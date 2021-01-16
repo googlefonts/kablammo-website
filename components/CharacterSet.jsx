@@ -129,6 +129,9 @@ const CharacterSet = (props) => {
 
 	return (
 		<div className={`character-set`}>
+			<div className={`character-set-filters`}>
+				<span>Filters</span>
+			</div>
 			<div ref={gridRef} className="grid" onClick={handleClick}>
 				<div className="grid-sizer"></div>
 				{characterDictionary.map((item, i) => {
@@ -145,9 +148,24 @@ const CharacterSet = (props) => {
 			<style jsx>{`
 				.character-set {
 					width: 100%;
-				}
-				.grid {
 					background: #3b8364;
+				}
+				.character-set-filters {
+					background: #ffc000;
+					border: 1px solid hsla(0, 0%, 0%, 0.5);
+					border-radius: 32px;
+					height: 75px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+				.character-set-filters span {
+					font-size: 15px;
+					text-align: center;
+					text-transform: uppercase;
+				}
+
+				.grid {
 				}
 
 				/* item is invisible, but used for layout */

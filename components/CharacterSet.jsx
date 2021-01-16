@@ -9,7 +9,7 @@ import React, {
 } from "react";
 import Link from "next/link";
 import isBrowser from "../util/IsBrowser";
-import Packery from "Packery";
+import Packery from "packery";
 
 const characterDictionary = [
 	{ letter: "A", category: "basic-latin" },

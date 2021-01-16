@@ -1,5 +1,5 @@
 {
-  "name": "the-local-optimist",
+  "name": "kablammo",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fisk-inc/the-local-optimist.git"
+    "url": "git+https://github.com/fisk-inc/kablammo.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/fisk-inc/the-local-optimist/issues"
+    "url": "https://github.com/fisk-inc/kablammo/issues"
   },
-  "homepage": "https://github.com/fisk-inc/the-local-optimist#readme",
+  "homepage": "https://github.com/fisk-inc/kablammo#readme",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
     "@fortawesome/free-solid-svg-icons": "^5.15.2",

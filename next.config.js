@@ -1,7 +1,7 @@
 module.exports = {
 	target: "serverless",
 	env: {
-		siteUrl: "https://localoptimist.com",
+		siteUrl: "https://kablammo-whapow-3000.netlify.app",
 	},
 	// exportPathMap: async function() {
 	// 	const paths = {

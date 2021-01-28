@@ -109,7 +109,7 @@ const CharacterSet = (props) => {
 
 	function addTransitionListener(itemContent) {
 		// reset 100%/100% sizing after transition end
-		var onTransitionEnd = function() {
+		var onTransitionEnd = function () {
 			itemContent.style.width = "";
 			itemContent.style.height = "";
 			itemContent.removeEventListener(
@@ -129,15 +129,17 @@ const CharacterSet = (props) => {
 
 	return (
 		<div className={`character-set`}>
-			<div className={`character-set-filters`}>
-				<span>Filters</span>
+			<div
+				className={`w-full border-2 border-black text-black bg-yellow rounded-lg h-20 text-center flex justify-center items-center`}
+			>
+				<span className="uppercase">Filters</span>
 			</div>
 			<div ref={gridRef} className="grid" onClick={handleClick}>
 				<div className="grid-sizer"></div>
 				{characterDictionary.map((item, i) => {
 					return (
 						<div key={i} className="grid-item">
-							<div className="grid-item-content">
+							<div className="grid-item-content text-black">
 								{item.letter}
 							</div>
 						</div>
@@ -150,8 +152,8 @@ const CharacterSet = (props) => {
 					width: 100%;
 					background: #3b8364;
 				}
+
 				.character-set-filters {
-					background: #ffc000;
 					border: 1px solid hsla(0, 0%, 0%, 0.5);
 					border-radius: 32px;
 					height: 75px;
@@ -159,6 +161,7 @@ const CharacterSet = (props) => {
 					justify-content: center;
 					align-items: center;
 				}
+
 				.character-set-filters span {
 					font-size: 15px;
 					text-align: center;

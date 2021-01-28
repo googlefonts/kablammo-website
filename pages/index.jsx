@@ -17,6 +17,7 @@ import BoxGrid from "../components/BoxGrid";
 import CategoryList from "../components/CategoryList";
 import CategoryImageList from "../components/CategoryImageList";
 import Footer from "../components/Footer";
+import Nav from "../components/Nav";
 import Carousel from "../components/Carousel";
 import Header from "../components/Header";
 import Layout from "../components/Layout";
@@ -70,6 +71,7 @@ const Index = (props) => {
             <script async defer src=""></script>
           </Head>
           <Layout padding={101}>
+            <Nav />
             <CharacterSetNoSSR />
           </Layout>
           {/* <Loading /> */}

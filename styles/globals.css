@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: "Kablammo";
+	src: url("/fonts/Kablammo/Kablammov0.16[move].woff2");
+}
+@font-face {
+	font-family: "Iso";
+	src: url("/fonts/Iso/ISOv0.8-Regular.woff2");
+}
+body {
+	@apply font-display;
+}
+span {
+	@apply font-mono;
+}

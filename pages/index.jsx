@@ -1,4 +1,10 @@
-import React, { Component, Fragment, useState, useContext } from "react";
+import React, {
+  Component,
+  Fragment,
+  useState,
+  useContext,
+  useEffect,
+} from "react";
 import Prismic from "prismic-javascript";
 import { RichText } from "prismic-reactjs";
 import {
@@ -18,6 +24,7 @@ import CategoryList from "../components/CategoryList";
 import CategoryImageList from "../components/CategoryImageList";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
+import Frame from "../components/Frame";
 import Carousel from "../components/Carousel";
 import Header from "../components/Header";
 import Layout from "../components/Layout";
@@ -27,15 +34,28 @@ import Moment from "react-moment";
 import ReactPixel from "react-facebook-pixel";
 import ReactGA from "react-ga";
 import dynamic from "next/dynamic";
+import Pill from "../components/Pill";
 
 const CharacterSetNoSSR = dynamic(() => import("../components/CharacterSet"), {
   ssr: false,
 });
 
-const Index = (props) => {
+const fetchData = async (setDocData) => {
+  const response = await client.query(
+    Prismic.Predicates.at("document.type", "home_page")
+  );
+  if (response) {
+    console.log("response", response);
+    setDocData(response.results[0]);
+  }
+};
+
+function Index(props) {
   const [doc, setDocData] = React.useState(null);
 
-  const pageReady = true;
+  fetchData(setDocData);
+
+  const pageReady = doc !== null ? true : false;
   return pageReady ? (
     <Media
       defaultMatches={{ mobile: false, desktop: false }}
@@ -45,11 +65,7 @@ const Index = (props) => {
       }}
     >
       {(matches) => (
-        <div
-          className={`index ${
-            matches.mobile ? "mobile" : matches.desktop ? "desktop" : ""
-          }`}
-        >
+        <div className={`index bg-black`}>
           <Head>
             <title>Kablammo</title>
             <meta name="description" content="Kablammo" />
@@ -70,19 +86,56 @@ const Index = (props) => {
             <meta property="og:image" content={""} />
             <script async defer src=""></script>
           </Head>
-          <Layout padding={101}>
+          <Layout>
             <Nav />
-            <CharacterSetNoSSR />
+            <Frame
+              className={`bg-purple border-2 border-solid border-black rounded-lg`}
+              bg={doc.data.landing_image.url}
+            />
+            <Pill className="bg-gray h-32"></Pill>
+            <Frame
+              className={`bg-lime border-2 border-solid border-black rounded-lg`}
+            />
+            <Frame
+              className={`bg-gray border-2 border-solid border-black rounded-lg`}
+            />
+            <Pill className="bg-lime h-32"></Pill>
+            <Frame
+              className={`bg-orange border-2 border-solid border-black rounded-lg`}
+            />{" "}
+            <Pill className="bg-yellow h-96"></Pill>
+            <Pill className="bg-orange h-72"></Pill>
+            <Pill className="bg-pink h-48"></Pill>
+            <Pill className="bg-purple h-32"></Pill>
+            <div
+              className={`bg-green border-2 border-solid border-black rounded-lg`}
+            >
+              <h3 className="text-center">Character Set</h3>
+              <CharacterSetNoSSR />
+            </div>{" "}
+            <Pill className="bg-pink h-32"></Pill>
+            <Pill className="bg-black h-screen"></Pill>
+            <Pill className="bg-purple h-32"></Pill>
+            <Pill className="bg-gray h-32"></Pill>
+            <Pill className="bg-lime h-96"></Pill>
+            <Pill className="bg-pink h-96"></Pill>
+            <Frame
+              className={`bg-gray border-2 border-solid border-black rounded-lg`}
+            />
+            <Pill className="bg-purple h-96"></Pill>
+            <Nav />
+            <Pill className="bg-gray h-32"></Pill>
+            <Pill className="bg-gray h-32"></Pill>
+            <Pill className="bg-gray h-32"></Pill>
+            <Pill className="bg-gray h-32"></Pill>
+            <Pill className="bg-blue h-32"></Pill>
           </Layout>
-          {/* <Loading /> */}
         </div>
       )}
     </Media>
   ) : (
-    {
-      /* <Loading initial /> */
-    }
+    <Loading initial />
   );
-};
+}
 
 export default Index;

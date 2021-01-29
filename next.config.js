@@ -3,27 +3,7 @@ module.exports = {
 	env: {
 		siteUrl: "https://kablammo-whapow-3000.netlify.app",
 	},
-	// exportPathMap: async function() {
-	// 	const paths = {
-	// 		"/": { page: "/" },
-	// 		"/stories": { page: "/stories" },
-	// 		"/stories/story": { page: "/stories/story" }
-	// };
-	// const API = await Prismic.getApi(apiEndpoint, {
-	// 	accessToken,
-	// 	req
-	// });
-	// const res = API.query(
-	// 	Prismic.Predicates.at("document.type", "stories")
-	// );
-	// const data = await res.json();
-	// const stories = data.map(entry => entry.story);
-	// stories.forEach(show => {
-	// 	paths[`/stories/${story.id}`] = {
-	// 		page: "/stories/[id]",
-	// 		query: { id: story.id }
-	// 	};
-	// });
-	// return paths;
-	// }
+	images: {
+		domains: ["kablammo.cdn.prismic.io"],
+	},
 };

@@ -10,6 +10,7 @@ import React, {
 import Link from "next/link";
 import isBrowser from "../util/IsBrowser";
 import Packery from "packery";
+import Pill from "./Pill";
 
 const characterDictionary = [
 	{ letter: "A", category: "basic-latin" },
@@ -129,17 +130,15 @@ const CharacterSet = (props) => {
 
 	return (
 		<div className={`character-set`}>
-			<div
-				className={`w-full border-2 border-black text-black bg-yellow rounded-lg h-20 text-center flex justify-center items-center`}
-			>
-				<span className="uppercase">Filters</span>
-			</div>
+			<Pill className="bg-yellow h-20">
+				<span className="uppercase font-mono">Filters</span>
+			</Pill>
 			<div ref={gridRef} className="grid" onClick={handleClick}>
 				<div className="grid-sizer"></div>
 				{characterDictionary.map((item, i) => {
 					return (
 						<div key={i} className="grid-item">
-							<div className="grid-item-content text-black">
+							<div className="grid-item-content border-2 border-solid border-black rounded-sm text-black">
 								{item.letter}
 							</div>
 						</div>
@@ -150,7 +149,6 @@ const CharacterSet = (props) => {
 			<style jsx>{`
 				.character-set {
 					width: 100%;
-					background: #3b8364;
 				}
 
 				.character-set-filters {
@@ -187,8 +185,6 @@ const CharacterSet = (props) => {
 					width: 100%;
 					height: 100%;
 					background: #e4e4e4;
-					border: 1px solid hsla(0, 0%, 0%, 0.5);
-					border-radius: 32px;
 					-webkit-transition: width 0.4s, height 0.4s;
 					transition: width 0.4s, height 0.4s;
 					display: flex;

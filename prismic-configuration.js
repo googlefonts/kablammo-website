@@ -2,17 +2,14 @@ import Prismic from "prismic-javascript";
 
 const prod = true;
 
-export const apiEndpoint = prod
-	? "https://the-local-optimist.cdn.prismic.io/api/v2"
-	: "https://the-local-optimist-dev.cdn.prismic.io/api/v2";
-export const accessToken = prod
-	? "MC5YaHo1WkJVQUFDTUFMZWZR.A2Lvv73vv73vv73vv73vv70Yf--_vUfvv73vv70ID1nvv70DMO-_ve-_ve-_vQIvNz48UW5HGe-_vQ"
-	: "MC5YbFFqdlJBQUFDY0FybllR.GEZA77-977-9Uu-_vRPvv70i77-977-9Ue-_vSFX77-977-9b3Xvv73vv73vv71c77-9aO-_vUVLdO-_vWw";
+export const apiEndpoint = "https://kablammo.cdn.prismic.io/api/v2";
+export const accessToken =
+	"MC5ZQk03UWhVQUFDWUFaNWc4.eu-_ve-_vQ5rO3fvv70VX0Hvv70X77-977-977-977-9a--_ve-_ve-_ve-_vSLvv73vv73vv70kUEnvv73vv73vv70";
 
 export const client = Prismic.client(apiEndpoint, { accessToken });
 
 // Manages links to internal Prismic documents
-export const linkResolver = function(doc) {
+export const linkResolver = function (doc) {
 	if (doc.type === "stories") {
 		return `/blog/stories/post?id=${doc.id}`;
 	}

@@ -12,7 +12,24 @@
 }
 body {
 	@apply font-display;
+	@apply text-black;
 }
-span {
-	@apply font-mono;
+
+h1 {
+	font-size: 5vw;
+}
+h2 {
+	font-size: 4vwpx;
+}
+h3 {
+	font-size: 5vw;
+}
+h4 {
+	font-size: 2px;
+}
+h5 {
+	font-size: 2px;
+}
+h6 {
+	font-size: 2px;
 }

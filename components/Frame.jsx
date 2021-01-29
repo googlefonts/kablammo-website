@@ -6,14 +6,14 @@ const Frame = (props) => {
 
 	return (
 		<div
-			className={`Frame w-full h-screen bg-contain bg-no-repeat bg-center ${
-				props.className && `${props.className}`
+			className={`Frame w-full bg-contain bg-no-repeat bg-center ${
+				props.className ? `${props.className}` : ``
 			}`}
 		>
 			{child}
 			<style jsx>{`
 				.Frame {
-					${props.bg && `background-image: url(${props.bg})`}
+					background-image: ${props.bg ? `url(${props.bg})` : ``};
 				}
 			`}</style>
 		</div>

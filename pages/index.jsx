@@ -87,21 +87,23 @@ function Index(props) {
             <script async defer src=""></script>
           </Head>
           <Layout>
-            <Nav />
-            <Frame
-              className={`bg-purple border-2 border-solid border-black rounded-lg`}
-              bg={doc.data.landing_image.url}
-            />
+            <Frame className={`h-screen`}>
+              <Nav />
+              <Frame
+                className={`bg-purple border-2 border-solid border-black rounded-lg h-full`}
+                bg={doc.data.landing_image.url}
+              />
+            </Frame>
             <Pill className="bg-gray h-32"></Pill>
             <Frame
-              className={`bg-lime border-2 border-solid border-black rounded-lg`}
+              className={`bg-lime border-2 border-solid border-black rounded-lg h-screen`}
             />
             <Frame
-              className={`bg-gray border-2 border-solid border-black rounded-lg`}
+              className={`bg-gray border-2 border-solid border-black rounded-lg h-screen`}
             />
             <Pill className="bg-lime h-32"></Pill>
             <Frame
-              className={`bg-orange border-2 border-solid border-black rounded-lg`}
+              className={`bg-orange border-2 border-solid border-black rounded-lg h-screen`}
             />{" "}
             <Pill className="bg-yellow h-96"></Pill>
             <Pill className="bg-orange h-72"></Pill>
@@ -120,7 +122,7 @@ function Index(props) {
             <Pill className="bg-lime h-96"></Pill>
             <Pill className="bg-pink h-96"></Pill>
             <Frame
-              className={`bg-gray border-2 border-solid border-black rounded-lg`}
+              className={`bg-gray border-2 border-solid border-black rounded-lg h-screen`}
             />
             <Pill className="bg-purple h-96"></Pill>
             <Nav />

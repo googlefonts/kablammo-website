@@ -13,7 +13,7 @@ const Frame = (props) => {
 			{child}
 			<style jsx>{`
 				.Frame {
-					background-image: ${props.bg ? `url(${props.bg})` : ``};
+					background-image: ${props.bg ? `url(${props.bg})` : `none`};
 				}
 			`}</style>
 		</div>

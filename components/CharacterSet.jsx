@@ -130,8 +130,8 @@ const CharacterSet = (props) => {
 
 	return (
 		<div className={`character-set`}>
-			<Pill className="bg-yellow h-20">
-				<span className="uppercase font-mono">Filters</span>
+			<Pill className="bg-yellow h-6">
+				<span className="uppercase font-mono text-2">Filters +</span>
 			</Pill>
 			<div ref={gridRef} className="grid" onClick={handleClick}>
 				<div className="grid-sizer"></div>

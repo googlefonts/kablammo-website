@@ -37,6 +37,12 @@ import dynamic from "next/dynamic";
 import Pill from "../components/Pill";
 import TwoTest from "../components/TwoTest";
 import isBrowser from "../util/isBrowser";
+import useVariableFont from "react-variable-fonts";
+
+const initialSettings = {
+  BVEL: 20,
+  SHDW: 50,
+};
 
 const CharacterSetNoSSR = dynamic(() => import("../components/CharacterSet"), {
   ssr: false,
@@ -113,53 +119,165 @@ function Index(props) {
             <script async defer src=""></script>
           </Head>
           <Layout>
-            <Frame className={`h-screen`}>
+            <Frame className={`h-100vh`}>
+              {/* NAV */}
               <Nav />
+              {/* LANDING */}
               <Frame
-                className={`bg-purple border-2 border-solid border-black rounded-lg`}
+                className={`flex justify-center h-landing bg-purple border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden`}
               >
-                {/*<div id="draw-shapes"></div>*/}
                 <TwoTest />
                 <img className="w-full" src={doc.data.landing_image.url} />
               </Frame>
             </Frame>
-            <Pill className="bg-gray h-32"></Pill>
+            {/* SMALL SCROLLING TEXT 1 */}
+            <Pill className="bg-gray hover:bg-orange h-6 bg-clip-padding overflow-hidden">
+              <ScrollingText
+                className=""
+                href={`#`}
+                blank
+                specialRight
+                hideMobile
+                borderTop
+                large
+              >
+                <span className="text-4 text-black uppercase">
+                  👁 A 🌐 Dancing ☀ typeface ☮ BROUGHT ☼ TO 👁 YOU 🌐 BY ☀ VEkTOR
+                  ☮ Type ☼ Foundry &nbsp;
+                </span>
+              </ScrollingText>
+            </Pill>
+            {/* TYPE TESTER 1 */}
             <Frame
-              className={`bg-lime border-2 border-solid border-black rounded-lg h-screen`}
-            />
-            <Frame
-              className={`bg-gray border-2 border-solid border-black rounded-lg h-screen`}
-            />
-            <Pill className="bg-lime h-32"></Pill>
-            <Frame
-              className={`bg-orange border-2 border-solid border-black rounded-lg h-screen`}
-            />{" "}
-            <Pill className="bg-yellow h-96"></Pill>
-            <Pill className="bg-orange h-72"></Pill>
-            <Pill className="bg-pink h-48"></Pill>
-            <Pill className="bg-purple h-32"></Pill>
-            <div
-              className={`bg-green border-2 border-solid border-black rounded-lg`}
+              className={`bg-lime border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden h-100vh grid grid-rows-6`}
             >
-              <h3 className="text-center">Character Set</h3>
-              <CharacterSetNoSSR />
-            </div>{" "}
-            <Pill className="bg-pink h-32"></Pill>
-            <Pill className="bg-black h-screen"></Pill>
-            <Pill className="bg-purple h-32"></Pill>
-            <Pill className="bg-gray h-32"></Pill>
-            <Pill className="bg-lime h-96"></Pill>
-            <Pill className="bg-pink h-96"></Pill>
+              <div className="flex justify-between row-span-1">
+                <div class="pt-10 pl-20">
+                  <span className="uppercase font-mono text-2">Alternates</span>
+                </div>
+                <div class="pt-10 pr-20">
+                  <span className="uppercase font-mono text-2">Background</span>
+                </div>
+              </div>
+              <div className="row-span-4 flex justify-center">
+                <div class="flex justify-center align-middle h-100% w-3/4">
+                  <span
+                    className="text-12 w-full block leading-none text-center text-pink focus:outline-none overflow-hidden self-center break-word"
+                    contenteditable="true"
+                    spellcheck="false"
+                  >
+                    ⚠ VARIABLE FONT 🌼 BY VECTOR 😵
+                  </span>
+                </div>
+              </div>
+              <div className="flex justify-between row-span-1">
+                <div className=""></div>
+                <div className=""></div>
+              </div>
+            </Frame>
+            {/* TYPE PARTICLES */}
             <Frame
-              className={`bg-gray border-2 border-solid border-black rounded-lg h-screen`}
+              className={`bg-gray border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden h-100vh`}
             />
-            <Pill className="bg-purple h-96"></Pill>
+            {/* SMALL SCROLLING TEXT 1 */}
+            <Pill className="bg-lime hover:bg-orange h-6 bg-clip-padding overflow-hidden">
+              <ScrollingText
+                className=""
+                href={`#`}
+                blank
+                specialRight
+                hideMobile
+                borderTop
+                large
+                right
+              >
+                <span className="text-4 text-blue uppercase">
+                  &#xE006;&nbsp;&#xE006;&nbsp;&#xE006;&nbsp;&#xE006;&nbsp;&#xE006;&nbsp;&#xE006;&nbsp;&#xE006;&nbsp;&#xE006;&nbsp;
+                </span>
+              </ScrollingText>
+            </Pill>
+            {/* SLIDER FRAME */}
+            <Frame
+              className={`bg-orange border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden h-100vh`}
+            />
+            {/* TYPE SCALES */}
+            <Pill className="bg-yellow h-12"></Pill>
+            <Pill className="bg-orange h-10"></Pill>
+            <Pill className="bg-pink h-8"></Pill>
+            <Pill className="bg-purple h-6"></Pill>
+            {/* CHARACTER SET */}
+            <div
+              className={`bg-green border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden`}
+            >
+              <h3 className="text-center text-yellow">Character Set</h3>
+              <CharacterSetNoSSR />
+            </div>
+            {/* SLOT MACHINE */}
+            <Frame
+              className={`bg-black border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden h-100vh`}
+            >
+              <Pill className="bg-pink h-6"></Pill>
+              <Pill className="bg-purple h-6"></Pill>
+            </Frame>
+            {/* SMALL SCROLLING TEXT PILL 2 */}
+            <Pill className="bg-gray hover:bg-orange h-6 bg-clip-padding overflow-hidden">
+              <ScrollingText
+                className=""
+                href={`#`}
+                blank
+                specialRight
+                hideMobile
+                borderTop
+                large
+                left
+              >
+                <span className="text-4 text-black uppercase">
+                  👁 A 🌐 Dancing ☀ typeface ☮ BROUGHT ☼ TO 👁 YOU 🌐 BY ☀ VEkTOR
+                  ☮ Type ☼ Foundry &nbsp;
+                </span>
+              </ScrollingText>
+            </Pill>
+            <Pill className="bg-lime hover:bg-orange h-32 bg-clip-padding overflow-hidden">
+              <ScrollingText
+                className=""
+                href={`#`}
+                blank
+                specialRight
+                hideMobile
+                borderTop
+                large
+                right
+              >
+                <span className="text-24 text-purple uppercase">
+                  The making of KABLAMMO
+                </span>
+              </ScrollingText>
+            </Pill>
+            <Pill className="bg-pink hover:bg-orange h-32 bg-clip-padding overflow-hidden">
+              <ScrollingText
+                className=""
+                href={`#`}
+                blank
+                specialRight
+                hideMobile
+                borderTop
+                large
+              >
+                <span className="text-24 text-gray uppercase">
+                  The making of KABLAMMO
+                </span>
+              </ScrollingText>
+            </Pill>
+            <Frame
+              className={`bg-gray border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden h-100vh`}
+            />
+            <Pill className="bg-purple h-32"></Pill>
             <Nav />
-            <Pill className="bg-gray h-32"></Pill>
-            <Pill className="bg-gray h-32"></Pill>
-            <Pill className="bg-gray h-32"></Pill>
-            <Pill className="bg-gray h-32"></Pill>
-            <Pill className="bg-blue h-32"></Pill>
+            <Pill className="bg-gray h-6"></Pill>
+            <Pill className="bg-gray h-6"></Pill>
+            <Pill className="bg-gray h-6"></Pill>
+            <Pill className="bg-gray h-6"></Pill>
+            <Pill className="bg-blue h-6"></Pill>
           </Layout>
         </div>
       )}

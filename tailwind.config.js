@@ -1,3 +1,25 @@
+var scaleSystem = {
+	"1": "1vw",
+	"2": "2vw",
+	"4": "4vw",
+	"6": "6vw",
+	"8": "8vw",
+	"10": "10vw",
+	"12": "12vw",
+	"14": "14vw",
+	"16": "16vw",
+	"18": "18vw",
+	"20": "20vw",
+	"22": "22vw",
+	"24": "24vw",
+	"26": "26vw",
+	"28": "28vw",
+	"30": "30vw",
+	"100vw": "100vw",
+	"100vh": "100vh",
+	"100%": "100%",
+	landing: "calc(100% - 6vw)",
+};
 module.exports = {
 	purge: [
 		"./pages/**/*.{js,ts,jsx,tsx}",
@@ -26,6 +48,8 @@ module.exports = {
 			body: ["helvetica", "ui-sans-serif"],
 			mono: ["Iso", "ui-monospace"],
 		},
+		fontSize: scaleSystem,
+		height: scaleSystem,
 	},
 	variants: {
 		extend: {},

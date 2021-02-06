@@ -85,13 +85,10 @@ const ScrollingText = (props) => {
 					</div>
 					<style jsx>{`
 						.scrolling-text {
-							// transition: background 1s linear;
-							background: #f0fddf;
 							width: 100%;
-							overflow-x: hidden;
-							border-bottom: 1px solid black;
+							overflow: hidden;
 							position: relative;
-							height: ${props.large && matches.desktop ? "80px" : "36px"};
+							height: 100%;
 						}
 
 						.scrolling-text-inner {
@@ -112,31 +109,8 @@ const ScrollingText = (props) => {
 							text-transform: uppercase;
 							transition: display 1s;
 						}
-						.scrolling-text:hover {
-							background: ${
-								props.specialLeft
-									? `linear-gradient(
-								90deg,
-								#ffeb00 0%,
-								#4ca1ff 33.3333%,
-								#ff58ff 66.6666%,
-								#ffb74c 100%
-							)`
-									: props.specialRight
-									? `linear-gradient(
-								90deg,
-								#ffb74c 0%,
-								#ff58ff 33.3333%,
-								#4ca1ff 66.6666%,
-								#ffeb00 100%)`
-									: `#f0fddf`
-							};
-						}
-						.scrolling-text-inner:hover {
-							// animation-play-state: paused;
-						}
 						.scrolling-text a {
-							margin-top: ${props.large && matches.desktop ? "15px" : "0"};
+							margin-top: -5px;
 						}
 						.mobile .scrolling-text-inner {
 							animation: scrollMobile 150s linear infinite;

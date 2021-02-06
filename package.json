@@ -48,6 +48,7 @@
     "react-slick": "^0.25.2",
     "react-snapchat-pixel": "^1.1.1",
     "react-swipeable": "^5.5.1",
+    "react-variable-fonts": "^1.2.2",
     "serve": "^11.3.2",
     "tailwindcss": "^2.0.2",
     "two.js": "^0.7.1"

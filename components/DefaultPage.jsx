@@ -30,7 +30,7 @@ import Header from "./Header";
 import Layout from "./Layout";
 import Loading from "./Loading";
 import SliceZone from "./SliceZone";
-import isBrowser from "../util/IsBrowser";
+const isBrowser = typeof window !== "undefined";
 import ReactPixel from "react-facebook-pixel";
 import ReactGA from "react-ga";
 

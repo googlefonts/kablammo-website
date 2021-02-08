@@ -8,7 +8,7 @@ import React, {
 	useRef,
 } from "react";
 import Link from "next/link";
-import isBrowser from "../util/IsBrowser";
+const isBrowser = typeof window !== "undefined";
 
 const Nav = (props) => {
 	const [showChild, setShowChild] = useState(false);

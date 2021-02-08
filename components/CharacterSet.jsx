@@ -8,7 +8,7 @@ import React, {
 	useRef,
 } from "react";
 import Link from "next/link";
-import isBrowser from "../util/IsBrowser";
+const isBrowser = typeof window !== "undefined";
 import Packery from "packery";
 import Pill from "./Pill";
 
@@ -110,7 +110,7 @@ const CharacterSet = (props) => {
 
 	function addTransitionListener(itemContent) {
 		// reset 100%/100% sizing after transition end
-		var onTransitionEnd = function () {
+		var onTransitionEnd = function() {
 			itemContent.style.width = "";
 			itemContent.style.height = "";
 			itemContent.removeEventListener(

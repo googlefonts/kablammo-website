@@ -36,8 +36,9 @@ import ReactGA from "react-ga";
 import dynamic from "next/dynamic";
 import Pill from "../components/Pill";
 import TwoTest from "../components/TwoTest";
-import isBrowser from "../util/isBrowser";
 import useVariableFont from "react-variable-fonts";
+
+const isBrowser = typeof window !== "undefined";
 
 const initialSettings = {
   BVEL: 20,
@@ -366,7 +367,7 @@ function Index(props) {
             </Frame>
             {/* DOWNLOAD */}
             <Pill className="bg-purple h-30">
-              <span className="text-24 text-lime uppercase">Download</span>
+              <span className="text-16 text-lime uppercase">Download</span>
             </Pill>
             <Nav />
             {/* CREDITS */}

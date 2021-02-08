@@ -201,10 +201,42 @@ function Index(props) {
               className={`bg-orange border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden h-100vh`}
             />
             {/* TYPE SCALES */}
-            <Pill className="bg-yellow h-12"></Pill>
-            <Pill className="bg-orange h-10"></Pill>
-            <Pill className="bg-pink h-8"></Pill>
-            <Pill className="bg-purple h-6"></Pill>
+            <Pill className="bg-yellow h-24">
+              <span
+                className="text-18 w-full block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word"
+                contenteditable="true"
+                spellcheck="false"
+              >
+                A Font 4
+              </span>
+            </Pill>
+            <Pill className="bg-orange h-16">
+              <span
+                className="text-10 w-full block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word"
+                contenteditable="true"
+                spellcheck="false"
+              >
+                Huge Headlines
+              </span>
+            </Pill>
+            <Pill className="bg-pink h-12">
+              <span
+                className="text-6 w-full block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word"
+                contenteditable="true"
+                spellcheck="false"
+              >
+                Out Of This World Ideas
+              </span>
+            </Pill>
+            <Pill className="bg-purple h-6">
+              <span
+                className="text-3 w-full block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word"
+                contenteditable="true"
+                spellcheck="false"
+              >
+                And Feelings Words Just Cannot Describe
+              </span>
+            </Pill>
             {/* CHARACTER SET */}
             <div
               className={`bg-green border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden`}
@@ -214,10 +246,39 @@ function Index(props) {
             </div>
             {/* SLOT MACHINE */}
             <Frame
-              className={`bg-black border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden h-100vh`}
+              className={`bg-black border-2 border-solid border-black bg-clip-padding overflow-hidden h-100vh flex justify-between flex-col`}
             >
-              <Pill className="bg-pink h-6"></Pill>
-              <Pill className="bg-purple h-6"></Pill>
+              <Pill className="bg-pink hover:bg-orange h-6 bg-clip-padding overflow-hidden">
+                <ScrollingText
+                  className=""
+                  href={`#`}
+                  blank
+                  specialRight
+                  hideMobile
+                  borderTop
+                  large
+                >
+                  <span className="text-4 text-lime uppercase">
+                    &#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;
+                  </span>
+                </ScrollingText>
+              </Pill>
+              <Pill className="bg-purple hover:bg-orange h-6 bg-clip-padding overflow-hidden">
+                <ScrollingText
+                  className=""
+                  href={`#`}
+                  blank
+                  specialRight
+                  hideMobile
+                  borderTop
+                  large
+                  right
+                >
+                  <span className="text-4 text-green uppercase">
+                    &#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;
+                  </span>
+                </ScrollingText>
+              </Pill>
             </Frame>
             {/* SMALL SCROLLING TEXT PILL 2 */}
             <Pill className="bg-gray hover:bg-orange h-6 bg-clip-padding overflow-hidden">
@@ -237,7 +298,8 @@ function Index(props) {
                 </span>
               </ScrollingText>
             </Pill>
-            <Pill className="bg-lime hover:bg-orange h-32 bg-clip-padding overflow-hidden">
+            {/* BIG SROLLING TEXT 1 */}
+            <Pill className="bg-lime hover:bg-orange h-30 bg-clip-padding overflow-hidden">
               <ScrollingText
                 className=""
                 href={`#`}
@@ -253,7 +315,8 @@ function Index(props) {
                 </span>
               </ScrollingText>
             </Pill>
-            <Pill className="bg-pink hover:bg-orange h-32 bg-clip-padding overflow-hidden">
+            {/* BIG SROLLING TEXT 2 */}
+            <Pill className="bg-pink hover:bg-orange h-30 bg-clip-padding overflow-hidden">
               <ScrollingText
                 className=""
                 href={`#`}
@@ -268,16 +331,71 @@ function Index(props) {
                 </span>
               </ScrollingText>
             </Pill>
+            {/* ESSAY */}
             <Frame
-              className={`bg-gray border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden h-100vh`}
-            />
-            <Pill className="bg-purple h-32"></Pill>
+              className={`bg-gray border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden h-100vh grid grid-cols-2`}
+            >
+              <div className="">
+                <span>
+                  Nicolette Gray wrote about the Caslon Italian (above) in her
+                  book Nineteenth Century. Maelstrom & Maelstrom Sans are
+                  reversed-stress typefaces. They’re “perverse”, to be sure, but
+                  that’s exactly their charm. They belong to a genre destined to
+                  be a perpetual typographic outsider — never fashionable yet
+                  never abandoned. Maelstrom & Maelstrom Sans are
+                  reversed-stress typefaces. They’re “perverse”, to be sure, but
+                  that’s exactly their charm. They belong to a genre destined to
+                  be a perpetual typographic outsider — never fashionable yet
+                  never abandoned. Nicolette Gray wrote about the Caslon Italian
+                  (above) in her book Nineteenth Century. Ornamented Types and
+                  Title Pages The only semi-ornamental type of this decade
+                  [1821] is the much, and quite rightly, abused Italian. The
+                  Italian is an Egyptian with a horizontal stress and extra
+                  serifs reversed and joined to the letter by the point; a crude
+                  expression of the idea of perversity. It is scarcely just,
+                  however, to regard it as a typical monstrosity of the time.
+                  The only semi-ornamental type of this decade [1821] is the
+                  much, and quite rightly, abused Italian. The Italian is an
+                  Egyptian with a horizontal stress and extra serifs reversed
+                  and joined to the letter by the point; a crude expression of
+                  the idea of perversity. It is scarcely just, however, to
+                  regard it as a typical monstrosity of the time.
+                </span>
+              </div>
+              <div className=""></div>
+            </Frame>
+            {/* DOWNLOAD */}
+            <Pill className="bg-purple h-30">
+              <span className="text-24 text-lime uppercase">Download</span>
+            </Pill>
             <Nav />
-            <Pill className="bg-gray h-6"></Pill>
-            <Pill className="bg-gray h-6"></Pill>
-            <Pill className="bg-gray h-6"></Pill>
-            <Pill className="bg-gray h-6"></Pill>
-            <Pill className="bg-blue h-6"></Pill>
+            {/* CREDITS */}
+            <Pill className="bg-gray h-6  ">
+              <span className="font-body text-2 uppercase">
+                Lead Design and Concept by Travis Kochel
+              </span>
+            </Pill>
+            <Pill className="bg-gray h-6">
+              <span className="font-body text-2 uppercase">
+                Cyrillic & Production Assistance by Daria Petrova & Ethan Cohen
+              </span>
+            </Pill>
+            <Pill className="bg-gray h-6">
+              <span className="font-body text-2 uppercase">
+                Website Design & Development by FISK
+              </span>
+            </Pill>
+            <Pill className="bg-gray h-6">
+              <span className="font-body text-2 uppercase">
+                Commissioned by Google Fonts
+              </span>
+            </Pill>
+            {/* VEKTOR TYPE FOUNDRY CREDIT */}
+            <Pill className="bg-blue h-12">
+              <span className="text-6 uppercase">
+                Font by Vektor Type Foundry
+              </span>
+            </Pill>
           </Layout>
         </div>
       )}

@@ -1,6 +1,7 @@
 var scaleSystem = {
 	"1": "1vw",
 	"2": "2vw",
+	"3": "3vw",
 	"4": "4vw",
 	"6": "6vw",
 	"8": "8vw",
@@ -44,8 +45,8 @@ module.exports = {
 			lg: "100px",
 		},
 		fontFamily: {
-			display: ["Kablammo", "helvetica", "ui-sans-serif"],
-			body: ["helvetica", "ui-sans-serif"],
+			display: ["Kablammo", "Helvetica", "ui-sans-serif"],
+			body: ["Helvetica", "ui-sans-serif"],
 			mono: ["Iso", "ui-monospace"],
 		},
 		fontSize: scaleSystem,

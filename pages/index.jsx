@@ -36,6 +36,7 @@ import ReactGA from "react-ga";
 import dynamic from "next/dynamic";
 import Pill from "../components/Pill";
 import TwoTest from "../components/TwoTest";
+import TypeTester from "../components/TypeTester";
 import useVariableFont from "react-variable-fonts";
 
 const isBrowser = typeof window !== "undefined";
@@ -149,33 +150,7 @@ function Index(props) {
               </ScrollingText>
             </Pill>
             {/* TYPE TESTER 1 */}
-            <Frame
-              className={`bg-lime border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden h-100vh grid grid-rows-6`}
-            >
-              <div className="flex justify-between row-span-1">
-                <div class="pt-10 pl-20">
-                  <span className="uppercase font-mono text-2">Alternates</span>
-                </div>
-                <div class="pt-10 pr-20">
-                  <span className="uppercase font-mono text-2">Background</span>
-                </div>
-              </div>
-              <div className="row-span-4 flex justify-center">
-                <div class="flex justify-center align-middle h-100% w-3/4">
-                  <span
-                    className="text-12 w-full block leading-none text-center text-pink focus:outline-none overflow-hidden self-center break-word"
-                    contenteditable="true"
-                    spellcheck="false"
-                  >
-                    ⚠ VARIABLE FONT 🌼 BY VECTOR 😵
-                  </span>
-                </div>
-              </div>
-              <div className="flex justify-between row-span-1">
-                <div className=""></div>
-                <div className=""></div>
-              </div>
-            </Frame>
+            <TypeTester />
             {/* TYPE PARTICLES */}
             <Frame
               className={`bg-gray border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden h-100vh`}
@@ -205,8 +180,9 @@ function Index(props) {
             <Pill className="bg-yellow h-24">
               <span
                 className="text-18 w-full block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word"
-                contenteditable="true"
-                spellcheck="false"
+                contentEditable="true"
+                spellCheck="false"
+                suppressContentEditableWarning={true}
               >
                 A Font 4
               </span>
@@ -214,8 +190,9 @@ function Index(props) {
             <Pill className="bg-orange h-16">
               <span
                 className="text-10 w-full block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word"
-                contenteditable="true"
-                spellcheck="false"
+                contentEditable="true"
+                spellCheck="false"
+                suppressContentEditableWarning={true}
               >
                 Huge Headlines
               </span>
@@ -223,8 +200,9 @@ function Index(props) {
             <Pill className="bg-pink h-12">
               <span
                 className="text-6 w-full block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word"
-                contenteditable="true"
-                spellcheck="false"
+                contentEditable="true"
+                spellCheck="false"
+                suppressContentEditableWarning={true}
               >
                 Out Of This World Ideas
               </span>
@@ -232,8 +210,9 @@ function Index(props) {
             <Pill className="bg-purple h-6">
               <span
                 className="text-3 w-full block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word"
-                contenteditable="true"
-                spellcheck="false"
+                contentEditable="true"
+                spellCheck="false"
+                suppressContentEditableWarning={true}
               >
                 And Feelings Words Just Cannot Describe
               </span>

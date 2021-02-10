@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+	--magic-rainbow-color-1: hsl(0deg, 96%, 55%);
+	--magic-rainbow-color-2: hsl(25deg, 100%, 50%);
+	--magic-rainbow-color-1: hsl(40deg, 100%, 50%);
+}
 @font-face {
 	font-family: "Kablammo";
 	src: url("/fonts/Kablammo/Kablammov0.16[move].woff2");

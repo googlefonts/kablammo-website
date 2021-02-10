@@ -8,19 +8,16 @@ import React, {
 	useRef,
 } from "react";
 
-const TypeTesterInput = ({ typeMove }) => {
+const TypeTesterInput = (props) => {
 	const [showChild, setShowChild] = useState(false);
-	const [moveSetting, setMoveSetting] = useState(typeMove.value);
+	const [moveSetting, setMoveSetting] = useState(props.typeMove);
 	useEffect(() => {
-		setMoveSetting(typeMove.value);
-	}, []);
-	useEffect(() => {
-		console.log("type tester input type move", moveSetting);
-	}, [typeMove]);
-	console.log("typeMove", typeMove);
+		setMoveSetting(props.typeMove);
+		console.log(moveSetting, props.typeMove);
+	}, [props.typeMove]);
 
 	return (
-		<div className="row-span-4 flex justify-center">
+		<div key={moveSetting} className="row-span-4 flex justify-center">
 			<div className="flex justify-center align-middle h-100% w-3/4">
 				<span
 					style={{

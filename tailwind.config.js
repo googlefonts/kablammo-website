@@ -1,4 +1,5 @@
 var scaleSystem = {
+	"2px": "2px",
 	"1": "1vw",
 	"2": "2vw",
 	"3": "3vw",
@@ -18,6 +19,7 @@ var scaleSystem = {
 	"30": "30vw",
 	"100vw": "100vw",
 	"100vh": "100vh",
+	"50%": "50%",
 	"100%": "100%",
 	landing: "calc(100% - 6vw)",
 };
@@ -30,6 +32,7 @@ module.exports = {
 	theme: {
 		extend: {},
 		colors: {
+			transparent: "transparent",
 			black: "#3D3D3D",
 			gray: "#E4E4E4",
 			green: "#3B8364",

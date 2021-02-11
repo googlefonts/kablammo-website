@@ -12,115 +12,147 @@ const isBrowser = typeof window !== "undefined";
 import { Formik, Form, Field, useFormikContext } from "formik";
 import useVariableFont from "react-variable-fonts";
 import Frame from "../components/Frame";
+import TwoBackground from "../components/TwoBackground";
 import anime from "animejs";
 
-const initialSettings = {
-	move: 500,
-};
-
-const TypeMoveContext = ({ setTypeMove }) => {
-	const { values, submitForm } = useFormikContext();
-	useEffect(() => {
-		const newTypeMove = values.moveInput.toString();
-		setTypeMove(newTypeMove);
-	}, [values]);
-
-	return null;
-};
-const getStyles = (value) => {
-	return getComputedStyle(document.documentElement)
-		.getPropertyValue(value)
-		.trim();
-};
-
-const setStyles = (property, value) => {
-	return document.documentElement.style.setProperty(property, value);
-};
-
 const TypeTester = (props) => {
-	const [showChild, setShowChild] = useState(false);
+	const typeTesterRef = useRef(null);
+	const typeTesterInputRef = useRef(null);
+	const sliderRef = useRef(null);
+
+	const [sliderCurrentValue, setSliderCurrentValue] = useState(500);
+	const [updatingSlider, setUpdatingSlider] = useState(false);
+	const sliderValue = useRef(500);
 	const [typeTesterValues, setTypeTesterValues] = useState({
 		min: 0,
 		max: 1000,
-		currentValue: 500,
 	});
-	const slider = useRef(null);
-	const typeTester = useRef(null);
 	let typeTesterAnimation = null;
 	const handleAnimationPause = (e) => typeTesterAnimation.pause();
 	const handleAnimationPlay = (e) => typeTesterAnimation.play();
-
 	useEffect(() => {
-		console.log(typeTesterValues);
-		slider.current.value = typeTesterValues.currentValue;
 		typeTesterAnimation = anime({
-			targets: typeTester.current,
+			targets: typeTesterRef.current,
 			fontVariationSettings: ["'move' 0", "'move' 1000"],
 			easing: "linear",
 			direction: "alternate",
-			duration: 3000,
+			duration: 10000,
 			loop: true,
-			update: function () {},
+			update: function (anim) {
+				const currentValue = parseFloat(
+					anim.animations[0].currentValue.substring(7)
+				);
+				if (!updatingSlider) {
+					sliderRef.current.value = currentValue;
+				}
+			},
 		});
-	}, [typeTesterValues]);
-	const handleSlider = (e, v) => {
-		const sliderValue = parseInt(slider.current.value);
-		// typeTester.current.style.fontVariationSettings = `'move' ${sliderValue}`;
-		// setTypeTesterValues({
-		// 	...typeTesterValues,
-		// 	currentValue: parseInt(sliderValue),
-		// });
+		console.log(updatingSlider);
+	}, [updatingSlider]);
+	TwoBackground(typeTesterRef);
+
+	const handleSliderChange = (e) => {
+		// const sliderValue = parseInt(sliderRef.current.value);
+	};
+
+	const handleSliderHover = (e) => {
+		setUpdatingSlider((prevState) => !prevState);
 	};
 	return (
-		<Frame
-			className={`type-tester bg-lime border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden h-100vh grid grid-rows-6`}
+		<div
+			ref={typeTesterRef}
+			className="h-100vh w-screen relative bg-lime border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden"
 		>
-			<div className="flex justify-between row-span-1">
-				<div className="pt-10 pl-20">
-					<span className="uppercase font-mono text-1">
-						Alternates
-					</span>
+			<Frame
+				className={`type-tester h-100vh absolute top-0 left-0 right-0 bottom-0 z-10`}
+			>
+				<span
+					ref={typeTesterInputRef}
+					className="type-tester text-12 m-auto w-3/4 h-100vh absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center block leading-none text-center text-pink focus:outline-none overflow-hidden self-center break-word p-10"
+					contentEditable="true"
+					suppressContentEditableWarning={true}
+					spellCheck="false"
+					onClick={handleAnimationPause}
+					onMouseLeave={handleAnimationPlay}
+				>
+					⚠ VARIABLE FONT 🌼 BY VECTOR 😵
+				</span>
+
+				<div className="flex justify-between">
+					<div className="pt-10 pl-20">
+						<span className="uppercase font-mono text-1">
+							Alternates
+						</span>
+					</div>
+					<div className="pt-10 pr-20">
+						<span className="uppercase font-mono text-1">
+							Background
+						</span>
+					</div>
 				</div>
-				<div className="pt-10 pr-20">
-					<span className="uppercase font-mono text-1">
-						Background
-					</span>
+				<div className="absolute left-0 right-0 bottom-0 flex justify-between">
+					<div className="pb-10 pl-20 pr-2 w-1/5 flex flex-col">
+						<label
+							className="uppercase font-mono text-1 text-center"
+							htmlFor="cars"
+						>
+							Font Weights
+						</label>
+						<select
+							className="w-100% h-6 bg-yellow border-2 border-solid border-black rounded-lg relative flex justify-center items-center overflow-hidden font-body uppercase text-2 flex justify-center items-center"
+							name="cars"
+							id="cars"
+						>
+							<option value="Zoink">Zoink</option>
+							<option value="Tweet">Tweet</option>
+							<option value="Bloop">Bloop</option>
+							<option value="Vroom">Vroom</option>
+						</select>
+					</div>
+					<div className="pb-10 pr-20 w-4/5 flex flex-col ">
+						<span
+							className="uppercase font-mono text-1 text-center"
+							htmlFor="cars"
+						>
+							Font Weights
+						</span>
+						<div
+							className="h-6 bg-purple border-2 border-solid border-black rounded-lg relative flex justify-center items-center overflow-hidden"
+							onMouseEnter={handleSliderHover}
+							onMouseLeave={handleSliderHover}
+						>
+							<div className="w-1/4 bg-gray h-100% border-r-2 border-solid border-black flex justify-center items-center">
+								<span className="uppercase font-mono text-1">
+									Dance Axis
+								</span>
+							</div>
+							<div className="w-3/4 bg-black h-2px"></div>
+							<input
+								className="slider appearance-none w-3/4 h-100% bg-transparent absolute right-0"
+								name="moveInput"
+								type="range"
+								min={typeTesterValues.min}
+								max={typeTesterValues.max}
+								ref={sliderRef}
+								defaultValue={sliderCurrentValue}
+								onChange={handleSliderChange}
+								step="1"
+							/>
+						</div>
+					</div>
 				</div>
-			</div>
-			<div className="row-span-4 flex justify-center">
-				<div className="flex justify-center align-middle h-100% w-3/4">
-					<span
-						ref={typeTester}
-						className="type-tester text-12 w-full block leading-none text-center text-pink focus:outline-none overflow-hidden self-center break-word"
-						contentEditable="true"
-						suppressContentEditableWarning={true}
-						spellCheck="false"
-						onClick={handleAnimationPause}
-						onMouseLeave={handleAnimationPlay}
-					>
-						⚠ VARIABLE FONT 🌼 BY VECTOR 😵
-					</span>
-				</div>
-			</div>
-			<div className="flex justify-between row-span-1">
-				<div className="pt-10 pl-20"></div>
-				<div className="pt-10 pr-20">
-					<input
-						className="slider"
-						name="moveInput"
-						type="range"
-						min={typeTesterValues.min}
-						max={typeTesterValues.max}
-						value={typeTesterValues.currentValue}
-						ref={slider}
-						onChange={handleSlider}
-					/>
-				</div>
-			</div>
+			</Frame>
 			<style jsx>{`
 				.type-tester {
 				}
-				.slider {
+				.slider::-webkit-slider-thumb {
+					appearance: none;
+					height: 50px;
+					width: 50px;
+					border: 0;
+					border-radius: 100%;
+					background: #ffc000;
+					cursor: pointer;
 				}
 				@keyframes type-tester-animation {
 					0% {
@@ -132,7 +164,7 @@ const TypeTester = (props) => {
 					}
 				}
 			`}</style>
-		</Frame>
+		</div>
 	);
 };
 

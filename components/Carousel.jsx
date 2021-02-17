@@ -1,90 +1,289 @@
-import React, { Component, Fragment, useState, useContext } from "react";
-import Link from "next/link";
-import Row from "../components/Row";
-import Box from "../components/Box";
-import Moment from "react-moment";
-import Button from "../components/Button";
+import React, { Component } from "react";
+import Anime from "animejs";
+import Frame from "../components/Frame";
+import AnimationButton from "../components/AnimationButton";
+import InputRange from "react-input-range";
 
-const Carousel = ({ data, children }) => {
-	const [child, setChild] = useState(children);
+class Carousel extends React.Component {
+	constructor(props) {
+		super(props);
 
-	return (
-		<div className={`home-carousel`}>
-			<Row className="h-100 bg-gray aic">
-				<a
-					href={data.button_link}
-					className="c-black view-more-link white-hover"
-				>
-					<h2 className="ff-favorit-light tac">
-						{data.featured_post_title}&nbsp;&nbsp;&nbsp;&nbsp;
-						<span className="hide-mobile c-black ff-favorit-mono tt-uppercase">
-							<Moment
-								format="MM.DD.YYYY"
-								date={data.featured_post_date}
-							></Moment>
-						</span>
-					</h2>
-				</a>
-			</Row>
-			<Row className="two-column bg-light-green tall">
-				<Box
-					className="border carousel-image"
-					imageSrc={data.featured_post_image.url}
-				>
-					<a href={data.button_link} className="h-100p w-100p"></a>
-				</Box>
-				<Box className="">
-					<div className="padding">
-						<a href={data.button_link}>
-							<h2 className="d-ib c-black ff-favorit-light fz-2 no-margin orange-hover">
-								{data.featured_post_description}
-							</h2>
-						</a>
-						<a href={data.button_link}>
-							<p className="d-ib c-black ff-favorit-light orange-hover">
-								{data.featured_post_sub_description}
-							</p>
-						</a>
-						<a href={data.button_link}>
-							<p className="ff-favorit-light tt-uppercase orange-hover d-ib">
-								{data.button_text}
-							</p>
-						</a>
-					</div>
-				</Box>
-			</Row>
-			<style global jsx>{`
-				.home-carousel {
-				}
-				.tall {
-					min-height: 525px;
-				}
-				div.padding {
-					box-sizing: border-box;
-					padding: 2rem;
-				}
-				.d-ib {
-					display: inline-block;
-				}
-				.orange-hover:hover {
-					color: #ffb74c !important;
-				}
-				@media (max-width: 1199px) {
-					.tall {
-						height: auto;
-					}
-					.carousel-image {
-						height: 66.6666vw;
-						border-right: 0;
-						border-bottom: 1px solid black;
-					}
-					div.padding {
-						padding: 30px 1rem 20px;
-					}
-				}
-			`}</style>
-		</div>
-	);
-};
+		this.state = { value: props.sliderValue, items: props.items };
+		console.log("items", props.items);
+	}
 
+	render() {
+		console.log("updated slider value", this.state.value);
+		return (
+			<div className={this.props.className}>
+				<section className="carousel" aria-label="Gallery">
+					<ol className="carousel__viewport">
+						{this.state.items.map((item, i) => {
+							console.log("item", item);
+							return (
+								<li
+									key={i}
+									id={`carousel__slide-` + i}
+									tabIndex="0"
+									className={
+										`carousel__slide bg-no-repeat bg-center w-100% ` +
+										item.bg_color_class
+									}
+									style={{
+										backgroundImage:
+											"url(" + item.image.url + ")",
+									}}
+								>
+									<div className="carousel__snapper">
+										<a
+											href={
+												`#carousel__slide-` +
+												(i === 0
+													? this.state.items.length -
+													  1
+													: i - 1)
+											}
+											className="carousel__prev text-lime hover:text-purple leading-none text-6"
+										>
+											←
+										</a>
+										<a
+											href={
+												`#carousel__slide-` +
+												(i ===
+												this.state.items.length - 1
+													? 0
+													: i + 1)
+											}
+											className="carousel__next text-lime hover:text-pink leading-none text-6"
+										>
+											→
+										</a>
+									</div>
+								</li>
+							);
+						})}
+					</ol>
+					{/* <aside className="carousel__navigation">
+						<ol className="carousel__navigation-list">
+							<li className="carousel__navigation-item">
+								<a
+									href="#carousel__slide1"
+									className="carousel__navigation-button"
+								>
+									Go to slide 1
+								</a>
+							</li>
+							<li className="carousel__navigation-item">
+								<a
+									href="#carousel__slide2"
+									className="carousel__navigation-button"
+								>
+									Go to slide 2
+								</a>
+							</li>
+							<li className="carousel__navigation-item">
+								<a
+									href="#carousel__slide3"
+									className="carousel__navigation-button"
+								>
+									Go to slide 3
+								</a>
+							</li>
+							<li className="carousel__navigation-item">
+								<a
+									href="#carousel__slide4"
+									className="carousel__navigation-button"
+								>
+									Go to slide 4
+								</a>
+							</li>
+						</ol>
+					</aside> */}
+				</section>
+				<style jsx>{`
+					@keyframes tonext {
+						75% {
+							left: 0;
+						}
+						95% {
+							left: 100%;
+						}
+						98% {
+							left: 100%;
+						}
+						99% {
+							left: 0;
+						}
+					}
+
+					@keyframes tostart {
+						75% {
+							left: 0;
+						}
+						95% {
+							left: -300%;
+						}
+						98% {
+							left: -300%;
+						}
+						99% {
+							left: 0;
+						}
+					}
+
+					@keyframes snap {
+						96% {
+							scroll-snap-align: center;
+						}
+						97% {
+							scroll-snap-align: none;
+						}
+						99% {
+							scroll-snap-align: none;
+						}
+						100% {
+							scroll-snap-align: center;
+						}
+					}
+
+					ol,
+					li {
+						list-style: none;
+						margin: 0;
+						padding: 0;
+					}
+
+					.carousel {
+						position: relative;
+						height: 100%;
+					}
+
+					.carousel__viewport {
+						position: absolute;
+						top: 0;
+						right: 0;
+						bottom: 0;
+						left: 0;
+						display: flex;
+						overflow-x: hidden;
+						counter-reset: item;
+						scroll-behavior: smooth;
+						scroll-snap-type: x mandatory;
+					}
+
+					.carousel__slide {
+						position: relative;
+						flex: 0 0 100%;
+						width: 100%;
+						counter-increment: item;
+						background-size: 85%;
+					}
+
+					.carousel__slide:before {
+						// content: counter(item);
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate3d(-50%, -100%, 70px);
+						color: #fff;
+						line-height: 1em;
+					}
+
+					.carousel__snapper {
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+						scroll-snap-align: center;
+					}
+
+					@media (hover: hover) {
+						.carousel__snapper {
+							animation-name: tonext, snap;
+							animation-timing-function: ease;
+							animation-duration: 4s;
+							animation-iteration-count: infinite;
+						}
+
+						.carousel__slide:last-child .carousel__snapper {
+							animation-name: tostart, snap;
+						}
+					}
+
+					@media (prefers-reduced-motion: reduce) {
+						.carousel__snapper {
+							animation-name: none;
+						}
+					}
+
+					.carousel:hover .carousel__snapper,
+					.carousel:focus-within .carousel__snapper {
+						animation-name: none;
+					}
+
+					.carousel__navigation {
+						position: absolute;
+						right: 0;
+						bottom: 0;
+						left: 0;
+						text-align: center;
+					}
+
+					.carousel__navigation-list,
+					.carousel__navigation-item {
+						display: inline-block;
+					}
+
+					// .carousel__navigation-button {
+					// 	display: inline-block;
+					// 	width: 1.5rem;
+					// 	height: 1.5rem;
+					// 	background-color: #333;
+					// 	background-clip: content-box;
+					// 	border: 0.25rem solid transparent;
+					// 	border-radius: 50%;
+					// 	font-size: 2rem;
+					// 	transition: transform 0.1s;
+					// }
+
+					.carousel::before,
+					.carousel::after,
+					.carousel__prev,
+					.carousel__next {
+						position: absolute;
+						top: 45%;
+						transform: translateY(-50%);
+						border-radius: 50%;
+						outline: 0;
+					}
+
+					.carousel::before,
+					.carousel__prev {
+						left: 2vw;
+					}
+
+					.carousel::after,
+					.carousel__next {
+						right: 2vw;
+					}
+
+					.carousel::before,
+					.carousel::after {
+						content: "";
+						z-index: 1;
+						// background-color: #333;
+						// background-size: 1.5rem 1.5rem;
+						// background-repeat: no-repeat;
+						// background-position: center center;
+						color: #fff;
+						text-align: center;
+						pointer-events: none;
+					}
+				`}</style>
+			</div>
+		);
+	}
+}
 export default Carousel;

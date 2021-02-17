@@ -14,54 +14,61 @@ import useVariableFont from "react-variable-fonts";
 import Frame from "../components/Frame";
 import TwoBackground from "../components/TwoBackground";
 import anime from "animejs";
+// import ReactAnime from "react-animejs";
+
+// const { Anime, stagger } = ReactAnime;
 
 const TypeTester = (props) => {
 	const typeTesterRef = useRef(null);
 	const typeTesterInputRef = useRef(null);
 	const sliderRef = useRef(null);
-
+	const sliderValue = useRef(500);
+	const sliderUpdating = useRef(false);
 	const [sliderCurrentValue, setSliderCurrentValue] = useState(500);
 	const [updatingSlider, setUpdatingSlider] = useState(false);
-	const sliderValue = useRef(500);
+	const [typeTesterAnimation, setTypeTesterAnimation] = useState(null);
+
 	const [typeTesterValues, setTypeTesterValues] = useState({
 		min: 0,
 		max: 1000,
 	});
-	let typeTesterAnimation = null;
 	const handleAnimationPause = (e) => typeTesterAnimation.pause();
 	const handleAnimationPlay = (e) => typeTesterAnimation.play();
 	useEffect(() => {
-		typeTesterAnimation = anime({
-			targets: typeTesterRef.current,
-			fontVariationSettings: ["'move' 0", "'move' 1000"],
-			easing: "linear",
-			direction: "alternate",
-			duration: 10000,
-			loop: true,
-			update: function (anim) {
-				const currentValue = parseFloat(
-					anim.animations[0].currentValue.substring(7)
-				);
-				if (!updatingSlider) {
-					sliderRef.current.value = currentValue;
-				}
-			},
-		});
-		console.log(updatingSlider);
+		// const animation = anime({
+		// targets: typeTesterRef.current,
+		// fontVariationSettings: ["'move' 0", "'move' 1000"],
+		// easing: "linear",
+		// direction: "alternate",
+		// duration: 10000,
+		// loop: true,
+		// update: function(anim) {
+		// 	console.log("sliderUpdating.current", sliderUpdating.current);
+		// if (sliderUpdating.current === false) {
+		// 	sliderValue.current = parseFloat(
+		// 		anim.animations[0].currentValue.substring(7)
+		// 	);
+		// 	sliderRef.current.value = sliderValue.current;
+		// 	console.log("hey");
+		// }
+		// },
+		// });
 	}, [updatingSlider]);
 	TwoBackground(typeTesterRef);
 
 	const handleSliderChange = (e) => {
-		// const sliderValue = parseInt(sliderRef.current.value);
+		sliderValue.current = e.target.value;
 	};
 
 	const handleSliderHover = (e) => {
-		setUpdatingSlider((prevState) => !prevState);
+		console.log("typeTesterAnimation", typeTesterAnimation);
+		sliderUpdating.current = !sliderUpdating.current;
+		// if (sliderUpdating) typeTesterAnimation.play();
 	};
 	return (
 		<div
 			ref={typeTesterRef}
-			className="h-100vh w-screen relative bg-lime border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden"
+			className="h-100vh w-full relative bg-lime border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden"
 		>
 			<Frame
 				className={`type-tester h-100vh absolute top-0 left-0 right-0 bottom-0 z-10`}
@@ -72,8 +79,6 @@ const TypeTester = (props) => {
 					contentEditable="true"
 					suppressContentEditableWarning={true}
 					spellCheck="false"
-					onClick={handleAnimationPause}
-					onMouseLeave={handleAnimationPlay}
 				>
 					⚠ VARIABLE FONT 🌼 BY VECTOR 😵
 				</span>

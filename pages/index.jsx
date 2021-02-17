@@ -36,9 +36,11 @@ import ReactGA from "react-ga";
 import dynamic from "next/dynamic";
 import Pill from "../components/Pill";
 import TwoTest from "../components/TwoTest";
-import TypeTester from "../components/TypeTester";
+import TypeTester2 from "../components/TypeTester2";
 import useVariableFont from "react-variable-fonts";
 import { Controller, Scene } from "react-scrollmagic";
+import TimelineAnimations from "../components/TimelineAnimations";
+import IntersectBox from "../components/IntersectBox";
 
 const isBrowser = typeof window !== "undefined";
 
@@ -134,7 +136,6 @@ function Index(props) {
               </Frame>
             </Frame>
             {/* SMALL SCROLLING TEXT 1 */}
-            {/* TYPE TESTER 1 */}
             <Pill className="bg-gray hover:bg-orange h-6 bg-clip-padding overflow-hidden">
               <ScrollingText
                 className=""
@@ -151,13 +152,20 @@ function Index(props) {
                 </span>
               </ScrollingText>
             </Pill>
-            <TypeTester />
+            {/* TYPE TESTER 1 */}
+            <TypeTester2 />
             {/* TYPE PARTICLES */}
             <Frame
-              className={`bg-gray border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden h-100vh`}
-            />
+              className={`bg-gray border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden h-100vh flex justify-center items-center`}
+            >
+              {/* <TimelineAnimations /> */}
+              <span className="text-6 leading-none text-black uppercase text-center">
+                Meet KABLAMMO, the DANCING FONT FROM OUTER SPACE! Developed BY
+                VEKTOR FOUNDRY, IT FEATURES A DANCE AXIS THAT MAKES THE LETTERS
+                bop and BOUNCE and bloop AROUND.
+              </span>
+            </Frame>
             {/* SMALL SCROLLING TEXT 1 */}
-            {/* SLIDER FRAME */}
             <Pill className="bg-lime hover:bg-orange h-6 bg-clip-padding overflow-hidden">
               <ScrollingText
                 className=""
@@ -174,8 +182,10 @@ function Index(props) {
                 </span>
               </ScrollingText>
             </Pill>
-            <Frame
+            {/* SLIDER FRAME */}
+            <Carousel
               className={`bg-orange border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden h-100vh`}
+              items={doc.data.carousel}
             />
             {/* TYPE SCALES */}
             <Pill className="bg-yellow h-24">
@@ -219,9 +229,11 @@ function Index(props) {
               </span>
             </Pill>
             {/* CHARACTER SET */}
-            className=
-            {`bg-green border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden`}
-            ><h3 className="text-center text-yellow">Character Set</h3>
+            <div
+              className={`bg-green border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden`}
+            >
+              <h3 className="text-center text-yellow">Character Set</h3>
+            </div>
             <CharacterSetNoSSR />
             {/* SLOT MACHINE */}
             <Frame

@@ -1,6 +1,7 @@
 import Two from "two.js";
 import $ from "jquery";
 import { createCanvas, Image } from "canvas";
+
 const colors = {
 	black: "#3D3D3D",
 	gray: "#E4E4E4",
@@ -12,12 +13,12 @@ const colors = {
 	orange: "#EB7B57",
 	pink: "#E18DC5",
 };
-var randomProperty = function (obj) {
+var randomProperty = function(obj) {
 	var keys = Object.keys(obj);
 	return obj[keys[(keys.length * Math.random()) << 0]];
 };
 const TwoBackground = (typeTesterRef) => {
-	$(function () {
+	$(function() {
 		// var type = /(svg|webgl)/.test(url.type) ? url.type : "canvas";
 		var type = "canvas";
 
@@ -57,11 +58,11 @@ const TwoBackground = (typeTesterRef) => {
 		// );
 
 		$(window)
-			.bind("keydown", function (e) {
+			.bind("keydown", function(e) {
 				var character = String.fromCharCode(e.which);
 				add(character);
 			})
-			.bind("touchstart", function () {
+			.bind("touchstart", function() {
 				var r = Math.random();
 
 				var character = String.fromCharCode(
@@ -70,9 +71,9 @@ const TwoBackground = (typeTesterRef) => {
 				add(character);
 			});
 
-		two.bind("resize", function () {
+		two.bind("resize", function() {
 			// directions.translation.set(two.width / 2, two.height / 2);
-		}).bind("update", function () {
+		}).bind("update", function() {
 			for (var i = 0; i < characters.length; i++) {
 				var text = characters[i];
 				text.translation.addSelf(text.velocity);

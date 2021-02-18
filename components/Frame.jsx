@@ -1,9 +1,14 @@
-import React, { Component, Fragment, useState, useContext } from "react";
+import React, {
+	Component,
+	Fragment,
+	useState,
+	useContext,
+	useEffect,
+} from "react";
 import Link from "next/link";
 
 const Frame = (props) => {
 	const [child, setChild] = useState(props.children);
-
 	return (
 		<div
 			className={`Frame w-full bg-contain bg-no-repeat bg-center ${

@@ -7,7 +7,13 @@ const Layout = (props) => {
 	return (
 		<div className={`layout`}>
 			{child}
-			<style jsx>{`
+			<style jsx global>{`
+				.layout {
+					scroll-snap-type: y mandatory;
+				}
+				.layout > * {
+					scroll-snap-align: start;
+				}
 				@media (max-width: 1199px) {
 					.layout {
 						padding-top: ${props.padding

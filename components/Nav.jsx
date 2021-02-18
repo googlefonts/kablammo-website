@@ -8,6 +8,8 @@ import React, {
 	useRef,
 } from "react";
 import Link from "next/link";
+import NavItem from "./NavItem";
+
 const isBrowser = typeof window !== "undefined";
 
 const Nav = (props) => {
@@ -17,26 +19,18 @@ const Nav = (props) => {
 
 	return (
 		<div className={`nav flex flex-col xl:flex-row`}>
-			<div
-				className={`w-screen xl:w-1/5 border-2 border-solid border-black text-black bg-yellow rounded-lg text-center flex justify-center font-body items-center h-16 xl:h-6`}
-			>
-				<span className="uppercase text-2">Kablammo</span>
-			</div>
-			<div
-				className={`w-screen xl:w-1/5 border-2 border-solid border-black text-black bg-orange rounded-lg text-center flex justify-center font-body items-center h-16 xl:h-6`}
-			>
-				<span className="uppercase text-2">Character Set</span>
-			</div>
-			<div
-				className={`w-screen xl:w-1/5 border-2 border-solid border-black text-black bg-lime rounded-lg text-center flex justify-center font-body items-center h-16 xl:h-6`}
-			>
-				<span className="uppercase text-2">Process</span>
-			</div>
-			<div
-				className={`w-screen xl:w-1/5 border-2 border-solid border-black text-black bg-blue rounded-lg text-center flex justify-center font-body items-center h-16 xl:h-6`}
-			>
-				<span className="uppercase text-2">Download</span>
-			</div>
+			<Link href="#" passHref scroll={false}>
+				<NavItem className="bg-yellow">Kablammo</NavItem>
+			</Link>
+			<Link href="#" passHref scroll={false}>
+				<NavItem className="bg-orange">Try It Out!</NavItem>
+			</Link>
+			<Link href="#" passHref scroll={false}>
+				<NavItem className="bg-lime">Character Set</NavItem>
+			</Link>
+			<Link href="#" passHref scroll={false}>
+				<NavItem className="bg-blue">Download</NavItem>
+			</Link>
 			<div className={`w-screen xl:w-1/5 flex justify-center`}>
 				<div
 					className={`w-1/2 h-16 xl:h-6 border-2 border-solid border-black text-black bg-pink rounded-lg text-center flex justify-center font-body items-center`}

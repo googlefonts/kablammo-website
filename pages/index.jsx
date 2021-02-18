@@ -38,9 +38,9 @@ import Pill from "../components/Pill";
 import TwoTest from "../components/TwoTest";
 import TypeTester2 from "../components/TypeTester2";
 import useVariableFont from "react-variable-fonts";
-import { Controller, Scene } from "react-scrollmagic";
 import TimelineAnimations from "../components/TimelineAnimations";
 import IntersectBox from "../components/IntersectBox";
+import Scene from "../components/Scene";
 
 const isBrowser = typeof window !== "undefined";
 
@@ -89,7 +89,6 @@ function Index(props) {
   const [doc, setDocData] = React.useState(null);
 
   fetchData(setDocData);
-
   // isBrowser && setTwo();
 
   const pageReady = doc !== null ? true : false;
@@ -125,6 +124,8 @@ function Index(props) {
           </Head>
           <Layout>
             <Frame className={`h-100vh`}>
+              {/* SCENE */}
+              {isBrowser && <Scene />}
               {/* NAV */}
               <Nav />
               {/* LANDING */}

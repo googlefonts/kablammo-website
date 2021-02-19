@@ -203,7 +203,7 @@ class Carousel extends React.Component {
 						.carousel__snapper {
 							animation-name: tonext, snap;
 							animation-timing-function: ease;
-							animation-duration: 4s;
+							animation-duration: 4ss;
 							animation-iteration-count: infinite;
 						}
 

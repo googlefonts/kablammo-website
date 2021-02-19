@@ -36,11 +36,12 @@ import ReactGA from "react-ga";
 import dynamic from "next/dynamic";
 import Pill from "../components/Pill";
 import TwoTest from "../components/TwoTest";
-import TypeTester2 from "../components/TypeTester2";
+import TypeTester from "../components/TypeTester";
 import useVariableFont from "react-variable-fonts";
 import TimelineAnimations from "../components/TimelineAnimations";
 import IntersectBox from "../components/IntersectBox";
 import Scene from "../components/Scene";
+import Pattern from "../components/Pattern";
 
 const isBrowser = typeof window !== "undefined";
 
@@ -129,11 +130,19 @@ function Index(props) {
               {/* NAV */}
               <Nav />
               {/* LANDING */}
+
               <Frame
-                className={`flex justify-center h-landing bg-purple border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden`}
+                className={`h-landing bg-purple border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden`}
               >
-                <TwoTest />
-                <img className="w-full" src={doc.data.landing_image.url} />
+                <Pattern
+                  className="flex justify-center"
+                  bgImage="/images/bg/purple-worms.svg"
+                >
+                  <img
+                    className="w-full items-center"
+                    src={doc.data.landing_image.url}
+                  />
+                </Pattern>
               </Frame>
             </Frame>
             {/* SMALL SCROLLING TEXT 1 */}
@@ -154,7 +163,7 @@ function Index(props) {
               </ScrollingText>
             </Pill>
             {/* TYPE TESTER 1 */}
-            <TypeTester2 />
+            <TypeTester />
             {/* TYPE PARTICLES */}
             <Frame
               className={`bg-gray border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden h-100vh flex justify-center items-center`}
@@ -189,45 +198,65 @@ function Index(props) {
               items={doc.data.carousel}
             />
             {/* TYPE SCALES */}
-            <Pill className="bg-yellow h-24">
-              <span
-                className="text-18 w-full block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word"
-                contentEditable="true"
-                spellCheck="false"
-                suppressContentEditableWarning={true}
+            <Pill className="bg-yellow h-24 overflow-hidden">
+              <Pattern
+                className="grid place-items-center"
+                bgImage="/images/bg/yellow-circles.svg"
               >
-                A Font 4
-              </span>
+                <span
+                  className="text-18 w-full block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word"
+                  contentEditable="true"
+                  spellCheck="false"
+                  suppressContentEditableWarning={true}
+                >
+                  A Font 4
+                </span>
+              </Pattern>
             </Pill>
-            <Pill className="bg-orange h-16">
-              <span
-                className="text-10 w-full block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word"
-                contentEditable="true"
-                spellCheck="false"
-                suppressContentEditableWarning={true}
+            <Pill className="bg-orange h-16 overflow-hidden">
+              <Pattern
+                className="grid place-items-center"
+                bgImage="/images/bg/orange-worms.svg"
               >
-                Huge Headlines
-              </span>
+                <span
+                  className="text-10 w-full block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word"
+                  contentEditable="true"
+                  spellCheck="false"
+                  suppressContentEditableWarning={true}
+                >
+                  Huge Headlines
+                </span>
+              </Pattern>
             </Pill>
-            <Pill className="bg-pink h-12">
-              <span
-                className="text-6 w-full block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word"
-                contentEditable="true"
-                spellCheck="false"
-                suppressContentEditableWarning={true}
+            <Pill className="bg-pink h-12 overflow-hidden">
+              <Pattern
+                className="grid place-items-center"
+                bgImage="/images/bg/pink-pattern.svg"
               >
-                Out Of This World Ideas
-              </span>
+                <span
+                  className="text-6 w-full block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word"
+                  contentEditable="true"
+                  spellCheck="false"
+                  suppressContentEditableWarning={true}
+                >
+                  Out Of This World Ideas
+                </span>
+              </Pattern>
             </Pill>
-            <Pill className="bg-purple h-6">
-              <span
-                className="text-3 w-full block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word"
-                contentEditable="true"
-                spellCheck="false"
-                suppressContentEditableWarning={true}
+            <Pill className="bg-purple h-6 overflow-hidden">
+              <Pattern
+                className="grid place-items-center"
+                bgImage="/images/bg/purple-squiggly.svg"
               >
-                And Feelings Words Just Cannot Describe
-              </span>
+                <span
+                  className="text-3 w-full block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word"
+                  contentEditable="true"
+                  spellCheck="false"
+                  suppressContentEditableWarning={true}
+                >
+                  And Feelings Words Just Cannot Describe
+                </span>
+              </Pattern>
             </Pill>
             {/* CHARACTER SET */}
             <div

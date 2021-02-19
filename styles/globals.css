@@ -34,7 +34,7 @@ h6 {
 	font-size: 2px;
 }
 
-canvas {
+/*canvas {
 	width: 100vw !important;
 	height: 100vh !important;
 	position: absolute !important;
@@ -42,7 +42,7 @@ canvas {
 	left: 0 !important;
 	bottom: 0 !important;
 	right: 0 !important;
-}
+}*/
 
 .track {
 	appearance: none;

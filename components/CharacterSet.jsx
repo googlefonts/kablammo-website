@@ -39,6 +39,46 @@ const characterDictionary = [
 	{ letter: "X", category: "basic-latin" },
 	{ letter: "Y", category: "basic-latin" },
 	{ letter: "Z", category: "basic-latin" },
+	{ letter: "1", category: "basic-latin" },
+	{ letter: "2", category: "basic-latin" },
+	{ letter: "3", category: "basic-latin" },
+	{ letter: "4", category: "basic-latin" },
+	{ letter: "5", category: "basic-latin" },
+	{ letter: "6", category: "basic-latin" },
+	{ letter: "7", category: "basic-latin" },
+	{ letter: "8", category: "basic-latin" },
+	{ letter: "9", category: "basic-latin" },
+	{ letter: "0", category: "basic-latin" },
+	{ letter: "!", category: "basic-latin" },
+	{ letter: "?", category: "basic-latin" },
+	{ letter: "$", category: "basic-latin" },
+	{ letter: "🙃", category: "basic-latin" },
+	{ letter: "🛸", category: "basic-latin" },
+	{ letter: "🪐", category: "basic-latin" },
+	{ letter: "", category: "basic-latin" },
+	{ letter: "", category: "basic-latin" },
+	{ letter: "", category: "basic-latin" },
+	{ letter: "", category: "basic-latin" },
+	{ letter: "", category: "basic-latin" },
+	{ letter: "", category: "basic-latin" },
+	{ letter: "", category: "basic-latin" },
+	{ letter: "", category: "basic-latin" },
+	{ letter: "", category: "basic-latin" },
+	{ letter: "🛸", category: "basic-latin" },
+	{ letter: "🪐", category: "basic-latin" },
+	{ letter: "", category: "basic-latin" },
+	{ letter: "", category: "basic-latin" },
+	{ letter: "", category: "basic-latin" },
+	{ letter: "", category: "basic-latin" },
+	{ letter: "", category: "basic-latin" },
+	{ letter: "", category: "basic-latin" },
+	{ letter: "", category: "basic-latin" },
+	{ letter: "", category: "basic-latin" },
+	{ letter: "", category: "basic-latin" },
+	{ letter: "", category: "basic-latin" },
+	{ letter: "", category: "basic-latin" },
+	{ letter: "", category: "basic-latin" },
+	{ letter: "", category: "basic-latin" },
 ];
 
 const CharacterSet = (props) => {
@@ -110,7 +150,7 @@ const CharacterSet = (props) => {
 
 	function addTransitionListener(itemContent) {
 		// reset 100%/100% sizing after transition end
-		var onTransitionEnd = function() {
+		var onTransitionEnd = function () {
 			itemContent.style.width = "";
 			itemContent.style.height = "";
 			itemContent.removeEventListener(
@@ -138,7 +178,7 @@ const CharacterSet = (props) => {
 				{characterDictionary.map((item, i) => {
 					return (
 						<div key={i} className="grid-item">
-							<div className="grid-item-content border-2 border-solid border-black rounded-sm text-black">
+							<div className="grid-item-content grid-cols-12 border-2 border-solid border-black rounded-sm text-black">
 								{item.letter}
 							</div>
 						</div>
@@ -172,7 +212,7 @@ const CharacterSet = (props) => {
 				/* item is invisible, but used for layout */
 				.grid-item,
 				.grid-sizer {
-					width: 10vw;
+					width: calc(10vw - 24px);
 				}
 
 				.grid-item {

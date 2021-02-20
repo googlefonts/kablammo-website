@@ -202,12 +202,15 @@ class TypeTester extends Component {
                                 >
                                     Font Weights
                                 </label>
-                                <Select
+                                {/*<Select
                                     className="w-100% h-4 bg-yellow border-2 border-solid border-black rounded-lg relative flex justify-center items-center overflow-hidden font-body uppercase text-2 flex justify-center items-center"
                                     value={this.state.selectedOption}
                                     onChange={this.handleSelectChange}
                                     options={options}
-                                />
+                                />*/}
+                                <div className="w-100% h-4 bg-yellow border-2 border-solid border-black rounded-lg relative flex justify-center items-center overflow-hidden font-body uppercase text-2 flex justify-center items-center">
+                                    Zoink
+                                </div>
                             </div>
                             <div className="pb-10 pr-20 w-4/5 flex flex-col ">
                                 <span

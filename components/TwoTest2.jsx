@@ -25,7 +25,7 @@ var randomProperty = function (obj) {
 	var keys = Object.keys(obj);
 	return obj[keys[(keys.length * Math.random()) << 0]];
 };
-const TwoTest = ({ grayRef }) => {
+const TwoTest2 = ({ grayRef }) => {
 	const startIt = (grayRef) => {
 		// var type = /(svg|webgl)/.test(url.type) ? url.type : "canvas";
 		var type = "canvas";
@@ -124,4 +124,4 @@ const TwoTest = ({ grayRef }) => {
 	return <div className="hidden"></div>;
 };
 
-export default TwoTest;
+export default TwoTest2;

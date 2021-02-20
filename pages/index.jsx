@@ -4,6 +4,7 @@ import React, {
   useState,
   useContext,
   useEffect,
+  useRef,
 } from "react";
 import Prismic from "prismic-javascript";
 import { RichText } from "prismic-reactjs";
@@ -36,6 +37,7 @@ import ReactGA from "react-ga";
 import dynamic from "next/dynamic";
 import Pill from "../components/Pill";
 import TwoTest from "../components/TwoTest";
+import TwoTest2 from "../components/TwoTest2";
 import TypeTester from "../components/TypeTester";
 import useVariableFont from "react-variable-fonts";
 import TimelineAnimations from "../components/TimelineAnimations";
@@ -88,6 +90,7 @@ const setTwo = () => {
 };
 function Index(props) {
   const [doc, setDocData] = React.useState(null);
+  const grayRef = useRef(null);
 
   fetchData(setDocData);
   // isBrowser && setTwo();
@@ -168,12 +171,14 @@ function Index(props) {
             <Frame
               className={`bg-gray border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden h-100vh flex justify-center items-center`}
             >
+              <div className="grayRef w-full h-100%" ref={grayRef}></div>
               {/* <TimelineAnimations /> */}
-              <span className="text-6 leading-none text-black uppercase text-center">
+              {/* <span className="text-6 leading-none text-black uppercase text-center">
                 Meet KABLAMMO, the DANCING FONT FROM OUTER SPACE! Developed BY
                 VEKTOR FOUNDRY, IT FEATURES A DANCE AXIS THAT MAKES THE LETTERS
                 bop and BOUNCE and bloop AROUND.
-              </span>
+              </span> */}
+              <TwoTest2 grayRef={grayRef} />
             </Frame>
             {/* SMALL SCROLLING TEXT 1 */}
             <Pill className="bg-lime hover:bg-orange h-6 bg-clip-padding overflow-hidden">
@@ -262,9 +267,9 @@ function Index(props) {
             <div
               className={`bg-green border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden`}
             >
-              <h3 className="text-center text-yellow">Character Set</h3>
+              <h3 className="text-center text-yellow mt-6">Character Set</h3>
+              <CharacterSetNoSSR />
             </div>
-            <CharacterSetNoSSR />
             {/* SLOT MACHINE */}
             <Frame
               className={`bg-black border-2 border-solid border-black bg-clip-padding overflow-hidden h-100vh flex justify-between flex-col`}
@@ -354,36 +359,55 @@ function Index(props) {
             </Pill>
             {/* ESSAY */}
             <Frame
-              className={`bg-gray border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden h-100vh grid grid-cols-2`}
+              className={`bg-gray border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden h-100vh`}
             >
-              <div className="">
-                <span>
-                  Nicolette Gray wrote about the Caslon Italian (above) in her
-                  book Nineteenth Century. Maelstrom & Maelstrom Sans are
-                  reversed-stress typefaces. They’re “perverse”, to be sure, but
-                  that’s exactly their charm. They belong to a genre destined to
-                  be a perpetual typographic outsider — never fashionable yet
-                  never abandoned. Maelstrom & Maelstrom Sans are
-                  reversed-stress typefaces. They’re “perverse”, to be sure, but
-                  that’s exactly their charm. They belong to a genre destined to
-                  be a perpetual typographic outsider — never fashionable yet
-                  never abandoned. Nicolette Gray wrote about the Caslon Italian
-                  (above) in her book Nineteenth Century. Ornamented Types and
-                  Title Pages The only semi-ornamental type of this decade
-                  [1821] is the much, and quite rightly, abused Italian. The
-                  Italian is an Egyptian with a horizontal stress and extra
-                  serifs reversed and joined to the letter by the point; a crude
-                  expression of the idea of perversity. It is scarcely just,
-                  however, to regard it as a typical monstrosity of the time.
-                  The only semi-ornamental type of this decade [1821] is the
-                  much, and quite rightly, abused Italian. The Italian is an
-                  Egyptian with a horizontal stress and extra serifs reversed
-                  and joined to the letter by the point; a crude expression of
-                  the idea of perversity. It is scarcely just, however, to
-                  regard it as a typical monstrosity of the time.
-                </span>
+              <h3 className="text-center text-black mt-6">About the Font</h3>
+              <div className={`grid grid-cols-2`}>
+                <div className="pl-20 pr-20">
+                  <p className="font-body block mb-8 text-1">
+                    Nicolette Gray wrote about the Caslon Italian (above) in her
+                    book Nineteenth Century.
+                  </p>
+                  <p className="font-mono block mb-8 text-1">
+                    Maelstrom & Maelstrom Sans are reversed-stress typefaces.
+                    They’re “perverse”, to be sure, but that’s exactly their
+                    charm. They belong to a genre destined to be a perpetual
+                    typographic outsider — never fashionable yet never
+                    abandoned.
+                  </p>
+                  <p className="font-mono block mb-8 text-1">
+                    Maelstrom & Maelstrom Sans are reversed-stress typefaces.
+                    They’re “perverse”, to be sure, but that’s exactly their
+                    charm. They belong to a genre destined to be a perpetual
+                    typographic outsider — never fashionable yet never
+                    abandoned.
+                  </p>
+                  <p className="font-mono block mb-8 text-1">
+                    Nicolette Gray wrote about the Caslon Italian (above) in her
+                    book Nineteenth Century.
+                  </p>
+                  <p className="font-mono block mb-8 text-1">
+                    Ornamented Types and Title Pages{" "}
+                  </p>
+                  <p className="font-mono block mb-8 text-1">
+                    The only semi-ornamental type of this decade [1821] is the
+                    much, and quite rightly, abused Italian. The Italian is an
+                    Egyptian with a horizontal stress and extra serifs reversed
+                    and joined to the letter by the point; a crude expression of
+                    the idea of perversity. It is scarcely just, however, to
+                    regard it as a typical monstrosity of the time.
+                  </p>
+                  <p className="font-mono block mb-8 text-1">
+                    The only semi-ornamental type of this decade [1821] is the
+                    much, and quite rightly, abused Italian. The Italian is an
+                    Egyptian with a horizontal stress and extra serifs reversed
+                    and joined to the letter by the point; a crude expression of
+                    the idea of perversity. It is scarcely just, however, to
+                    regard it as a typical monstrosity of the time.
+                  </p>
+                </div>
+                <div className=""></div>
               </div>
-              <div className=""></div>
             </Frame>
             {/* DOWNLOAD */}
             <Pill className="bg-purple h-30">

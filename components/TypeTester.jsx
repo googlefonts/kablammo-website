@@ -5,7 +5,7 @@ import AnimationButton from "../components/AnimationButton";
 import Slider from "../components/Slider";
 import InputRange from "react-input-range";
 import Select from "react-select";
-import TwoBackground from "../components/TwoBackground";
+// import TwoBackground from "../components/TwoBackground";
 import Pattern from "../components/Pattern";
 
 let animation = null;
@@ -147,7 +147,9 @@ class TypeTester extends Component {
                 });
             });
         }
-        TwoBackground(this.typeTesterRef);
+        {
+            /* TwoBackground(this.typeTesterRef); */
+        }
     }
 
     componentDidUpdate(prevProps, prevState) {

@@ -36,8 +36,8 @@ import ReactPixel from "react-facebook-pixel";
 import ReactGA from "react-ga";
 import dynamic from "next/dynamic";
 import Pill from "../components/Pill";
-import TwoTest from "../components/TwoTest";
-import TwoTest2 from "../components/TwoTest2";
+// import TwoTest from "../components/TwoTest";
+// import TwoTest2 from "../components/TwoTest2";
 import TypeTester from "../components/TypeTester";
 import useVariableFont from "react-variable-fonts";
 import TimelineAnimations from "../components/TimelineAnimations";
@@ -178,7 +178,7 @@ function Index(props) {
                 VEKTOR FOUNDRY, IT FEATURES A DANCE AXIS THAT MAKES THE LETTERS
                 bop and BOUNCE and bloop AROUND.
               </span> */}
-              <TwoTest2 grayRef={grayRef} />
+              {/*<TwoTest2 grayRef={grayRef} />*/}
             </Frame>
             {/* SMALL SCROLLING TEXT 1 */}
             <Pill className="bg-lime hover:bg-orange h-6 bg-clip-padding overflow-hidden">

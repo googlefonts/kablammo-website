@@ -169,15 +169,23 @@ function Index(props) {
             <TypeTester />
             {/* TYPE PARTICLES */}
             <Frame
-              className={`bg-gray border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden h-100vh flex justify-center items-center`}
+              className={`bg-gray border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden h-100vh flex justify-center items-center px-20`}
             >
-              <div className="grayRef w-full h-100%" ref={grayRef}></div>
+              {/*<div className="grayRef w-full h-100%" ref={grayRef}></div>*/}
               {/* <TimelineAnimations /> */}
-              {/* <span className="text-6 leading-none text-black uppercase text-center">
+              <span className="text-6 leading-tight text-black uppercase text-center">
                 Meet KABLAMMO, the DANCING FONT FROM OUTER SPACE! Developed BY
                 VEKTOR FOUNDRY, IT FEATURES A DANCE AXIS THAT MAKES THE LETTERS
                 bop and BOUNCE and bloop AROUND.
-              </span> */}
+              </span>
+              <div className="text-20 leading-tight text-black uppercase text-center w-screen h-100% absolute">
+                <div className="text-orange absolute top-6 left-5">💩</div>
+                <div className="text-purple absolute top-2 left-30">⚠</div>
+                <div className="text-yellow absolute top-0 left-55">👀</div>
+                <div className="text-green absolute top-6 left-80">👽</div>
+                <div className="text-pink absolute top-26 left-24">🪐</div>
+                <div className="text-blue absolute top-20 left-70">🕒</div>
+              </div>
               {/*<TwoTest2 grayRef={grayRef} />*/}
             </Frame>
             {/* SMALL SCROLLING TEXT 1 */}
@@ -204,6 +212,14 @@ function Index(props) {
             />
             {/* TYPE SCALES */}
             <Pill className="bg-yellow h-24 overflow-hidden">
+              <div className="flex justify-between">
+                <div className="pt-10 pl-20">
+                  <span className="uppercase font-mono text-1">Alternates</span>
+                </div>
+                <div className="pt-10 pr-20">
+                  <span className="uppercase font-mono text-1">Background</span>
+                </div>
+              </div>
               <Pattern
                 className="grid place-items-center"
                 bgImage="/images/bg/yellow-circles.svg"

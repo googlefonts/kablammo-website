@@ -57,6 +57,7 @@ module.exports = {
 		borderRadius: {
 			sm: "32px",
 			lg: "100px",
+			full: "999999px",
 		},
 		fontFamily: {
 			display: ["Kablammo", "Helvetica", "ui-sans-serif"],

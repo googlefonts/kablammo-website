@@ -16,18 +16,28 @@ const colors = [
 
 const CharacterSetItem = ({ item }) => {
 	const [bgStyle, setBgStyle] = useState({
-		backgroundColor: colors[Math.floor(Math.random() * colors.length)],
+		backgroundColor: "#e4e4e4",
 	});
+	const [hovering, setHovering] = useState(false);
 	const updateBgColor = (e) => {
 		console.log("grid-item-content", e, bgStyle);
+		setBgStyle({
+			backgroundColor: colors[Math.floor(Math.random() * colors.length)],
+		});
+	};
+	const updateHovering = (e) => {
+		setHovering(!hovering);
 	};
 
 	return (
 		<div className={`grid-item`}>
 			<div
 				onMouseEnter={updateBgColor}
+				onClick={updateHovering}
 				style={bgStyle}
-				className="grid-item-content grid-cols-12 border-2 border-solid border-black rounded-sm text-black"
+				className={`${
+					hovering ? "animate-it" : ""
+				} grid-item-content grid-cols-12 border-2 border-solid border-black rounded-sm text-black`}
 			>
 				{item.letter}
 			</div>

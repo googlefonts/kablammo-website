@@ -199,14 +199,20 @@ function Index(props) {
                 bgImage="/images/bg/yellow-circles.svg"
               >
                 <div className="absolute flex justify-between w-full">
-                  <div className="pt-10 pl-20">
+                  <div className="pt-10 pl-20 flex flex-col">
                     <span className="uppercase font-mono text-1">
                       Font Weight
                     </span>
+                    <span className="uppercase font-mono text-1 bg-purple rounded-full pt-1">
+                      120px
+                    </span>
                   </div>
-                  <div className="pt-10 pr-20">
+                  <div className="pt-10 pr-20 flex flex-col">
                     <span className="uppercase font-mono text-1">
                       Font Size
+                    </span>
+                    <span className="uppercase font-mono text-1 bg-purple rounded-full pt-1">
+                      120px
                     </span>
                   </div>
                 </div>
@@ -226,14 +232,20 @@ function Index(props) {
                 bgImage="/images/bg/orange-worms.svg"
               >
                 <div className="absolute flex justify-between w-full">
-                  <div className="pt-10 pl-20">
+                  <div className="pt-10 pl-20 flex flex-col">
                     <span className="uppercase font-mono text-1">
                       Font Weight
                     </span>
+                    <span className="uppercase font-mono text-1 bg-purple rounded-full pt-1">
+                      120px
+                    </span>
                   </div>
-                  <div className="pt-10 pr-20">
+                  <div className="pt-10 pr-20 flex flex-col">
                     <span className="uppercase font-mono text-1">
                       Font Size
+                    </span>
+                    <span className="uppercase font-mono text-1 bg-purple rounded-full pt-1">
+                      120px
                     </span>
                   </div>
                 </div>
@@ -253,14 +265,20 @@ function Index(props) {
                 bgImage="/images/bg/pink-pattern.svg"
               >
                 <div className="absolute flex justify-between w-full">
-                  <div className="pt-8 pl-20">
+                  <div className="pt-8 pl-20 flex flex-col">
                     <span className="uppercase font-mono text-1">
                       Font Weight
                     </span>
+                    <span className="uppercase font-mono text-1 bg-purple rounded-full pt-1">
+                      120px
+                    </span>
                   </div>
-                  <div className="pt-8 pr-20">
+                  <div className="pt-8 pr-20 flex flex-col">
                     <span className="uppercase font-mono text-1">
                       Font Size
+                    </span>
+                    <span className="uppercase font-mono text-1 bg-purple rounded-full pt-1">
+                      120px
                     </span>
                   </div>
                 </div>
@@ -280,14 +298,20 @@ function Index(props) {
                 bgImage="/images/bg/purple-squiggly.svg"
               >
                 <div className="absolute flex justify-between w-full">
-                  <div className="pt-6 pl-20">
+                  <div className="pt-6 pl-20 flex flex-col">
                     <span className="uppercase font-mono text-1">
                       Font Weight
                     </span>
+                    <span className="uppercase font-mono text-1 bg-purple rounded-full pt-1">
+                      120px
+                    </span>
                   </div>
-                  <div className="pt-6 pr-20">
+                  <div className="pt-6 pr-20 flex flex-col">
                     <span className="uppercase font-mono text-1">
                       Font Size
+                    </span>
+                    <span className="uppercase font-mono text-1 bg-purple rounded-full pt-1">
+                      120px
                     </span>
                   </div>
                 </div>

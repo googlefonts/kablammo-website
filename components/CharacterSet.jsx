@@ -11,6 +11,7 @@ import Link from "next/link";
 const isBrowser = typeof window !== "undefined";
 import Packery from "packery";
 import Pill from "./Pill";
+import CharacterSetItem from "./CharacterSetItem";
 
 const characterDictionary = [
 	{ letter: "A", category: "basic-latin" },
@@ -150,7 +151,7 @@ const CharacterSet = (props) => {
 
 	function addTransitionListener(itemContent) {
 		// reset 100%/100% sizing after transition end
-		var onTransitionEnd = function () {
+		var onTransitionEnd = function() {
 			itemContent.style.width = "";
 			itemContent.style.height = "";
 			itemContent.removeEventListener(
@@ -177,10 +178,8 @@ const CharacterSet = (props) => {
 				<div className="grid-sizer"></div>
 				{characterDictionary.map((item, i) => {
 					return (
-						<div key={i} className="grid-item">
-							<div className="grid-item-content grid-cols-12 border-2 border-solid border-black rounded-sm text-black">
-								{item.letter}
-							</div>
+						<div key={i}>
+							<CharacterSetItem item={item} />
 						</div>
 					);
 				})}
@@ -207,48 +206,6 @@ const CharacterSet = (props) => {
 				}
 
 				.grid {
-				}
-
-				/* item is invisible, but used for layout */
-				.grid-item,
-				.grid-sizer {
-					width: calc(10vw - 24px);
-				}
-
-				.grid-item {
-					float: left;
-					height: 10vw;
-				}
-
-				/* grid-item-content is visible, and transitions size */
-				.grid-item-content {
-					width: 100%;
-					height: 100%;
-					background: #e4e4e4;
-					-webkit-transition: width 0.4s, height 0.4s;
-					transition: width 0.4s, height 0.4s;
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					font-size: 7vw;
-					line-height: 8vw;
-					text-align: center;
-				}
-
-				.grid-item:hover .grid-item-content {
-					background: #e4e4e4;
-					cursor: pointer;
-				}
-
-				/* both item and item content change size */
-				.grid-item.is-expanded {
-					width: 20vw;
-					height: 20vw;
-					z-index: 2;
-				}
-
-				.grid-item.is-expanded .grid-item-content {
-					background: #ffc000;
 				}
 			`}</style>
 		</div>

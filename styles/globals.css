@@ -10,9 +10,11 @@
 	font-family: "Iso";
 	src: url("/fonts/Iso/ISOv0.8-Regular.woff2");
 }
+
 body {
 	@apply font-display;
 	@apply text-black;
+	overflow-x: hidden;
 }
 
 h1 {
@@ -52,4 +54,26 @@ h6 {
 	border-radius: 100%;
 	background: #ffc000;
 	cursor: pointer;
+}
+
+.animate-it-fast {
+	animation: animate-it 3s infinite alternate linear;
+}
+
+.animate-it {
+	animation: animate-it 6s infinite alternate linear;
+}
+
+.animate-it-slow {
+	animation: animate-it 10s infinite alternate linear;
+}
+
+@keyframes animate-it {
+	0% {
+		font-variation-settings: "move" 0;
+	}
+
+	100% {
+		font-variation-settings: "move" 1000;
+	}
 }

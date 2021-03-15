@@ -44,6 +44,7 @@ import TimelineAnimations from "../components/TimelineAnimations";
 import IntersectBox from "../components/IntersectBox";
 import Scene from "../components/Scene";
 import Pattern from "../components/Pattern";
+import TypeParticles from "../components/TypeParticles";
 
 const isBrowser = typeof window !== "undefined";
 
@@ -159,7 +160,7 @@ function Index(props) {
                 borderTop
                 large
               >
-                <span className="text-4 text-black uppercase">
+                <span className="animate-it text-4 text-black uppercase">
                   👁 A 🌐 Dancing ☀ typeface ☮ BROUGHT ☼ TO 👁 YOU 🌐 BY ☀ VEkTOR
                   ☮ Type ☼ Foundry &nbsp;
                 </span>
@@ -168,26 +169,7 @@ function Index(props) {
             {/* TYPE TESTER 1 */}
             <TypeTester />
             {/* TYPE PARTICLES */}
-            <Frame
-              className={`bg-gray border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden h-100vh flex justify-center items-center px-20`}
-            >
-              {/*<div className="grayRef w-full h-100%" ref={grayRef}></div>*/}
-              {/* <TimelineAnimations /> */}
-              <span className="text-6 leading-tight text-black uppercase text-center">
-                Meet KABLAMMO, the DANCING FONT FROM OUTER SPACE! Developed BY
-                VEKTOR FOUNDRY, IT FEATURES A DANCE AXIS THAT MAKES THE LETTERS
-                bop and BOUNCE and bloop AROUND.
-              </span>
-              <div className="text-20 leading-tight text-black uppercase text-center w-screen h-100% absolute">
-                <div className="text-orange absolute top-6 left-5">💩</div>
-                <div className="text-purple absolute top-2 left-30">⚠</div>
-                <div className="text-yellow absolute top-0 left-55">👀</div>
-                <div className="text-green absolute top-6 left-80">👽</div>
-                <div className="text-pink absolute top-26 left-24">🪐</div>
-                <div className="text-blue absolute top-20 left-70">🕒</div>
-              </div>
-              {/*<TwoTest2 grayRef={grayRef} />*/}
-            </Frame>
+            <TypeParticles />
             {/* SMALL SCROLLING TEXT 1 */}
             <Pill className="bg-lime hover:bg-orange h-6 bg-clip-padding overflow-hidden">
               <ScrollingText
@@ -200,7 +182,7 @@ function Index(props) {
                 large
                 right
               >
-                <span className="text-4 text-blue uppercase">
+                <span className="animate-it-fast text-4 text-blue uppercase">
                   &#xE006;&nbsp;&#xE006;&nbsp;&#xE006;&nbsp;&#xE006;&nbsp;&#xE006;&nbsp;&#xE006;&nbsp;&#xE006;&nbsp;&#xE006;&nbsp;
                 </span>
               </ScrollingText>
@@ -211,21 +193,25 @@ function Index(props) {
               items={doc.data.carousel}
             />
             {/* TYPE SCALES */}
-            <Pill className="bg-yellow h-24 overflow-hidden">
-              <div className="flex justify-between">
-                <div className="pt-10 pl-20">
-                  <span className="uppercase font-mono text-1">Alternates</span>
-                </div>
-                <div className="pt-10 pr-20">
-                  <span className="uppercase font-mono text-1">Background</span>
-                </div>
-              </div>
+            <Pill className="bg-yellow h-24 overflow-hidden flex-col">
               <Pattern
                 className="grid place-items-center"
                 bgImage="/images/bg/yellow-circles.svg"
               >
+                <div className="absolute flex justify-between w-full">
+                  <div className="pt-10 pl-20">
+                    <span className="uppercase font-mono text-1">
+                      Font Weight
+                    </span>
+                  </div>
+                  <div className="pt-10 pr-20">
+                    <span className="uppercase font-mono text-1">
+                      Font Size
+                    </span>
+                  </div>
+                </div>
                 <span
-                  className="text-18 w-full block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word"
+                  className="animate-it-slow text-18 w-full block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word"
                   contentEditable="true"
                   spellCheck="false"
                   suppressContentEditableWarning={true}
@@ -239,8 +225,20 @@ function Index(props) {
                 className="grid place-items-center"
                 bgImage="/images/bg/orange-worms.svg"
               >
+                <div className="absolute flex justify-between w-full">
+                  <div className="pt-10 pl-20">
+                    <span className="uppercase font-mono text-1">
+                      Font Weight
+                    </span>
+                  </div>
+                  <div className="pt-10 pr-20">
+                    <span className="uppercase font-mono text-1">
+                      Font Size
+                    </span>
+                  </div>
+                </div>
                 <span
-                  className="text-10 w-full block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word"
+                  className="animate-it-slow text-10 w-full block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word"
                   contentEditable="true"
                   spellCheck="false"
                   suppressContentEditableWarning={true}
@@ -254,8 +252,20 @@ function Index(props) {
                 className="grid place-items-center"
                 bgImage="/images/bg/pink-pattern.svg"
               >
+                <div className="absolute flex justify-between w-full">
+                  <div className="pt-8 pl-20">
+                    <span className="uppercase font-mono text-1">
+                      Font Weight
+                    </span>
+                  </div>
+                  <div className="pt-8 pr-20">
+                    <span className="uppercase font-mono text-1">
+                      Font Size
+                    </span>
+                  </div>
+                </div>
                 <span
-                  className="text-6 w-full block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word"
+                  className="animate-it-slow text-6 w-full block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word"
                   contentEditable="true"
                   spellCheck="false"
                   suppressContentEditableWarning={true}
@@ -269,8 +279,20 @@ function Index(props) {
                 className="grid place-items-center"
                 bgImage="/images/bg/purple-squiggly.svg"
               >
+                <div className="absolute flex justify-between w-full">
+                  <div className="pt-6 pl-20">
+                    <span className="uppercase font-mono text-1">
+                      Font Weight
+                    </span>
+                  </div>
+                  <div className="pt-6 pr-20">
+                    <span className="uppercase font-mono text-1">
+                      Font Size
+                    </span>
+                  </div>
+                </div>
                 <span
-                  className="text-3 w-full block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word"
+                  className="animate-it-slow text-3 w-full block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word"
                   contentEditable="true"
                   spellCheck="false"
                   suppressContentEditableWarning={true}

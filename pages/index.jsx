@@ -217,7 +217,7 @@ function Index(props) {
                   </div>
                 </div>
                 <span
-                  className="animate-it-slow text-18 w-full block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word"
+                  className="text-18 w-full block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word"
                   contentEditable="true"
                   spellCheck="false"
                   suppressContentEditableWarning={true}
@@ -250,7 +250,7 @@ function Index(props) {
                   </div>
                 </div>
                 <span
-                  className="animate-it-slow text-10 w-full block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word"
+                  className="text-10 w-full block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word"
                   contentEditable="true"
                   spellCheck="false"
                   suppressContentEditableWarning={true}
@@ -283,7 +283,7 @@ function Index(props) {
                   </div>
                 </div>
                 <span
-                  className="animate-it-slow text-6 w-full block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word"
+                  className="text-6 w-full block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word"
                   contentEditable="true"
                   spellCheck="false"
                   suppressContentEditableWarning={true}
@@ -316,7 +316,7 @@ function Index(props) {
                   </div>
                 </div>
                 <span
-                  className="animate-it-slow text-3 w-full block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word"
+                  className="text-3 w-full block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word"
                   contentEditable="true"
                   spellCheck="false"
                   suppressContentEditableWarning={true}

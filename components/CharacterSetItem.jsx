@@ -55,7 +55,7 @@ const CharacterSetItem = ({ item }) => {
 					display: flex;
 					justify-content: center;
 					align-items: center;
-					font-size: 7vw;
+					font-size: 6vw;
 					line-height: 8vw;
 					text-align: center;
 					background-color: #e4e4e4;
@@ -84,6 +84,7 @@ const CharacterSetItem = ({ item }) => {
 				}
 				.grid-item.is-expanded .grid-item-content {
 					background: #ffc000;
+					font-size: 15vw;
 				}
 				@media (max-width: 1199px) {
 					.type-particles {

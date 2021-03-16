@@ -56,6 +56,14 @@ h6 {
 	cursor: pointer;
 }
 
+.color-burn {
+	mix-blend-mode: color-burn;
+}
+
+.text-shadow-1 {
+	text-shadow: #e8f75c 30px 30px;
+}
+
 .animate-it-fast {
 	animation: animate-it 3s infinite alternate linear;
 }

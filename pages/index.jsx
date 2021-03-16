@@ -142,10 +142,22 @@ function Index(props) {
                   className="flex justify-center"
                   bgImage="/images/bg/purple-worms.svg"
                 >
-                  <img
+                  {/* <img
                     className="w-full items-center"
                     src={doc.data.landing_image.url}
-                  />
+                  /> */}
+                  <div className={`w-full`}>
+                    <h1
+                      className={`animate-it absolute inset-0 text-40 leading-tight text-blue color-burn mt-8 ml-10`}
+                    >
+                      
+                    </h1>
+                    <h1
+                      className={`animate-it absolute inset-0 text-40 leading-tight text-pink`}
+                    >
+                      
+                    </h1>
+                  </div>
                 </Pattern>
               </Frame>
             </Frame>

@@ -20,6 +20,7 @@ var scaleSystem = {
 	"26": "26vw",
 	"28": "28vw",
 	"30": "30vw",
+	"34.9": "34.9vw",
 	"35": "35vw",
 	"40": "40vw",
 	"50": "50vw",
@@ -44,6 +45,7 @@ module.exports = {
 		extend: {},
 		colors: {
 			transparent: "transparent",
+			extraBlack: "rgba(0, 0, 0, 0.25)",
 			black: "#3D3D3D",
 			gray: "#E4E4E4",
 			green: "#3B8364",
@@ -52,7 +54,7 @@ module.exports = {
 			purple: "#9891E8",
 			yellow: "#FFC000",
 			orange: "#EB7B57",
-			pink: "#E18DC5",
+			pink: "#F97DDA",
 		},
 		borderRadius: {
 			sm: "32px",

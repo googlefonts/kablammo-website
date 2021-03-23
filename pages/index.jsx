@@ -45,6 +45,7 @@ import IntersectBox from "../components/IntersectBox";
 import Scene from "../components/Scene";
 import Pattern from "../components/Pattern";
 import TypeParticles from "../components/TypeParticles";
+import Kablammo from "../components/Kablammo";
 
 const isBrowser = typeof window !== "undefined";
 
@@ -138,27 +139,7 @@ function Index(props) {
               <Frame
                 className={`h-landing bg-purple border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden`}
               >
-                <Pattern
-                  className="flex justify-center"
-                  bgImage="/images/bg/purple-worms.svg"
-                >
-                  {/* <img
-                    className="w-full items-center"
-                    src={doc.data.landing_image.url}
-                  /> */}
-                  <div className={`w-full`}>
-                    <h1
-                      className={`animate-it absolute inset-0 text-40 leading-tight text-blue color-burn mt-8 ml-10`}
-                    >
-                      
-                    </h1>
-                    <h1
-                      className={`animate-it absolute inset-0 text-40 leading-tight text-pink`}
-                    >
-                      
-                    </h1>
-                  </div>
-                </Pattern>
+                <Kablammo />
               </Frame>
             </Frame>
             {/* SMALL SCROLLING TEXT 1 */}

@@ -2,10 +2,9 @@ import React, { Component } from "react";
 import Anime from "animejs";
 import Frame from "../components/Frame";
 import AnimationButton from "../components/AnimationButton";
-import Slider from "../components/Slider";
+import TypeTesterSlider from "../components/TypeTesterSlider";
 import InputRange from "react-input-range";
-import Select from "react-select";
-// import TwoBackground from "../components/TwoBackground";
+import TypeTesterSelect from "../components/TypeTesterSelect";
 import Pattern from "../components/Pattern";
 
 let animation = null;
@@ -62,6 +61,8 @@ class TypeTester extends Component {
             },
             sliderValue: 500,
             selectedOption: null,
+            fontWeight: "lime",
+            showOptions: false,
         };
 
         this.typeTesterRef = React.createRef();
@@ -71,10 +72,10 @@ class TypeTester extends Component {
         this.sliderUpdating = React.createRef();
 
         this.handleSliderChange = this.handleSliderChange.bind(this);
-        this.handleSelectChange = this.handleSelectChange.bind(this);
         this.handleTypeTesterInputChange = this.handleTypeTesterInputChange.bind(
             this
         );
+        this.handleFontWeightChange = this.handleFontWeightChange.bind(this);
         this.setOrReset = this.setOrReset.bind(this);
         this.handleSliderHover = this.handleSliderHover.bind(this);
     }
@@ -125,10 +126,10 @@ class TypeTester extends Component {
         });
     }
 
-    handleSelectChange(selectedOption) {
-        this.setState({ selectedOption }, () =>
-            console.log(`Option selected:`, this.state.selectedOption)
-        );
+    handleFontWeightChange(event, value) {
+        const newWeight = event.target.value;
+        this.setState({ fontWeight: event.target.value });
+        console.log("event", newWeight);
     }
 
     componentDidMount() {
@@ -161,6 +162,26 @@ class TypeTester extends Component {
     render() {
         console.log("render", this.state);
 
+        const customStyles = {
+            menu: (provided, state) => ({
+                ...provided,
+                width: state.selectProps.width,
+                borderBottom: "1px dotted pink",
+                color: state.selectProps.menuColor,
+                padding: 20,
+            }),
+
+            control: (_, { selectProps: { width } }) => ({
+                width: width,
+            }),
+
+            singleValue: (provided, state) => {
+                const opacity = state.isDisabled ? 0.5 : 1;
+                const transition = "opacity 300ms";
+                return { ...provided, opacity, transition };
+            },
+        };
+
         return (
             <div
                 ref={this.typeTesterRef}
@@ -183,46 +204,57 @@ class TypeTester extends Component {
                         >
                             ⚠ VARIABLE FONT 🌼 BY VECTOR 😵
                         </span>
-
                         <div className="flex justify-between">
                             <div className="pt-10 pl-20">
                                 <span className="uppercase font-mono text-1">
                                     Alternates
                                 </span>
+                                <div className="flex">
+                                    <div
+                                        className={`type-tester-alternate grid place-items-center bg-yellow mr-2 font-mono uppercase`}
+                                    >
+                                        On
+                                    </div>
+                                    <div
+                                        className={`type-tester-alternate grid place-items-center bg-gray font-mono uppercase`}
+                                    >
+                                        Off
+                                    </div>
+                                </div>
                             </div>
                             <div className="pt-10 pr-20">
                                 <span className="uppercase font-mono text-1">
                                     Background
                                 </span>
+                                <div className="flex text-1">
+                                    <div
+                                        className={`type-tester-alternate grid place-items-center bg-yellow mr-2 font-display uppercase`}
+                                    >
+                                        
+                                    </div>
+                                    <div
+                                        className={`type-tester-alternate grid place-items-center bg-gray font-display uppercase`}
+                                    >
+                                        
+                                    </div>
+                                    <div
+                                        className={`type-tester-alternate grid place-items-center bg-gray font-display uppercase`}
+                                    >
+                                        
+                                    </div>
+                                    <div
+                                        className={`type-tester-alternate grid place-items-center bg-gray font-display uppercase`}
+                                    >
+                                        
+                                    </div>
+                                </div>{" "}
                             </div>
                         </div>
                         <div className="absolute left-0 right-0 bottom-0 flex justify-between">
-                            <div className="pb-10 pl-20 pr-2 w-1/5 flex flex-col">
-                                <label
-                                    className="uppercase font-mono text-1 text-center"
-                                    htmlFor="cars"
-                                >
-                                    Font Weights
-                                </label>
-                                {/*<Select
-                                    className="w-100% h-4 bg-yellow border-2 border-solid border-black rounded-lg relative flex justify-center items-center overflow-hidden font-body uppercase text-2 flex justify-center items-center"
-                                    value={this.state.selectedOption}
-                                    onChange={this.handleSelectChange}
-                                    options={options}
-                                />*/}
-                                <div className="w-100% h-4 bg-yellow border-2 border-solid border-black rounded-lg relative flex justify-center items-center overflow-hidden font-body uppercase text-2 flex justify-center items-center">
-                                    Zoink
-                                </div>
-                            </div>
-                            <div className="pb-10 pr-20 w-4/5 flex flex-col ">
-                                <span
-                                    className="uppercase font-mono text-1 text-center"
-                                    htmlFor="cars"
-                                >
-                                    Font Weights
-                                </span>
+                            <TypeTesterSelect />
+                            <div className="mt-auto pb-10 pr-20 w-5/6 flex flex-col ">
                                 <div
-                                    className="h-4 bg-purple border-2 border-solid border-black rounded-lg relative flex justify-center items-center overflow-hidden"
+                                    className="h-3 bg-purple border-2 border-solid border-black rounded-lg relative flex justify-center items-center overflow-hidden"
                                     onMouseEnter={this.handleSliderHover}
                                     onMouseLeave={this.handleSliderHover}
                                 >
@@ -232,7 +264,7 @@ class TypeTester extends Component {
                                         </span>
                                     </div>
                                     <div className="w-3/4">
-                                        <Slider
+                                        <TypeTesterSlider
                                             key={this.sliderRefValue}
                                             sliderValue={this.state.sliderValue}
                                             handleSliderChange={
@@ -246,9 +278,23 @@ class TypeTester extends Component {
                     </Frame>
                 </Pattern>
                 <style jsx>{`
-                    select option[data-default] {
-                        color: red;
-                        text-align: center;
+                    .type-tester-alternate {
+                        height: 2vw;
+                        width: 2vw;
+                        border: 0;
+                        border-radius: 100%;
+                        cursor: pointer;
+                        transition: none;
+                    }
+                    .select {
+                    }
+                    .select-options {
+                        animation: height 600ms;
+                    }
+                    .select-current-option {
+                    }
+                    .hide-options {
+                        height: 0;
                     }
                 `}</style>
             </div>

@@ -4,7 +4,7 @@ import Frame from "../components/Frame";
 import AnimationButton from "../components/AnimationButton";
 import InputRange from "react-input-range";
 
-class Slider extends React.Component {
+class TypeTesterSlider extends React.Component {
   constructor(props) {
     super(props);
 
@@ -41,13 +41,13 @@ class Slider extends React.Component {
 
           .input-range__slider {
             appearance: none;
-            height: 3vw;
-            width: 3vw;
+            height: 2vw;
+            width: 2vw;
             border: 0;
             border-radius: 100%;
             background: #ffc000;
             cursor: pointer;
-            margin-top: -1.5vw;
+            margin-top: -1vw;
             transition: none;
           }
           .input-range__slider:active {
@@ -84,4 +84,4 @@ class Slider extends React.Component {
     );
   }
 }
-export default Slider;
+export default TypeTesterSlider;

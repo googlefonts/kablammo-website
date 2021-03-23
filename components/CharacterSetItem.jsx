@@ -11,7 +11,7 @@ const colors = [
 	"#9891E8",
 	"#FFC000",
 	"#EB7B57",
-	"#E18DC5",
+	"#F97DDA",
 ];
 
 const CharacterSetItem = ({ item }) => {

@@ -7,29 +7,29 @@ import Row from "./Row";
 const TypeParticles = (props) => {
 	return (
 		<Frame
-			className={`type-particles bg-gray border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden h-100vh flex justify-center items-center px-20`}
+			className={`type-particles bg-extraBlack border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden h-100vh flex justify-center items-center px-20`}
 		>
 			{/*<div className="grayRef w-full h-100%" ref={grayRef}></div>*/}
 			{/* <TimelineAnimations /> */}
-			<span className="animate-it-slow text-6 leading-tight text-black uppercase text-center">
+			<span className="text-6 leading-tight text-gray uppercase text-center">
 				Meet KABLAMMO, the DANCING FONT FROM OUTER SPACE! Developed BY
 				VEKTOR FOUNDRY, IT FEATURES A DANCE AXIS THAT MAKES THE LETTERS
 				bop and BOUNCE and bloop AROUND.
 			</span>
-			<div className="text-20 leading-tight text-black uppercase text-center w-screen h-100% absolute">
+			<div className="text-20 leading-tight text-gray uppercase text-center w-screen h-100% absolute">
 				<div className="animate-it-fast text-orange absolute top-6 left-5">
 					💩
 				</div>
-				<div className="animate-it-fast text-purple absolute top-2 left-30">
+				<div className="animate-it text-purple absolute top-2 left-30">
 					⚠
 				</div>
-				<div className="animate-it-fast text-yellow absolute top-0 left-55">
+				<div className="animate-it-slow text-yellow absolute top-0 left-55">
 					👀
 				</div>
-				<div className="animate-it-fast text-green absolute top-6 left-80">
+				<div className="animate-it text-green absolute top-6 left-80">
 					👽
 				</div>
-				<div className="animate-it-fast text-pink absolute top-26 left-24">
+				<div className="animate-it-slow text-pink absolute top-26 left-24">
 					🪐
 				</div>
 				<div className="animate-it-fast text-blue absolute top-20 left-70">

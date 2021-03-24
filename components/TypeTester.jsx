@@ -22,33 +22,6 @@ const clearCurrentAnimation = (currentAnimation) => {
     }
 };
 
-const AnimationStart = (target, handleSliderChange) => {
-    return new Promise((resolve, reject) => {
-        clearCurrentAnimation(animation);
-
-        animation = Anime({
-            targets: target.current,
-            fontVariationSettings: ["'move' 0", "'move' 1000"],
-            easing: "linear",
-            direction: "alternate",
-            duration: 10000,
-            loop: true,
-            update: (anim) => {
-                if (animation.paused === false) {
-                    handleSliderChange(
-                        anim.animations[0].currentValue.substring(7)
-                    );
-                    // sliderValue.current = parseFloat(
-                    // anim.animations[0].currentValue.substring(7)
-                    // );
-                    // sliderRef.current.value = sliderValue.current;
-                    // console.log("hey");
-                }
-            },
-        });
-    });
-};
-
 class TypeTester extends Component {
     constructor(props) {
         super(props);
@@ -78,6 +51,7 @@ class TypeTester extends Component {
         this.handleFontWeightChange = this.handleFontWeightChange.bind(this);
         this.setOrReset = this.setOrReset.bind(this);
         this.handleSliderHover = this.handleSliderHover.bind(this);
+        this.animationStart = this.animationStart.bind(this);
     }
 
     setOrReset() {
@@ -99,7 +73,7 @@ class TypeTester extends Component {
     }
 
     handleSliderChange(value) {
-        // console.log("sliderValue", value);
+        console.log("sliderValue", value);
         if (animation.paused) {
             this.typeTesterInputRef.current.style.fontVariationSettings =
                 "'move' " + value;
@@ -132,13 +106,48 @@ class TypeTester extends Component {
         console.log("event", newWeight);
     }
 
+    animationStart(target, handleSliderChange) {
+        return new Promise((resolve, reject) => {
+            clearCurrentAnimation(animation);
+            animation = Anime({
+                targets: target.current,
+                fontVariationSettings: ["'move' 0", "'move' 1000"],
+                easing: "linear",
+                direction: "alternate",
+                duration: 10000,
+                loop: true,
+                update: (anim) => {
+                    if (animation.paused === false) {
+                        handleSliderChange(
+                            anim.animations[0].currentValue.substring(7)
+                        );
+
+                        this.setState({
+                            sliderValue: anim.animations[0].currentValue.substring(
+                                7
+                            ),
+                        });
+                        {
+                            /*}
+                        this.sliderValue.current = parseFloat(
+                            anim.animations[0].currentValue.substring(7)
+                        );
+                        this.sliderRef.current.value = sliderValue.current;
+                        console.log("hey", this.sliderValue.current);*/
+                        }
+                    }
+                },
+            });
+        });
+    }
+
     componentDidMount() {
         console.log("did mount", this.state);
         if (this.state.animate) {
             this.setState({
                 inProgress: true,
             });
-            AnimationStart(
+            this.animationStart(
                 this.typeTesterInputRef,
                 this.handleSliderChange
             ).then(() => {
@@ -205,7 +214,7 @@ class TypeTester extends Component {
                             ⚠ VARIABLE FONT 🌼 BY VECTOR 😵
                         </span>
                         <div className="flex justify-between">
-                            <div className="pt-10 pl-20">
+                            <div className="pt-10 pl-20 text-1">
                                 <span className="uppercase font-mono text-1">
                                     Alternates
                                 </span>

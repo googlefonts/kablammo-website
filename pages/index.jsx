@@ -90,13 +90,28 @@ const setTwo = () => {
   // to the screen
   two.update();
 };
+
 function Index(props) {
   const [doc, setDocData] = React.useState(null);
   const grayRef = useRef(null);
 
   fetchData(setDocData);
   // isBrowser && setTwo();
+  var observer = new IntersectionObserver(function (entries, observer) {
+    entries.forEach(function (entry) {
+      // Pause/Play the animation
+      if (entry.isIntersecting)
+        entry.target.style.animationPlayState = "running";
+      else entry.target.style.animationPlayState = "paused";
+    });
+  });
 
+  var variableTexts = document.querySelectorAll(
+    ".animate-it, .animate-it-slow, .animate-it-fast"
+  );
+  variableTexts.forEach(function (el) {
+    observer.observe(el);
+  });
   const pageReady = doc !== null ? true : false;
   return pageReady ? (
     <Media

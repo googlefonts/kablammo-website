@@ -17,7 +17,7 @@ const options = [
 
 const clearCurrentAnimation = (currentAnimation) => {
     if (currentAnimation) {
-        console.log("Remove current animation...");
+        // console.log("Remove current animation...");
         currentAnimation.pause();
     }
 };
@@ -73,7 +73,7 @@ class TypeTester extends Component {
     }
 
     handleSliderChange(value) {
-        console.log("sliderValue", value);
+        // console.log("sliderValue", value);
         if (animation.paused) {
             this.typeTesterInputRef.current.style.fontVariationSettings =
                 "'move' " + value;
@@ -103,7 +103,7 @@ class TypeTester extends Component {
     handleFontWeightChange(event, value) {
         const newWeight = event.target.value;
         this.setState({ fontWeight: event.target.value });
-        console.log("event", newWeight);
+        // console.log("event", newWeight);
     }
 
     animationStart(target, handleSliderChange) {
@@ -142,7 +142,7 @@ class TypeTester extends Component {
     }
 
     componentDidMount() {
-        console.log("did mount", this.state);
+        // console.log("did mount", this.state);
         if (this.state.animate) {
             this.setState({
                 inProgress: true,
@@ -151,7 +151,7 @@ class TypeTester extends Component {
                 this.typeTesterInputRef,
                 this.handleSliderChange
             ).then(() => {
-                console.log("Time to enter...");
+                // console.log("Time to enter...");
                 this.setState({
                     inProgress: false,
                 });
@@ -164,12 +164,12 @@ class TypeTester extends Component {
 
     componentDidUpdate(prevProps, prevState) {
         if (prevState.sliderValue !== this.state.sliderValue) {
-            console.log("updated");
+            // console.log("updated");
         }
     }
 
     render() {
-        console.log("render", this.state);
+        // console.log("render", this.state);
 
         const customStyles = {
             menu: (provided, state) => ({

@@ -2,12 +2,23 @@ import React, { useState } from "react";
 
 const TypeTesterSelect = () => {
 	const [showOptions, setShowOptions] = useState(false);
-	const [currentOption, setCurrentOption] = useState("Option 1");
-
-	const handleOptionClick = (value) => {
+	const [options, setOptions] = useState([
+		{ option1: { title: "Option 1", sort: 1, active: true } },
+		{ option2: { title: "Option 2", sort: 2, active: false } },
+		{ option3: { title: "Option 3", sort: 3, active: false } },
+		{ option4: { title: "Option 4", sort: 4, active: false } },
+	]);
+	const handleOptionClick = (option) => {
 		setShowOptions(!showOptions);
-		setCurrentOption(value);
+		const newOptions = options.map((newOption, index) => {
+			if (newOption.title === option.title) {
+				newOption.active = !option.active;
+			}
+		});
+		setOptions(newOptions);
+		console.log("newOptions", options);
 	};
+
 	return (
 		<div className="pb-10 pl-20 pr-2 w-1/6 flex flex-col">
 			<div className="select">
@@ -16,7 +27,20 @@ const TypeTesterSelect = () => {
 						showOptions ? "show-options" : "hide-options"
 					}`}
 				>
-					<li
+					{options
+						.filter((x) => x.active === false)
+						.map((option, index) => {
+							return (
+								<li
+									key={index}
+									className={`w-100% h-3 -mb-0.5 bg-blue hover:bg-pink border-2 border-solid border-black rounded-lg relative flex justify-center items-center overflow-hidden font-body uppercase text-1 flex justify-center items-center`}
+									onClick={() => handleOptionClick(option)}
+								>
+									{option.title}
+								</li>
+							);
+						})}
+					{/*<li
 						className="w-100% h-3 -mb-0.5 bg-blue hover:bg-pink border-2 border-solid border-black rounded-lg relative flex justify-center items-center overflow-hidden font-body uppercase text-1 flex justify-center items-center"
 						onClick={() => handleOptionClick("Option 2")}
 					>
@@ -33,13 +57,14 @@ const TypeTesterSelect = () => {
 						onClick={() => handleOptionClick("Option 4")}
 					>
 						Option 4
-					</li>
+					</li>*/}
 				</ol>
 				<div
 					className="select-current-option w-100% h-3 bg-yellow hover:bg-pink border-2 border-solid border-black rounded-lg relative flex justify-center items-center overflow-hidden font-body uppercase text-1 flex justify-center items-center"
 					onClick={() => setShowOptions(!showOptions)}
 				>
-					{currentOption}
+					{options &&
+						options.filter((x) => x.active === true)[0].title}
 				</div>
 			</div>
 			<style jsx>{`

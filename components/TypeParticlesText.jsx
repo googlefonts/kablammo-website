@@ -31,6 +31,7 @@ const TypeParticlesText = (props) => {
 			onMouseEnter={handleMouseEnter}
 			onClick={handleClick}
 			style={spanStyle}
+			className={``}
 		>
 			{props.children}
 			<style jsx>{``}</style>

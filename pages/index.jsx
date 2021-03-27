@@ -45,6 +45,7 @@ import IntersectBox from "../components/IntersectBox";
 import Scene from "../components/Scene";
 import Pattern from "../components/Pattern";
 import TypeParticles from "../components/TypeParticles";
+import IntersectionObserver from "../components/IntersectionObserver";
 import Kablammo from "../components/Kablammo";
 
 const isBrowser = typeof window !== "undefined";
@@ -95,23 +96,10 @@ function Index(props) {
   const [doc, setDocData] = React.useState(null);
   const grayRef = useRef(null);
 
-  fetchData(setDocData);
-  // isBrowser && setTwo();
-  var observer = new IntersectionObserver(function (entries, observer) {
-    entries.forEach(function (entry) {
-      // Pause/Play the animation
-      if (entry.isIntersecting)
-        entry.target.style.animationPlayState = "running";
-      else entry.target.style.animationPlayState = "paused";
-    });
-  });
+  useEffect(() => {}, []); // do this only once, on mount
 
-  var variableTexts = document.querySelectorAll(
-    ".animate-it, .animate-it-slow, .animate-it-fast"
-  );
-  variableTexts.forEach(function (el) {
-    observer.observe(el);
-  });
+  fetchData(setDocData);
+
   const pageReady = doc !== null ? true : false;
   return pageReady ? (
     <Media
@@ -206,26 +194,24 @@ function Index(props) {
                 className="grid place-items-center"
                 bgImage="/images/bg/yellow-circles.svg"
               >
-                <div className="absolute flex justify-between w-full">
+                <div className="absolute flex justify-between w-100%">
                   <div className="pt-10 pl-20 flex flex-col">
                     <span className="uppercase font-mono text-1">
-                      Font Weight
+                      Font Move
                     </span>
-                    <span className="uppercase font-mono text-1 bg-purple rounded-full pt-1">
-                      120px
+                    <span className="uppercase font-mono text-1 bg-purple rounded-full pt-1 px-4">
+                      Option 1
                     </span>
                   </div>
                   <div className="pt-10 pr-20 flex flex-col">
-                    <span className="uppercase font-mono text-1">
-                      Font Size
-                    </span>
-                    <span className="uppercase font-mono text-1 bg-purple rounded-full pt-1">
-                      120px
+                    <span className="uppercase font-mono text-1">Color</span>
+                    <span className="uppercase font-mono text-1 bg-purple rounded-full pt-1 px-4">
+                      Black
                     </span>
                   </div>
                 </div>
                 <span
-                  className="text-18 w-full block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word"
+                  className="text-18 w-100% block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word font-axis-1"
                   contentEditable="true"
                   spellCheck="false"
                   suppressContentEditableWarning={true}
@@ -239,26 +225,24 @@ function Index(props) {
                 className="grid place-items-center"
                 bgImage="/images/bg/orange-worms.svg"
               >
-                <div className="absolute flex justify-between w-full">
+                <div className="absolute flex justify-between w-100%">
                   <div className="pt-10 pl-20 flex flex-col">
                     <span className="uppercase font-mono text-1">
-                      Font Weight
+                      Font Move
                     </span>
-                    <span className="uppercase font-mono text-1 bg-purple rounded-full pt-1">
-                      120px
+                    <span className="uppercase font-mono text-1 bg-purple rounded-full pt-1 px-4">
+                      Option 2
                     </span>
                   </div>
                   <div className="pt-10 pr-20 flex flex-col">
-                    <span className="uppercase font-mono text-1">
-                      Font Size
-                    </span>
-                    <span className="uppercase font-mono text-1 bg-purple rounded-full pt-1">
-                      120px
+                    <span className="uppercase font-mono text-1">Color</span>
+                    <span className="uppercase font-mono text-1 bg-purple rounded-full pt-1 px-4">
+                      Black
                     </span>
                   </div>
                 </div>
                 <span
-                  className="text-10 w-full block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word"
+                  className="text-10 w-100% block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word font-axis-2"
                   contentEditable="true"
                   spellCheck="false"
                   suppressContentEditableWarning={true}
@@ -272,26 +256,24 @@ function Index(props) {
                 className="grid place-items-center"
                 bgImage="/images/bg/pink-pattern.svg"
               >
-                <div className="absolute flex justify-between w-full">
+                <div className="absolute flex justify-between w-100%">
                   <div className="pt-8 pl-20 flex flex-col">
                     <span className="uppercase font-mono text-1">
-                      Font Weight
+                      Font Move
                     </span>
-                    <span className="uppercase font-mono text-1 bg-purple rounded-full pt-1">
-                      120px
+                    <span className="uppercase font-mono text-1 bg-purple rounded-full pt-1 px-4">
+                      Option 3
                     </span>
                   </div>
                   <div className="pt-8 pr-20 flex flex-col">
-                    <span className="uppercase font-mono text-1">
-                      Font Size
-                    </span>
-                    <span className="uppercase font-mono text-1 bg-purple rounded-full pt-1">
-                      120px
+                    <span className="uppercase font-mono text-1">Color</span>
+                    <span className="uppercase font-mono text-1 bg-purple rounded-full pt-1 px-4">
+                      Black
                     </span>
                   </div>
                 </div>
                 <span
-                  className="text-6 w-full block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word"
+                  className="text-6 w-100% block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word font-axis-3"
                   contentEditable="true"
                   spellCheck="false"
                   suppressContentEditableWarning={true}
@@ -305,26 +287,24 @@ function Index(props) {
                 className="grid place-items-center"
                 bgImage="/images/bg/purple-squiggly.svg"
               >
-                <div className="absolute flex justify-between w-full">
+                <div className="absolute flex justify-between w-100%">
                   <div className="pt-6 pl-20 flex flex-col">
                     <span className="uppercase font-mono text-1">
-                      Font Weight
+                      Font Move
                     </span>
-                    <span className="uppercase font-mono text-1 bg-purple rounded-full pt-1">
-                      120px
+                    <span className="uppercase font-mono text-1 bg-purple rounded-full pt-1 px-4">
+                      Option 4
                     </span>
                   </div>
                   <div className="pt-6 pr-20 flex flex-col">
-                    <span className="uppercase font-mono text-1">
-                      Font Size
-                    </span>
-                    <span className="uppercase font-mono text-1 bg-purple rounded-full pt-1">
-                      120px
+                    <span className="uppercase font-mono text-1">Color</span>
+                    <span className="uppercase font-mono text-1 bg-purple rounded-full pt-1 px-4">
+                      Black
                     </span>
                   </div>
                 </div>
                 <span
-                  className="text-3 w-full block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word"
+                  className="text-3 w-100% block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word font-axis-4"
                   contentEditable="true"
                   spellCheck="false"
                   suppressContentEditableWarning={true}

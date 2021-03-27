@@ -11,7 +11,7 @@ const Frame = (props) => {
 	const [child, setChild] = useState(props.children);
 	return (
 		<div
-			className={`Frame w-full bg-contain bg-no-repeat bg-center ${
+			className={`Frame w-100% bg-contain bg-no-repeat bg-center ${
 				props.className ? `${props.className}` : ``
 			}`}
 		>

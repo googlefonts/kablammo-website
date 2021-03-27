@@ -23,7 +23,7 @@ const TypeTesterInput = (props) => {
 					style={{
 						fontVariationSettings: "'move' " + moveSetting,
 					}}
-					className="text-12 w-full block leading-none text-center text-pink focus:outline-none overflow-hidden self-center break-word"
+					className="text-12 w-100% block leading-none text-center text-pink focus:outline-none overflow-hidden self-center break-word"
 					contentEditable="true"
 					suppressContentEditableWarning={true}
 					spellCheck="false"

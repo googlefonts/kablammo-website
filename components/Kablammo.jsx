@@ -2,7 +2,7 @@ import Pattern from "../components/Pattern";
 
 const Kablammo = (props) => {
 	const handleKablammoMouseMove = (event) => {
-		console.log("handleKablammoMouseMove", event);
+		// console.log("handleKablammoMouseMove", event);
 	};
 
 	return (
@@ -11,11 +11,11 @@ const Kablammo = (props) => {
 			bgImage="/images/bg/purple-worms.svg"
 		>
 			{/* <img
-                    className="w-full items-center"
+                    className="w-100% items-center"
                     src={doc.data.landing_image.url}
                   /> */}
 			<div
-				className={`w-full grid place-items-center`}
+				className={`w-100% grid place-items-center`}
 				onMouseMove={handleKablammoMouseMove}
 			>
 				<h1

@@ -68,7 +68,7 @@ const TypeTester2 = (props) => {
 	return (
 		<div
 			ref={typeTesterRef}
-			className="h-100vh w-full relative bg-lime border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden"
+			className="h-100vh w-100% relative bg-lime border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden"
 		>
 			<Frame
 				className={`type-tester h-100vh absolute top-0 left-0 right-0 bottom-0 z-10`}

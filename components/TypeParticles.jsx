@@ -10,11 +10,11 @@ const TypeParticles = (props) => {
 		<Frame
 			className={`type-particles bg-extraBlack border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden h-100vh flex justify-center items-center px-20 relative`}
 		>
-			{/*<div className="grayRef w-full h-100%" ref={grayRef}></div>*/}
+			{/*<div className="grayRef w-100% h-100%" ref={grayRef}></div>*/}
 			{/* <TimelineAnimations /> */}
 			<div className="text-6 leading-tight text-gray uppercase text-center">
 				<TypeParticlesText>Meet</TypeParticlesText>{" "}
-				<TypeParticlesText>KABLAMMO</TypeParticlesText>,{" "}
+				<TypeParticlesText>KABLAMMO,</TypeParticlesText>{" "}
 				<TypeParticlesText>the</TypeParticlesText>{" "}
 				<TypeParticlesText>DANCING</TypeParticlesText>{" "}
 				<TypeParticlesText>FONT</TypeParticlesText>{" "}
@@ -24,7 +24,7 @@ const TypeParticles = (props) => {
 				<TypeParticlesText>Developed</TypeParticlesText>{" "}
 				<TypeParticlesText>BY</TypeParticlesText>{" "}
 				<TypeParticlesText>VEKTOR</TypeParticlesText>{" "}
-				<TypeParticlesText>FOUNDRY</TypeParticlesText>,{" "}
+				<TypeParticlesText>FOUNDRY,</TypeParticlesText>{" "}
 				<TypeParticlesText>IT</TypeParticlesText>{" "}
 				<TypeParticlesText>FEATURES</TypeParticlesText>{" "}
 				<TypeParticlesText>A</TypeParticlesText>{" "}
@@ -39,24 +39,24 @@ const TypeParticles = (props) => {
 				<TypeParticlesText>BOUNCE</TypeParticlesText>{" "}
 				<TypeParticlesText>and</TypeParticlesText>{" "}
 				<TypeParticlesText>bloop</TypeParticlesText>{" "}
-				<TypeParticlesText>AROUND</TypeParticlesText>.
+				<TypeParticlesText>AROUND.</TypeParticlesText>
 			</div>
-			<div className="animate-it-fast text-orange absolute top-6 left-5 text-20 leading-tight">
+			<div className="animate-it-fast text-orange absolute top-6 left-5 text-20 leading-tight pointer-events-none">
 				💩
 			</div>
-			<div className="animate-it text-purple absolute top-2 left-30 text-20 leading-tight">
+			<div className="animate-it text-purple absolute top-2 left-30 text-20 leading-tight pointer-events-none">
 				⚠
 			</div>
-			<div className="animate-it-slow text-yellow absolute top-2 left-55 text-20 leading-tight">
+			<div className="animate-it-slow text-yellow absolute top-2 left-55 text-20 leading-tight pointer-events-none">
 				👀
 			</div>
-			<div className="animate-it text-green absolute top-6 left-80 text-20 leading-tight">
+			<div className="animate-it text-green absolute top-6 left-80 text-20 leading-tight pointer-events-none">
 				👽
 			</div>
-			<div className="animate-it-slow text-pink absolute top-26 left-24 text-20 leading-tight">
+			<div className="animate-it-slow text-pink absolute top-26 left-24 text-20 leading-tight pointer-events-none">
 				🪐
 			</div>
-			<div className="animate-it-fast text-blue absolute top-20 left-70 text-20 leading-tight">
+			<div className="animate-it-fast text-blue absolute top-20 left-70 text-20 leading-tight pointer-events-none">
 				🕒
 			</div>
 			<style jsx>{`

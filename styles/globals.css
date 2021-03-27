@@ -76,6 +76,19 @@ h6 {
 	animation: animate-it 10s infinite alternate linear;
 }
 
+.font-axis-1 {
+	font-variation-settings: "move" 0;
+}
+.font-axis-2 {
+	font-variation-settings: "move" 333;
+}
+.font-axis-3 {
+	font-variation-settings: "move" 666;
+}
+.font-axis-4 {
+	font-variation-settings: "move" 1000;
+}
+
 @keyframes animate-it {
 	0% {
 		font-variation-settings: "move" 0;

@@ -7,7 +7,7 @@ const Pill = (props) => {
 
 	return (
 		<div
-			className={`w-full border-2 border-solid border-black text-black rounded-lg text-center flex justify-center items-center ${
+			className={`w-100% border-2 border-solid border-black text-black rounded-lg text-center flex justify-center items-center ${
 				props.className && `${props.className}`
 			}`}
 		>

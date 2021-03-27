@@ -6,7 +6,7 @@ const Pattern = ({ className, children, bgImage }) => {
 
 	return (
 		<div
-			className={`h-100% w-full bg-cover bg-center ${
+			className={`h-100% w-100% bg-cover bg-center ${
 				className ? className : ""
 			}`}
 			style={{ backgroundImage: backgroundImage }}

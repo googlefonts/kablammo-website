@@ -109,8 +109,8 @@ class TimelineAnimations extends Component {
     }
     render() {
         return (
-            <div className="w-full h-100vh flex justify-center items-center flex-col">
-                <div ref={this.nodeRef} className="w-full h-12 bg-black"></div>
+            <div className="w-100% h-100vh flex justify-center items-center flex-col">
+                <div ref={this.nodeRef} className="w-100% h-12 bg-black"></div>
                 <AnimationButton handleClick={this.setOrReset} />
                 <style jsx>{``}</style>
             </div>

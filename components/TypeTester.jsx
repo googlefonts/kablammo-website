@@ -194,10 +194,10 @@ class TypeTester extends Component {
         return (
             <div
                 ref={this.typeTesterRef}
-                className="h-100vh w-full relative bg-lime border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden"
+                className="h-100vh w-100% relative bg-lime border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden"
             >
                 <Pattern
-                    className="h-100% w-full bg-cover grid place-items-center"
+                    className="h-100% w-100% bg-cover grid place-items-center"
                     bgImage="/images/bg/lime-circles.svg"
                 >
                     <Frame
@@ -269,7 +269,7 @@ class TypeTester extends Component {
                                 >
                                     <div className="w-1/4 bg-gray h-100% border-r-2 border-solid border-black flex justify-center items-center">
                                         <span className="uppercase font-mono text-1">
-                                            Dance Axis
+                                            Move Axis
                                         </span>
                                     </div>
                                     <div className="w-3/4">

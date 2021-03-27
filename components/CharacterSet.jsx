@@ -12,6 +12,7 @@ const isBrowser = typeof window !== "undefined";
 import Packery from "packery";
 import Pill from "./Pill";
 import CharacterSetItem from "./CharacterSetItem";
+import CharacterSetFilters from "./CharacterSetFilters";
 
 const characterDictionary = [
 	{ letter: "A", category: "basic-latin" },
@@ -151,7 +152,7 @@ const CharacterSet = (props) => {
 
 	function addTransitionListener(itemContent) {
 		// reset 100%/100% sizing after transition end
-		var onTransitionEnd = function() {
+		var onTransitionEnd = function () {
 			itemContent.style.width = "";
 			itemContent.style.height = "";
 			itemContent.removeEventListener(
@@ -171,9 +172,7 @@ const CharacterSet = (props) => {
 
 	return (
 		<div className={`character-set`}>
-			<Pill className="bg-yellow h-6">
-				<span className="uppercase font-mono text-2">Filters +</span>
-			</Pill>
+			<CharacterSetFilters />
 			<div ref={gridRef} className="grid" onClick={handleClick}>
 				<div className="grid-sizer"></div>
 				{characterDictionary.map((item, i) => {

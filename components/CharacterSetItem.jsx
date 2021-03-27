@@ -20,7 +20,6 @@ const CharacterSetItem = ({ item }) => {
 	});
 	const [clicked, setClicked] = useState(false);
 	const handleMouseEnter = (e) => {
-		console.log("grid-item-content", e, bgStyle);
 		setBgStyle({
 			backgroundColor: colors[Math.floor(Math.random() * colors.length)],
 		});

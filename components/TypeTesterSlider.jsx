@@ -7,18 +7,43 @@ import InputRange from "react-input-range";
 class TypeTesterSlider extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = { value: props.sliderValue };
+    // console.log("constructor", this.props);
+  }
+
+  componentDidMount() {
+    // console.log("componentdidmount", this.props);
+    // console.log("updated", this.props.sliderValue);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log(
+      "prevProps",
+      prevProps,
+      "prevState",
+      prevState,
+      "this.props",
+      this.props
+    );
+    if (prevProps.sliderValue !== this.props.sliderValue) {
+      // console.log("hello");
+    }
+
+    // if (prevState.sliderValue !== this.state.value) {
+    //   console.log("updated in componentDidUpdate", this.state);
+    // }
+    // if (prevProps.sliderValue !== this.state.value) {
+    //   console.log("updated in componentDidUpdate", this.state);
+    // }
   }
 
   render() {
-    console.log("updated slider value", this.state.value);
+    // console.log("updated slider value", this.props.sliderValue);
     return (
       <form className="form">
         <InputRange
           minValue={0}
           maxValue={1000}
-          value={this.state.value}
           value={this.state.value}
           onChange={(value) => {
             this.props.handleSliderChange(value);

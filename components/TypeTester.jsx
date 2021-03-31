@@ -28,14 +28,7 @@ class TypeTester extends Component {
         this.state = {
             animate: true,
             inProgress: false,
-            inputStyle: {
-                fontSize: "12vw",
-                fontVariationSettings: "'move' 500",
-            },
             sliderValue: 500,
-            selectedOption: null,
-            fontWeight: "lime",
-            showOptions: false,
         };
 
         this.typeTesterRef = React.createRef();
@@ -45,12 +38,8 @@ class TypeTester extends Component {
         this.sliderUpdating = React.createRef();
 
         this.handleSliderChange = this.handleSliderChange.bind(this);
-        this.handleTypeTesterInputChange = this.handleTypeTesterInputChange.bind(
-            this
-        );
-        this.handleFontWeightChange = this.handleFontWeightChange.bind(this);
+
         this.setOrReset = this.setOrReset.bind(this);
-        this.handleSliderHover = this.handleSliderHover.bind(this);
         this.animationStart = this.animationStart.bind(this);
     }
 
@@ -62,48 +51,22 @@ class TypeTester extends Component {
         }
     }
 
-    handleSliderHover(event) {
-        if (!animation.paused) {
-            animation.pause();
-            setInterval(() => {
-                const randomWeight = Math.random() * (200 - 35) + 35;
-            }, 0);
-        } else {
-        }
-    }
-
     handleSliderChange(value) {
-        // console.log("sliderValue", value);
-        if (animation.paused) {
-            this.typeTesterInputRef.current.style.fontVariationSettings =
-                "'move' " + value;
-            this.sliderRefValue.current = value;
-            this.setState((prevState) => {
-                const newState = {
-                    ...prevState,
-                    inputStyle: {
-                        ...prevState.inputStyle,
-                        sliderValue: value,
-                        fontVariationSettings: "'move' " + value,
-                    },
-                };
-                return newState;
-            });
-        }
-    }
-
-    handleTypeTesterInputChange(event) {
-        this.setState((prevState) => {
-            return {
-                inputStyle: { ...prevState.inputStyle, fontSize: "14vw" },
-            };
-        });
-    }
-
-    handleFontWeightChange(event, value) {
-        const newWeight = event.target.value;
-        this.setState({ fontWeight: event.target.value });
-        // console.log("event", newWeight);
+        console.log("handleSliderChange", value);
+        animation.pause();
+        // if (animation.paused) {
+        this.typeTesterInputRef.current.style.fontVariationSettings =
+            "'move' " + value;
+        // this.setState((prevState) => {
+        //     const newState = {
+        //         ...prevState,
+        //         sliderValue: value,
+        //     };
+        //     // console.log("newState", newState);
+        //     return newState;
+        // });
+        this.setState({ sliderValue: value });
+        // }
     }
 
     animationStart(target, handleSliderChange) {
@@ -142,7 +105,7 @@ class TypeTester extends Component {
     }
 
     componentDidMount() {
-        // console.log("did mount", this.state);
+        console.log("did mount", this.state);
         if (this.state.animate) {
             this.setState({
                 inProgress: true,
@@ -157,19 +120,17 @@ class TypeTester extends Component {
                 });
             });
         }
-        {
-            /* TwoBackground(this.typeTesterRef); */
-        }
     }
 
     componentDidUpdate(prevProps, prevState) {
         if (prevState.sliderValue !== this.state.sliderValue) {
-            // console.log("updated");
+            // console.log("updated in typeTester", this.state);
         }
+        console.log("prevstate", prevState, "this.state", this.state);
     }
 
     render() {
-        // console.log("render", this.state);
+        console.log("render", this.state);
 
         const customStyles = {
             menu: (provided, state) => ({
@@ -260,13 +221,11 @@ class TypeTester extends Component {
                             </div>
                         </div>
                         <div className="absolute left-0 right-0 bottom-0 flex justify-between">
-                            <TypeTesterSelect />
+                            <TypeTesterSelect
+                                handleSliderChange={this.handleSliderChange}
+                            />
                             <div className="mt-auto pb-10 pr-20 w-5/6 flex flex-col ">
-                                <div
-                                    className="h-3 bg-purple border-2 border-solid border-black rounded-lg relative flex justify-center items-center overflow-hidden"
-                                    onMouseEnter={this.handleSliderHover}
-                                    onMouseLeave={this.handleSliderHover}
-                                >
+                                <div className="h-3 bg-purple border-2 border-solid border-black rounded-lg relative flex justify-center items-center overflow-hidden">
                                     <div className="w-1/4 bg-gray h-100% border-r-2 border-solid border-black flex justify-center items-center">
                                         <span className="uppercase font-mono text-1">
                                             Move Axis
@@ -274,7 +233,7 @@ class TypeTester extends Component {
                                     </div>
                                     <div className="w-3/4">
                                         <TypeTesterSlider
-                                            key={this.sliderRefValue}
+                                            key={this.state.sliderValue}
                                             sliderValue={this.state.sliderValue}
                                             handleSliderChange={
                                                 this.handleSliderChange
@@ -287,6 +246,9 @@ class TypeTester extends Component {
                     </Frame>
                 </Pattern>
                 <style jsx>{`
+                    .type-tester {
+                        transition: font-variation-settings 0.6s ease;
+                    }
                     .type-tester-alternate {
                         height: 2vw;
                         width: 2vw;

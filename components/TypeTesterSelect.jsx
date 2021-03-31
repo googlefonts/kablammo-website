@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const TypeTesterSelect = () => {
+const TypeTesterSelect = (props) => {
 	const [showOptions, setShowOptions] = useState(false);
 	const [options, setOptions] = useState([
 		{ title: "Option 1", sort: 1, active: true },
@@ -8,17 +8,42 @@ const TypeTesterSelect = () => {
 		{ title: "Option 3", sort: 3, active: false },
 		{ title: "Option 4", sort: 4, active: false },
 	]);
+
 	const handleOptionClick = (option) => {
 		setShowOptions(!showOptions);
 		const newOptions = options.map((newOption, index) => {
 			if (newOption.title === option.title) {
 				newOption.active = !option.active;
+				setSelect(newOption);
 			} else {
 				newOption.active = false;
 			}
 			return newOption;
 		});
 		setOptions(newOptions);
+	};
+
+	const setSelect = (option) => {
+		console.log(option);
+		switch (option.title) {
+			case "Option 1":
+				props.handleSliderChange(0);
+				console.log("setSelect", option.title);
+				break;
+			case "Option 2":
+				props.handleSliderChange(333);
+				console.log("setSelect", option.title);
+				break;
+			case "Option 3":
+				props.handleSliderChange(666);
+				console.log("setSelect", option.title);
+				break;
+			case "Option 4":
+				props.handleSliderChange(1000);
+				console.log("setSelect", option.title);
+				break;
+			default:
+		}
 	};
 
 	return (

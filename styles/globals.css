@@ -66,14 +66,17 @@ h6 {
 
 .animate-it-fast {
 	animation: animate-it 3s infinite alternate linear;
+	transition: font-variation-settings 0.3s ease;
 }
 
 .animate-it {
 	animation: animate-it 6s infinite alternate linear;
+	transition: font-variation-settings 0.3s ease;
 }
 
 .animate-it-slow {
 	animation: animate-it 10s infinite alternate linear;
+	transition: font-variation-settings 0.3s ease;
 }
 
 .font-axis-1 {

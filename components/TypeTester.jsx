@@ -118,9 +118,9 @@ class TypeTester extends Component {
                 loop: true,
                 update: (anim) => {
                     if (animation.paused === false) {
-                        handleSliderChange(
-                            anim.animations[0].currentValue.substring(7)
-                        );
+                        // handleSliderChange(
+                        //     anim.animations[0].currentValue.substring(7)
+                        // );
 
                         this.setState({
                             sliderValue: anim.animations[0].currentValue.substring(
@@ -128,7 +128,7 @@ class TypeTester extends Component {
                             ),
                         });
                         {
-                            /*}
+                            /*
                         this.sliderValue.current = parseFloat(
                             anim.animations[0].currentValue.substring(7)
                         );
@@ -205,7 +205,7 @@ class TypeTester extends Component {
                     >
                         <span
                             ref={this.typeTesterInputRef}
-                            className="type-tester text-12 m-auto -mt-12 w-3/4 h-100vh absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center block leading-none text-center text-pink focus:outline-none overflow-hidden self-center break-word"
+                            className="type-tester text-12 m-auto -mt-12 w-3/4 h-100vh absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center block leading-none text-center text-pink focus:outline-none overflow-hidden self-center break-words"
                             contentEditable="true"
                             suppressContentEditableWarning={true}
                             spellCheck="false"

@@ -42,11 +42,13 @@ import TypeTester from "../components/TypeTester";
 import useVariableFont from "react-variable-fonts";
 import TimelineAnimations from "../components/TimelineAnimations";
 import IntersectBox from "../components/IntersectBox";
+import AnimateItBox from "../components/AnimateItBox";
 import Scene from "../components/Scene";
 import Pattern from "../components/Pattern";
 import TypeParticles from "../components/TypeParticles";
-import IntersectionObserver from "../components/IntersectionObserver";
 import Kablammo from "../components/Kablammo";
+import IntersectionWrapper from "../components/IntersectionWrapper";
+import useIntersectionObserver from "../util/useIntersectionObserver";
 
 const isBrowser = typeof window !== "undefined";
 
@@ -68,6 +70,7 @@ const fetchData = async (setDocData) => {
     setDocData(response.results[0]);
   }
 };
+
 const setTwo = () => {
   // Make an instance of two and place it on the page.
   var elem = document.getElementById("draw-shapes");
@@ -93,10 +96,8 @@ const setTwo = () => {
 };
 
 function Index(props) {
-  const [doc, setDocData] = React.useState(null);
+  const [doc, setDocData] = useState(null);
   const grayRef = useRef(null);
-
-  useEffect(() => {}, []); // do this only once, on mount
 
   fetchData(setDocData);
 
@@ -147,20 +148,30 @@ function Index(props) {
             </Frame>
             {/* SMALL SCROLLING TEXT 1 */}
             <Pill className="bg-gray hover:bg-orange h-6 bg-clip-padding overflow-hidden">
-              <ScrollingText
-                className=""
-                href={`#`}
-                blank
-                specialRight
-                hideMobile
-                borderTop
-                large
-              >
-                <span className="animate-it text-4 text-black uppercase">
-                  👁 A 🌐 Dancing ☀ typeface ☮ BROUGHT ☼ TO 👁 YOU 🌐 BY ☀ VEkTOR
-                  ☮ Type ☼ Foundry &nbsp;
-                </span>
-              </ScrollingText>
+              <AnimateItBox>
+                {(ratio) => (
+                  <ScrollingText
+                    className=""
+                    href={`#`}
+                    blank
+                    specialRight
+                    hideMobile
+                    borderTop
+                    large
+                  >
+                    <span
+                      className={
+                        ratio > 0
+                          ? `animate-it`
+                          : `` + ` text-4 text-black uppercase`
+                      }
+                    >
+                      👁 A 🌐 Dancing ☀ typeface ☮ BROUGHT ☼ TO 👁 YOU 🌐 BY ☀
+                      VEkTOR ☮ Type ☼ Foundry &nbsp;
+                    </span>
+                  </ScrollingText>
+                )}
+              </AnimateItBox>
             </Pill>
             {/* TYPE TESTER 1 */}
             <TypeTester />

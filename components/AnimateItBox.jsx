@@ -9,19 +9,19 @@ import React, {
 import useIntersect from "../util/useIntersect";
 
 const buildThresholdArray = () => Array.from(Array(100).keys(), (i) => i / 100);
-const { format } = new Intl.NumberFormat("en-US", { maximumFractionDigits: 2 });
 
-const IntersectBox = (props) => {
+const AnimateItBox = (props) => {
   const [ref, entry] = useIntersect({
     threshold: buildThresholdArray(),
   });
-  // console.log("ref", ref, "entry", entry);
+
   console.log("intersectionRatio", entry.intersectionRatio);
+
   return (
-    <section {...props} ref={ref} ratio={entry.intersectionRatio}>
+    <React.Fragment {...props} ref={ref} ratio={entry.intersectionRatio}>
       {props.children}
-    </section>
+    </React.Fragment>
   );
 };
 
-export default IntersectBox;
+export default AnimateItBox;

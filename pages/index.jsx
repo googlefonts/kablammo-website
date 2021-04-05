@@ -134,20 +134,20 @@ function Index(props) {
             <script async defer src=""></script>
           </Head>
           <Layout>
-            <Frame className={`h-100vh`}>
+            <Frame className={`h-100vh flex justify-between flex-col`}>
               {/* SCENE */}
               {isBrowser && <Scene />}
               {/* NAV */}
               <Nav />
               {/* LANDING */}
 
-              <Frame
+              <Pill
                 className={`bg-purple border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden`}
               >
                 <Kablammo />
-              </Frame>
+              </Pill>
               {/* SMALL SCROLLING TEXT 1 */}
-              <Pill className="hvr-wobble-top hvr-shutter-in-horizontal bg-gray hover:bg-yellow h-6 bg-clip-padding overflow-hidden">
+              <Pill className="hvr-wobble-top hvr-shutter-in-horizontal bg-gray hover:bg-yellow h-5 bg-clip-padding overflow-hidden">
                 <ScrollingText
                   className=""
                   href={`#`}
@@ -157,7 +157,7 @@ function Index(props) {
                   borderTop
                   large
                 >
-                  <span className={`animate-it text-4 text-black uppercase`}>
+                  <span className={`animate-it text-3 text-black uppercase`}>
                     👁 A 🌐 Dancing ☀ typeface ☮ BROUGHT ☼ TO 👁 YOU 🌐 BY ☀
                     VEkTOR ☮ Type ☼ Foundry &nbsp;
                   </span>

@@ -37,7 +37,7 @@ const Kablammo = (props) => {
 			>
 				<h1
 					ref={kablammoEl}
-					className={`relative text-40 leading-tight text-lime -mt-32`}
+					className={`relative text-40 leading-tight text-lime -mt-48`}
 				>
 					<span className={`scale-90%`}></span>
 					<span className={`absolute inset-0 text-pink`}></span>

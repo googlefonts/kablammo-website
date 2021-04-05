@@ -185,7 +185,7 @@ class TypeTester extends Component {
                                         } hvr-sink type-tester-alternate grid place-items-center mr-2 font-display uppercase`}
                                         onClick={(e) => this.handleBgClick(1)}
                                     >
-                                        
+                                        
                                     </a>
                                     <a
                                         className={`bg-${
@@ -195,7 +195,7 @@ class TypeTester extends Component {
                                         } hvr-sink type-tester-alternate grid place-items-center mr-2 font-display uppercase`}
                                         onClick={(e) => this.handleBgClick(2)}
                                     >
-                                        
+                                        
                                     </a>
                                     <a
                                         className={`bg-${
@@ -205,7 +205,7 @@ class TypeTester extends Component {
                                         } hvr-sink type-tester-alternate grid place-items-center font-display uppercase`}
                                         onClick={(e) => this.handleBgClick(3)}
                                     >
-                                        
+                                        
                                     </a>
                                 </div>{" "}
                             </div>

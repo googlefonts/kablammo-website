@@ -18,7 +18,7 @@ const Nav = (props) => {
 	useEffect(() => {}, []);
 	const handleInvert = (time) => {
 		document.body.style.filter =
-			time === "day" ? "" : "invert(1) hue-rotate(120deg)";
+			time === "day" ? "" : "invert(0.9) hue-rotate(120deg)";
 	};
 	return (
 		<div className={`nav flex flex-col xl:flex-row`}>
@@ -37,15 +37,15 @@ const Nav = (props) => {
 			<div className={`w-100% xl:w-20% flex justify-center`}>
 				<div
 					onClick={() => handleInvert("day")}
-					className={`hvr-shrink cursor-pointer w-50% h-16 xl:h-6 border-2 border-solid border-black text-black bg-pink rounded-lg text-center flex justify-center font-body items-center`}
+					className={`hvr-shrink cursor-pointer w-50% h-5 border-2 border-solid border-black text-black bg-pink rounded-lg text-center flex justify-center font-body items-center`}
 				>
-					<span className="font-display uppercase xl:text-4">☀</span>
+					<span className="font-display uppercase text-3">☀</span>
 				</div>
 				<div
 					onClick={() => handleInvert("night")}
-					className={`hvr-shrink cursor-pointer w-50% h-16 xl:h-6 border-2 border-solid border-black text-black bg-gray rounded-lg text-center flex justify-center font-body items-center`}
+					className={`hvr-shrink cursor-pointer w-50% h-5 border-2 border-solid border-black text-black bg-gray rounded-lg text-center flex justify-center font-body items-center`}
 				>
-					<span className="font-display uppercase xl:text-4">☾</span>
+					<span className="font-display uppercase text-3">☾</span>
 				</div>
 			</div>
 			<style jsx>{`

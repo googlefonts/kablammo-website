@@ -1,8 +1,13 @@
+import React, { useState } from "react";
 import Frame from "../components/Frame";
 import Pill from "../components/Pill";
 import ScrollingText from "../components/ScrollingText";
 
 const SlotMachine = (props) => {
+  const [hover, setHover] = useState(false);
+  const handleMouseEnter = () => {
+    setHover(!hover);
+  };
   return (
     <Frame
       className={`relative bg-black border-2 border-solid border-black bg-clip-padding overflow-hidden h-100vh flex justify-between flex-col`}
@@ -25,16 +30,36 @@ const SlotMachine = (props) => {
       <Frame
         className={`relative bg-black border-2 border-solid border-black bg-clip-padding overflow-hidden h-100% grid grid-cols-2 grid-rows-2`}
       >
-        <Pill className="bg-green hover:bg-pink h-100% bg-clip-padding overflow-hidden">
+        <Pill
+          onMouseEnter={handleMouseEnter}
+          className={`${
+            hover && `animate-it`
+          } bg-green hover:bg-pink h-100% bg-clip-padding overflow-hidden`}
+        >
           <span className="text-24 -mt-10 text-orange uppercase">👀</span>
         </Pill>
-        <Pill className="bg-lime hover:bg-pink h-100% bg-clip-padding overflow-hidden">
+        <Pill
+          onMouseEnter={handleMouseEnter}
+          className={`${
+            hover && `animate-it`
+          } bg-lime hover:bg-pink h-100% bg-clip-padding overflow-hidden`}
+        >
           <span className="text-24 -mt-10 text-blue  uppercase">👁</span>
         </Pill>
-        <Pill className="bg-yellow hover:bg-gray h-100% bg-clip-padding overflow-hidden">
+        <Pill
+          onMouseEnter={handleMouseEnter}
+          className={`${
+            hover && `animate-it`
+          } bg-yellow hover:bg-gray h-100% bg-clip-padding overflow-hidden`}
+        >
           <span className="text-24 -mt-10 text-purple uppercase"></span>
         </Pill>
-        <Pill className="bg-blue hover:bg-orange h-100% bg-clip-padding overflow-hidden">
+        <Pill
+          onMouseEnter={handleMouseEnter}
+          className={`${
+            hover && `animate-it`
+          } bg-blue hover:bg-orange h-100% bg-clip-padding overflow-hidden`}
+        >
           <span className="text-24 -mt-10 text-yellow uppercase">👄</span>
         </Pill>
       </Frame>

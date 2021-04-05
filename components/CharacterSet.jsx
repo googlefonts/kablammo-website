@@ -10,6 +10,7 @@ import React, {
 import Link from "next/link";
 const isBrowser = typeof window !== "undefined";
 import Packery from "packery";
+import Isotope from "isotope-layout";
 import Pill from "./Pill";
 import CharacterSetItem from "./CharacterSetItem";
 import CharacterSetFilters from "./CharacterSetFilters";
@@ -107,6 +108,16 @@ const CharacterSet = (props) => {
 				})
 			);
 	}, [gridRef]);
+
+	useEffect(() => {
+		var grid = gridRef !== null ? document.querySelector(".grid") : null;
+		var iso = new Isotope(grid, {
+			itemSelector: ".grid-item",
+			masonry: {
+				columnWidth: 200,
+			},
+		});
+	});
 
 	function handleClick(event) {
 		// only .grid-item-content clicks

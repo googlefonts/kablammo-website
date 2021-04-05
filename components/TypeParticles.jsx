@@ -41,7 +41,7 @@ const TypeParticles = (props) => {
 				<TypeParticlesText className={``}>bloop</TypeParticlesText>{" "}
 				<TypeParticlesText className={``}>AROUND.</TypeParticlesText>
 			</div>
-			{/*}
+
 			<div className="hvr-grow-rotate animate-it-fast text-orange absolute top-6 left-5 text-20 leading-tight pointer-events-none">
 				💩
 			</div>
@@ -59,7 +59,7 @@ const TypeParticles = (props) => {
 			</div>
 			<div className="hvr-grow-rotate animate-it-fast text-blue absolute top-20 left-70 text-20 leading-tight pointer-events-none">
 				🕒
-			</div>*/}
+			</div>
 			<style jsx>{`
 				.type-particles {
 					padding: 25px 10vw 0;

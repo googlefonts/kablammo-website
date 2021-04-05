@@ -201,7 +201,7 @@ function Index(props) {
             <SlotMachine />
             {/* SMALL SCROLLING TEXT PILL 2 */}
             {/* BIG SROLLING TEXT 1 */}
-            <Pill className="bg-gray hover:bg-orange h-6 bg-clip-padding overflow-hidden">
+            <Pill className="hvr-wobble-top hvr-shutter-in-horizontal bg-gray hover:bg-orange h-6 bg-clip-padding overflow-hidden">
               <ScrollingText
                 className=""
                 href={`#`}
@@ -235,7 +235,7 @@ function Index(props) {
               </ScrollingText>
             </Pill>
             {/* BIG SROLLING TEXT 2 */}
-            <Pill className="bg-pink hover:bg-green h-30 bg-clip-padding overflow-hidden">
+            <Pill className="hvr-wobble-top hvr-shutter-in-horizontal bg-pink hover:bg-green h-30 bg-clip-padding overflow-hidden">
               <ScrollingText
                 className=""
                 href={`#`}

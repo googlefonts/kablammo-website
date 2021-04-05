@@ -50,7 +50,7 @@ const TypeParticlesText = (props) => {
 			<style jsx>{`
 				.grow {
 					display: inline-block;
-					transition: transform 600ms;
+					transition: transform 250ms;
 				}
 				.grow:hover {
 					transform: scale(1.5);

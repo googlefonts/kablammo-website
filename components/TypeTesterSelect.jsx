@@ -26,16 +26,16 @@ const TypeTesterSelect = (props) => {
 	const setSelect = (option) => {
 		console.log(option);
 		switch (option.title) {
-			case "Option 1":
+			case "Axis A":
 				props.handleSliderChange(null, 1);
 				break;
-			case "Option 2":
+			case "Axis B":
 				props.handleSliderChange(null, 333);
 				break;
-			case "Option 3":
+			case "Axis C":
 				props.handleSliderChange(null, 666);
 				break;
-			case "Option 4":
+			case "Axis D":
 				props.handleSliderChange(null, 1000);
 				break;
 			default:

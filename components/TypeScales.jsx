@@ -22,7 +22,7 @@ const TypeScales = () => {
 								Move Axis
 							</span>
 							<span className="uppercase font-mono text-1 bg-purple rounded-full pt-1 px-4">
-								Option 1
+								Axis A
 							</span>
 						</div>
 						<div className="pt-10 pr-20 flex flex-col">
@@ -56,7 +56,7 @@ const TypeScales = () => {
 								Move Axis
 							</span>
 							<span className="uppercase font-mono text-1 bg-blue rounded-full pt-1 px-4">
-								Option 2
+								Axis B
 							</span>
 						</div>
 						<div className="pt-10 pr-20 flex flex-col">
@@ -90,7 +90,7 @@ const TypeScales = () => {
 								Move Axis
 							</span>
 							<span className="uppercase font-mono text-1 bg-lime rounded-full pt-1 px-4">
-								Option 3
+								Axis C
 							</span>
 						</div>
 						<div className="pt-8 pr-20 flex flex-col">
@@ -124,7 +124,7 @@ const TypeScales = () => {
 								Move Axis
 							</span>
 							<span className="uppercase font-mono text-1 bg-orange rounded-full pt-1 px-4">
-								Option 4
+								Axis D
 							</span>
 						</div>
 						<div className="pt-6 pr-20 flex flex-col">

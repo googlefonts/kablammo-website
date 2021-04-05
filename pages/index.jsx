@@ -142,14 +142,13 @@ function Index(props) {
               {/* LANDING */}
 
               <Pill
-                className={`bg-purple border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden`}
+                className={`bg-purple border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden h-100%`}
               >
                 <Kablammo />
               </Pill>
               {/* SMALL SCROLLING TEXT 1 */}
               <Pill className="hvr-wobble-top hvr-shutter-in-horizontal bg-gray hover:bg-yellow h-5 bg-clip-padding overflow-hidden">
                 <ScrollingText
-                  className=""
                   href={`#`}
                   blank
                   specialRight
@@ -172,8 +171,7 @@ function Index(props) {
             {/* SMALL SCROLLING TEXT 1 */}
             <Pill className="hvr-wobble-top hvr-shutter-out-horizontal bg-lime hover:bg-green h-6 bg-clip-padding overflow-hidden">
               <ScrollingText
-                className=""
-                href={`#`}
+                className="cursor-pointer"
                 blank
                 specialRight
                 hideMobile
@@ -181,7 +179,7 @@ function Index(props) {
                 large
                 right
               >
-                <span className="animate-it-fast text-4 line-height-4 text-blue uppercase">
+                <span className="animate-it-fast text-6 leading-none inline-block -mt-5 text-blue uppercase">
                   &#xE006;&nbsp;&#xE006;&nbsp;&#xE006;&nbsp;&#xE006;&nbsp;&#xE006;&nbsp;&#xE006;&nbsp;&#xE006;&nbsp;&#xE006;&nbsp;
                 </span>
               </ScrollingText>

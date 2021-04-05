@@ -30,7 +30,7 @@ const ScrollingText = (props) => {
 					<div className="scrolling-text-inner">
 						<a
 							className={props.specialLeft ? `small-text` : ``}
-							href={props.href}
+							href={props.href && props.href}
 							target={props.blank ? "_blank" : "_self"}
 						>
 							{child}&nbsp;{child}&nbsp;{child}&nbsp;{child}&nbsp;

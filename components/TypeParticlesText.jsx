@@ -42,11 +42,20 @@ const TypeParticlesText = (props) => {
 			onMouseLeave={handleMouseLeave}
 			onClick={handleHueRotate}
 			style={spanStyle}
-			className={`${props.className} ${hover &&
-				`animate-it`} hvr-grow cursor-pointer`}
+			className={`${props.className} ${
+				hover && `animate-it`
+			} cursor-pointer grow`}
 		>
 			{props.children}
-			<style jsx>{``}</style>
+			<style jsx>{`
+				.grow {
+					display: inline-block;
+					transition: transform 600ms;
+				}
+				.grow:hover {
+					transform: scale(1.5);
+				}
+			`}</style>
 		</span>
 	);
 };

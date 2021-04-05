@@ -15,6 +15,7 @@ body {
 	@apply font-display;
 	@apply text-black;
 	overflow-x: hidden;
+	transition: filter 600ms;
 }
 
 h1 {

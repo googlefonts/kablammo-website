@@ -3,10 +3,10 @@ import React, { useState } from "react";
 const TypeTesterSelect = (props) => {
 	const [showOptions, setShowOptions] = useState(false);
 	const [options, setOptions] = useState([
-		{ title: "Option 1", sort: 1, active: true },
-		{ title: "Option 2", sort: 2, active: false },
-		{ title: "Option 3", sort: 3, active: false },
-		{ title: "Option 4", sort: 4, active: false },
+		{ title: "Axis A", sort: 1, active: true },
+		{ title: "Axis B", sort: 2, active: false },
+		{ title: "Axis C", sort: 3, active: false },
+		{ title: "Axis D", sort: 4, active: false },
 	]);
 
 	const handleOptionClick = (option) => {

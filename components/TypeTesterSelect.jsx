@@ -27,27 +27,26 @@ const TypeTesterSelect = (props) => {
 		console.log(option);
 		switch (option.title) {
 			case "Option 1":
-				props.handleSliderChange(0);
-				console.log("setSelect", option.title);
+				props.handleSliderChange(null, 1);
 				break;
 			case "Option 2":
-				props.handleSliderChange(333);
-				console.log("setSelect", option.title);
+				props.handleSliderChange(null, 333);
 				break;
 			case "Option 3":
-				props.handleSliderChange(666);
-				console.log("setSelect", option.title);
+				props.handleSliderChange(null, 666);
 				break;
 			case "Option 4":
-				props.handleSliderChange(1000);
-				console.log("setSelect", option.title);
+				props.handleSliderChange(null, 1000);
 				break;
 			default:
 		}
 	};
 
 	return (
-		<div className="pb-10 pl-20 pr-2 w-1/6 flex flex-col">
+		<div
+			className="pb-10 pl-20 pr-2 w-1/6 flex flex-col"
+			onClick={props.onClick}
+		>
 			<div className="select">
 				<ol
 					className={`select-options z-99 ${

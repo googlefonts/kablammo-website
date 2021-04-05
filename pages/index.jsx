@@ -37,6 +37,7 @@ import ReactGA from "react-ga";
 import dynamic from "next/dynamic";
 import Pill from "../components/Pill";
 import TypeTester from "../components/TypeTester";
+import TypeTester3 from "../components/TypeTester3";
 import useVariableFont from "react-variable-fonts";
 import TimelineAnimations from "../components/TimelineAnimations";
 import IntersectBox from "../components/IntersectBox";
@@ -46,6 +47,7 @@ import Pattern from "../components/Pattern";
 import TypeParticles from "../components/TypeParticles";
 import Kablammo from "../components/Kablammo";
 import TypeScales from "../components/TypeScales";
+import SlotMachine from "../components/SlotMachine";
 import IntersectionWrapper from "../components/IntersectionWrapper";
 import useIntersectionObserver from "../util/useIntersectionObserver";
 
@@ -140,28 +142,29 @@ function Index(props) {
               {/* LANDING */}
 
               <Frame
-                className={`h-landing bg-purple border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden`}
+                className={`bg-purple border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden`}
               >
                 <Kablammo />
               </Frame>
+              {/* SMALL SCROLLING TEXT 1 */}
+              <Pill className="hvr-wobble-top hvr-shutter-in-horizontal bg-gray hover:bg-yellow h-6 bg-clip-padding overflow-hidden">
+                <ScrollingText
+                  className=""
+                  href={`#`}
+                  blank
+                  specialRight
+                  hideMobile
+                  borderTop
+                  large
+                >
+                  <span className={`animate-it text-4 text-black uppercase`}>
+                    👁 A 🌐 Dancing ☀ typeface ☮ BROUGHT ☼ TO 👁 YOU 🌐 BY ☀
+                    VEkTOR ☮ Type ☼ Foundry &nbsp;
+                  </span>
+                </ScrollingText>
+              </Pill>
             </Frame>
-            {/* SMALL SCROLLING TEXT 1 */}
-            <Pill className="hvr-wobble-top hvr-shutter-in-horizontal bg-gray hover:bg-yellow h-6 bg-clip-padding overflow-hidden">
-              <ScrollingText
-                className=""
-                href={`#`}
-                blank
-                specialRight
-                hideMobile
-                borderTop
-                large
-              >
-                <span className={`animate-it text-4 text-black uppercase`}>
-                  👁 A 🌐 Dancing ☀ typeface ☮ BROUGHT ☼ TO 👁 YOU 🌐 BY ☀ VEkTOR
-                  ☮ Type ☼ Foundry &nbsp;
-                </span>
-              </ScrollingText>
-            </Pill>
+
             {/* TYPE TESTER 1 */}
             <TypeTester />
             {/* TYPE PARTICLES */}
@@ -197,96 +200,7 @@ function Index(props) {
               <h3 className="text-center text-yellow mt-6">Character Set</h3>
               <CharacterSetNoSSR />
             </div>
-            {/* SLOT MACHINE */}
-            <Frame
-              className={`relative bg-black border-2 border-solid border-black bg-clip-padding overflow-hidden h-100vh flex justify-between flex-col`}
-            >
-              <Pill className="bg-pink hover:bg-orange h-6 bg-clip-padding overflow-hidden">
-                <ScrollingText
-                  className=""
-                  href={`#`}
-                  blank
-                  specialRight
-                  hideMobile
-                  borderTop
-                  large
-                >
-                  <span className="text-4 text-lime uppercase">
-                    &#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;
-                  </span>
-                </ScrollingText>
-              </Pill>
-              <Frame
-                className={`relative bg-black border-2 border-solid border-black bg-clip-padding overflow-hidden h-100% grid grid-cols-2 grid-rows-2`}
-              >
-                <Pill className="bg-green hover:bg-pink h-100% bg-clip-padding overflow-hidden">
-                  <span className="text-24 -mt-10 text-orange uppercase">
-                    👀
-                  </span>
-                </Pill>
-                <Pill className="bg-lime hover:bg-pink h-100% bg-clip-padding overflow-hidden">
-                  <span className="text-24 -mt-10 text-blue  uppercase">👁</span>
-                </Pill>
-                <Pill className="bg-yellow hover:bg-gray h-100% bg-clip-padding overflow-hidden">
-                  <span className="text-24 -mt-10 text-purple uppercase">
-                    
-                  </span>
-                </Pill>
-                <Pill className="bg-blue hover:bg-orange h-100% bg-clip-padding overflow-hidden">
-                  <span className="text-24 -mt-10 text-yellow uppercase">
-                    👄
-                  </span>
-                </Pill>
-              </Frame>
-              <Pill className="bg-purple hover:bg-orange h-6 bg-clip-padding overflow-hidden">
-                <ScrollingText
-                  className=""
-                  href={`#`}
-                  blank
-                  specialRight
-                  hideMobile
-                  borderTop
-                  large
-                  right
-                >
-                  <span className="text-4 text-green uppercase">
-                    &#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;
-                  </span>
-                </ScrollingText>
-              </Pill>
-              {/* <Pill className="right-vertical absolute right-6 bottom-0 bg-blue hover:bg-yellow h-6 bg-clip-padding overflow-hidden">
-                <ScrollingText
-                  className=""
-                  href={`#`}
-                  blank
-                  specialRight
-                  hideMobile
-                  borderTop
-                  large
-                  right
-                >
-                  <span className="text-4 text-yellow uppercase">
-                    &#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;
-                  </span>
-                </ScrollingText>
-              </Pill>
-              <Pill className="left-vertical absolute left-0 bg-orange hover:bg-purple h-6 bg-clip-padding overflow-hidden">
-                <ScrollingText
-                  className=""
-                  href={`#`}
-                  blank
-                  specialRight
-                  hideMobile
-                  borderTop
-                  large
-                  right
-                >
-                  <span className="text-4 text-purple uppercase">
-                    &#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;
-                  </span>
-                </ScrollingText>
-              </Pill> */}
-            </Frame>
+            <SlotMachine />
             {/* SMALL SCROLLING TEXT PILL 2 */}
             {/* BIG SROLLING TEXT 1 */}
             <Pill className="bg-gray hover:bg-orange h-6 bg-clip-padding overflow-hidden">

@@ -4,55 +4,55 @@ import Frame from "../components/Frame";
 import AnimationButton from "../components/AnimationButton";
 import InputRange from "react-input-range";
 
+// Auxiliary method. Retrieves and sanitises the value of a custom property.
+var getVariable = function (styles, propertyName) {
+  return String(styles.getPropertyValue(propertyName)).trim();
+};
+
+// Auxiliary method. Sets the value of a custom property at the document level.
+var setDocumentVariable = function (propertyName, value) {
+  document.documentElement.style.setProperty(propertyName, value);
+};
+
 class TypeTesterSlider extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: props.sliderValue };
-    // console.log("constructor", this.props);
-    this.handleSliderChange = this.handleSliderChange.bind(this);
+    this.setDocumentListener = this.setDocumentListener.bind(this);
   }
-  handleSliderChange(event) {
-    this.props.handleSliderChange(event.target.value);
-    const value = event.target.value;
-    this.setState({ value });
+  componentDidUpdate(prevProps, prevState) {}
+  setDocumentListener() {
+    document.documentElement.addEventListener("change", (event) => {
+      var styles = getComputedStyle(document.documentElement);
+      this.props.inputRef.current.value = getVariable(
+        styles,
+        "--typeTesterValue"
+      );
+    });
   }
   componentDidMount() {
-    // console.log("componentdidmount", this.props);
-    // console.log("updated", this.props.sliderValue);
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    console.log(
-      "prevProps",
-      prevProps,
-      "prevState",
-      prevState,
-      "this.props",
-      this.props
+    // console.log(this.inputRef);
+    // this.inputRef.current.addEventListener("input", function (e) {
+    //   setDocumentVariable("--typeTesterValue", this.inputRef.current.value);
+    // });
+    this.setDocumentListener();
+    var styles = getComputedStyle(document.documentElement);
+    this.props.inputRef.current.value = getVariable(
+      styles,
+      "--typeTesterValue"
     );
-    if (prevProps.sliderValue !== this.props.sliderValue) {
-      console.log("hello");
-    }
-
-    if (prevState.sliderValue !== this.state.value) {
-      console.log("updated in componentDidUpdate", this.state);
-    }
-    if (prevProps.sliderValue !== this.state.value) {
-      console.log("updated in componentDidUpdate", this.state);
-    }
   }
 
   render() {
-    // console.log("updated slider value", this.props.sliderValue);
     return (
-      <form className="form">
+      <form className="form cursor-pointer">
         <input
+          className="cursor-pointer"
+          ref={this.props.inputRef}
           type="range"
           min="0"
           max="1000"
-          value={this.state.value}
-          onChange={this.handleSliderChange}
-          step="1"
+          onChange={this.props.handleSliderChange}
+          step={1}
         />
         <style jsx global>{`
           /* Slider.css */
@@ -61,12 +61,31 @@ class TypeTesterSlider extends React.Component {
             // margin-bottom: 40px;
             transition: none;
           }
-
           .slider label {
             display: none;
             transition: none;
           }
-
+          input[type="range"] {
+            appearance: none;
+            outline: none;
+            width: 100%;
+            background: transparent;
+          }
+          input[type="range"]::-webkit-slider-thumb {
+            outline: none;
+            appearance: none;
+            height: 2vw;
+            width: 2vw;
+            border: 0;
+            border-radius: 100%;
+            background: #ffc000;
+            cursor: pointer;
+            margin-top: 0vw;
+            transition: none;
+          }
+          input[type="range"]::-webkit-slider-thumb:hover {
+            background: #f97dda;
+          }
           .input-range__slider {
             appearance: none;
             height: 2vw;
@@ -75,7 +94,7 @@ class TypeTesterSlider extends React.Component {
             border-radius: 100%;
             background: #ffc000;
             cursor: pointer;
-            margin-top: -1vw;
+            margin-top: 1vw;
             transition: none;
           }
           .input-range__slider:active {

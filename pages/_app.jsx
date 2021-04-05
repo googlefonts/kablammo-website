@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "react-input-range/lib/css/index.css";
 import "../styles/reset.css";
+import "../styles/hover-min.css";
 import "../styles/globals.css";
 import "../styles/slider.css";
 const isBrowser = typeof window !== "undefined";

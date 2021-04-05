@@ -9,10 +9,31 @@ import Pattern from "../components/Pattern";
 
 let animation = null;
 
-const options = [
-    { value: "chocolate", label: "Chocolate" },
-    { value: "strawberry", label: "Strawberry" },
-    { value: "vanilla", label: "Vanilla" },
+const bgOptions = [
+    {
+        index: 0,
+        image: "/images/bg/lime-circles.svg",
+        bgColor: "lime",
+        textColor: "pink",
+    },
+    {
+        index: 1,
+        image: "/images/bg/orange-worms.svg",
+        bgColor: "orange",
+        textColor: "green",
+    },
+    {
+        index: 2,
+        image: "/images/bg/pink-pattern.svg",
+        bgColor: "pink",
+        textColor: "lime",
+    },
+    {
+        index: 3,
+        image: "/images/bg/purple-squiggly.svg",
+        bgColor: "purple",
+        textColor: "yellow",
+    },
 ];
 
 const clearCurrentAnimation = (currentAnimation) => {
@@ -27,28 +48,17 @@ class TypeTester extends Component {
         super(props);
         this.state = {
             animate: true,
-            inProgress: false,
-            sliderValue: 500,
+            slider: { value: 500 },
+            activeBg: bgOptions[0],
         };
 
         this.typeTesterRef = React.createRef();
+        this.sliderRefValue = React.createRef(500);
         this.typeTesterInputRef = React.createRef();
-        this.sliderRef = React.createRef();
-        this.sliderRefValue = React.createRef();
         this.sliderUpdating = React.createRef();
-
         this.handleSliderChange = this.handleSliderChange.bind(this);
-
-        this.setOrReset = this.setOrReset.bind(this);
         this.animationStart = this.animationStart.bind(this);
-    }
-
-    setOrReset() {
-        if (!this.state.inProgress) {
-            this.setState({
-                animate: !this.state.animate,
-            });
-        }
+        this.sliderRefValue.current = 500;
     }
 
     handleSliderChange(value) {
@@ -60,77 +70,76 @@ class TypeTester extends Component {
         // this.setState((prevState) => {
         //     const newState = {
         //         ...prevState,
-        //         sliderValue: value,
+        //         slider.value: value,
         //     };
         //     // console.log("newState", newState);
         //     return newState;
         // });
-        this.setState({ sliderValue: value });
+        this.setState({ slider: { value: value } });
         // }
     }
 
-    animationStart(target, handleSliderChange) {
-        return new Promise((resolve, reject) => {
-            clearCurrentAnimation(animation);
-            animation = Anime({
-                targets: target.current,
-                fontVariationSettings: ["'move' 0", "'move' 1000"],
-                easing: "linear",
-                direction: "alternate",
-                duration: 10000,
-                loop: true,
-                update: (anim) => {
-                    if (animation.paused === false) {
-                        // handleSliderChange(
-                        //     anim.animations[0].currentValue.substring(7)
-                        // );
+    handleBgClick(index, e) {
+        event.preventDefault();
+        this.setState({ activeBg: bgOptions[index] });
+    }
 
-                        this.setState({
-                            sliderValue: anim.animations[0].currentValue.substring(
-                                7
-                            ),
-                        });
-                        {
-                            /*
-                        this.sliderValue.current = parseFloat(
-                            anim.animations[0].currentValue.substring(7)
-                        );
-                        this.sliderRef.current.value = sliderValue.current;
-                        console.log("hey", this.sliderValue.current);*/
-                        }
-                    }
-                },
-            });
+    animationStart(target, handleSliderChange) {
+        clearCurrentAnimation(animation);
+        animation = Anime({
+            targets: target.current,
+            fontVariationSettings: ["'move' 0", "'move' 1000"],
+            easing: "linear",
+            direction: "alternate",
+            duration: 10000,
+            loop: true,
+            update: (anim) => {
+                if (animation.paused === false) {
+                    console.log("updating", this.state.slider.value);
+                    // handleSliderChange(
+                    //     anim.animations[0].currentValue.substring(7)
+                    // );
+                    const sliderValueInt = parseInt(
+                        anim.animations[0].currentValue.substring(7)
+                    );
+                    this.sliderRefValue.current = sliderValueInt;
+                    console.log(
+                        "this.sliderrefvalue",
+                        this.sliderRefValue.current
+                    );
+                    // this.setState(
+                    //     {
+                    //         slider: { value: sliderValueInt },
+                    //     },
+                    //     () => {
+                    //         console.log(this.state.slider.value);
+                    //     }
+                    // );
+                }
+                return true;
+            },
         });
     }
 
     componentDidMount() {
-        console.log("did mount", this.state);
+        // console.log("did mount", this.state);
         if (this.state.animate) {
-            this.setState({
-                inProgress: true,
-            });
-            this.animationStart(
-                this.typeTesterInputRef,
-                this.handleSliderChange
-            ).then(() => {
-                // console.log("Time to enter...");
-                this.setState({
-                    inProgress: false,
-                });
-            });
+            // this.animationStart(
+            //     this.typeTesterInputRef,
+            //     this.handleSliderChange
+            // );
         }
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if (prevState.sliderValue !== this.state.sliderValue) {
-            // console.log("updated in typeTester", this.state);
+        if (prevState.slider.value !== this.state.slider.value) {
+            console.log("updated in typeTester", this.state);
         }
-        console.log("prevstate", prevState, "this.state", this.state);
+        // console.log("prevstate", prevState, "this.state", this.state);
     }
 
     render() {
-        console.log("render", this.state);
+        console.log("render", this.sliderRefValue);
 
         const customStyles = {
             menu: (provided, state) => ({
@@ -151,22 +160,24 @@ class TypeTester extends Component {
                 return { ...provided, opacity, transition };
             },
         };
-
+        // const uniqueKey = this.state.slider.value + this.state.activeBg.index;
+        // console.log("uniqueKey", uniqueKey);
         return (
             <div
                 ref={this.typeTesterRef}
-                className="h-100vh w-100% relative bg-lime border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden"
+                className={`bg-${this.state.activeBg.bgColor} h-100vh w-100% relative border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden`}
             >
                 <Pattern
+                    key={this.state.activeBg.index}
                     className="h-100% w-100% bg-cover grid place-items-center"
-                    bgImage="/images/bg/lime-circles.svg"
+                    bgImage={this.state.activeBg.image}
                 >
                     <Frame
                         className={`type-tester h-100vh absolute top-0 left-0 right-0 bottom-0 z-10`}
                     >
                         <span
                             ref={this.typeTesterInputRef}
-                            className="type-tester text-12 m-auto -mt-12 w-3/4 h-100vh absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center block leading-none text-center text-pink focus:outline-none overflow-hidden self-center break-words"
+                            className={`text-${this.state.activeBg.textColor} type-tester text-12 m-auto -mt-12 w-3/4 h-100vh absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center block leading-none text-center focus:outline-none overflow-hidden self-center break-words`}
                             contentEditable="true"
                             suppressContentEditableWarning={true}
                             spellCheck="false"
@@ -175,48 +186,68 @@ class TypeTester extends Component {
                             ⚠ VARIABLE FONT 🌼 BY VECTOR 😵
                         </span>
                         <div className="flex justify-between">
-                            <div className="pt-10 pl-20 text-1">
+                            <div className="pt-10 pl-20 z-50 text-1">
                                 <span className="uppercase font-mono text-1">
                                     Alternates
                                 </span>
                                 <div className="flex">
                                     <div
-                                        className={`type-tester-alternate grid place-items-center bg-yellow mr-2 font-mono uppercase`}
+                                        className={`hvr-sink type-tester-alternate grid place-items-center bg-yellow mr-2 font-mono uppercase`}
                                     >
                                         On
                                     </div>
                                     <div
-                                        className={`type-tester-alternate grid place-items-center bg-gray font-mono uppercase`}
+                                        className={`hvr-sink type-tester-alternate grid place-items-center bg-gray font-mono uppercase`}
                                     >
                                         Off
                                     </div>
                                 </div>
                             </div>
-                            <div className="pt-10 pr-20">
+                            <div className="pt-10 pr-20 z-50">
                                 <span className="uppercase font-mono text-1">
                                     Background
                                 </span>
                                 <div className="flex text-1">
-                                    <div
-                                        className={`type-tester-alternate grid place-items-center bg-yellow mr-2 font-display uppercase`}
+                                    <a
+                                        className={`bg-${
+                                            this.state.activeBg.index === 0
+                                                ? this.state.activeBg.textColor
+                                                : `gray`
+                                        } hvr-sink type-tester-alternate grid place-items-center mr-2 font-display uppercase`}
+                                        onClick={(e) => this.handleBgClick(0)}
                                     >
                                         
-                                    </div>
-                                    <div
-                                        className={`type-tester-alternate grid place-items-center bg-gray font-display uppercase`}
+                                    </a>
+                                    <a
+                                        className={`bg-${
+                                            this.state.activeBg.index === 1
+                                                ? this.state.activeBg.textColor
+                                                : `gray`
+                                        } hvr-sink type-tester-alternate grid place-items-center mr-2 font-display uppercase`}
+                                        onClick={(e) => this.handleBgClick(1)}
                                     >
                                         
-                                    </div>
-                                    <div
-                                        className={`type-tester-alternate grid place-items-center bg-gray font-display uppercase`}
+                                    </a>
+                                    <a
+                                        className={`bg-${
+                                            this.state.activeBg.index === 2
+                                                ? this.state.activeBg.textColor
+                                                : `gray`
+                                        } hvr-sink type-tester-alternate grid place-items-center mr-2 font-display uppercase`}
+                                        onClick={(e) => this.handleBgClick(2)}
                                     >
                                         
-                                    </div>
-                                    <div
-                                        className={`type-tester-alternate grid place-items-center bg-gray font-display uppercase`}
+                                    </a>
+                                    <a
+                                        className={`bg-${
+                                            this.state.activeBg.index === 3
+                                                ? this.state.activeBg.textColor
+                                                : `gray`
+                                        } hvr-sink type-tester-alternate grid place-items-center font-display uppercase`}
+                                        onClick={(e) => this.handleBgClick(3)}
                                     >
                                         
-                                    </div>
+                                    </a>
                                 </div>{" "}
                             </div>
                         </div>
@@ -232,20 +263,33 @@ class TypeTester extends Component {
                                         </span>
                                     </div>
                                     <div className="w-3/4">
-                                        <TypeTesterSlider
-                                            key={this.state.sliderValue}
-                                            sliderValue={this.state.sliderValue}
-                                            handleSliderChange={
-                                                this.handleSliderChange
-                                            }
-                                        />
+                                        <form className="form">
+                                            <InputRange
+                                                minValue={0}
+                                                maxValue={1000}
+                                                value={
+                                                    this.sliderRefValue.current
+                                                }
+                                                onChange={(value) => {
+                                                    this.setState({
+                                                        slider: {
+                                                            value: value,
+                                                        },
+                                                    });
+                                                    this.sliderRefValue.current = value;
+                                                }}
+                                                onChangeComplete={(value) => {
+                                                    console.log(value);
+                                                }}
+                                            />
+                                        </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </Frame>
                 </Pattern>
-                <style jsx>{`
+                <style global jsx>{`
                     .type-tester {
                         transition: font-variation-settings 0.6s ease;
                     }
@@ -266,6 +310,58 @@ class TypeTester extends Component {
                     }
                     .hide-options {
                         height: 0;
+                    }
+                    /* Slider.css */
+
+                    .slider {
+                        // margin-bottom: 40px;
+                        transition: none;
+                    }
+
+                    .slider label {
+                        display: none;
+                        transition: none;
+                    }
+
+                    .input-range__slider {
+                        appearance: none;
+                        height: 2vw;
+                        width: 2vw;
+                        border: 0;
+                        border-radius: 100%;
+                        background: #ffc000;
+                        cursor: pointer;
+                        margin-top: -1vw;
+                        transition: none;
+                    }
+                    .input-range__slider:active {
+                        transform: none;
+                    }
+                    .input-range__track {
+                        background: black;
+                        height: 2px;
+                        transition: none;
+                    }
+
+                    .input-range__track--active {
+                        display: none;
+                        transition: none;
+                    }
+
+                    .input-range__label--value .input-range__label-container {
+                        display: none;
+                        transition: none;
+                    }
+
+                    .input-range__label--min .input-range__label-container,
+                    .input-range__label--max .input-range__label-container {
+                        display: none;
+                        transition: none;
+                    }
+
+                    .input-range__label--max .input-range__label-container {
+                        display: none;
+                        transition: none;
                     }
                 `}</style>
             </div>

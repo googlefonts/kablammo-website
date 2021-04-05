@@ -148,30 +148,20 @@ function Index(props) {
             </Frame>
             {/* SMALL SCROLLING TEXT 1 */}
             <Pill className="bg-gray hover:bg-orange h-6 bg-clip-padding overflow-hidden">
-              <AnimateItBox>
-                {(ratio) => (
-                  <ScrollingText
-                    className=""
-                    href={`#`}
-                    blank
-                    specialRight
-                    hideMobile
-                    borderTop
-                    large
-                  >
-                    <span
-                      className={
-                        ratio > 0
-                          ? `animate-it`
-                          : `` + ` text-4 text-black uppercase`
-                      }
-                    >
-                      👁 A 🌐 Dancing ☀ typeface ☮ BROUGHT ☼ TO 👁 YOU 🌐 BY ☀
-                      VEkTOR ☮ Type ☼ Foundry &nbsp;
-                    </span>
-                  </ScrollingText>
-                )}
-              </AnimateItBox>
+              <ScrollingText
+                className=""
+                href={`#`}
+                blank
+                specialRight
+                hideMobile
+                borderTop
+                large
+              >
+                <span className={`animate-it text-4 text-black uppercase`}>
+                  👁 A 🌐 Dancing ☀ typeface ☮ BROUGHT ☼ TO 👁 YOU 🌐 BY ☀ VEkTOR
+                  ☮ Type ☼ Foundry &nbsp;
+                </span>
+              </ScrollingText>
             </Pill>
             {/* TYPE TESTER 1 */}
             <TypeTester />

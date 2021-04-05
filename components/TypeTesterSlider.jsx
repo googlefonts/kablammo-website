@@ -26,15 +26,15 @@ class TypeTesterSlider extends React.Component {
       this.props
     );
     if (prevProps.sliderValue !== this.props.sliderValue) {
-      // console.log("hello");
+      console.log("hello");
     }
 
-    // if (prevState.sliderValue !== this.state.value) {
-    //   console.log("updated in componentDidUpdate", this.state);
-    // }
-    // if (prevProps.sliderValue !== this.state.value) {
-    //   console.log("updated in componentDidUpdate", this.state);
-    // }
+    if (prevState.sliderValue !== this.state.value) {
+      console.log("updated in componentDidUpdate", this.state);
+    }
+    if (prevProps.sliderValue !== this.state.value) {
+      console.log("updated in componentDidUpdate", this.state);
+    }
   }
 
   render() {

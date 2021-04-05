@@ -1,7 +1,6 @@
 import React, { Component, Fragment, useState, useContext } from "react";
 
 const colors = [
-	"#E4E4E4",
 	"#E8F75C",
 	"#73B6E7",
 	"#9891E8",
@@ -15,11 +14,22 @@ const TypeParticlesText = (props) => {
 		color: "#e4e4e4",
 	});
 	const [clicked, setClicked] = useState(false);
+	const [hover, setHover] = useState(false);
+
+	const handleHueRotate = (e) => {
+		let randomNumber = Math.floor(Math.random() * 360) + 1;
+		document.body.style.filter = `hue-rotate(${randomNumber}deg)`;
+	};
 
 	const handleMouseEnter = (e) => {
+		setHover(true);
 		setSpanStyle({
 			color: colors[Math.floor(Math.random() * colors.length)],
 		});
+	};
+
+	const handleMouseLeave = (e) => {
+		setHover(false);
 	};
 
 	const handleClick = (e) => {
@@ -29,9 +39,11 @@ const TypeParticlesText = (props) => {
 	return (
 		<span
 			onMouseEnter={handleMouseEnter}
-			onClick={handleClick}
+			onMouseLeave={handleMouseLeave}
+			onClick={handleHueRotate}
 			style={spanStyle}
-			className={``}
+			className={`${props.className} ${hover &&
+				`animate-it`} hvr-grow cursor-pointer`}
 		>
 			{props.children}
 			<style jsx>{``}</style>

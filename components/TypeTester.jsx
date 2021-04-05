@@ -18,21 +18,21 @@ const bgOptions = [
     },
     {
         index: 1,
-        image: "/images/bg/orange-worms.svg",
-        bgColor: "orange",
-        textColor: "green",
-    },
-    {
-        index: 2,
         image: "/images/bg/pink-pattern.svg",
-        bgColor: "pink",
+        bgColor: "blue",
         textColor: "lime",
     },
     {
-        index: 3,
+        index: 2,
         image: "/images/bg/purple-squiggly.svg",
         bgColor: "purple",
         textColor: "yellow",
+    },
+    {
+        index: 3,
+        image: "/images/bg/orange-worms.svg",
+        bgColor: "green",
+        textColor: "gray",
     },
 ];
 
@@ -50,6 +50,8 @@ class TypeTester extends Component {
             animate: true,
             slider: { value: 500 },
             activeBg: bgOptions[0],
+            isActive: true,
+            seconds: 0,
         };
 
         this.typeTesterRef = React.createRef();
@@ -88,14 +90,13 @@ class TypeTester extends Component {
         clearCurrentAnimation(animation);
         animation = Anime({
             targets: target.current,
-            fontVariationSettings: ["'move' 0", "'move' 1000"],
+            fontVariationSettings: ["'move' 1", "'move' 1000"],
             easing: "linear",
             direction: "alternate",
             duration: 10000,
             loop: true,
             update: (anim) => {
                 if (animation.paused === false) {
-                    console.log("updating", this.state.slider.value);
                     // handleSliderChange(
                     //     anim.animations[0].currentValue.substring(7)
                     // );
@@ -128,6 +129,31 @@ class TypeTester extends Component {
             //     this.typeTesterInputRef,
             //     this.handleSliderChange
             // );
+            // let interval = null;
+            // if (this.state.isActive) {
+            //     interval = setInterval(() => {
+            //         this.setState((prevState) => {
+            //             let newSliderValue;
+            //             if (prevState.slider.value <= 1000) {
+            //                 newSliderValue = prevState.slider.value - 1;
+            //             }
+            //             if (prevState.slider.value >= 1000) {
+            //                 newSliderValue = prevState.slider.value + 1;
+            //             }
+            //             this.typeTesterInputRef.current.style.fontVariationSettings =
+            //                 "'move' " + newSliderValue;
+            //             return {
+            //                 ...prevState,
+            //                 slider: { value: newSliderValue },
+            //                 seconds: prevState.seconds + 0.1,
+            //             };
+            //         });
+            //     }, 100);
+            // } else if (!this.state.isActive && this.state.seconds !== 0) {
+            //     clearInterval(interval);
+            // }
+            // // console.log(seconds);
+            // return () => clearInterval(interval);
         }
     }
 
@@ -263,26 +289,15 @@ class TypeTester extends Component {
                                         </span>
                                     </div>
                                     <div className="w-3/4">
-                                        <form className="form">
-                                            <InputRange
-                                                minValue={0}
-                                                maxValue={1000}
-                                                value={
-                                                    this.sliderRefValue.current
-                                                }
-                                                onChange={(value) => {
-                                                    this.setState({
-                                                        slider: {
-                                                            value: value,
-                                                        },
-                                                    });
-                                                    this.sliderRefValue.current = value;
-                                                }}
-                                                onChangeComplete={(value) => {
-                                                    console.log(value);
-                                                }}
-                                            />
-                                        </form>
+                                        <TypeTesterSlider
+                                            key={this.state.slider.value}
+                                            sliderValue={
+                                                this.state.slider.value
+                                            }
+                                            handleSliderChange={
+                                                this.handleSliderChange
+                                            }
+                                        />
                                     </div>
                                 </div>
                             </div>
@@ -322,7 +337,22 @@ class TypeTester extends Component {
                         display: none;
                         transition: none;
                     }
-
+                    input[type="range"] {
+                        appearance: none;
+                        width: 100%;
+                        background: transparent;
+                    }
+                    input[type="range"]::-webkit-slider-thumb {
+                        -webkit-appearance: none;
+                        height: 2vw;
+                        width: 2vw;
+                        border: 0;
+                        border-radius: 100%;
+                        background: #ffc000;
+                        cursor: pointer;
+                        margin-top: -1vw;
+                        transition: none;
+                    }
                     .input-range__slider {
                         appearance: none;
                         height: 2vw;

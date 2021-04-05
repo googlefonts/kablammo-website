@@ -36,8 +36,6 @@ import ReactPixel from "react-facebook-pixel";
 import ReactGA from "react-ga";
 import dynamic from "next/dynamic";
 import Pill from "../components/Pill";
-// import TwoTest from "../components/TwoTest";
-// import TwoTest2 from "../components/TwoTest2";
 import TypeTester from "../components/TypeTester";
 import useVariableFont from "react-variable-fonts";
 import TimelineAnimations from "../components/TimelineAnimations";
@@ -47,6 +45,7 @@ import Scene from "../components/Scene";
 import Pattern from "../components/Pattern";
 import TypeParticles from "../components/TypeParticles";
 import Kablammo from "../components/Kablammo";
+import TypeScales from "../components/TypeScales";
 import IntersectionWrapper from "../components/IntersectionWrapper";
 import useIntersectionObserver from "../util/useIntersectionObserver";
 
@@ -147,7 +146,7 @@ function Index(props) {
               </Frame>
             </Frame>
             {/* SMALL SCROLLING TEXT 1 */}
-            <Pill className="bg-gray hover:bg-orange h-6 bg-clip-padding overflow-hidden">
+            <Pill className="hvr-wobble-top hvr-shutter-in-horizontal bg-gray hover:bg-yellow h-6 bg-clip-padding overflow-hidden">
               <ScrollingText
                 className=""
                 href={`#`}
@@ -168,7 +167,7 @@ function Index(props) {
             {/* TYPE PARTICLES */}
             <TypeParticles />
             {/* SMALL SCROLLING TEXT 1 */}
-            <Pill className="bg-lime hover:bg-orange h-6 bg-clip-padding overflow-hidden">
+            <Pill className="hvr-wobble-top hvr-shutter-out-horizontal bg-lime hover:bg-green h-6 bg-clip-padding overflow-hidden">
               <ScrollingText
                 className=""
                 href={`#`}
@@ -179,7 +178,7 @@ function Index(props) {
                 large
                 right
               >
-                <span className="animate-it-fast text-4 text-blue uppercase">
+                <span className="animate-it-fast text-4 line-height-4 text-blue uppercase">
                   &#xE006;&nbsp;&#xE006;&nbsp;&#xE006;&nbsp;&#xE006;&nbsp;&#xE006;&nbsp;&#xE006;&nbsp;&#xE006;&nbsp;&#xE006;&nbsp;
                 </span>
               </ScrollingText>
@@ -190,130 +189,7 @@ function Index(props) {
               items={doc.data.carousel}
             />
             {/* TYPE SCALES */}
-            <Pill className="bg-yellow h-24 overflow-hidden flex-col">
-              <Pattern
-                className="grid place-items-center"
-                bgImage="/images/bg/yellow-circles.svg"
-              >
-                <div className="absolute flex justify-between w-100%">
-                  <div className="pt-10 pl-20 flex flex-col">
-                    <span className="uppercase font-mono text-1">
-                      Font Move
-                    </span>
-                    <span className="uppercase font-mono text-1 bg-purple rounded-full pt-1 px-4">
-                      Option 1
-                    </span>
-                  </div>
-                  <div className="pt-10 pr-20 flex flex-col">
-                    <span className="uppercase font-mono text-1">Color</span>
-                    <span className="uppercase font-mono text-1 bg-purple rounded-full pt-1 px-4">
-                      Black
-                    </span>
-                  </div>
-                </div>
-                <span
-                  className="text-18 w-100% block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word font-axis-1"
-                  contentEditable="true"
-                  spellCheck="false"
-                  suppressContentEditableWarning={true}
-                >
-                  A Font 4
-                </span>
-              </Pattern>
-            </Pill>
-            <Pill className="bg-orange h-16 overflow-hidden">
-              <Pattern
-                className="grid place-items-center"
-                bgImage="/images/bg/orange-worms.svg"
-              >
-                <div className="absolute flex justify-between w-100%">
-                  <div className="pt-10 pl-20 flex flex-col">
-                    <span className="uppercase font-mono text-1">
-                      Font Move
-                    </span>
-                    <span className="uppercase font-mono text-1 bg-purple rounded-full pt-1 px-4">
-                      Option 2
-                    </span>
-                  </div>
-                  <div className="pt-10 pr-20 flex flex-col">
-                    <span className="uppercase font-mono text-1">Color</span>
-                    <span className="uppercase font-mono text-1 bg-purple rounded-full pt-1 px-4">
-                      Black
-                    </span>
-                  </div>
-                </div>
-                <span
-                  className="text-10 w-100% block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word font-axis-2"
-                  contentEditable="true"
-                  spellCheck="false"
-                  suppressContentEditableWarning={true}
-                >
-                  Huge Headlines
-                </span>
-              </Pattern>
-            </Pill>
-            <Pill className="bg-pink h-12 overflow-hidden">
-              <Pattern
-                className="grid place-items-center"
-                bgImage="/images/bg/pink-pattern.svg"
-              >
-                <div className="absolute flex justify-between w-100%">
-                  <div className="pt-8 pl-20 flex flex-col">
-                    <span className="uppercase font-mono text-1">
-                      Font Move
-                    </span>
-                    <span className="uppercase font-mono text-1 bg-purple rounded-full pt-1 px-4">
-                      Option 3
-                    </span>
-                  </div>
-                  <div className="pt-8 pr-20 flex flex-col">
-                    <span className="uppercase font-mono text-1">Color</span>
-                    <span className="uppercase font-mono text-1 bg-purple rounded-full pt-1 px-4">
-                      Black
-                    </span>
-                  </div>
-                </div>
-                <span
-                  className="text-6 w-100% block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word font-axis-3"
-                  contentEditable="true"
-                  spellCheck="false"
-                  suppressContentEditableWarning={true}
-                >
-                  Out Of This World Ideas
-                </span>
-              </Pattern>
-            </Pill>
-            <Pill className="bg-purple h-6 overflow-hidden">
-              <Pattern
-                className="grid place-items-center"
-                bgImage="/images/bg/purple-squiggly.svg"
-              >
-                <div className="absolute flex justify-between w-100%">
-                  <div className="pt-6 pl-20 flex flex-col">
-                    <span className="uppercase font-mono text-1">
-                      Font Move
-                    </span>
-                    <span className="uppercase font-mono text-1 bg-purple rounded-full pt-1 px-4">
-                      Option 4
-                    </span>
-                  </div>
-                  <div className="pt-6 pr-20 flex flex-col">
-                    <span className="uppercase font-mono text-1">Color</span>
-                    <span className="uppercase font-mono text-1 bg-purple rounded-full pt-1 px-4">
-                      Black
-                    </span>
-                  </div>
-                </div>
-                <span
-                  className="text-3 w-100% block leading-none text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word font-axis-4"
-                  contentEditable="true"
-                  spellCheck="false"
-                  suppressContentEditableWarning={true}
-                >
-                  And Feelings Words Just Cannot Describe
-                </span>
-              </Pattern>
-            </Pill>
+            <TypeScales />
             {/* CHARACTER SET */}
             <div
               className={`bg-green border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden`}
@@ -323,7 +199,7 @@ function Index(props) {
             </div>
             {/* SLOT MACHINE */}
             <Frame
-              className={`bg-black border-2 border-solid border-black bg-clip-padding overflow-hidden h-100vh flex justify-between flex-col`}
+              className={`relative bg-black border-2 border-solid border-black bg-clip-padding overflow-hidden h-100vh flex justify-between flex-col`}
             >
               <Pill className="bg-pink hover:bg-orange h-6 bg-clip-padding overflow-hidden">
                 <ScrollingText
@@ -340,6 +216,28 @@ function Index(props) {
                   </span>
                 </ScrollingText>
               </Pill>
+              <Frame
+                className={`relative bg-black border-2 border-solid border-black bg-clip-padding overflow-hidden h-100% grid grid-cols-2 grid-rows-2`}
+              >
+                <Pill className="bg-green hover:bg-pink h-100% bg-clip-padding overflow-hidden">
+                  <span className="text-24 -mt-10 text-orange uppercase">
+                    👀
+                  </span>
+                </Pill>
+                <Pill className="bg-lime hover:bg-pink h-100% bg-clip-padding overflow-hidden">
+                  <span className="text-24 -mt-10 text-blue  uppercase">👁</span>
+                </Pill>
+                <Pill className="bg-yellow hover:bg-gray h-100% bg-clip-padding overflow-hidden">
+                  <span className="text-24 -mt-10 text-purple uppercase">
+                    
+                  </span>
+                </Pill>
+                <Pill className="bg-blue hover:bg-orange h-100% bg-clip-padding overflow-hidden">
+                  <span className="text-24 -mt-10 text-yellow uppercase">
+                    👄
+                  </span>
+                </Pill>
+              </Frame>
               <Pill className="bg-purple hover:bg-orange h-6 bg-clip-padding overflow-hidden">
                 <ScrollingText
                   className=""
@@ -356,6 +254,38 @@ function Index(props) {
                   </span>
                 </ScrollingText>
               </Pill>
+              {/* <Pill className="right-vertical absolute right-6 bottom-0 bg-blue hover:bg-yellow h-6 bg-clip-padding overflow-hidden">
+                <ScrollingText
+                  className=""
+                  href={`#`}
+                  blank
+                  specialRight
+                  hideMobile
+                  borderTop
+                  large
+                  right
+                >
+                  <span className="text-4 text-yellow uppercase">
+                    &#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;
+                  </span>
+                </ScrollingText>
+              </Pill>
+              <Pill className="left-vertical absolute left-0 bg-orange hover:bg-purple h-6 bg-clip-padding overflow-hidden">
+                <ScrollingText
+                  className=""
+                  href={`#`}
+                  blank
+                  specialRight
+                  hideMobile
+                  borderTop
+                  large
+                  right
+                >
+                  <span className="text-4 text-purple uppercase">
+                    &#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;
+                  </span>
+                </ScrollingText>
+              </Pill> */}
             </Frame>
             {/* SMALL SCROLLING TEXT PILL 2 */}
             {/* BIG SROLLING TEXT 1 */}
@@ -376,7 +306,7 @@ function Index(props) {
                 </span>
               </ScrollingText>
             </Pill>
-            <Pill className="bg-lime hover:bg-orange h-30 bg-clip-padding overflow-hidden">
+            <Pill className="bg-lime hover:bg-blue h-30 bg-clip-padding overflow-hidden">
               <ScrollingText
                 className=""
                 href={`#`}
@@ -393,7 +323,7 @@ function Index(props) {
               </ScrollingText>
             </Pill>
             {/* BIG SROLLING TEXT 2 */}
-            <Pill className="bg-pink hover:bg-orange h-30 bg-clip-padding overflow-hidden">
+            <Pill className="bg-pink hover:bg-green h-30 bg-clip-padding overflow-hidden">
               <ScrollingText
                 className=""
                 href={`#`}

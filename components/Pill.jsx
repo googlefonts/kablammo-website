@@ -7,11 +7,27 @@ const Pill = (props) => {
 
 	return (
 		<div
-			className={`w-100% border-2 border-solid border-black text-black rounded-lg text-center flex justify-center items-center ${
-				props.className && `${props.className}`
-			}`}
+			className={`pill w-100% border-2 border-solid border-black text-black rounded-lg text-center flex justify-center items-center ${props.className &&
+				`${props.className}`}`}
 		>
 			{showChild && props.children}
+			<style jsx>{`
+				.pill {
+					overflow-x: hidden;
+				}
+				.right-vertical {
+					transform: rotate(90deg);
+					transform-origin: bottom right;
+					width: 76vh;
+					bottom: 12vh;
+				}
+				.left-vertical {
+					transform: rotate(270deg);
+					transform-origin: top left;
+					width: 76vh;
+					bottom: 0vh;
+				}
+			`}</style>
 		</div>
 	);
 };

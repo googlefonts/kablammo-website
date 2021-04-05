@@ -9,8 +9,13 @@ class TypeTesterSlider extends React.Component {
     super(props);
     this.state = { value: props.sliderValue };
     // console.log("constructor", this.props);
+    this.handleSliderChange = this.handleSliderChange.bind(this);
   }
-
+  handleSliderChange(event) {
+    this.props.handleSliderChange(event.target.value);
+    const value = event.target.value;
+    this.setState({ value });
+  }
   componentDidMount() {
     // console.log("componentdidmount", this.props);
     // console.log("updated", this.props.sliderValue);
@@ -41,15 +46,13 @@ class TypeTesterSlider extends React.Component {
     // console.log("updated slider value", this.props.sliderValue);
     return (
       <form className="form">
-        <InputRange
-          minValue={0}
-          maxValue={1000}
+        <input
+          type="range"
+          min="0"
+          max="1000"
           value={this.state.value}
-          onChange={(value) => {
-            this.props.handleSliderChange(value);
-            this.setState({ value });
-          }}
-          onChangeComplete={(value) => console.log(value)}
+          onChange={this.handleSliderChange}
+          step="1"
         />
         <style jsx global>{`
           /* Slider.css */

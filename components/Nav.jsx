@@ -16,7 +16,10 @@ const Nav = (props) => {
 	const [showChild, setShowChild] = useState(false);
 
 	useEffect(() => {}, []);
-
+	const handleInvert = (time) => {
+		document.body.style.filter =
+			time === "day" ? "" : "invert(1) hue-rotate(120deg)";
+	};
 	return (
 		<div className={`nav flex flex-col xl:flex-row`}>
 			<Link href="#" passHref scroll={false}>
@@ -33,11 +36,13 @@ const Nav = (props) => {
 			</Link>
 			<div className={`w-100% xl:w-20% flex justify-center`}>
 				<div
+					onClick={() => handleInvert("day")}
 					className={`hvr-shrink cursor-pointer w-50% h-16 xl:h-6 border-2 border-solid border-black text-black bg-pink rounded-lg text-center flex justify-center font-body items-center`}
 				>
 					<span className="font-display uppercase xl:text-4">☀</span>
 				</div>
 				<div
+					onClick={() => handleInvert("night")}
 					className={`hvr-shrink cursor-pointer w-50% h-16 xl:h-6 border-2 border-solid border-black text-black bg-gray rounded-lg text-center flex justify-center font-body items-center`}
 				>
 					<span className="font-display uppercase xl:text-4">☾</span>

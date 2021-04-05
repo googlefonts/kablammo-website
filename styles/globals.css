@@ -80,7 +80,7 @@ h6 {
 }
 
 .font-axis-1 {
-	font-variation-settings: "move" 0;
+	font-variation-settings: "move" 1;
 }
 .font-axis-2 {
 	font-variation-settings: "move" 333;
@@ -94,7 +94,7 @@ h6 {
 
 @keyframes animate-it {
 	0% {
-		font-variation-settings: "move" 0;
+		font-variation-settings: "move" 1;
 	}
 
 	100% {

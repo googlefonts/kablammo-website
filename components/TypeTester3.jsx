@@ -142,26 +142,9 @@ class TypeTester extends Component {
                             spellCheck="false"
                             onKeyDown={this.handleTypeTesterInputChange}
                         >
-                            ⚠ VARIABLE FONT 🌼 BY VECTOR 😵
+                            ⚠ VARIABLE FONT 🌼 BY VECTRO 😵
                         </span>
-                        <div className="flex justify-between">
-                            <div className="pt-10 pl-20 z-50 text-1">
-                                <span className="uppercase font-mono text-1">
-                                    Alternates
-                                </span>
-                                <div className="flex">
-                                    <div
-                                        className={`hvr-sink type-tester-alternate grid place-items-center bg-yellow mr-2 font-mono uppercase`}
-                                    >
-                                        On
-                                    </div>
-                                    <div
-                                        className={`hvr-sink type-tester-alternate grid place-items-center bg-gray font-mono uppercase`}
-                                    >
-                                        Off
-                                    </div>
-                                </div>
-                            </div>
+                        <div className="flex justify-end">
                             <div className="pt-10 pr-20 z-50">
                                 <span className="uppercase font-mono text-1">
                                     Background

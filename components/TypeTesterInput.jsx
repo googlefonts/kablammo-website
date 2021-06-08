@@ -28,7 +28,7 @@ const TypeTesterInput = (props) => {
 					suppressContentEditableWarning={true}
 					spellCheck="false"
 				>
-					⚠ VARIABLE FONT 🌼 BY VECTOR 😵
+					⚠ VARIABLE FONT 🌼 BY VECTRO 😵
 				</span>
 			</div>
 		</div>

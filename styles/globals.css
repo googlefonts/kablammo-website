@@ -3,38 +3,38 @@
 @tailwind utilities;
 
 @font-face {
-	font-family: "Kablammo";
-	src: url("/fonts/Kablammo/Kablammov0.16[move].woff2");
+  font-family: "Kablammo";
+  src: url("/fonts/Kablammo/Kablammov0.21[move].woff2");
 }
 @font-face {
-	font-family: "Iso";
-	src: url("/fonts/Iso/ISOv0.8-Regular.woff2");
+  font-family: "Iso";
+  src: url("/fonts/Iso/ISOv0.8-Regular.woff2");
 }
 
 body {
-	@apply font-display;
-	@apply text-black;
-	overflow-x: hidden;
-	transition: filter 600ms;
+  @apply font-display;
+  @apply text-black;
+  overflow-x: hidden;
+  transition: filter 600ms;
 }
 
 h1 {
-	font-size: 5vw;
+  font-size: 5vw;
 }
 h2 {
-	font-size: 4vwpx;
+  font-size: 4vwpx;
 }
 h3 {
-	font-size: 5vw;
+  font-size: 5vw;
 }
 h4 {
-	font-size: 2px;
+  font-size: 2px;
 }
 h5 {
-	font-size: 2px;
+  font-size: 2px;
 }
 h6 {
-	font-size: 2px;
+  font-size: 2px;
 }
 
 /*canvas {
@@ -48,57 +48,57 @@ h6 {
 }*/
 
 .track {
-	appearance: none;
-	height: 50px;
-	width: 50px;
-	border: 0;
-	border-radius: 100%;
-	background: #ffc000;
-	cursor: pointer;
+  appearance: none;
+  height: 50px;
+  width: 50px;
+  border: 0;
+  border-radius: 100%;
+  background: #ffc000;
+  cursor: pointer;
 }
 
 .color-burn {
-	mix-blend-mode: color-burn;
+  mix-blend-mode: color-burn;
 }
 
 .text-shadow-1 {
-	text-shadow: #e8f75c 30px 30px;
+  text-shadow: #e8f75c 30px 30px;
 }
 
 .animate-it-fast {
-	animation: animate-it 3s infinite alternate linear;
-	transition: font-variation-settings 0.3s ease;
+  animation: animate-it 3s infinite alternate linear;
+  transition: font-variation-settings 0.3s ease;
 }
 
 .animate-it {
-	animation: animate-it 6s infinite alternate linear;
-	transition: font-variation-settings 0.3s ease;
+  animation: animate-it 6s infinite alternate linear;
+  transition: font-variation-settings 0.3s ease;
 }
 
 .animate-it-slow {
-	animation: animate-it 10s infinite alternate linear;
-	transition: font-variation-settings 0.3s ease;
+  animation: animate-it 10s infinite alternate linear;
+  transition: font-variation-settings 0.3s ease;
 }
 
 .font-axis-1 {
-	font-variation-settings: "move" 1;
+  font-variation-settings: "move" 1;
 }
 .font-axis-2 {
-	font-variation-settings: "move" 333;
+  font-variation-settings: "move" 333;
 }
 .font-axis-3 {
-	font-variation-settings: "move" 666;
+  font-variation-settings: "move" 666;
 }
 .font-axis-4 {
-	font-variation-settings: "move" 1000;
+  font-variation-settings: "move" 1000;
 }
 
 @keyframes animate-it {
-	0% {
-		font-variation-settings: "move" 1;
-	}
+  0% {
+    font-variation-settings: "move" 1;
+  }
 
-	100% {
-		font-variation-settings: "move" 1000;
-	}
+  100% {
+    font-variation-settings: "move" 1000;
+  }
 }

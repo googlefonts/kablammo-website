@@ -158,7 +158,7 @@ function Index(props) {
                 >
                   <span className={`animate-it text-3 text-black uppercase`}>
                     👁 A 🌐 Dancing ☀ typeface ☮ BROUGHT ☼ TO 👁 YOU 🌐 BY ☀
-                    VEkTOR ☮ Type ☼ Foundry &nbsp;
+                    VECTRO ☮ Type ☼ Foundry &nbsp;
                   </span>
                 </ScrollingText>
               </Pill>
@@ -213,7 +213,7 @@ function Index(props) {
                 left
               >
                 <span className="text-4 text-black uppercase">
-                  👁 A 🌐 Dancing ☀ typeface ☮ BROUGHT ☼ TO 👁 YOU 🌐 BY ☀ VEkTOR
+                  👁 A 🌐 Dancing ☀ typeface ☮ BROUGHT ☼ TO 👁 YOU 🌐 BY ☀ VECTRO
                   ☮ Type ☼ Foundry &nbsp;
                 </span>
               </ScrollingText>
@@ -328,10 +328,10 @@ function Index(props) {
                 Commissioned by Google Fonts
               </span>
             </Pill>
-            {/* VEKTOR TYPE FOUNDRY CREDIT */}
+            {/* VECTRO TYPE FOUNDRY CREDIT */}
             <Pill className="bg-blue h-12">
               <span className="text-6 uppercase">
-                Font by Vektor Type Foundry
+                Font by Vectro Type Foundry
               </span>
             </Pill>
           </Layout>

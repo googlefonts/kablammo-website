@@ -80,15 +80,10 @@ const TypeTester2 = (props) => {
 					suppressContentEditableWarning={true}
 					spellCheck="false"
 				>
-					⚠ VARIABLE FONT 🌼 BY VECTOR 😵
+					⚠ VARIABLE FONT 🌼 BY VECTRO 😵
 				</span>
 
-				<div className="flex justify-between">
-					<div className="pt-10 pl-20">
-						<span className="uppercase font-mono text-1">
-							Alternates
-						</span>
-					</div>
+				<div className="flex justify-end">
 					<div className="pt-10 pr-20">
 						<span className="uppercase font-mono text-1">
 							Background

@@ -23,7 +23,7 @@ const TypeParticles = (props) => {
 				<TypeParticlesText className={``}>SPACE!</TypeParticlesText>{" "}
 				<TypeParticlesText className={``}>Developed</TypeParticlesText>{" "}
 				<TypeParticlesText className={``}>BY</TypeParticlesText>{" "}
-				<TypeParticlesText className={``}>VEKTOR</TypeParticlesText>{" "}
+				<TypeParticlesText className={``}>VECTRO</TypeParticlesText>{" "}
 				<TypeParticlesText className={``}>FOUNDRY,</TypeParticlesText>{" "}
 				<TypeParticlesText className={``}>IT</TypeParticlesText>{" "}
 				<TypeParticlesText className={``}>FEATURES</TypeParticlesText>{" "}

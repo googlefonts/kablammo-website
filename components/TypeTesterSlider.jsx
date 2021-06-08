@@ -46,7 +46,7 @@ class TypeTesterSlider extends React.Component {
     return (
       <form className="form cursor-pointer">
         <input
-          className="cursor-pointer"
+          className="cursor-pointer mt-1"
           ref={this.props.inputRef}
           type="range"
           min="0"

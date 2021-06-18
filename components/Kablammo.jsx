@@ -32,12 +32,12 @@ const Kablammo = (props) => {
                     src={doc.data.landing_image.url}
                   /> */}
 			<div
-				className={`w-100% grid place-items-center`}
+				className={`w-100% h-100% grid place-items-center`}
 				onMouseMove={handleKablammoMouseMove}
 			>
 				<h1
 					ref={kablammoEl}
-					className={`relative text-44 leading-none text-lime -mt-36 -ml-12`}
+					className={`relative text-44 leading-none text-lime -mt-12 -ml-12`}
 				>
 					<span className={`mt-12 ml-12`}></span>
 					<span className={`absolute inset-0 text-pink`}></span>

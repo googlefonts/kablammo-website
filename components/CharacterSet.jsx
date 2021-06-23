@@ -79,9 +79,6 @@ const characterDictionary = [
 	{ letter: "", category: "basic-latin" },
 	{ letter: "", category: "basic-latin" },
 	{ letter: "", category: "basic-latin" },
-	{ letter: "", category: "basic-latin" },
-	{ letter: "", category: "basic-latin" },
-	{ letter: "", category: "basic-latin" },
 ];
 
 const CharacterSet = (props) => {

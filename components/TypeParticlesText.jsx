@@ -48,6 +48,9 @@ const TypeParticlesText = (props) => {
 		>
 			{props.children}
 			<style jsx>{`
+				span {
+					text-shadow: 2px 2px #3D3D3D, -2px -2px #3D3D3D, -2px 2px #3D3D3D, 2px -2px #3D3D3D;
+				}
 				.grow {
 					display: inline-block;
 					transition: transform 250ms;

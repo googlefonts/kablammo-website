@@ -8,6 +8,29 @@ const SlotMachine = (props) => {
   const handleMouseEnter = () => {
     setHover(!hover);
   };
+  const [slot1Alt, setSlot1Alt] = useState(true);
+  const [slot2Alt, setSlot2Alt] = useState(true);
+  const [slot3Alt, setSlot3Alt] = useState(true);
+  const [slot4Alt, setSlot4Alt] = useState(true);
+  const altChars = {
+    slot1: ["👀", "?"],
+    slot2: ["👁", ""],
+    slot3: ["", "🪐"],
+    slot4: ["👄", "🙃"],
+  }
+  const handleClickSlot1 = () => {
+    // setSlot1Alt(!slot1Alt);
+    altChars.slot1[0]="?";
+  }
+  const handleClickSlot2 = () => {
+    setSlot2Alt(!slot2Alt);
+  }
+  const handleClickSlot3 = () => {
+    setSlot3Alt(!slot3Alt);
+  }
+  const handleClickSlot4 = () => {
+    setSlot4Alt(!slot4Alt);
+  }
   return (
     <Frame
       className={`relative bg-black border-2 border-solid border-black bg-clip-padding overflow-hidden h-100vh flex justify-between flex-col`}
@@ -32,35 +55,39 @@ const SlotMachine = (props) => {
       >
         <Pill
           onMouseEnter={handleMouseEnter}
+          onClick = {handleClickSlot1}
           className={`${
             hover && `animate-it`
-          } bg-green hover:bg-pink h-100% bg-clip-padding overflow-hidden`}
+          } bg-green hover:bg-pink h-100% bg-clip-padding overflow-hidden cursor-pointer`}
         >
-          <span className="text-24 -mt-10 text-orange uppercase">👀</span>
+          <span className="text-24 -mt-10 text-orange uppercase">{slot1Alt ? altChars.slot1[0] : altChars.slot1[1]}</span>
         </Pill>
         <Pill
           onMouseEnter={handleMouseEnter}
+          onClick = {handleClickSlot2}
           className={`${
             hover && `animate-it`
-          } bg-lime hover:bg-pink h-100% bg-clip-padding overflow-hidden`}
+          } bg-lime hover:bg-pink h-100% bg-clip-padding overflow-hidden cursor-pointer`}
         >
-          <span className="text-24 -mt-10 text-blue  uppercase">👁</span>
+          <span className="text-24 -mt-10 text-blue  uppercase">{slot2Alt ? altChars.slot2[0] : altChars.slot2[1]}</span>
         </Pill>
         <Pill
           onMouseEnter={handleMouseEnter}
+          onClick = {handleClickSlot3}
           className={`${
             hover && `animate-it`
-          } bg-yellow hover:bg-gray h-100% bg-clip-padding overflow-hidden`}
+          } bg-yellow hover:bg-gray h-100% bg-clip-padding overflow-hidden cursor-pointer`}
         >
-          <span className="text-24 -mt-10 text-purple uppercase"></span>
+          <span className="text-24 -mt-10 text-purple uppercase">{slot3Alt ? altChars.slot3[0] : altChars.slot3[1]}</span>
         </Pill>
         <Pill
           onMouseEnter={handleMouseEnter}
+          onClick = {handleClickSlot4}
           className={`${
             hover && `animate-it`
-          } bg-blue hover:bg-orange h-100% bg-clip-padding overflow-hidden`}
+          } bg-blue hover:bg-orange h-100% bg-clip-padding overflow-hidden cursor-pointer`}
         >
-          <span className="text-24 -mt-10 text-yellow uppercase">👄</span>
+          <span className="text-24 -mt-10 text-yellow uppercase">{slot4Alt ? altChars.slot4[0] : altChars.slot4[1]}</span>
         </Pill>
       </Frame>
       <Pill className="bg-purple hover:bg-orange h-6 bg-clip-padding overflow-hidden">

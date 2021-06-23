@@ -67,7 +67,6 @@ const fetchData = async (setDocData) => {
     Prismic.Predicates.at("document.type", "home_page")
   );
   if (response) {
-    console.log("response", response);
     setDocData(response.results[0]);
   }
 };

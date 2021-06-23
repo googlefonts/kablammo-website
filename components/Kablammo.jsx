@@ -34,7 +34,6 @@ const Kablammo = (props) => {
     }
 	useEffect(() => {
 		// document.addEventListener("mousemove", handleKablammoMouseMove);
-		console.log("using effect ...");
 		animationStart();
 	});
 	return (

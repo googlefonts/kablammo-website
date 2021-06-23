@@ -30,7 +30,6 @@ class TypeTesterSlider extends React.Component {
     });
   }
   componentDidMount() {
-    // console.log(this.inputRef);
     // this.inputRef.current.addEventListener("input", function (e) {
     //   setDocumentVariable("--typeTesterValue", this.inputRef.current.value);
     // });

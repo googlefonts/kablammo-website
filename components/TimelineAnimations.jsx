@@ -7,7 +7,6 @@ let animation = null;
 
 const clearCurrentAnimation = (currentAnimation) => {
     if (currentAnimation) {
-        console.log("Remove current animation...");
         currentAnimation.pause();
     }
 };
@@ -23,7 +22,6 @@ const TimeLineAnimationStart = (target) => {
             background: ["#3D3D3D", "#FFC000"],
             easing: "linear",
             complete: () => {
-                console.log("Enter animation complete...");
                 enterComplete = true;
                 resolve(enterComplete);
             },
@@ -42,7 +40,6 @@ const TimeLineAnimationReturn = (target) => {
             background: ["#FFC000", "#3D3D3D"],
             easing: "linear",
             complete: () => {
-                console.log("Exit animation complete...");
                 exitComplete = true;
                 resolve(exitComplete);
             },
@@ -90,7 +87,6 @@ class TimelineAnimations extends Component {
                     inProgress: true,
                 });
                 TimeLineAnimationStart(this.nodeRef).then(() => {
-                    console.log("Time to enter...");
                     this.setState({
                         inProgress: false,
                     });
@@ -100,7 +96,6 @@ class TimelineAnimations extends Component {
                     inProgress: true,
                 });
                 TimeLineAnimationReturn(this.nodeRef).then(() => {
-                    console.log("Time to Exit");
                     this.setState({
                         inProgress: false,
                     });

@@ -118,7 +118,6 @@ const TwoTest = ({ grayRef }) => {
 		}
 	};
 	useEffect(() => {
-		console.log("grayRef", grayRef);
 		startIt(grayRef);
 	}, [grayRef]);
 	return <div className="hidden"></div>;

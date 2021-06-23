@@ -15,8 +15,6 @@ const IntersectBox = (props) => {
   const [ref, entry] = useIntersect({
     threshold: buildThresholdArray(),
   });
-  // console.log("ref", ref, "entry", entry);
-  console.log("intersectionRatio", entry.intersectionRatio);
   return (
     <section {...props} ref={ref} ratio={entry.intersectionRatio}>
       {props.children}

@@ -17,7 +17,6 @@ const useIntersect = ({ root = null, rootMargin, threshold = 0 }) => {
     currentObserver.disconnect();
 
     if (node) currentObserver.observe(node);
-    console.log("node", node);
     return () => currentObserver.disconnect();
   }, [node]);
 

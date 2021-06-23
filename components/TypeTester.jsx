@@ -48,7 +48,6 @@ var setDocumentVariable = function (propertyName, value) {
 
 const clearCurrentAnimation = (currentAnimation) => {
     if (currentAnimation) {
-        // console.log("Remove current animation...");
         currentAnimation.pause();
     }
 };

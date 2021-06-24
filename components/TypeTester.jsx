@@ -205,6 +205,9 @@ class TypeTester extends Component {
                                         <span className="uppercase font-mono text-1">
                                             Move Axis
                                         </span>
+                                        {/* <span>
+                                            <img src="../public/images/icons/pauseplaylight"/>
+                                        </span> */}
                                     </div>
                                     <div
                                         className="w-3/4 cursor-pointer"

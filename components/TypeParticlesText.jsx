@@ -49,7 +49,7 @@ const TypeParticlesText = (props) => {
 			{props.children}
 			<style jsx>{`
 				span {
-					text-shadow: 2px 2px #323232, -2px -2px #323232, -2px 2px #323232, 2px -2px #323232;
+					text-shadow: 1px 1px #323232, -1px -1px #323232, -1px 1px #323232, 1px -1px #323232;
 				}
 				.grow {
 					display: inline-block;

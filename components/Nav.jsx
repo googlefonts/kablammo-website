@@ -27,7 +27,7 @@ const Nav = (props) => {
 					Kablammo
 				</NavItem>
 			</Link>
-			<Link href="#" passHref scroll={false}>
+			<Link href="#typetester" passHref scroll={false}>
 				<NavItem className="bg-orange hover:bg-pink hvr-shrink">
 					Try It Out!
 				</NavItem>

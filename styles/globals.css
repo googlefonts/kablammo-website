@@ -16,7 +16,7 @@ body {
   @apply text-black;
   overflow-x: hidden;
   transition: filter 600ms;
-  /* cursor: url("../public/images/cursors/25h/autocursor.png"); */
+  /* cursor: url("/images/icons/25h/autocursor.png"); */
   /* cursor: wait; */
 }
 

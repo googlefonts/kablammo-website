@@ -140,6 +140,7 @@ class TypeTester extends Component {
         return (
             <div
                 ref={this.typeTesterRef}
+                id="typetester"
                 className={`bg-${this.state.activeBg.bgColor} h-100vh w-100% relative border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden`}
             >
                 <Pattern

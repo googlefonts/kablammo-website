@@ -8,6 +8,7 @@ import TypeTesterSelect from "../components/TypeTesterSelect";
 import Pattern from "../components/Pattern";
 
 let animation = null;
+let animationPlaying = true;
 
 const bgOptions = [
     {
@@ -49,6 +50,18 @@ var setDocumentVariable = function (propertyName, value) {
 const clearCurrentAnimation = (currentAnimation) => {
     if (currentAnimation) {
         currentAnimation.pause();
+    }
+};
+const toggleCurrentAnimation = (currentAnimation) => {
+    if (currentAnimation) {
+        if(animationPlaying){
+        currentAnimation.pause();
+        animationPlaying = false;
+        }
+     else {
+         currentAnimation.play();
+        animationPlaying = true;
+        }
     }
 };
 
@@ -93,6 +106,10 @@ class TypeTester extends Component {
 
     handleClick(event) {
         clearCurrentAnimation(animation);
+    }
+
+    handleControllerClick(event) {
+        toggleCurrentAnimation(animation);
     }
 
     animationStart(target, handleSliderChange) {
@@ -205,9 +222,9 @@ class TypeTester extends Component {
                                         <span className="uppercase font-mono text-1">
                                             Move Axis
                                         </span>
-                                        {/* <span>
-                                            <img src="../public/images/icons/pauseplaylight"/>
-                                        </span> */}
+                                        <span onClick={this.handleControllerClick} className="cursor-pointer">
+                                            <img id="controlicon" src="/images/icons/playpauselight.png"/>
+                                        </span>
                                     </div>
                                     <div
                                         className="w-3/4 cursor-pointer"
@@ -229,6 +246,11 @@ class TypeTester extends Component {
                     </Frame>
                 </Pattern>
                 <style global jsx>{`
+                #controlicon {
+                    height:1vw;  
+                    width:auto;
+                    margin-left:15px;
+                }
                     .type-tester {
                         transition: font-variation-settings 0.6s ease;
                     }

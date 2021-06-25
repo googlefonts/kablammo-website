@@ -158,6 +158,7 @@ class TypeTester extends Component {
                             suppressContentEditableWarning={true}
                             spellCheck="false"
                             onKeyDown={this.handleTypeTesterInputChange}
+                            id="typetestereditablefield"
                         >
                             ⚠ VARIABLE FONT 🌼 BY VECTRO 😵
                         </span>
@@ -247,6 +248,9 @@ class TypeTester extends Component {
                     </Frame>
                 </Pattern>
                 <style global jsx>{`
+                #typetestereditablefield{
+                    cursor: url("/images/icons/textcursor.svg"), move;
+                }
                 #controlicon {
                     height:1vw;  
                     width:auto;

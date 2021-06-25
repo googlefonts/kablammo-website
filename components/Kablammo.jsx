@@ -43,6 +43,7 @@ const Kablammo = (props) => {
 		>
 			<div
 				className={`w-100% h-100% grid place-items-center`}
+				id="kablammowrapper"
 				// onMouseMove={handleKablammoMouseMove}
 			>
 				<h1
@@ -56,6 +57,9 @@ const Kablammo = (props) => {
 			<style jsx>{`
 				.scale-90% {
 					transform: scale(0.9);
+				}
+				#kablammowrapper {
+					height:100% !important;
 				}
 			`}</style>
 		</Pattern>

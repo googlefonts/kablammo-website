@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import MatterType from "../components/MatterType";
 // var positions = ["top left", "bottom center", "top right"];
 
-const Pattern = ({ className, children, bgImage }) => {
+const Pattern = ({ className, children, bgImage, id }) => {
 	// const [seconds, setSeconds] = useState(0);
 	// const [isActive, setIsActive] = useState(true);
 	// const [bgPosition, setBgPosition] = useState(positions[0]);
@@ -27,6 +27,7 @@ const Pattern = ({ className, children, bgImage }) => {
 			className={`h-100% w-100% bg bg-center ${
 				className ? className : ""
 			}`}
+			id={id}
 			style={{
 				backgroundImage: backgroundImage,
 				// backgroundPosition: bgPosition,

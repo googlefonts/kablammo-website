@@ -19,6 +19,7 @@ const TypeParticlesText = (props) => {
 	const handleHueRotate = (e) => {
 		let randomNumber = Math.floor(Math.random() * 360) + 1;
 		document.body.style.filter = `hue-rotate(${randomNumber}deg)`;
+		setTimeout(() => { document.body.style.filter = `hue-rotate(0deg)`; }, 8000);
 	};
 
 	const handleMouseEnter = (e) => {

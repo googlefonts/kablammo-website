@@ -3,6 +3,8 @@ import Anime from "animejs";
 import Frame from "../components/Frame";
 import AnimationButton from "../components/AnimationButton";
 import InputRange from "react-input-range";
+import Pill from "../components/Pill";
+import ScrollingText from "../components/ScrollingText";
 
 class Carousel extends React.Component {
 	constructor(props) {
@@ -17,7 +19,10 @@ class Carousel extends React.Component {
 		return (
 			<div className={this.props.className}>
 				<section className="carousel" aria-label="Gallery">
+					            {/* SMALL SCROLLING TEXT 1 */}
+
 					<ol className="carousel__viewport">
+						
 						{this.state.items.map((item, i) => {
 							console.log("item", item);
 							return (
@@ -64,42 +69,6 @@ class Carousel extends React.Component {
 							);
 						})}
 					</ol>
-					{/* <aside className="carousel__navigation">
-						<ol className="carousel__navigation-list">
-							<li className="carousel__navigation-item">
-								<a
-									href="#carousel__slide1"
-									className="carousel__navigation-button"
-								>
-									Go to slide 1
-								</a>
-							</li>
-							<li className="carousel__navigation-item">
-								<a
-									href="#carousel__slide2"
-									className="carousel__navigation-button"
-								>
-									Go to slide 2
-								</a>
-							</li>
-							<li className="carousel__navigation-item">
-								<a
-									href="#carousel__slide3"
-									className="carousel__navigation-button"
-								>
-									Go to slide 3
-								</a>
-							</li>
-							<li className="carousel__navigation-item">
-								<a
-									href="#carousel__slide4"
-									className="carousel__navigation-button"
-								>
-									Go to slide 4
-								</a>
-							</li>
-						</ol>
-					</aside> */}
 				</section>
 				<style jsx>{`
 					@keyframes tonext {

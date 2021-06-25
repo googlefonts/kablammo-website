@@ -14,10 +14,8 @@ const useIntersectionObserver = (props) => {
       // Pause/Play the animation
       if (entry.isIntersecting) {
         entry.target.style.animationPlayState = "running";
-        console.log(entry.target, "running");
       } else {
         entry.target.style.animationPlayState = "paused";
-        console.log(entry.target, "paused");
       }
     });
   });
@@ -27,7 +25,6 @@ const useIntersectionObserver = (props) => {
   variableTexts.forEach(function (el) {
     observer.observe(el);
   });
-  console.log("variableTexts", variableTexts);
 };
 
 export default useIntersectionObserver;

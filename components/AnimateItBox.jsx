@@ -15,8 +15,6 @@ const AnimateItBox = (props) => {
     threshold: buildThresholdArray(),
   });
 
-  console.log("intersectionRatio", entry.intersectionRatio);
-
   return (
     <React.Fragment {...props} ref={ref} ratio={entry.intersectionRatio}>
       {props.children}

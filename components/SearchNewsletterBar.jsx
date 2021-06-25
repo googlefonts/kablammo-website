@@ -23,7 +23,6 @@ const SearchNewsletterBar = (props) => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		if (validateEmail(latestInput.current.newsletter)) {
-			console.log("is email");
 			fetch("/.netlify/functions/newsletter", {
 				body: JSON.stringify(latestInput.current.newsletter),
 				method: "POST",

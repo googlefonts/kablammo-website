@@ -8,6 +8,7 @@ import TypeTesterSelect from "../components/TypeTesterSelect";
 import Pattern from "../components/Pattern";
 
 let animation = null;
+let animationPlaying = true;
 
 const bgOptions = [
     {
@@ -48,8 +49,19 @@ var setDocumentVariable = function (propertyName, value) {
 
 const clearCurrentAnimation = (currentAnimation) => {
     if (currentAnimation) {
-        // console.log("Remove current animation...");
         currentAnimation.pause();
+    }
+};
+const toggleCurrentAnimation = (currentAnimation) => {
+    if (currentAnimation) {
+        if(animationPlaying){
+        currentAnimation.pause();
+        animationPlaying = false;
+        }
+     else {
+         currentAnimation.play();
+        animationPlaying = true;
+        }
     }
 };
 
@@ -96,6 +108,10 @@ class TypeTester extends Component {
         clearCurrentAnimation(animation);
     }
 
+    handleControllerClick(event) {
+        toggleCurrentAnimation(animation);
+    }
+
     animationStart(target, handleSliderChange) {
         clearCurrentAnimation(animation);
 
@@ -124,6 +140,7 @@ class TypeTester extends Component {
         return (
             <div
                 ref={this.typeTesterRef}
+                id="typetester"
                 className={`bg-${this.state.activeBg.bgColor} h-100vh w-100% relative border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden`}
             >
                 <Pattern
@@ -141,6 +158,7 @@ class TypeTester extends Component {
                             suppressContentEditableWarning={true}
                             spellCheck="false"
                             onKeyDown={this.handleTypeTesterInputChange}
+                            id="typetestereditablefield"
                         >
                             ⚠ VARIABLE FONT 🌼 BY VECTRO 😵
                         </span>
@@ -206,6 +224,9 @@ class TypeTester extends Component {
                                         <span className="uppercase font-mono text-1">
                                             Move Axis
                                         </span>
+                                        <span onClick={this.handleControllerClick} className="cursor-pointer">
+                                            <img id="controlicon" src="/images/icons/playpauselight.png"/>
+                                        </span>
                                     </div>
                                     <div
                                         className="w-3/4 cursor-pointer"
@@ -227,6 +248,14 @@ class TypeTester extends Component {
                     </Frame>
                 </Pattern>
                 <style global jsx>{`
+                #typetestereditablefield{
+                    cursor: url("/images/icons/textcursor.svg"), move;
+                }
+                #controlicon {
+                    height:1vw;  
+                    width:auto;
+                    margin-left:15px;
+                }
                     .type-tester {
                         transition: font-variation-settings 0.6s ease;
                     }

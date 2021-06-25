@@ -61,7 +61,6 @@ const TypeTester2 = (props) => {
 	};
 
 	const handleSliderHover = (e) => {
-		console.log("typeTesterAnimation", typeTesterAnimation);
 		sliderUpdating.current = !sliderUpdating.current;
 		// if (sliderUpdating) typeTesterAnimation.play();
 	};

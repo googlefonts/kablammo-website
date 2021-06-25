@@ -13,7 +13,6 @@ const TypeTesterInput = (props) => {
 	const [moveSetting, setMoveSetting] = useState(props.typeMove);
 	useEffect(() => {
 		setMoveSetting(props.typeMove);
-		console.log(moveSetting, props.typeMove);
 	}, [props.typeMove]);
 
 	return (

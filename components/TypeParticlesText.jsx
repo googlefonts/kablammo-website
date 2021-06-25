@@ -19,6 +19,7 @@ const TypeParticlesText = (props) => {
 	const handleHueRotate = (e) => {
 		let randomNumber = Math.floor(Math.random() * 360) + 1;
 		document.body.style.filter = `hue-rotate(${randomNumber}deg)`;
+		setTimeout(() => { document.body.style.filter = `hue-rotate(0deg)`; }, 8000);
 	};
 
 	const handleMouseEnter = (e) => {
@@ -48,12 +49,16 @@ const TypeParticlesText = (props) => {
 		>
 			{props.children}
 			<style jsx>{`
+				span {
+					text-shadow: 1px 1px #323232, -1px -1px #323232, -1px 1px #323232, 1px -1px #323232;
+				}
 				.grow {
 					display: inline-block;
-					transition: transform 250ms;
+					transition: transform 150ms;
 				}
 				.grow:hover {
 					transform: scale(1.5);
+					delay: -50ms;
 				}
 			`}</style>
 		</span>

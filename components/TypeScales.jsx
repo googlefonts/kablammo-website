@@ -7,7 +7,7 @@ const TypeScales = () => {
 	const option3El = useRef(null);
 	const option4El = useRef(null);
 	useEffect(() => {
-		console.log("option1El", window.innerWidth * 0.18);
+		// console.log("option1El", window.innerWidth * 0.18);
 	}, [option1El]);
 	return (
 		<React.Fragment>

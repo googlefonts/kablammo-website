@@ -67,7 +67,6 @@ const fetchData = async (setDocData) => {
     Prismic.Predicates.at("document.type", "home_page")
   );
   if (response) {
-    console.log("response", response);
     setDocData(response.results[0]);
   }
 };
@@ -180,7 +179,7 @@ function Index(props) {
                 right
               >
                 <span className="animate-it-fast text-6 leading-none inline-block -mt-5 text-blue uppercase">
-                  &#xE006;&nbsp;&#xE006;&nbsp;&#xE006;&nbsp;&#xE006;&nbsp;&#xE006;&nbsp;&#xE006;&nbsp;&#xE006;&nbsp;&#xE006;&nbsp;
+                  &#xE006;&#xE006;&#xE006;&#xE006;&#xE006;&#xE006;&#xE006;&#xE006;
                 </span>
               </ScrollingText>
             </Pill>

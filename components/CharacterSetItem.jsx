@@ -14,7 +14,7 @@ const colors = [
   "#F97DDA",
 ];
 
-const CharacterSetItem = ({ item, className }) => {
+const CharacterSetItem = ({ item, className, keyValue }) => {
   const [bgStyle, setBgStyle] = useState({
     backgroundColor: "#e4e4e4",
   });

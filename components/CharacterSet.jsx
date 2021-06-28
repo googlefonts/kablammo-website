@@ -52,33 +52,33 @@ const characterDictionary = [
   { letter: "8", category: "basic-latin" },
   { letter: "9", category: "basic-latin" },
   { letter: "0", category: "basic-latin" },
-  { letter: "!", category: "basic-latin" },
-  { letter: "?", category: "basic-latin" },
-  { letter: "$", category: "basic-latin" },
+  { letter: "!", category: "punctuation" },
+  { letter: "?", category: "punctuation" },
+  { letter: "$", category: "punctuation" },
   { letter: "🙃", category: "emojis" },
+  { letter: "🛸", category: "emojis" },
+  { letter: "🪐", category: "emojis" },
+  { letter: "", category: "symbols" },
+  { letter: "", category: "symbols" },
+  { letter: "", category: "symbols" },
+  { letter: "", category: "symbols" },
+  { letter: "", category: "symbols" },
+  { letter: "", category: "symbols" },
+  { letter: "", category: "symbols" },
+  { letter: "", category: "symbols" },
+  { letter: "", category: "symbols" },
   { letter: "🛸", category: "basic-latin" },
   { letter: "🪐", category: "basic-latin" },
-  { letter: "", category: "basic-latin" },
-  { letter: "", category: "basic-latin" },
-  { letter: "", category: "basic-latin" },
-  { letter: "", category: "basic-latin" },
-  { letter: "", category: "basic-latin" },
-  { letter: "", category: "basic-latin" },
-  { letter: "", category: "basic-latin" },
-  { letter: "", category: "basic-latin" },
-  { letter: "", category: "basic-latin" },
-  { letter: "🛸", category: "basic-latin" },
-  { letter: "🪐", category: "basic-latin" },
-  { letter: "", category: "basic-latin" },
-  { letter: "", category: "basic-latin" },
-  { letter: "", category: "basic-latin" },
-  { letter: "", category: "basic-latin" },
-  { letter: "", category: "basic-latin" },
-  { letter: "", category: "basic-latin" },
-  { letter: "", category: "basic-latin" },
-  { letter: "", category: "basic-latin" },
-  { letter: "", category: "basic-latin" },
-  { letter: "", category: "basic-latin" },
+  { letter: "", category: "symbols" },
+  { letter: "", category: "symbols" },
+  { letter: "", category: "symbols" },
+  { letter: "", category: "symbols" },
+  { letter: "", category: "symbols" },
+  { letter: "", category: "symbols" },
+  { letter: "", category: "symbols" },
+  { letter: "", category: "symbols" },
+  { letter: "", category: "symbols" },
+  { letter: "", category: "symbols" },
 ];
 
 const CharacterSet = (props) => {
@@ -97,7 +97,8 @@ const CharacterSet = (props) => {
   }[transitionProp];
   // external js: packery.pkgd.j
   useEffect(() => {
-    var grid = gridRef !== null ? document.querySelector(".grid") : null;
+    var grid =
+      gridRef !== null ? document.querySelector(".isotope-grid") : null;
     gridRef !== null &&
       setPckry(
         new Packery(gridRef.current, {
@@ -108,17 +109,16 @@ const CharacterSet = (props) => {
   }, [gridRef]);
 
   useEffect(() => {
-    var grid = gridRef !== null ? document.querySelector(".grid") : null;
+    var grid =
+      gridRef !== null ? document.querySelector(".isotope-grid") : null;
     gridInit = new Isotope(grid, {
       itemSelector: ".grid-item",
-      masonry: {
-        columnWidth: 200,
-      },
     });
   });
 
   function handleClick(event) {
-    var grid = gridRef !== null ? document.querySelector(".grid") : null;
+    var grid =
+      gridRef !== null ? document.querySelector(".isotope-grid") : null;
     if (!event.target.classList.contains("grid-item-content")) {
       return;
     }
@@ -177,10 +177,13 @@ const CharacterSet = (props) => {
   }
 
   const handleFilterClick = (event) => {
-    var grid = gridRef !== null ? document.querySelector(".grid") : null;
-    console.log(filterValue, grid, gridRef, gridInit);
+    // var grid = gridRef !== null ? document.querySelector(".grid") : null;
     const filterValue = event.target.getAttribute("data-filter");
+    // console.log(filterValue, grid, gridRef, gridInit);
+    console.log("filterValue", filterValue);
+    console.log("grid", gridInit);
     gridInit.arrange({ filter: filterValue });
+    handleClick(event);
   };
 
   // bind filter button click
@@ -194,13 +197,15 @@ const CharacterSet = (props) => {
   return (
     <div className={`character-set`}>
       <CharacterSetFilters handleFilterClick={handleFilterClick} />
-      <div ref={gridRef} className="grid" onClick={handleClick}>
+      <div ref={gridRef} className="isotope-grid" onClick={handleClick}>
         <div className="grid-sizer"></div>
         {characterDictionary.map((item, i) => {
           return (
-            <div key={i}>
-              <CharacterSetItem className={``} item={item} />
-            </div>
+            <CharacterSetItem
+              item={item}
+              className={`${item.category}`}
+              key={i}
+            />
           );
         })}
       </div>
@@ -225,7 +230,8 @@ const CharacterSet = (props) => {
           text-transform: uppercase;
         }
 
-        .grid {
+        .isotope-grid {
+          display: grid;
         }
       `}</style>
     </div>

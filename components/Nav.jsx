@@ -78,7 +78,7 @@ const Nav = (props) => {
 				</div>
 			</div>
 			</div>
-			<div id="mobilelinks" className={`lg:hidden flex-col w-100%`}>
+			<div id="mobilelinks" className={`hidden flex-col w-100%`}>
 			<Link href="#" passHref scroll={false}>
 				<NavItem className="bg-lime">
 					Kablammo

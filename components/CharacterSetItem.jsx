@@ -14,7 +14,7 @@ const colors = [
 	"#F97DDA",
 ];
 
-const CharacterSetItem = ({ item }) => {
+const CharacterSetItem = ({ item, className }) => {
 	const [bgStyle, setBgStyle] = useState({
 		backgroundColor: "#e4e4e4",
 	});
@@ -29,14 +29,13 @@ const CharacterSetItem = ({ item }) => {
 	};
 
 	return (
-		<div className={`grid-item`}>
+		<div className={`grid-item ${className ? className : ""}`}>
 			<div
 				onMouseEnter={handleMouseEnter}
 				onClick={handleClicked}
 				style={bgStyle}
-				className={`${
-					clicked ? "animate-it" : ""
-				} grid-item-content grid-cols-12 border-2 border-solid border-black rounded-sm text-black`}
+				className={`${clicked ? "animate-it" : ""
+					} grid-item-content grid-cols-12 border-2 border-solid border-black rounded-sm text-black`}
 			>
 				{item.letter}
 			</div>

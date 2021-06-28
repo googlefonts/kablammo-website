@@ -85,6 +85,7 @@ const CharacterSet = (props) => {
 	const [showChild, setShowChild] = useState(false);
 	const [pckry, setPckry] = useState(null);
 	const gridRef = useRef(null);
+	let gridInit;
 	var docElem = document.documentElement;
 	var transitionProp =
 		typeof docElem.style.transition == "string"
@@ -94,7 +95,7 @@ const CharacterSet = (props) => {
 		WebkitTransition: "webkitTransitionEnd",
 		transition: "transitionend",
 	}[transitionProp];
-	// external js: packery.pkgd.js
+	// external js: packery.pkgd.j
 	useEffect(() => {
 		var grid = gridRef !== null ? document.querySelector(".grid") : null;
 		gridRef !== null &&
@@ -108,7 +109,7 @@ const CharacterSet = (props) => {
 
 	useEffect(() => {
 		var grid = gridRef !== null ? document.querySelector(".grid") : null;
-		var iso = new Isotope(grid, {
+		gridInit = new Isotope(grid, {
 			itemSelector: ".grid-item",
 			masonry: {
 				columnWidth: 200,
@@ -117,7 +118,7 @@ const CharacterSet = (props) => {
 	});
 
 	function handleClick(event) {
-		// only .grid-item-content clicks
+		var grid = gridRef !== null ? document.querySelector(".grid") : null;
 		if (!event.target.classList.contains("grid-item-content")) {
 			return;
 		}
@@ -178,15 +179,30 @@ const CharacterSet = (props) => {
 		itemContent.style.height = size && size.height + "px";
 	}
 
+	const handleFilterClick = (event) => {
+		var grid = gridRef !== null ? document.querySelector(".grid") : null;
+		console.log(filterValue, grid, gridRef, gridInit)
+		const filterValue = event.target.getAttribute("data-filter");
+		gridInit.arrange({ filter: filterValue })
+	}
+
+	// bind filter button click
+	// $('#filters').on('click', 'button', function () {
+	// 	var filterValue = $(this).attr('data-filter');
+	// 	// use filterFn if matches value
+	// 	filterValue = filterFns[filterValue] || filterValue;
+	// 	$grid.isotope({ filter: filterValue });
+	// });
+
 	return (
 		<div className={`character-set`}>
-			<CharacterSetFilters />
+			<CharacterSetFilters handleFilterClick={handleFilterClick} />
 			<div ref={gridRef} className="grid" onClick={handleClick}>
 				<div className="grid-sizer"></div>
 				{characterDictionary.map((item, i) => {
 					return (
 						<div key={i}>
-							<CharacterSetItem item={item} />
+							<CharacterSetItem className={ } item={item} />
 						</div>
 					);
 				})}

@@ -133,7 +133,7 @@ function Index(props) {
             <script async defer src=""></script>
           </Head>
           <Layout>
-            <Frame className={`h-100vh flex justify-between flex-col`}>
+            <Frame className={`lg:h-100vh flex justify-between flex-col`}>
               {/* SCENE */}
               {isBrowser && <Scene />}
               {/* NAV */}

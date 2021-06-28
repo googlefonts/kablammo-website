@@ -33,7 +33,7 @@ const TypeParticles = (props) => {
 				<TypeParticlesText className={``}>THAT</TypeParticlesText>{" "}
 				<TypeParticlesText className={``}>MAKES</TypeParticlesText>{" "}
 				<TypeParticlesText className={``}>THE</TypeParticlesText>{" "}
-				<TypeParticlesText className={``}>LETTERS</TypeParticlesText>
+				<TypeParticlesText className={``}>LETTERS</TypeParticlesText>{" "}
 				<TypeParticlesText className={``}>bop</TypeParticlesText>{" "}
 				<TypeParticlesText className={``}>and</TypeParticlesText>{" "}
 				<TypeParticlesText className={``}>BOUNCE</TypeParticlesText>{" "}

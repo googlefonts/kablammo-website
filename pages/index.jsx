@@ -141,7 +141,7 @@ function Index(props) {
               {/* LANDING */}
 
               <Pill
-                className={`bg-purple border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden h-100%`}
+                className={`bg-purple lg:border-2 border border-solid border-black bg-clip-padding overflow-hidden h-100%`}
               >
                 <Kablammo />
               </Pill>
@@ -185,14 +185,14 @@ function Index(props) {
             </Pill>
             {/* SLIDER FRAME */}
             <Carousel
-              className={`bg-orange border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden h-100vh`}
+              className={`bg-orange lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-100vh`}
               items={doc.data.carousel}
             />
             {/* TYPE SCALES */}
             <TypeScales />
             {/* CHARACTER SET */}
             <div
-              className={`bg-green border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden`}
+              className={`bg-green lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden`}
             >
               <h3 className="text-center text-yellow mt-6">Character Set</h3>
               <CharacterSetNoSSR />
@@ -251,7 +251,7 @@ function Index(props) {
             </Pill>
             {/* ESSAY */}
             <Frame
-              className={`bg-gray border-2 border-solid border-black rounded-lg bg-clip-padding overflow-hidden h-100vh`}
+              className={`bg-gray lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-100vh`}
             >
               <h3 className="text-center text-black mt-6">About the Font</h3>
               <div className={`grid grid-cols-2`}>

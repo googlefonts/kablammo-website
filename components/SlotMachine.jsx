@@ -10,10 +10,10 @@ const SlotMachine = (props) => {
     slot2: ["👁", ""],
     slot3: ["", "🪐"],
     slot4: ["👄", "🙃"],
-  }
+  };
   return (
     <Frame
-      className={`relative bg-black border-2 border-solid border-black bg-clip-padding overflow-hidden h-100vh flex justify-between flex-col`}
+      className={`relative bg-black lg:border-2 border border-solid border-black bg-clip-padding overflow-hidden h-100vh flex justify-between flex-col`}
     >
       <Pill className="bg-pink hover:bg-orange h-6 bg-clip-padding overflow-hidden">
         <ScrollingText
@@ -31,12 +31,36 @@ const SlotMachine = (props) => {
         </ScrollingText>
       </Pill>
       <Frame
-        className={`relative bg-black border-2 border-solid border-black bg-clip-padding overflow-hidden h-100% grid grid-cols-2 grid-rows-2`}
+        className={`relative bg-black lg:border-2 border border-solid border-black bg-clip-padding overflow-hidden h-100% grid grid-cols-2 grid-rows-2`}
       >
-        <Slots content="👀" alt="?" bgColor="green" bgColorHover="pink" textColor="orange"/>
-        <Slots content="👁" alt="" bgColor="lime" bgColorHover="pink" textColor="blue"/>
-        <Slots content="" alt="🪐" bgColor="yellow" bgColorHover="gray" textColor="purple"/>
-        <Slots content="👄" alt="🙃" bgColor="blue" bgColorHover="orange" textColor="yellow"/>
+        <Slots
+          content="👀"
+          alt="?"
+          bgColor="green"
+          bgColorHover="pink"
+          textColor="orange"
+        />
+        <Slots
+          content="👁"
+          alt=""
+          bgColor="lime"
+          bgColorHover="pink"
+          textColor="blue"
+        />
+        <Slots
+          content=""
+          alt="🪐"
+          bgColor="yellow"
+          bgColorHover="gray"
+          textColor="purple"
+        />
+        <Slots
+          content="👄"
+          alt="🙃"
+          bgColor="blue"
+          bgColorHover="orange"
+          textColor="yellow"
+        />
       </Frame>
       <Pill className="bg-purple hover:bg-orange h-6 bg-clip-padding overflow-hidden">
         <ScrollingText

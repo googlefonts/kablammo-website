@@ -38,7 +38,7 @@ const Kablammo = (props) => {
 	});
 	return (
 		<Pattern
-			className="flex justify-center"
+			className="flex justify-center py-24 px-4 lg:px-0 lg:py-0"
 			bgImage="/images/bg/purple-worms.svg"
 		>
 			<div
@@ -48,9 +48,9 @@ const Kablammo = (props) => {
 			>
 				<h1
 					ref={kablammoEl}
-					className={`relative text-44 leading-none text-lime -mt-12 -ml-12`}
+					className={`relative text-44 leading-none text-lime -mt-8 -ml-8 lg:-mt-12 lg:-ml-12`}
 				>
-					<span className={`mt-12 ml-12`}></span>
+					<span className={`mt-12 ml-4 lg:mt-12 lg:ml-12`}></span>
 					<span className={`absolute inset-0 text-pink`}></span>
 				</h1>
 			</div>

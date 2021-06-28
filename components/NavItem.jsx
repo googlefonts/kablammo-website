@@ -2,7 +2,7 @@ const NavItem = React.forwardRef((props, ref) => {
 	return (
 		<a
 			className={
-				`w-100% xl:w-20% border-2 border-solid border-black text-black rounded-lg text-center flex justify-center font-body items-center h-5 ` +
+				`lg:flex w-100% l:w-20% border-2 border-solid border-black text-black rounded-lg text-center justify-center font-body items-center h-10 lg:h-5 hover:bg-pink ` +
 				props.className
 			}
 			href={props.href}

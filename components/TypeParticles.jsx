@@ -1,17 +1,12 @@
 import React, { Component, Fragment, useState, useContext } from "react";
-import Link from "next/link";
-import { useRouter } from "next/router";
 import Frame from "./Frame";
-import Row from "./Row";
 import TypeParticlesText from "./TypeParticlesText";
 
 const TypeParticles = (props) => {
   return (
     <Frame
-      className={`type-particles bg-extraBlack md:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-60vh md:h-100vh flex justify-center items-center px-10 md:px-20 relative`}
+      className={`type-particles bg-extraBlack md:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-50vh lg:h-100vh flex justify-center items-center px-10 md:px-20 relative`}
     >
-      {/*<div className="grayRef w-100% h-100%" ref={grayRef}></div>*/}
-      {/* <TimelineAnimations /> */}
       <div className="text-7 md:text-6 leading-tight text-gray uppercase text-center z-50">
         <TypeParticlesText className={``}>Meet</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>KABLAMMO,</TypeParticlesText>{" "}

@@ -40,7 +40,7 @@ const Nav = (props) => {
       <div id="toprow" className="flex flex-row">
         <div
           onClick={toggleMobileNav}
-          className="bg-blue px-4 hover:bg-pink cursor-pointer display-block lg:hidden border-2 border-solid border-black text-black rounded-lg text-center flex justify-center font-display items-center h-auto text-8 lg:h-5"
+          className="bg-blue px-4 hover:bg-pink cursor-pointer display-block lg:hiddenlg:border-2 border border-solid border-black text-black rounded-lg text-center flex justify-center font-display items-center h-10 text-8 lg:h-5"
         >
           =
         </div>
@@ -61,13 +61,13 @@ const Nav = (props) => {
         <div className={`w-100% lg:w-20% flex justify-center`}>
           <div
             onClick={() => handleInvert("day")}
-            className={`hvr-shrink cursor-pointer w-50% h-auto lg:h-5 border-2 border-solid border-black text-black bg-yellow rounded-lg text-center flex justify-center font-body items-center hover:bg-pink `}
+            className={`hvr-shrink cursor-pointer w-50% h-10 lg:h-5lg:border-2 border border-solid border-black text-black bg-yellow rounded-lg text-center flex justify-center font-body items-center hover:bg-pink `}
           >
             <span className="font-display uppercase text-8 lg:text-3">☀</span>
           </div>
           <div
             onClick={() => handleInvert("night")}
-            className={`hvr-shrink cursor-pointer w-50% h-auto lg:h-5 border-2 border-solid border-black text-black bg-extraBlack rounded-lg text-center flex justify-center font-body items-center hover:bg-pink `}
+            className={`hvr-shrink cursor-pointer w-50% h-10 lg:h-5lg:border-2 border border-solid border-black text-black bg-extraBlack rounded-lg text-center flex justify-center font-body items-center hover:bg-pink `}
           >
             <span className="font-display uppercase text-8 lg:text-3 text-gray">
               ☾

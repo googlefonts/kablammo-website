@@ -213,7 +213,7 @@ function Index(props) {
                 large
                 left
               >
-                <span className="text-4 text-black uppercase">
+                <span className="text-2 text-black uppercase">
                   👁 A 🌐 Dancing ☀ typeface ☮ BROUGHT ☼ TO 👁 YOU 🌐 BY ☀ VECTRO
                   ☮ Type ☼ Foundry &nbsp;
                 </span>
@@ -305,29 +305,29 @@ function Index(props) {
             </Frame>
             {/* DOWNLOAD */}
             <Pill className="bg-purple h-30">
-              <span className="text-5 lg:text-16 text-lime uppercase">
+              <span className="text-2 lg:text-16 text-lime uppercase">
                 Download
               </span>
             </Pill>
             <Nav />
             {/* CREDITS */}
             <Pill className="bg-gray h-10 lg:h-6">
-              <span className="font-body text-2 uppercase">
+              <span className="font-body text-4 lg:text-2 uppercase">
                 Lead Design and Concept by Travis Kochel
               </span>
             </Pill>
             <Pill className="bg-gray h-10 lg:h-6">
-              <span className="font-body text-2 uppercase">
+              <span className="font-body text-4 lg:text-2 uppercase">
                 Cyrillic & Production Assistance by Daria Petrova & Ethan Cohen
               </span>
             </Pill>
             <Pill className="bg-gray h-10 lg:h-6">
-              <span className="font-body text-2 uppercase">
+              <span className="font-body text-4 lg:text-2 uppercase">
                 Website Design & Development by FISK
               </span>
             </Pill>
             <Pill className="bg-gray h-10 lg:h-6">
-              <span className="font-body text-2 uppercase">
+              <span className="font-body text-4 lg:text-2 uppercase">
                 Commissioned by Google Fonts
               </span>
             </Pill>

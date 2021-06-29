@@ -1,8 +1,4 @@
-import React, { Component, Fragment, useState, useContext } from "react";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import Frame from "./Frame";
-import Row from "./Row";
+import React, { useState } from "react";
 
 const colors = [
   "#E4E4E4",
@@ -36,15 +32,11 @@ const CharacterSetItem = ({ item, className, keyValue }) => {
         style={bgStyle}
         className={`${
           clicked ? "animate-it" : ""
-        } grid-item-content grid-cols-12 lg:border-2 border border-solid border-black rounded-sm text-black`}
+        } grid-item-content grid-cols-6 lg:grid-cols-12 lg:border-2 border border-solid border-black rounded-sm text-black`}
       >
         {item.letter}
       </div>
       <style jsx>{`
-        .character-set-item {
-          padding: 25px 10vw 0;
-          margin: 0 auto;
-        }
         /* grid-item-content is visible, and transitions size */
         .grid-item-content {
           width: 100%;
@@ -86,8 +78,16 @@ const CharacterSetItem = ({ item, className, keyValue }) => {
           font-size: 15vw;
         }
         @media (max-width: 1199px) {
-          .type-particles {
-            padding: 1rem;
+          .grid-item,
+          .grid-sizer {
+            width: calc(100% / 6);
+          }
+          .grid-item {
+            height: 10vh;
+          }
+          .grid-item-content {
+            font-size: 10vw;
+            line-height: 10vw;
           }
         }
       `}</style>

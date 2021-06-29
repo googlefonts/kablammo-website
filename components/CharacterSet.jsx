@@ -160,10 +160,8 @@ const CharacterSet = (props) => {
     WebkitTransition: "webkitTransitionEnd",
     transition: "transitionend",
   }[transitionProp];
-  // external js: packery.pkgd.j
+
   useEffect(() => {
-    var grid =
-      gridRef !== null ? document.querySelector(".isotope-grid") : null;
     gridRef !== null &&
       setPckry(
         new Packery(gridRef.current, {
@@ -182,8 +180,6 @@ const CharacterSet = (props) => {
   });
 
   function handleClick(event) {
-    var grid =
-      gridRef !== null ? document.querySelector(".isotope-grid") : null;
     if (!event.target.classList.contains("grid-item-content")) {
       return;
     }

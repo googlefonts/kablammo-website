@@ -6,6 +6,7 @@ import TypeTesterSlider from "../components/TypeTesterSlider";
 import InputRange from "react-input-range";
 import TypeTesterSelect from "../components/TypeTesterSelect";
 import Pattern from "../components/Pattern";
+import Pill from "../components/Pill";
 
 let animation = null;
 let animationPlaying = true;
@@ -137,10 +138,11 @@ class TypeTester extends Component {
 
   render() {
     return (
+      <div>
       <div
         ref={this.typeTesterRef}
         id="typetester"
-        className={`bg-${this.state.activeBg.bgColor} lg:h-100vh h-50vh w-100% relative lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden`}
+        className={`bg-${this.state.activeBg.bgColor} lg:h-100vh md:h-75vh h-50vh w-100% relative lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden`}
       >
         <Pattern
           key={this.state.activeBg.index}
@@ -148,11 +150,11 @@ class TypeTester extends Component {
           bgImage={this.state.activeBg.image}
         >
           <Frame
-            className={`type-tester lg:h-100vh h-50vh absolute top-0 left-0 right-0 bottom-0 z-10`}
+            className={`type-tester lg:h-100vh md:h-75vh h-50vh absolute top-0 left-0 right-0 bottom-0 z-10`}
           >
             <span
               ref={this.typeTesterInputRef}
-              className={`text-${this.state.activeBg.textColor} type-tester text-12 m-auto lg:-mt-12 w-3/4 lg:h-100vh h-50vh absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center block leading-none text-center focus:outline-none overflow-hidden self-center break-words`}
+              className={`text-${this.state.activeBg.textColor} type-tester text-13 lg:text-12 m-auto lg:-mt-12 w-3/4 lg:h-100vh md:h-60vh h-40vh absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center block leading-none text-center focus:outline-none overflow-hidden self-center break-words`}
               contentEditable="true"
               suppressContentEditableWarning={true}
               spellCheck="false"
@@ -161,9 +163,9 @@ class TypeTester extends Component {
             >
               ⚠ VARIABLE FONT 🌼 BY VECTRO 😵
             </span>
-            <div className="flex justify-end">
-              <div className="pt-10 pr-20 z-50">
-                <span className="uppercase font-mono text-1">Background</span>
+            <div className="justify-end hidden lg:flex ">
+              <div className="pt-5 pr-5 lg:pr-20 z-50">
+                <span className="uppercase font-mono text-black text-1">Background</span>
                 <div className="flex text-1">
                   <a
                     className={`bg-${
@@ -206,7 +208,7 @@ class TypeTester extends Component {
                 </div>{" "}
               </div>
             </div>
-            <div className="absolute left-0 right-0 bottom-0 flex justify-between">
+            <div className="hidden lg:flex absolute left-0 right-0 bottom-0 flex justify-between">
               <TypeTesterSelect
                 key={this.typeTesterInputRef.current}
                 inputRef={this.inputRef}
@@ -244,12 +246,51 @@ class TypeTester extends Component {
             </div>
           </Frame>
         </Pattern>
+        </div>
+      <Pill className="bg-purple h-10 lg:h-6 flex w-100vw lg:hidden">
+        <div className="w-100% h-100%">
+              {/* <TypeTesterSelect
+                key={this.typeTesterInputRef.current}
+                inputRef={this.inputRef}
+                handleSliderChange={this.handleSliderChange}
+                onClick={this.handleClick}
+              /> */}
+              <div className="flex flex-col w-100% h-100%">
+                <div className="h-100% w-100% bg-purple lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg flex justify-center items-center overflow-hidden">
+                  <div className="w-1/4 bg-gray h-100% flex justify-center items-center">
+                    <span className="uppercase font-mono text-3">
+                      Move Axis
+                    </span>
+                    <span
+                      onClick={this.handleControllerClick}
+                      className="cursor-pointer"
+                    >
+                      <img
+                        id="controlicon"
+                        src="/images/icons/playpauselight.png"
+                      />
+                    </span>
+                  </div>
+                  <div
+                    className="w-3/4 cursor-pointer"
+                    onClick={this.handleClick}
+                  >
+                    <TypeTesterSlider
+                      key={this.typeTesterInputRef.current}
+                      inputRef={this.inputRef}
+                      handleSliderChange={this.handleSliderChange}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            </Pill>
         <style global jsx>{`
           #typetestereditablefield {
             cursor: url("/images/icons/textcursor.svg"), move;
           }
           #controlicon {
-            height: 1vw;
+            height: 15px;
             width: auto;
             margin-left: 15px;
           }
@@ -327,6 +368,7 @@ class TypeTester extends Component {
             transition: none;
           }
         `}</style>
+      
       </div>
     );
   }

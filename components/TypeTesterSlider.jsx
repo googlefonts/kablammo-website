@@ -55,7 +55,18 @@ class TypeTesterSlider extends React.Component {
         />
         <style jsx global>{`
           /* Slider.css */
-
+          @media only screen and (min-width: 1024px) {
+            input[type="range"]::-webkit-slider-thumb {
+              height: 3vw;
+              width: 3vw;
+            }
+          }
+          @media only screen and (max-width: 1024px) {
+            input[type="range"]::-webkit-slider-thumb {
+              height: 8vw;
+              width: 8vw;
+            }
+          }
           .slider {
             // margin-bottom: 40px;
             transition: none;
@@ -73,11 +84,12 @@ class TypeTesterSlider extends React.Component {
           input[type="range"]::-webkit-slider-thumb {
             outline: none;
             appearance: none;
-            height: 2vw;
-            width: 2vw;
             border: 0;
             border-radius: 100%;
-            background: #ffc000;
+            background-image: url("images/icons/sliderbutton.png");
+            background-position: center;
+            background-repeat: no-repeat; 
+            background-size: cover; 
             cursor: pointer;
             margin-top: 0vw;
             transition: none;

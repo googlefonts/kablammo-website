@@ -96,7 +96,7 @@ const TypeTester2 = (props) => {
               Font Weights
             </label>
             <select
-              className="w-100% h-6 bg-yellow lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg relative flex justify-center items-center overflow-hidden font-body uppercase text-2 flex justify-center items-center"
+              className="w-100% h-10 lg:h-6 bg-yellow lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg relative flex justify-center items-center overflow-hidden font-body uppercase text-4 flex justify-center items-center"
               name="cars"
               id="cars"
             >

@@ -12,7 +12,7 @@ const CharacterSetFilters = ({ handleFilterClick }) => {
   return (
     <div className="character-set-filters">
       <div onClick={handleClick}>
-        <Pill className="bg-yellow h-6 cursor-pointer">
+        <Pill className="bg-yellow h-10 lg:h-6 cursor-pointer">
           <span className="uppercase font-mono text-2">Filters +</span>
         </Pill>
       </div>
@@ -27,28 +27,28 @@ const CharacterSetFilters = ({ handleFilterClick }) => {
               <button
                 data-filter=".basic-latin"
                 onClick={handleFilterClick}
-                className="bg-yellow hover:bg-lime h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-2 uppercase"
+                className="bg-yellow hover:bg-lime h-10 lg:h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-4 uppercase"
               >
                 Basic Latin
               </button>
               <button
                 data-filter=".numerals"
                 onClick={handleFilterClick}
-                className="bg-lime hover:bg-lime h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-2 uppercase"
+                className="bg-lime hover:bg-lime h-10 lg:h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-4 uppercase"
               >
                 Numerals
               </button>
               <button
                 data-filter=".symbols"
                 onClick={handleFilterClick}
-                className="bg-gray hover:bg-lime h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-2 uppercase"
+                className="bg-gray hover:bg-lime h-10 lg:h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-4 uppercase"
               >
                 Symbols
               </button>
               <button
                 data-filter=".emojis"
                 onClick={handleFilterClick}
-                className="bg-purple hover:bg-lime h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-2 uppercase"
+                className="bg-purple hover:bg-lime h-10 lg:h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-4 uppercase"
               >
                 Emojis
               </button>
@@ -57,28 +57,28 @@ const CharacterSetFilters = ({ handleFilterClick }) => {
               <button
                 data-filter=".extended"
                 onClick={handleFilterClick}
-                className="bg-orange hover:bg-lime h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-2 uppercase"
+                className="bg-orange hover:bg-lime h-10 lg:h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-4 uppercase"
               >
                 Extended
               </button>
               <button
                 data-filter=".punctuation"
                 onClick={handleFilterClick}
-                className="bg-green hover:bg-lime h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-2 uppercase"
+                className="bg-green hover:bg-lime h-10 lg:h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-4 uppercase"
               >
                 Punctuation
               </button>
               <button
                 data-filter=".zodiac"
                 onClick={handleFilterClick}
-                className="bg-blue hover:bg-lime h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-2 uppercase"
+                className="bg-blue hover:bg-lime h-10 lg:h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-4 uppercase"
               >
                 Zodiac
               </button>
               <button
                 data-filter=".patterns"
                 onClick={handleFilterClick}
-                className="bg-pink hover:bg-lime h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-2 uppercase"
+                className="bg-pink hover:bg-lime h-10 lg:h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-4 uppercase"
               >
                 Patterns
               </button>

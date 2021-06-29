@@ -1,41 +1,38 @@
 import React, { useEffect, useState } from "react";
-import MatterType from "../components/MatterType";
 // var positions = ["top left", "bottom center", "top right"];
 
 const Pattern = ({ className, children, bgImage, id }) => {
-	// const [seconds, setSeconds] = useState(0);
-	// const [isActive, setIsActive] = useState(true);
-	// const [bgPosition, setBgPosition] = useState(positions[0]);
-	const backgroundImage = bgImage ? "url('" + bgImage + "')" : "none";
+  // const [seconds, setSeconds] = useState(0);
+  // const [isActive, setIsActive] = useState(true);
+  // const [bgPosition, setBgPosition] = useState(positions[0]);
+  const backgroundImage = bgImage ? "url('" + bgImage + "')" : "none";
 
-	// useEffect(() => {
-	// 	let interval = null;
-	// 	if (isActive) {
-	// 		interval = setInterval(() => {
-	// 			setSeconds((seconds) => seconds + 0.5);
-	// 			setBgPosition(positions[Math.floor(Math.random() * 3)]);
-	// 		}, 500);
-	// 	} else if (!isActive && seconds !== 0) {
-	// 		clearInterval(interval);
-	// 	}
-	// 	// console.log(seconds);
-	// 	return () => clearInterval(interval);
-	// }, [isActive, seconds]);
+  // useEffect(() => {
+  // 	let interval = null;
+  // 	if (isActive) {
+  // 		interval = setInterval(() => {
+  // 			setSeconds((seconds) => seconds + 0.5);
+  // 			setBgPosition(positions[Math.floor(Math.random() * 3)]);
+  // 		}, 500);
+  // 	} else if (!isActive && seconds !== 0) {
+  // 		clearInterval(interval);
+  // 	}
+  // 	// console.log(seconds);
+  // 	return () => clearInterval(interval);
+  // }, [isActive, seconds]);
 
-	return (
-		<div
-			className={`h-100% w-100% bg bg-center ${
-				className ? className : ""
-			}`}
-			id={id}
-			style={{
-				backgroundImage: backgroundImage,
-				// backgroundPosition: bgPosition,
-			}}
-		>
-			{/*<MatterType />*/}
-			{children}
-			<style jsx>{`
+  return (
+    <div
+      className={`h-100% w-100% bg bg-center ${className ? className : ""}`}
+      id={id}
+      style={{
+        backgroundImage: backgroundImage,
+        // backgroundPosition: bgPosition,
+      }}
+    >
+      {/*<MatterType />*/}
+      {children}
+      <style jsx>{`
 				.bg {
 					background-size: 125%;
 				}
@@ -57,7 +54,7 @@ const Pattern = ({ className, children, bgImage, id }) => {
 				// 	}
 				}
 			`}</style>
-		</div>
-	);
+    </div>
+  );
 };
 export default Pattern;

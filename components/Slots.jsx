@@ -24,7 +24,7 @@ const Slots = (props) => {
     >
       <span
         onClick={handleClick}
-        className={`text-50 lg:text-24 -mt-10 w-100% text-${props.textColor} uppercase`}
+        className={`text-38 lg:text-24 -mt-10 w-100% text-${props.textColor} uppercase`}
       >
         {activeEmoji}
       </span>

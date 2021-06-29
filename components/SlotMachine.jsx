@@ -31,7 +31,7 @@ const SlotMachine = (props) => {
         </ScrollingText>
       </Pill>
       <Frame
-        className={`relative bg-black lg:border-2 border border-solid border-black bg-clip-padding overflow-hidden h-100% grid grid-cols-1 grid-rows-4 lg:grid-cols-2 lg:grid-rows-2`}
+        className={`relative bg-black border-2 border-solid border-black bg-clip-padding overflow-hidden h-100% grid grid-cols-2 grid-rows-2`}
       >
         <Slots
           content="👀"

@@ -9,7 +9,7 @@ const NavItem = React.forwardRef((props, ref) => {
       onClick={props.onClick}
       ref={ref}
     >
-      <span className="uppercase text-2">{props.children}</span>
+      <span className="uppercase text-4 lg:text-2">{props.children}</span>
     </a>
   );
 });

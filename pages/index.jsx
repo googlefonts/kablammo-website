@@ -170,7 +170,7 @@ function Index(props) {
             {/* TYPE PARTICLES */}
             <TypeParticles />
             {/* SMALL SCROLLING TEXT 1 */}
-            <Pill className="hvr-wobble-top hvr-shutter-out-horizontal bg-lime hover:bg-green h-10 lg:h-5  bg-clip-padding overflow-hidden">
+            <Pill className="hvr-wobble-top hvr-shutter-out-horizontal bg-lime hover:bg-green h-10 lg:h-5 bg-clip-padding overflow-hidden">
               <ScrollingText
                 className="cursor-pointer"
                 blank
@@ -202,7 +202,7 @@ function Index(props) {
             <SlotMachine />
             {/* SMALL SCROLLING TEXT PILL 2 */}
             {/* BIG SROLLING TEXT 1 */}
-            <Pill className="hvr-wobble-top hvr-shutter-in-horizontal bg-gray hover:bg-orange h-6 bg-clip-padding overflow-hidden">
+            <Pill className="hvr-wobble-top hvr-shutter-in-horizontal bg-gray hover:bg-orange h-10 lg:h-6 bg-clip-padding overflow-hidden">
               <ScrollingText
                 className=""
                 href={`#`}
@@ -253,37 +253,37 @@ function Index(props) {
             </Pill>
             {/* ESSAY */}
             <Frame
-              className={`bg-gray lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-100vh`}
+              className={`bg-gray lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-50vh lg:h-100vh`}
             >
               <h3 className="text-center text-black mt-6">About the Font</h3>
               <div className={`grid grid-cols-2`}>
                 <div className="pl-20 pr-20">
-                  <p className="font-body block mb-8 text-1">
+                  <p className="font-body block mb-8 text-5 lg:text-1">
                     Nicolette Gray wrote about the Caslon Italian (above) in her
                     book Nineteenth Century.
                   </p>
-                  <p className="font-mono block mb-8 text-1">
+                  <p className="font-mono block mb-8 text-5 lg:text-1">
                     Maelstrom & Maelstrom Sans are reversed-stress typefaces.
                     They’re “perverse”, to be sure, but that’s exactly their
                     charm. They belong to a genre destined to be a perpetual
                     typographic outsider — never fashionable yet never
                     abandoned.
                   </p>
-                  <p className="font-mono block mb-8 text-1">
+                  <p className="font-mono block mb-8 text-5 lg:text-1">
                     Maelstrom & Maelstrom Sans are reversed-stress typefaces.
                     They’re “perverse”, to be sure, but that’s exactly their
                     charm. They belong to a genre destined to be a perpetual
                     typographic outsider — never fashionable yet never
                     abandoned.
                   </p>
-                  <p className="font-mono block mb-8 text-1">
+                  <p className="font-mono block mb-8 text-5 lg:text-1">
                     Nicolette Gray wrote about the Caslon Italian (above) in her
                     book Nineteenth Century.
                   </p>
-                  <p className="font-mono block mb-8 text-1">
+                  <p className="font-mono block mb-8 text-5 lg:text-1">
                     Ornamented Types and Title Pages{" "}
                   </p>
-                  <p className="font-mono block mb-8 text-1">
+                  <p className="font-mono block mb-8 text-5 lg:text-1">
                     The only semi-ornamental type of this decade [1821] is the
                     much, and quite rightly, abused Italian. The Italian is an
                     Egyptian with a horizontal stress and extra serifs reversed
@@ -291,7 +291,7 @@ function Index(props) {
                     the idea of perversity. It is scarcely just, however, to
                     regard it as a typical monstrosity of the time.
                   </p>
-                  <p className="font-mono block mb-8 text-1">
+                  <p className="font-mono block mb-8 text-5 lg:text-1">
                     The only semi-ornamental type of this decade [1821] is the
                     much, and quite rightly, abused Italian. The Italian is an
                     Egyptian with a horizontal stress and extra serifs reversed
@@ -305,26 +305,28 @@ function Index(props) {
             </Frame>
             {/* DOWNLOAD */}
             <Pill className="bg-purple h-30">
-              <span className="text-16 text-lime uppercase">Download</span>
+              <span className="text-5 lg:text-16 text-lime uppercase">
+                Download
+              </span>
             </Pill>
             <Nav />
             {/* CREDITS */}
-            <Pill className="bg-gray h-6">
+            <Pill className="bg-gray h-10 lg:h-6">
               <span className="font-body text-2 uppercase">
                 Lead Design and Concept by Travis Kochel
               </span>
             </Pill>
-            <Pill className="bg-gray h-6">
+            <Pill className="bg-gray h-10 lg:h-6">
               <span className="font-body text-2 uppercase">
                 Cyrillic & Production Assistance by Daria Petrova & Ethan Cohen
               </span>
             </Pill>
-            <Pill className="bg-gray h-6">
+            <Pill className="bg-gray h-10 lg:h-6">
               <span className="font-body text-2 uppercase">
                 Website Design & Development by FISK
               </span>
             </Pill>
-            <Pill className="bg-gray h-6">
+            <Pill className="bg-gray h-10 lg:h-6">
               <span className="font-body text-2 uppercase">
                 Commissioned by Google Fonts
               </span>

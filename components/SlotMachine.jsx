@@ -15,7 +15,7 @@ const SlotMachine = (props) => {
     <Frame
       className={`relative bg-black lg:border-2 border border-solid border-black bg-clip-padding overflow-hidden h-100vh flex justify-between flex-col`}
     >
-      <Pill className="bg-pink hover:bg-orange h-6 bg-clip-padding overflow-hidden">
+      <Pill className="bg-pink hover:bg-orange h-10 lg:h-6 bg-clip-padding overflow-hidden">
         <ScrollingText
           className=""
           href={`#`}
@@ -31,7 +31,7 @@ const SlotMachine = (props) => {
         </ScrollingText>
       </Pill>
       <Frame
-        className={`relative bg-black lg:border-2 border border-solid border-black bg-clip-padding overflow-hidden h-100% grid grid-cols-2 grid-rows-2`}
+        className={`relative bg-black lg:border-2 border border-solid border-black bg-clip-padding overflow-hidden h-100% grid grid-cols-1 grid-rows-4 lg:grid-cols-2 lg:grid-rows-2`}
       >
         <Slots
           content="👀"
@@ -62,7 +62,7 @@ const SlotMachine = (props) => {
           textColor="yellow"
         />
       </Frame>
-      <Pill className="bg-purple hover:bg-orange h-6 bg-clip-padding overflow-hidden">
+      <Pill className="bg-purple hover:bg-orange h-10 lg:h-6 bg-clip-padding overflow-hidden">
         <ScrollingText
           className=""
           href={`#`}

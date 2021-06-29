@@ -146,7 +146,7 @@ function Index(props) {
                 <Kablammo />
               </Pill>
               {/* SMALL SCROLLING TEXT 1 */}
-              <Pill className="hvr-wobble-top hvr-shutter-in-horizontal bg-gray hover:bg-yellow h-5 bg-clip-padding overflow-hidden">
+              <Pill className="hvr-wobble-top hvr-shutter-in-horizontal bg-gray hover:bg-yellow h-10 lg:h-5 bg-clip-padding overflow-hidden">
                 <ScrollingText
                   href={`#`}
                   blank
@@ -155,7 +155,9 @@ function Index(props) {
                   borderTop
                   large
                 >
-                  <span className={`animate-it text-3 text-black uppercase`}>
+                  <span
+                    className={`animate-it text-5 lg:text-3 text-black uppercase`}
+                  >
                     👁 A 🌐 Dancing ☀ typeface ☮ BROUGHT ☼ TO 👁 YOU 🌐 BY ☀
                     VECTRO ☮ Type ☼ Foundry &nbsp;
                   </span>
@@ -168,7 +170,7 @@ function Index(props) {
             {/* TYPE PARTICLES */}
             <TypeParticles />
             {/* SMALL SCROLLING TEXT 1 */}
-            <Pill className="hvr-wobble-top hvr-shutter-out-horizontal bg-lime hover:bg-green h-6 bg-clip-padding overflow-hidden">
+            <Pill className="hvr-wobble-top hvr-shutter-out-horizontal bg-lime hover:bg-green h-10 lg:h-5  bg-clip-padding overflow-hidden">
               <ScrollingText
                 className="cursor-pointer"
                 blank
@@ -185,7 +187,7 @@ function Index(props) {
             </Pill>
             {/* SLIDER FRAME */}
             <Carousel
-              className={`bg-orange lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-100vh`}
+              className={`bg-orange lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-25vh lg:h-100vh`}
               items={doc.data.carousel}
             />
             {/* TYPE SCALES */}

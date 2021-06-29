@@ -140,7 +140,7 @@ class TypeTester extends Component {
       <div
         ref={this.typeTesterRef}
         id="typetester"
-        className={`bg-${this.state.activeBg.bgColor} lg:h-100vh h-50vh w-100% relative lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden`}
+        className={`bg-${this.state.activeBg.bgColor} lg:h-100vh h-25vh w-100% relative lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden`}
       >
         <Pattern
           key={this.state.activeBg.index}
@@ -148,11 +148,11 @@ class TypeTester extends Component {
           bgImage={this.state.activeBg.image}
         >
           <Frame
-            className={`type-tester lg:h-100vh h-50vh absolute top-0 left-0 right-0 bottom-0 z-10`}
+            className={`type-tester lg:h-100vh h-25vh absolute top-0 left-0 right-0 bottom-0 z-10`}
           >
             <span
               ref={this.typeTesterInputRef}
-              className={`text-${this.state.activeBg.textColor} type-tester text-12 m-auto lg:-mt-12 w-3/4 lg:h-100vh h-50vh absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center block leading-none text-center focus:outline-none overflow-hidden self-center break-words`}
+              className={`text-${this.state.activeBg.textColor} type-tester text-12 m-auto lg:-mt-12 w-3/4 lg:h-100vh h-25vh absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center block leading-none text-center focus:outline-none overflow-hidden self-center break-words`}
               contentEditable="true"
               suppressContentEditableWarning={true}
               spellCheck="false"

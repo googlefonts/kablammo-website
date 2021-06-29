@@ -6,6 +6,7 @@ import TypeTesterSlider from "../components/TypeTesterSlider";
 import InputRange from "react-input-range";
 import TypeTesterSelect from "../components/TypeTesterSelect";
 import Pattern from "../components/Pattern";
+import Pill from "../components/Pill";
 
 let animation = null;
 let animationPlaying = true;
@@ -246,12 +247,50 @@ class TypeTester extends Component {
           </Frame>
         </Pattern>
         </div>
+      <Pill className="bg-purple h-10 lg:h-6 flex w-100vw lg:hidden">
+        <div className="w-100% h-100%">
+              {/* <TypeTesterSelect
+                key={this.typeTesterInputRef.current}
+                inputRef={this.inputRef}
+                handleSliderChange={this.handleSliderChange}
+                onClick={this.handleClick}
+              /> */}
+              <div className="flex flex-col w-100% h-100%">
+                <div className="h-100% w-100% bg-purple lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg flex justify-center items-center overflow-hidden">
+                  <div className="w-1/4 bg-gray h-100% flex justify-center items-center">
+                    <span className="uppercase font-mono text-3">
+                      Move Axis
+                    </span>
+                    <span
+                      onClick={this.handleControllerClick}
+                      className="cursor-pointer"
+                    >
+                      <img
+                        id="controlicon"
+                        src="/images/icons/playpauselight.png"
+                      />
+                    </span>
+                  </div>
+                  <div
+                    className="w-3/4 cursor-pointer"
+                    onClick={this.handleClick}
+                  >
+                    <TypeTesterSlider
+                      key={this.typeTesterInputRef.current}
+                      inputRef={this.inputRef}
+                      handleSliderChange={this.handleSliderChange}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            </Pill>
         <style global jsx>{`
           #typetestereditablefield {
             cursor: url("/images/icons/textcursor.svg"), move;
           }
           #controlicon {
-            height: 1vw;
+            height: 15px;
             width: auto;
             margin-left: 15px;
           }

@@ -162,9 +162,9 @@ class TypeTester extends Component {
             >
               ⚠ VARIABLE FONT 🌼 BY VECTRO 😵
             </span>
-            <div className="flex justify-end">
-              <div className="pt-10 pr-20 z-50">
-                <span className="uppercase font-mono text-1">Background</span>
+            <div className="justify-end hidden lg:flex ">
+              <div className="pt-5 pr-5 lg:pr-20 z-50">
+                <span className="uppercase font-mono text-black text-1">Background</span>
                 <div className="flex text-1">
                   <a
                     className={`bg-${

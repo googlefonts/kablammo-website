@@ -17,13 +17,13 @@ const TypeScales = () => {
           bgImage="/images/bg/yellow-circles.svg"
         >
           <div className="absolute flex justify-between w-100%">
-            <div className="pt-10 pl-20 flex flex-col">
+            <div className="pt-3 lg:pt-10 pl-3 lg:pl-20 flex flex-col">
               <span className="uppercase font-mono text-1">Move Axis</span>
               <span className="uppercase font-mono text-1 bg-purple rounded-full pt-1 px-4">
                 Axis A
               </span>
             </div>
-            <div className="pt-10 pr-20 flex flex-col">
+            <div className="pt-3 lg:pt-10 pr-3 lg:pr-20 flex flex-col">
               <span className="uppercase font-mono text-1">Font Size</span>
               <span className="hvr-bounce-in uppercase font-mono text-1 bg-purple rounded-full pt-1 px-4">
                 {parseInt(window.innerWidth * 0.18)}px
@@ -47,13 +47,13 @@ const TypeScales = () => {
           bgImage="/images/bg/pink-pattern.svg"
         >
           <div className="absolute flex justify-between w-100%">
-            <div className="pt-10 pl-20 flex flex-col">
+            <div className="pt-3 lg:pt-10 pl-3 lg:pl-20 flex flex-col">
               <span className="uppercase font-mono text-1">Move Axis</span>
               <span className="uppercase font-mono text-1 bg-blue rounded-full pt-1 px-4">
                 Axis B
               </span>
             </div>
-            <div className="pt-10 pr-20 flex flex-col">
+            <div className="pt-3 lg:pt-10 pr-3 lg:pr-20 flex flex-col">
               <span className="uppercase font-mono text-1">Font Size</span>
               <span className="uppercase font-mono text-1 bg-blue rounded-full pt-1 px-4">
                 {parseInt(window.innerWidth * 0.1)}px
@@ -77,13 +77,13 @@ const TypeScales = () => {
           bgImage="/images/bg/orange-worms.svg"
         >
           <div className="absolute flex justify-between w-100%">
-            <div className="pt-8 pl-20 flex flex-col">
+            <div className="pt-3 lg:pt-10 pl-3 lg:pl-20 flex flex-col">
               <span className="uppercase font-mono text-1">Move Axis</span>
               <span className="uppercase font-mono text-1 bg-lime rounded-full pt-1 px-4">
                 Axis C
               </span>
             </div>
-            <div className="pt-8 pr-20 flex flex-col">
+            <div className="pt-3 lg:pt-10 pr-3 lg:pr-20 flex flex-col">
               <span className="uppercase font-mono text-1">Font Size</span>
               <span className="uppercase font-mono text-1 bg-lime rounded-full pt-1 px-4">
                 {parseInt(window.innerWidth * 0.06)}px
@@ -107,13 +107,13 @@ const TypeScales = () => {
           bgImage="/images/bg/purple-squiggly.svg"
         >
           <div className="absolute flex justify-between w-100%">
-            <div className="pt-6 pl-20 flex flex-col">
+            <div className="pt-3 lg:pt-6 pl-3 lg:pl-20 flex flex-col">
               <span className="uppercase font-mono text-1">Move Axis</span>
               <span className="uppercase font-mono text-1 bg-orange rounded-full pt-1 px-4">
                 Axis D
               </span>
             </div>
-            <div className="pt-6 pr-20 flex flex-col">
+            <div className="pt-3 lg:pt-6 pr-3 lg:pr-20 flex flex-col">
               <span className="uppercase font-mono text-1">Font Size</span>
               <span className="uppercase font-mono text-1 bg-orange rounded-full pt-1 px-4">
                 {parseInt(window.innerWidth * 0.03)}px

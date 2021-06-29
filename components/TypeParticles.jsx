@@ -8,11 +8,11 @@ import TypeParticlesText from "./TypeParticlesText";
 const TypeParticles = (props) => {
   return (
     <Frame
-      className={`type-particles bg-extraBlack lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-100vh flex justify-center items-center px-20 relative`}
+      className={`type-particles bg-extraBlack md:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-60vh md:h-100vh flex justify-center items-center px-10 md:px-20 relative`}
     >
       {/*<div className="grayRef w-100% h-100%" ref={grayRef}></div>*/}
       {/* <TimelineAnimations /> */}
-      <div className="text-6 leading-tight text-gray uppercase text-center z-50">
+      <div className="text-7 md:text-6 leading-tight text-gray uppercase text-center z-50">
         <TypeParticlesText className={``}>Meet</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>KABLAMMO,</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>the</TypeParticlesText>{" "}
@@ -45,19 +45,19 @@ const TypeParticles = (props) => {
       <div className="hvr-grow-rotate animate-it-fast text-orange absolute top-6 left-5 text-20 leading-tight pointer-events-none">
         💩
       </div>
-      <div className="hvr-grow-rotate animate-it text-purple absolute top-2 left-30 text-20 leading-tight pointer-events-none">
+      <div className="hvr-grow-rotate animate-it text-purple absolute top-35 lg:top-2 left-30 text-20 leading-tight pointer-events-none">
         ⚠
       </div>
-      <div className="hvr-grow-rotate animate-it-slow text-yellow absolute top-2 left-55 text-20 leading-tight pointer-events-none">
+      <div className="hvr-grow-rotate animate-it-slow text-yellow absolute top-50 lg:top-2 left-55 text-20 leading-tight pointer-events-none">
         👀
       </div>
       <div className="hvr-grow-rotate animate-it text-green absolute top-6 left-80 text-20 leading-tight pointer-events-none">
         👽
       </div>
-      <div className="hvr-grow-rotate animate-it-slow text-pink absolute top-26 left-24 text-20 leading-tight pointer-events-none">
+      <div className="hvr-grow-rotate animate-it-slow text-pink absolute top-70 lg:top-26 left-24 text-20 leading-tight pointer-events-none">
         🪐
       </div>
-      <div className="hvr-grow-rotate animate-it-fast text-blue absolute top-20 left-70 text-20 leading-tight pointer-events-none">
+      <div className="hvr-grow-rotate animate-it-fast text-blue absolute lg:top-20 top-80 left-70 text-20 leading-tight pointer-events-none">
         🕒
       </div>
       <style jsx>{`

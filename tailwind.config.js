@@ -75,6 +75,7 @@ module.exports = {
       olive: "#90892A",
     },
     borderRadius: {
+      xs: "2.5vw",
       sm: "4vw",
       lg: "100px",
       full: "999999px",

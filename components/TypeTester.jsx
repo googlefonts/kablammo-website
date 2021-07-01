@@ -175,7 +175,7 @@ class TypeTester extends Component {
                           ? this.state.activeBg.textColor
                           : `gray`
                       } hvr-sink type-tester-alternate grid place-items-center mr-2 font-display uppercase`}
-                      onClick={(e) => this.handleBgClick(0)}
+                      onClick={(e) => this.handleBgClick(0,e)}
                     >
                       
                     </a>
@@ -185,7 +185,7 @@ class TypeTester extends Component {
                           ? this.state.activeBg.textColor
                           : `gray`
                       } hvr-sink type-tester-alternate grid place-items-center mr-2 font-display uppercase`}
-                      onClick={(e) => this.handleBgClick(1)}
+                      onClick={(e) => this.handleBgClick(1,e)}
                     >
                       
                     </a>
@@ -195,7 +195,7 @@ class TypeTester extends Component {
                           ? this.state.activeBg.textColor
                           : `gray`
                       } hvr-sink type-tester-alternate grid place-items-center mr-2 font-display uppercase`}
-                      onClick={(e) => this.handleBgClick(2)}
+                      onClick={(e) => this.handleBgClick(2,e)}
                     >
                       
                     </a>
@@ -203,7 +203,7 @@ class TypeTester extends Component {
                       className={`bg-${
                         this.state.activeBg.index === 3 ? `purple` : `gray`
                       } hvr-sink type-tester-alternate grid place-items-center font-display uppercase`}
-                      onClick={(e) => this.handleBgClick(3)}
+                      onClick={(e) => this.handleBgClick(3,e)}
                     >
                       
                     </a>

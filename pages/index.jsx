@@ -182,7 +182,7 @@ function Index(props) {
                 large
                 left
               >
-                <span className="text-2 text-black uppercase">
+                <span className="text-5 lg:text-3 text-black uppercase">
                   👁 A 🌐 Dancing ☀ typeface ☮ BROUGHT ☼ TO 👁 YOU 🌐 BY ☀ VECTRO
                   ☮ Type ☼ Foundry &nbsp;
                 </span>
@@ -226,33 +226,32 @@ function Index(props) {
             >
               <h3 className="text-center text-black mt-6">About the Font</h3>
               <div className={`grid grid-cols-2`}>
-                <div className="pl-20 pr-20">
-                  <p className="font-body block mb-8 text-5 lg:text-1">
+                <div className="px-20">
+                  <p className="font-body block mb-8 text-5 lg:text-2">
                     Nicolette Gray wrote about the Caslon Italian (above) in her
                     book Nineteenth Century.
                   </p>
-                  <p className="font-mono block mb-8 text-5 lg:text-1">
+                  <p className="font-mono block mb-8 text-5 lg:text-2">
                     Maelstrom & Maelstrom Sans are reversed-stress typefaces.
                     They’re “perverse”, to be sure, but that’s exactly their
                     charm. They belong to a genre destined to be a perpetual
                     typographic outsider — never fashionable yet never
                     abandoned.
                   </p>
-                  <p className="font-mono block mb-8 text-5 lg:text-1">
+                  <p className="font-mono block mb-8 text-5 lg:text-2">
                     Maelstrom & Maelstrom Sans are reversed-stress typefaces.
                     They’re “perverse”, to be sure, but that’s exactly their
                     charm. They belong to a genre destined to be a perpetual
                     typographic outsider — never fashionable yet never
-                    abandoned.
-                  </p>
-                  <p className="font-mono block mb-8 text-5 lg:text-1">
-                    Nicolette Gray wrote about the Caslon Italian (above) in her
+                    abandoned. Nicolette Gray wrote about the Caslon Italian (above) in her
                     book Nineteenth Century.
                   </p>
-                  <p className="font-mono block mb-8 text-5 lg:text-1">
+                </div>
+                <div className="px-20 text-10">
+                <p className="font-mono block mb-8 lg:text-2">
                     Ornamented Types and Title Pages{" "}
                   </p>
-                  <p className="font-mono block mb-8 text-5 lg:text-1">
+                  <p className="font-mono block mb-8 lg:text-2">
                     The only semi-ornamental type of this decade [1821] is the
                     much, and quite rightly, abused Italian. The Italian is an
                     Egyptian with a horizontal stress and extra serifs reversed
@@ -260,7 +259,7 @@ function Index(props) {
                     the idea of perversity. It is scarcely just, however, to
                     regard it as a typical monstrosity of the time.
                   </p>
-                  <p className="font-mono block mb-8 text-5 lg:text-1">
+                  <p className="font-mono block mb-8 text-5 lg:text-2">
                     The only semi-ornamental type of this decade [1821] is the
                     much, and quite rightly, abused Italian. The Italian is an
                     Egyptian with a horizontal stress and extra serifs reversed
@@ -269,7 +268,6 @@ function Index(props) {
                     regard it as a typical monstrosity of the time.
                   </p>
                 </div>
-                <div className=""></div>
               </div>
             </Frame>
             {/* DOWNLOAD */}

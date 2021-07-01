@@ -42,13 +42,13 @@ const Kablammo = (props) => {
       bgImage="/images/bg/purple-worms.svg"
     >
       <div
-        className={`w-100% h-100% grid place-items-center`}
+        className={`w-100% h-100% lg:w-80% lg:h-auto grid place-items-center`}
         id="kablammowrapper"
         // onMouseMove={handleKablammoMouseMove}
       >
         <h1
           ref={kablammoEl}
-          className={`relative text-44 leading-none text-lime -mt-8 -ml-8 lg:-mt-12 lg:-ml-12 xl:-mt-24`}
+          className={`relative text-35 leading-none text-lime -mt-8 -ml-8 lg:-mt-12 lg:-ml-12 xl:-mt-24`}
         >
           <span className={`mt-12 ml-4 lg:mt-12 lg:ml-12`}></span>
           <span className={`absolute inset-0 text-pink`}></span>

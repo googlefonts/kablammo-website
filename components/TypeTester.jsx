@@ -138,11 +138,11 @@ class TypeTester extends Component {
 
   render() {
     return (
-      <div>
+      <div className="lg:h-100vh md:h-75vh h-50vh ">
         <div
           ref={this.typeTesterRef}
           id="typetester"
-          className={`bg-${this.state.activeBg.bgColor} lg:h-100vh md:h-75vh h-50vh w-100% relative lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden`}
+          className={`bg-${this.state.activeBg.bgColor} h-tester-mobile lg:h-tester-desktop w-100% relative lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden`}
         >
           <Pattern
             key={this.state.activeBg.index}
@@ -150,11 +150,11 @@ class TypeTester extends Component {
             bgImage={this.state.activeBg.image}
           >
             <Frame
-              className={`type-tester lg:h-100vh md:h-75vh h-50vh absolute top-0 left-0 right-0 bottom-0 z-10`}
+              className={`type-tester h-100% absolute top-0 left-0 right-0 bottom-0 z-10`}
             >
               <span
                 ref={this.typeTesterInputRef}
-                className={`text-${this.state.activeBg.textColor} type-tester text-13 lg:text-12 m-auto lg:-mt-12 w-3/4 lg:h-100vh md:h-60vh h-40vh absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center block leading-none text-center focus:outline-none overflow-hidden self-center break-words`}
+                className={`text-${this.state.activeBg.textColor} type-tester text-13 lg:text-12 m-auto lg:-mt-12 w-3/4 h-100% absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center block leading-none text-center focus:outline-none overflow-hidden self-center break-words`}
                 contentEditable="true"
                 suppressContentEditableWarning={true}
                 spellCheck="false"
@@ -210,42 +210,10 @@ class TypeTester extends Component {
                   </div>{" "}
                 </div>
               </div>
-              <div className="hidden lg:flex absolute left-0 right-0 bottom-0 flex justify-between">
-                <TypeTesterSelect
-                  key={this.typeTesterInputRef.current}
-                  inputRef={this.inputRef}
-                  handleSliderChange={this.handleSliderChange}
-                  onClick={this.handleClick}
-                />
-                <div className="mt-auto pb-10 pr-20 w-5/6 flex flex-col ">
-                  <div className="h-3 bg-purple lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg relative flex justify-center items-center overflow-hidden">
-                    <div
-                      onClick={this.toggleCurrentAnimation}
-                      className="w-1/4 bg-gray h-100% border-r-2 border-solid border-black flex justify-center items-center"
-                    >
-                      <span className="uppercase font-mono text-1">
-                        {this.state.animationPlaying === true
-                          ? `Pause`
-                          : `Play`}
-                      </span>
-                    </div>
-                    <div
-                      className="w-3/4 cursor-pointer"
-                      onClick={this.handleClick}
-                    >
-                      <TypeTesterSlider
-                        key={this.typeTesterInputRef.current}
-                        inputRef={this.inputRef}
-                        handleSliderChange={this.handleSliderChange}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
             </Frame>
           </Pattern>
         </div>
-        <Pill className="bg-purple h-10 lg:h-6 flex w-100vw lg:hidden">
+        <Pill className="bg-purple h-10 lg:h-5 flex w-100vw">
           <div className="w-100% h-100%">
             {/* <TypeTesterSelect
                 key={this.typeTesterInputRef.current}
@@ -254,7 +222,7 @@ class TypeTester extends Component {
                 onClick={this.handleClick}
               /> */}
             <div className="flex flex-col w-100% h-100%">
-              <div className="h-100% w-100% bg-purple lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg flex justify-center items-center overflow-hidden">
+              <div className="h-100% w-100% bg-purple rounded-sm lg:rounded-lg flex justify-center items-center overflow-hidden">
                 <div className="w-1/4 bg-gray h-100% flex justify-center items-center">
                   <span className="uppercase font-mono text-3">Move Axis</span>
                   <span

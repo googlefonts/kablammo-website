@@ -33,6 +33,7 @@ var scaleSystem = {
   70: "70vw",
   80: "80vw",
   90: "90vw",
+  95: "95vw",
   "100vw": "100vw",
   "25vh": "25vh",
   "30vh": "30vh",
@@ -54,6 +55,8 @@ var scaleSystem = {
   "80%": "80%",
   "100%": "100%",
   landing: "calc(100% - 6vw)",
+  "tester-desktop": "calc(100% - 5vw);",
+  "tester-mobile": "calc(100% - 10vw);",
 };
 module.exports = {
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],

@@ -59,10 +59,20 @@ class TypeTesterSlider extends React.Component {
             input[type="range"]::-webkit-slider-thumb {
               height: 4.5vw;
               width: 4.5vw;
+              margin-top: -2.2vw;
+            }
+            input[type="range"]::-moz-range-thumb {
+              height: 4.5vw;
+              width: 4.5vw;
             }
           }
           @media only screen and (max-width: 1024px) {
             input[type="range"]::-webkit-slider-thumb {
+              height: 8vw;
+              width: 8vw;
+              margin-top: -4vw;
+            }
+            input[type="range"]::-moz-range-thumb {
               height: 8vw;
               width: 8vw;
             }
@@ -91,12 +101,27 @@ class TypeTesterSlider extends React.Component {
             background-repeat: no-repeat; 
             background-size: cover; 
             cursor: pointer;
+            transition: none;
+          }
+          input[type="range"]::-ms-thumb {
+            margin: 0; /* Reset margin in Edge since it supports -webkit-slider-thumb as well */
+          }
+          input[type="range"]::-moz-range-thumb {
+            outline: none;
+            appearance: none;
+            border: 0;
+            border-radius: 100%;
+            background-image: url("images/icons/sliderbutton.png");
+            background-position: center;
+            background-repeat: no-repeat; 
+            background-size: cover; 
+            cursor: pointer;
             margin-top: 0vw;
             transition: none;
           }
-          input[type="range"]::-webkit-slider-thumb:hover {
-            background: #f97dda;
-          }
+          // input[type="range"]::-webkit-slider-thumb:hover {
+          //   background: #f97dda;
+          // }
           .input-range__slider {
             appearance: none;
             height: 2vw;
@@ -111,16 +136,24 @@ class TypeTesterSlider extends React.Component {
           .input-range__slider:active {
             transform: none;
           }
-          .input-range__track {
+          ::-webkit-slider-runnable-track {
+            // box-sizing: border-box
+            background: black;
+            margin-top:2.4vw;
+            margin-bottom:2.4vw;
+            height: 0.2vw;
+            transition: none;
+          }
+          ::-moz-range-track {
             background: black;
             height: 2px;
             transition: none;
           }
 
-          .input-range__track--active {
-            display: none;
-            transition: none;
-          }
+          // .input-range__track--active {
+          //   display: none;
+          //   transition: none;
+          // }
 
           .input-range__label--value .input-range__label-container {
             display: none;

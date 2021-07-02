@@ -223,7 +223,7 @@ class TypeTester extends Component {
               /> */}
             <div className="flex flex-col w-100% h-100%">
               <div className="h-100% w-100% bg-purple rounded-sm lg:rounded-lg flex justify-center items-center overflow-hidden">
-                <div className="w-1/4 lg:w-1/5 bg-gray h-100% flex justify-center items-center">
+                <div className="w-1/5 lg:w-10% bg-gray h-100% flex justify-center items-center">
                   <span
                     onClick={this.toggleCurrentAnimation}
                     className="cursor-pointer"
@@ -235,7 +235,7 @@ class TypeTester extends Component {
                   </span>
                 </div>
                 <div
-                  className="w-3/4 lg:w-4/5 cursor-pointer"
+                  className="w-4/5 lg:w-90% cursor-pointer"
                   onClick={this.handleClick}
                 >
                   <TypeTesterSlider

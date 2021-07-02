@@ -276,7 +276,7 @@ function Index(props) {
                 Download
               </span>
             </Pill>
-            <Nav />
+            {/* <Nav /> */}
             {/* CREDITS */}
             <Pill className="bg-gray h-10 lg:h-6">
               <span className="font-body text-4 lg:text-2 uppercase">

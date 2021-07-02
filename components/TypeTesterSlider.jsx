@@ -57,8 +57,8 @@ class TypeTesterSlider extends React.Component {
           /* Slider.css */
           @media only screen and (min-width: 1024px) {
             input[type="range"]::-webkit-slider-thumb {
-              height: 3vw;
-              width: 3vw;
+              height: 4.5vw;
+              width: 4.5vw;
             }
           }
           @media only screen and (max-width: 1024px) {

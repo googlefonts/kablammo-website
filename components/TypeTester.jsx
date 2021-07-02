@@ -154,7 +154,7 @@ class TypeTester extends Component {
             >
               <span
                 ref={this.typeTesterInputRef}
-                className={`text-${this.state.activeBg.textColor} type-tester text-13 lg:text-12 m-auto lg:-mt-12 w-3/4 h-100% absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center block leading-none text-center focus:outline-none overflow-hidden self-center break-words`}
+                className={`text-${this.state.activeBg.textColor} type-tester text-13 lg:text-12 m-auto w-3/4 h-100% absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center block leading-none text-center focus:outline-none overflow-hidden self-center break-words`}
                 contentEditable="true"
                 suppressContentEditableWarning={true}
                 spellCheck="false"
@@ -223,20 +223,19 @@ class TypeTester extends Component {
               /> */}
             <div className="flex flex-col w-100% h-100%">
               <div className="h-100% w-100% bg-purple rounded-sm lg:rounded-lg flex justify-center items-center overflow-hidden">
-                <div className="w-1/4 bg-gray h-100% flex justify-center items-center">
-                  <span className="uppercase font-mono text-3">Move Axis</span>
+                <div className="w-1/4 lg:w-1/5 bg-gray h-100% flex justify-center items-center">
                   <span
                     onClick={this.toggleCurrentAnimation}
                     className="cursor-pointer"
                   >
                     <img
-                      id="controlicon"
-                      src="/images/icons/playpauselight.png"
+                      src="/images/icons/playpause.png"
+                      className="h-6 lg:h-3"
                     />
                   </span>
                 </div>
                 <div
-                  className="w-3/4 cursor-pointer"
+                  className="w-3/4 lg:w-4/5 cursor-pointer"
                   onClick={this.handleClick}
                 >
                   <TypeTesterSlider
@@ -252,11 +251,6 @@ class TypeTester extends Component {
         <style global jsx>{`
           #typetestereditablefield {
             cursor: url("/images/icons/textcursor.svg"), move;
-          }
-          #controlicon {
-            height: 15px;
-            width: auto;
-            margin-left: 15px;
           }
           .type-tester {
             transition: font-variation-settings 0.6s ease;

@@ -272,7 +272,7 @@ function Index(props) {
             </Frame>
             {/* DOWNLOAD */}
             <Pill className="bg-purple h-30">
-              <span className="text-2 lg:text-16 text-lime uppercase">
+              <span className="text-16 lg:text-16 text-lime uppercase">
                 Download
               </span>
             </Pill>

@@ -38,12 +38,9 @@ const TypeParticlesText = (props) => {
 	};
 	useEffect(()=>{
 		if (window.innerWidth < 1024){
-			console.log("small")
 			let rand1 = 10000+Math.random()*100000;
-			console.log(rand1);
 			function mobileHighlighting(){ 
 				setTimeout(()=>{
-					console.log("yoooo");
 					handleMouseEnter();
 					setTimeout(()=>{
 						handleMouseLeave;

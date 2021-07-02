@@ -165,7 +165,7 @@ function Index(props) {
             <div
               className={`bg-green lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden`}
             >
-              <h3 className="text-center text-yellow mt-6">Character Set</h3>
+              <p className="text-center text-yellow text-8 lg:text-5 my-3 lg:my-6">Character Set</p>
               <CharacterSetNoSSR />
             </div>
             <SlotMachine />
@@ -222,44 +222,28 @@ function Index(props) {
             </Pill>
             {/* ESSAY */}
             <Frame
-              className={`bg-gray lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-50vh lg:h-100vh`}
+              className={`bg-gray lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-auto lg:h-75vh`}
             >
-              <h3 className="text-center text-black mt-6">About the Font</h3>
-              <div className={`grid grid-cols-2`}>
-                <div className="px-20">
-                  <p className="font-body block mb-8 text-5 lg:text-2">
+              <p className="text-center text-black text-8 lg:text-5 my-3 lg:my-6">About the Font</p>
+              <div className={`grid lg:grid-cols-2`}>
+                <div className="px-5 lg:pl-5 lg:pr-2.5 text-5 lg:text-2 xl:text-1.5">
+                  <p className="font-body block mb-2 lg:mb-8">
                     Nicolette Gray wrote about the Caslon Italian (above) in her
                     book Nineteenth Century.
                   </p>
-                  <p className="font-mono block mb-8 text-5 lg:text-2">
+                  <p className="font-mono block mb-4 lg:mb-8">
                     Maelstrom & Maelstrom Sans are reversed-stress typefaces.
                     They’re “perverse”, to be sure, but that’s exactly their
                     charm. They belong to a genre destined to be a perpetual
                     typographic outsider — never fashionable yet never
                     abandoned.
                   </p>
-                  <p className="font-mono block mb-8 text-5 lg:text-2">
-                    Maelstrom & Maelstrom Sans are reversed-stress typefaces.
-                    They’re “perverse”, to be sure, but that’s exactly their
-                    charm. They belong to a genre destined to be a perpetual
-                    typographic outsider — never fashionable yet never
-                    abandoned. Nicolette Gray wrote about the Caslon Italian (above) in her
-                    book Nineteenth Century.
-                  </p>
                 </div>
-                <div className="px-20 text-10">
-                <p className="font-mono block mb-8 lg:text-2">
+                <div className="px-5 lg:pr-5 lg:pl-2.5 text-5 lg:text-2 xl:text-1.5">
+                <p className="font-body block mb-2 lg:mb-8">
                     Ornamented Types and Title Pages{" "}
                   </p>
-                  <p className="font-mono block mb-8 lg:text-2">
-                    The only semi-ornamental type of this decade [1821] is the
-                    much, and quite rightly, abused Italian. The Italian is an
-                    Egyptian with a horizontal stress and extra serifs reversed
-                    and joined to the letter by the point; a crude expression of
-                    the idea of perversity. It is scarcely just, however, to
-                    regard it as a typical monstrosity of the time.
-                  </p>
-                  <p className="font-mono block mb-8 text-5 lg:text-2">
+                  <p className="font-mono block mb-4 lg:mb-8">
                     The only semi-ornamental type of this decade [1821] is the
                     much, and quite rightly, abused Italian. The Italian is an
                     Egyptian with a horizontal stress and extra serifs reversed

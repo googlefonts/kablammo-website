@@ -262,23 +262,23 @@ function Index(props) {
             </Pill>
             {/* <Nav /> */}
             {/* CREDITS */}
-            <Pill className="bg-gray h-10 lg:h-6">
-              <span className="font-body text-4 lg:text-2 uppercase">
+            <Pill className="bg-gray h-auto lg:h-6">
+              <span className="font-body text-4 lg:text-2 py-2 uppercase">
                 Lead Design and Concept by Travis Kochel
               </span>
             </Pill>
-            <Pill className="bg-gray h-10 lg:h-6">
-              <span className="font-body text-4 lg:text-2 uppercase">
+            <Pill className="bg-gray h-auto lg:h-6">
+              <span className="font-body text-4 lg:text-4 lg:text-2 py-2 uppercase">
                 Cyrillic & Production Assistance by Daria Petrova & Ethan Cohen
               </span>
             </Pill>
-            <Pill className="bg-gray h-10 lg:h-6">
-              <span className="font-body text-4 lg:text-2 uppercase">
+            <Pill className="bg-gray h-auto lg:h-6">
+              <span className="font-body py-1 text-4 lg:text-2 py-2 uppercase">
                 Website Design & Development by FISK
               </span>
             </Pill>
-            <Pill className="bg-gray h-10 lg:h-6">
-              <span className="font-body text-4 lg:text-2 uppercase">
+            <Pill className="bg-gray h-auto lg:h-6">
+              <span className="font-body text-4 lg:text-2 py-2 uppercase">
                 Commissioned by Google Fonts
               </span>
             </Pill>

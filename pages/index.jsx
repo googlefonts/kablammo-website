@@ -165,7 +165,9 @@ function Index(props) {
             <div
               className={`bg-green lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden`}
             >
-              <p className="text-center text-yellow text-8 lg:text-5 my-3 lg:my-6">Character Set</p>
+              <p className="text-center text-yellow text-8 lg:text-5 my-3 lg:my-6">
+                Character Set
+              </p>
               <CharacterSetNoSSR />
             </div>
             <SlotMachine />
@@ -224,8 +226,10 @@ function Index(props) {
             <Frame
               className={`bg-gray lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-auto lg:h-75vh`}
             >
-              <p className="text-center text-black text-8 lg:text-5 my-3 lg:my-6">About the Font</p>
-              <div className={`grid lg:grid-cols-2`}>
+              <p className="text-center text-black text-8 lg:text-5 my-3 lg:my-6">
+                About the Font
+              </p>
+              <div className={`grid lg:grid-cols-1 w-90vh m-auto`}>
                 <div className="px-5 lg:pl-5 lg:pr-2.5 text-5 lg:text-2 xl:text-1.5">
                   <p className="font-body block mb-2 lg:mb-8">
                     Nicolette Gray wrote about the Caslon Italian (above) in her
@@ -239,46 +243,31 @@ function Index(props) {
                     abandoned.
                   </p>
                 </div>
-                <div className="px-5 lg:pr-5 lg:pl-2.5 text-5 lg:text-2 xl:text-1.5">
-                <p className="font-body block mb-2 lg:mb-8">
-                    Ornamented Types and Title Pages{" "}
-                  </p>
-                  <p className="font-mono block mb-4 lg:mb-8">
-                    The only semi-ornamental type of this decade [1821] is the
-                    much, and quite rightly, abused Italian. The Italian is an
-                    Egyptian with a horizontal stress and extra serifs reversed
-                    and joined to the letter by the point; a crude expression of
-                    the idea of perversity. It is scarcely just, however, to
-                    regard it as a typical monstrosity of the time.
-                  </p>
-                </div>
               </div>
             </Frame>
             {/* DOWNLOAD */}
             <Pill className="bg-purple h-30">
-              <span className="text-16 text-lime uppercase">
-                Download
-              </span>
+              <span className="text-16 text-lime uppercase">Download</span>
             </Pill>
             {/* <Nav /> */}
             {/* CREDITS */}
             <Pill className="bg-gray h-auto lg:h-6">
-              <span className="font-body text-4 lg:text-2 py-2 uppercase">
+              <span className="font-body text-4 lg:text-2 py-2 uppercase leading-tight">
                 Lead Design and Concept by Travis Kochel
               </span>
             </Pill>
             <Pill className="bg-gray h-auto lg:h-6">
-              <span className="font-body text-4 lg:text-4 lg:text-2 py-2 uppercase">
+              <span className="font-body text-4 lg:text-2 py-2 uppercase leading-tight">
                 Cyrillic & Production Assistance by Daria Petrova & Ethan Cohen
               </span>
             </Pill>
             <Pill className="bg-gray h-auto lg:h-6">
-              <span className="font-body py-1 text-4 lg:text-2 py-2 uppercase">
+              <span className="font-body text-4 lg:text-2 py-2 uppercase leading-tight">
                 Website Design & Development by FISK
               </span>
             </Pill>
             <Pill className="bg-gray h-auto lg:h-6">
-              <span className="font-body text-4 lg:text-2 py-2 uppercase">
+              <span className="font-body text-4 lg:text-2 py-2 uppercase leading-tight">
                 Commissioned by Google Fonts
               </span>
             </Pill>

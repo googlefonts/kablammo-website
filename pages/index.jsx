@@ -242,6 +242,17 @@ function Index(props) {
                     typographic outsider — never fashionable yet never
                     abandoned.
                   </p>
+                  <p className="font-body block mb-2 lg:mb-8">
+                    Nicolette Gray wrote about the Caslon Italian (above) in her
+                    book Nineteenth Century.
+                  </p>
+                  <p className="font-mono block mb-4 lg:mb-8">
+                    Maelstrom & Maelstrom Sans are reversed-stress typefaces.
+                    They’re “perverse”, to be sure, but that’s exactly their
+                    charm. They belong to a genre destined to be a perpetual
+                    typographic outsider — never fashionable yet never
+                    abandoned.
+                  </p>
                 </div>
               </div>
             </Frame>

@@ -46,7 +46,7 @@ const Nav = (props) => {
         </div>
         <div id="desktoplinks" className={`hidden lg:flex w-100%`}>
           <Link href="#" passHref scroll={false}>
-            <NavItem className="bg-lime">Kablammo</NavItem>
+            <NavItem className="bg-lime">Made By Vectro</NavItem>
           </Link>
           <Link href="#typetester" passHref scroll={false}>
             <NavItem className="bg-orange">Try It Out!</NavItem>

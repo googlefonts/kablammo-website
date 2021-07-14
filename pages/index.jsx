@@ -125,7 +125,7 @@ function Index(props) {
                   large
                 >
                   <span
-                    className={`animate-it text-5 lg:text-3 text-black uppercase`}
+                    className={`text-5 lg:text-3 text-black uppercase`}
                   >
                     ☮ BROUGHT ☼ TO 👁 YOU 🌐 BY ☀
                     VECTRO ☮ Type ☼ Foundry &nbsp;
@@ -138,22 +138,6 @@ function Index(props) {
             {/* TYPE TESTER 1 */}
             <TypeTester />
             
-            {/* SMALL SCROLLING TEXT 1 */}
-            <Pill className="hvr-wobble-top hvr-shutter-out-horizontal bg-lime hover:bg-green h-10 lg:h-5 bg-clip-padding overflow-hidden">
-              <ScrollingText
-                className="cursor-pointer"
-                blank
-                specialRight
-                hideMobile
-                borderTop
-                large
-                right
-              >
-                <span className="animate-it-fast text-6 leading-none inline-block -mt-5 text-blue uppercase">
-                  &#xE006;&#xE006;&#xE006;&#xE006;&#xE006;&#xE006;&#xE006;&#xE006;
-                </span>
-              </ScrollingText>
-            </Pill>
             {/* SLIDER FRAME */}
             <Carousel
               className={`bg-orange lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-50vh lg:h-100vh`}
@@ -255,49 +239,49 @@ function Index(props) {
               </div>
             </Frame>
             {/* DOWNLOAD */}
-            <Pill className="bg-purple h-30">
-              <span className="text-16 text-lime uppercase">
+            <Pill className="bg-purple hover:bg-pink h-30">
+              <span className="text-16 text-lime uppercase cursor-pointer">
                 Download
               </span>
             </Pill>
             {/* <Nav /> */}
             {/* CREDITS */}
-            <Pill className="bg-yellow h-auto lg:h-6">
+            <Pill className="bg-gray h-auto lg:h-6">
             <span className="font-body text-4 lg:text-2 py-2 px-4 uppercase">
                 Art Direction
               </span>
               </Pill>
-              <Pill className="bg-gray h-auto lg:h-6">
+              <Pill className="bg-yellow h-auto lg:h-6">
               <span className="font-body text-4 lg:text-2 py-2 px-4 uppercase">
               Travis Kochel and Lizy Gershenzon
               </span>
             </Pill>
-            <Pill className="bg-purple h-auto lg:h-6">
+            <Pill className="bg-gray h-auto lg:h-6">
             <span className="font-body text-4 lg:text-2 py-2 px-4 uppercase">
             Lead Design and Production 
               </span>
               </Pill>
-              <Pill className="bg-gray h-auto lg:h-6">
+              <Pill className="bg-purple h-auto lg:h-6">
               <span className="font-body text-4 lg:text-2 py-2 px-4 uppercase">
               Travis Kochel
               </span>
             </Pill>
-            <Pill className="bg-lime h-auto lg:h-6">
+            <Pill className="bg-gray h-auto lg:h-6">
               <span className="font-body text-4 lg:text-2 py-2 px-4 uppercase">
                 Cyrillic and Production Help
               </span>
             </Pill>
-            <Pill className="bg-gray h-auto lg:h-6">
+            <Pill className="bg-lime h-auto lg:h-6">
               <span className="font-body text-4 lg:text-2 py-2 px-4 uppercase">
                 Daria Petrova and Ethan Cohen
               </span>
             </Pill>
-            <Pill className="bg-pink h-auto lg:h-6">
+            <Pill className="bg-gray h-auto lg:h-6">
               <span className="font-body py-1 text-4 lg:text-2 py-2 uppercase">
                 Website Design and Development
               </span>
             </Pill>
-            <Pill className="bg-gray h-auto lg:h-6">
+            <Pill className="bg-pink h-auto lg:h-6">
               <span className="font-body py-1 text-4 lg:text-2 py-2 uppercase">
                 FISK
               </span>
@@ -308,8 +292,8 @@ function Index(props) {
               </span>
             </Pill>
             {/* VECTRO TYPE FOUNDRY CREDIT */}
-            <Pill className="bg-blue h-12">
-              <span className="text-6 uppercase">
+            <Pill className="bg-blue h-12 hover:bg-yellow">
+              <span className="text-6 uppercase cursor-pointer">
                 Font by Vectro Type Foundry
               </span>
             </Pill>

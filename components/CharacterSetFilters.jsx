@@ -11,39 +11,39 @@ const CharacterSetFilters = ({ handleFilterClick }) => {
 
   const categories = [
     {
-      name: 'basic-latin',
+      name: '.basic-latin',
       label: 'Basic Latin',
     },
     {
-      name: 'extended-latin',
+      name: '.extended-latin',
       label: 'Extended Latin'
     },
     {
-      name: 'cyrillic',
+      name: '.cyrillic',
       label: 'Cyrillic'
     },
     {
-      name: 'numerals',
+      name: '.numerals',
       label: 'Numerals'
     },
     {
-      name: 'punctuation-and-symbols',
+      name: '.punctuation-and-symbols',
       label: 'Punctuation & Symbols'
     },
     {
-      name: 'math-and-currency',
+      name: '.math-and-currency',
       label: 'Math & Currency'
     },
     {
-      name: 'kablammoji',
+      name: '.kablammoji',
       label: 'Kablammoji'
     },
     {
-      name: 'patterns-and-borders',
+      name: '.patterns-and-borders',
       label: 'Patterns & Borders'
     },
     {
-      name: 'zodiac',
+      name: '.zodiac',
       label: 'Zodiac'
     }
   ]

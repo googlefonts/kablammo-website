@@ -148,6 +148,7 @@ function Index(props) {
             {/* CHARACTER SET */}
             <div
               className={`bg-green lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden`}
+              id="characterset"
             >
               <p className="text-center text-yellow text-8 lg:text-5 my-3 lg:my-6">Character Set</p>
               <CharacterSetNoSSR />

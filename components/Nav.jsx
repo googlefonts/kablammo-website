@@ -51,7 +51,7 @@ const Nav = (props) => {
           <Link href="#typetester" passHref scroll={false}>
             <NavItem className="bg-orange">Try It Out!</NavItem>
           </Link>
-          <Link href="#" passHref scroll={false}>
+          <Link href="#characterset" passHref scroll={false}>
             <NavItem className="bg-blue">Character Set</NavItem>
           </Link>
           <Link href="#" passHref scroll={false}>
@@ -83,7 +83,7 @@ const Nav = (props) => {
         <Link href="#typetester" passHref scroll={false}>
           <NavItem className="bg-orange">Try It Out!</NavItem>
         </Link>
-        <Link href="#" passHref scroll={false}>
+        <Link href="#characterset" passHref scroll={false}>
           <NavItem className="bg-blue">Character Set</NavItem>
         </Link>
         <Link href="#" passHref scroll={false}>

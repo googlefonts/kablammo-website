@@ -3,10 +3,10 @@ import React, { useState } from "react";
 const TypeTesterSelect = (props) => {
   const [showOptions, setShowOptions] = useState(false);
   const [options, setOptions] = useState([
-    { title: "Axis A", sort: 1, active: true },
-    { title: "Axis B", sort: 2, active: false },
-    { title: "Axis C", sort: 3, active: false },
-    { title: "Axis D", sort: 4, active: false },
+    { title: "A", sort: 1, active: true },
+    { title: "B", sort: 2, active: false },
+    { title: "C", sort: 3, active: false },
+    { title: "D", sort: 4, active: false },
   ]);
 
   const handleOptionClick = (option) => {
@@ -26,16 +26,16 @@ const TypeTesterSelect = (props) => {
   const setSelect = (option) => {
     console.log(option);
     switch (option.title) {
-      case "Axis A":
+      case "A":
         props.handleSliderChange(null, 1);
         break;
-      case "Axis B":
+      case "B":
         props.handleSliderChange(null, 333);
         break;
-      case "Axis C":
+      case "C":
         props.handleSliderChange(null, 666);
         break;
-      case "Axis D":
+      case "D":
         props.handleSliderChange(null, 1000);
         break;
       default:

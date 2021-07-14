@@ -25,17 +25,17 @@ const TypeParticles = (props) => {
       <div className="text-7 md:text-6 leading-tight text-gray uppercase text-center z-50">
         <TypeParticlesText className={``}>Meet</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>KABLAMMO</TypeParticlesText>{" "}
-        <TypeParticlesText className={``}>👀,</TypeParticlesText>{" "}
+        <TypeParticlesText color={`#E8F75C`} className={``}>👀</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>the</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>DANCING</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>FONT</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>FROM</TypeParticlesText>{" "}
-        <TypeParticlesText className={``}>🛸</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>OUTER</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>SPACE!</TypeParticlesText>{" "}
+        <TypeParticlesText color={`#73B6E7`} className={``}>🛸</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>Designed</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>BY</TypeParticlesText>{" "}
-        <TypeParticlesText className={``}>🌐</TypeParticlesText>{" "}
+        <TypeParticlesText color={`#F97DDA`} className={``}>🙃</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>VECTRO</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>FOUNDRY,</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>IT</TypeParticlesText>{" "}
@@ -43,6 +43,7 @@ const TypeParticles = (props) => {
         <TypeParticlesText className={``}>A</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>MOVEMENT</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>AXIS</TypeParticlesText>{" "}
+        <TypeParticlesText color={`#9891E8`} className={``}>🌐</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>THAT</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>MAKES</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>THE</TypeParticlesText>{" "}
@@ -53,7 +54,7 @@ const TypeParticles = (props) => {
         <TypeParticlesText className={``}>and</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>bloop</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>and</TypeParticlesText>{" "}
-        <TypeParticlesText className={``}>💥</TypeParticlesText>{" "}      
+        <TypeParticlesText color={`#EB7B57`} className={``}>💥</TypeParticlesText>{" "}      
         </div>
 
       {/* <div className="hvr-grow-rotate animate-it-fast text-orange absolute top-6 left-5 text-20 leading-tight pointer-events-none">

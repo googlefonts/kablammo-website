@@ -11,7 +11,7 @@ const colors = [
 
 const TypeParticlesText = (props) => {
 	const [spanStyle, setSpanStyle] = useState({
-		color: "#e4e4e4",
+		color: props.color ? props.color : "#e4e4e4",
 	});
 	const [clicked, setClicked] = useState(false);
 	const [hover, setHover] = useState(false);

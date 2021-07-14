@@ -262,8 +262,8 @@ function Index(props) {
             </Pill>
             {/* <Nav /> */}
             {/* CREDITS */}
-            <Pill className="bg-gray h-auto lg:h-6">
-            <span className="font-body font-bold text-4 lg:text-2 py-2 px-4 uppercase">
+            <Pill className="bg-yellow h-auto lg:h-6">
+            <span className="font-body text-4 lg:text-2 py-2 px-4 uppercase">
                 Art Direction
               </span>
               </Pill>
@@ -272,8 +272,8 @@ function Index(props) {
               Travis Kochel and Lizy Gershenzon
               </span>
             </Pill>
-            <Pill className="bg-gray h-auto lg:h-6">
-            <span className="font-body font-bold text-4 lg:text-2 py-2 px-4 uppercase">
+            <Pill className="bg-purple h-auto lg:h-6">
+            <span className="font-body text-4 lg:text-2 py-2 px-4 uppercase">
             Lead Design and Production 
               </span>
               </Pill>
@@ -282,17 +282,27 @@ function Index(props) {
               Travis Kochel
               </span>
             </Pill>
+            <Pill className="bg-lime h-auto lg:h-6">
+              <span className="font-body text-4 lg:text-2 py-2 px-4 uppercase">
+                Cyrillic and Production Help
+              </span>
+            </Pill>
             <Pill className="bg-gray h-auto lg:h-6">
               <span className="font-body text-4 lg:text-2 py-2 px-4 uppercase">
-                Cyrillic & Production Assistance by Daria Petrova & Ethan Cohen
+                Daria Petrova and Ethan Cohen
+              </span>
+            </Pill>
+            <Pill className="bg-pink h-auto lg:h-6">
+              <span className="font-body py-1 text-4 lg:text-2 py-2 uppercase">
+                Website Design and Development
               </span>
             </Pill>
             <Pill className="bg-gray h-auto lg:h-6">
               <span className="font-body py-1 text-4 lg:text-2 py-2 uppercase">
-                Website Design & Development by FISK
+                FISK
               </span>
             </Pill>
-            <Pill className="bg-gray h-auto lg:h-6">
+            <Pill className="bg-orange h-auto lg:h-6">
               <span className="font-body text-4 lg:text-2 py-2 uppercase">
                 Commissioned by Google Fonts
               </span>

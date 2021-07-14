@@ -9,78 +9,125 @@ const CharacterSetFilters = ({ handleFilterClick }) => {
     setOpen(!open);
   };
 
+  const categories = [
+    {
+      name: 'basic-latin',
+      label: 'Basic Latin',
+    },
+    {
+      name: 'extended-latin',
+      label: 'Extended Latin'
+    },
+    {
+      name: 'cyrillic',
+      label: 'Cyrillic'
+    },
+    {
+      name: 'numerals',
+      label: 'Numerals'
+    },
+    {
+      name: 'punctuation-and-symbols',
+      label: 'Punctuation & Symbols'
+    },
+    {
+      name: 'math-and-currency',
+      label: 'Math & Currency'
+    },
+    {
+      name: 'kablammoji',
+      label: 'Kablammoji'
+    },
+    {
+      name: 'patterns-and-borders',
+      label: 'Patterns & Borders'
+    },
+    {
+      name: 'zodiac',
+      label: 'Zodiac'
+    }
+  ]
+
+
   return (
     <div className="character-set-filters">
-      <div onClick={handleClick}>
+      {/* <div onClick={handleClick}>
         <Pill className="bg-yellow h-10 lg:h-6 cursor-pointer">
-          <span className="uppercase font-mono text-4 lg:text-2">Filters +</span>
+          <span className="uppercase font-mono text-3 lg:text-2">Filters +</span>
         </Pill>
-      </div>
-      <div
-        className={`filters w-100% text-black text-center grid place-items-center ${
-          open ? "open" : "closed"
-        }`}
+      </div>*/}
+      <div 
+        className={`filters w-100% text-black text-center grid place-items-center`}
       >
         <div className="w-100%">
-          <div className="grid grid-cols-2 font-body">
+          <div className="grid grid-cols-3 font-body">
             <div>
               <button
-                data-filter=".basic-latin"
+                data-filter={categories[0].name}
                 onClick={handleFilterClick}
-                className="bg-yellow hover:bg-lime h-10 lg:h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-4 lg:text-2 uppercase"
+                className="bg-yellow hover:bg-lime h-10 lg:h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-3 lg:text-2 uppercase"
               >
-                Basic Latin
+                {categories[0].label}
               </button>
               <button
-                data-filter=".numerals"
+                data-filter={categories[1].name}
                 onClick={handleFilterClick}
-                className="bg-lime hover:bg-lime h-10 lg:h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-4 lg:text-2 uppercase"
+                className="bg-lime hover:bg-lime h-10 lg:h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-3 lg:text-2 uppercase"
               >
-                Numerals
+                {categories[1].label}
               </button>
               <button
-                data-filter=".symbols"
+                data-filter={categories[2].name}
                 onClick={handleFilterClick}
-                className="bg-gray hover:bg-lime h-10 lg:h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-4 lg:text-2 uppercase"
+                className="bg-pink hover:bg-lime h-10 lg:h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-3 lg:text-2 uppercase"
               >
-                Symbols
-              </button>
-              <button
-                data-filter=".emojis"
-                onClick={handleFilterClick}
-                className="bg-purple hover:bg-lime h-10 lg:h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-4 lg:text-2 uppercase"
-              >
-                Emojis
+                {categories[2].label}
               </button>
             </div>
             <div>
-              <button
-                data-filter=".extended"
+            <button
+                data-filter={categories[3].name}
                 onClick={handleFilterClick}
-                className="bg-orange hover:bg-lime h-10 lg:h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-4 lg:text-2 uppercase"
+                className="bg-purple hover:bg-lime h-10 lg:h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-3 lg:text-2 uppercase"
               >
-                Extended
+                {categories[3].label}
               </button>
               <button
-                data-filter=".punctuation"
+                data-filter={categories[4].name}
                 onClick={handleFilterClick}
-                className="bg-green hover:bg-lime h-10 lg:h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-4 lg:text-2 uppercase"
+                className="bg-orange hover:bg-lime h-10 lg:h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-3 lg:text-2 uppercase"
               >
-                Punctuation
+                {categories[4].label}
               </button>
               <button
-                data-filter=".zodiac"
+                data-filter={categories[5].name}
                 onClick={handleFilterClick}
-                className="bg-blue hover:bg-lime h-10 lg:h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-4 lg:text-2 uppercase"
+                className="bg-blue hover:bg-lime h-10 lg:h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-3 lg:text-2 uppercase"
               >
-                Zodiac
+                {categories[5].label}
+              </button>
+            </div>
+            <div>
+            <button
+                data-filter={categories[5].name}
+                onClick={handleFilterClick}
+                className="bg-lime hover:bg-lime h-10 lg:h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-3 lg:text-2 uppercase"
+              >
+                {categories[5].label}
               </button>
               <button
-                data-filter=".patterns"
+                data-filter={categories[6].name}
                 onClick={handleFilterClick}
-                className="bg-pink hover:bg-lime h-10 lg:h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-4 lg:text-2 uppercase"
+                className="bg-pink hover:bg-lime h-10 lg:h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-3 lg:text-2 uppercase"
               >
-                Patterns
+                {categories[6].label}
+              </button>
+              <button
+                data-filter={categories[7].name}
+                onClick={handleFilterClick}
+                className="bg-purple hover:bg-lime h-10 lg:h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-3 lg:text-2 uppercase"
+              >
+                {categories[7].label}
               </button>
             </div>
           </div>

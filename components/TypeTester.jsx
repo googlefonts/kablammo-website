@@ -250,7 +250,7 @@ class TypeTester extends Component {
         </Pill>
         <style global jsx>{`
           #typetestereditablefield {
-            cursor: url("/images/icons/textcursor.svg"), move;
+            cursor: url("/images/icons/textcursor.svg"), text;
           }
           .type-tester {
             transition: font-variation-settings 0.6s ease;

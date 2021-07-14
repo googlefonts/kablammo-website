@@ -105,10 +105,12 @@ const TypeTesterSelect = (props) => {
           animation: height 600ms;
         }
         .select-options li {
-          cursor: pointer;
+          // cursor: pointer;
+          cursor: url("/images/icons/SVG/white-cursor.svg"), pointer;
         }
         .select-current-option {
-          cursor: pointer;
+          // cursor: pointer;
+          cursor: url("/images/icons/SVG/white-cursor.svg"), pointer;
         }
         .hide-options {
           opacity: 0;

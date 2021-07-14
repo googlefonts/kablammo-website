@@ -161,7 +161,7 @@ class TypeTester extends Component {
                 onKeyDown={this.handleTypeTesterInputChange}
                 id="typetestereditablefield"
               >
-                ⚠ VARIABLE FONT 🌼 BY VECTRO 😵
+                ⚠ click and type 💩 try me out 😵
               </span>
               <div className="justify-end hidden lg:flex ">
                 <div className="pt-5 pr-5 lg:pr-20 z-50">
@@ -260,7 +260,8 @@ class TypeTester extends Component {
             width: 2vw;
             border: 0;
             border-radius: 100%;
-            cursor: pointer;
+            // cursor: pointer;
+            cursor: url("/images/icons/SVG/white-cursor.svg"), pointer;
             transition: none;
           }
           .select {
@@ -291,7 +292,8 @@ class TypeTester extends Component {
             border: 0;
             border-radius: 100%;
             background: #ffc000;
-            cursor: pointer;
+            // cursor: pointer;
+            cursor: url("/images/icons/SVG/white-cursor.svg"), pointer;
             margin-top: -1vw;
             transition: none;
           }

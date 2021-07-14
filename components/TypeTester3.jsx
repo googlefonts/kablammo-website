@@ -229,7 +229,8 @@ class TypeTester extends Component {
             width: 2vw;
             border: 0;
             border-radius: 100%;
-            cursor: pointer;
+            // cursor: pointer;
+            cursor: url("/images/icons/SVG/white-cursor.svg"), pointer;
             transition: none;
           }
           .select {
@@ -260,7 +261,8 @@ class TypeTester extends Component {
             border: 0;
             border-radius: 100%;
             background: #ffc000;
-            cursor: pointer;
+            // cursor: pointer;
+            cursor: url("/images/icons/SVG/white-cursor.svg"), pointer;
             margin-top: -1vw;
             transition: none;
           }

@@ -127,17 +127,17 @@ function Index(props) {
                   <span
                     className={`animate-it text-5 lg:text-3 text-black uppercase`}
                   >
-                    👁 A 🌐 Dancing ☀ typeface ☮ BROUGHT ☼ TO 👁 YOU 🌐 BY ☀
+                    ☮ BROUGHT ☼ TO 👁 YOU 🌐 BY ☀
                     VECTRO ☮ Type ☼ Foundry &nbsp;
                   </span>
                 </ScrollingText>
               </Pill>
             </Frame>
-
-            {/* TYPE TESTER 1 */}
-            <TypeTester />
             {/* TYPE PARTICLES */}
             <TypeParticles />
+            {/* TYPE TESTER 1 */}
+            <TypeTester />
+            
             {/* SMALL SCROLLING TEXT 1 */}
             <Pill className="hvr-wobble-top hvr-shutter-out-horizontal bg-lime hover:bg-green h-10 lg:h-5 bg-clip-padding overflow-hidden">
               <ScrollingText
@@ -263,12 +263,27 @@ function Index(props) {
             {/* <Nav /> */}
             {/* CREDITS */}
             <Pill className="bg-gray h-auto lg:h-6">
-              <span className="font-body text-4 lg:text-2 py-2 uppercase">
-                Lead Design and Concept by Travis Kochel
+            <span className="font-body font-bold text-4 lg:text-2 py-2 px-4 uppercase">
+                Art Direction
+              </span>
+              </Pill>
+              <Pill className="bg-gray h-auto lg:h-6">
+              <span className="font-body text-4 lg:text-2 py-2 px-4 uppercase">
+              Travis Kochel and Lizy Gershenzon
               </span>
             </Pill>
             <Pill className="bg-gray h-auto lg:h-6">
-              <span className="font-body text-4 lg:text-4 lg:text-2 py-2 uppercase">
+            <span className="font-body font-bold text-4 lg:text-2 py-2 px-4 uppercase">
+            Lead Design and Production 
+              </span>
+              </Pill>
+              <Pill className="bg-gray h-auto lg:h-6">
+              <span className="font-body text-4 lg:text-2 py-2 px-4 uppercase">
+              Travis Kochel
+              </span>
+            </Pill>
+            <Pill className="bg-gray h-auto lg:h-6">
+              <span className="font-body text-4 lg:text-2 py-2 px-4 uppercase">
                 Cyrillic & Production Assistance by Daria Petrova & Ethan Cohen
               </span>
             </Pill>

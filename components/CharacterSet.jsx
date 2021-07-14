@@ -14,15 +14,16 @@ import Isotope from "isotope-layout";
 import Pill from "./Pill";
 import CharacterSetItem from "./CharacterSetItem";
 import CharacterSetFilters from "./CharacterSetFilters";
+// import myText from '../public/js/kablammo-uni-glyphs.txt';
 
 const characterDictionary = [
-  { letter: "A", category: "basic-latin", scale: 1 },
-  { letter: "Á", category: "extended", scale: 1 },
-  { letter: "Ă", category: "extended", scale: 1 },
-  { letter: "Ắ", category: "extended", scale: 1 },
-  { letter: "Ặ", category: "extended", scale: 1 },
-  { letter: "Ằ", category: "extended", scale: 1 },
-  { letter: "Ẳ", category: "extended", scale: 1 },
+  { letter: "\u0041", category: "basic-latin", scale: 1 },
+  { letter: "\u00C1", category: "extended", scale: 1 },
+  { letter: "\u0102", category: "extended", scale: 1 },
+  { letter: "\u1EAE", category: "extended", scale: 1 },
+  { letter: "\u1EB6", category: "extended", scale: 1 },
+  { letter: "\u1EB0", category: "extended", scale: 1 },
+  { letter: "\u1EB2", category: "extended", scale: 1 },
   { letter: "Ẵ", category: "extended", scale: 1 },
   { letter: "Â", category: "extended", scale: 1 },
   { letter: "Ấ", category: "extended", scale: 1 },
@@ -67,6 +68,7 @@ const characterDictionary = [
   { letter: "K", category: "basic-latin", scale: 1 },
   { letter: "L", category: "basic-latin", scale: 1 },
   { letter: "M", category: "basic-latin", scale: 1 },
+  { letter: "\u1E42", category: "basic-latin", scale: 1 },
   { letter: "N", category: "basic-latin", scale: 1 },
   { letter: "O", category: "basic-latin", scale: 1 },
   { letter: "P", category: "basic-latin", scale: 1 },
@@ -243,6 +245,7 @@ const CharacterSet = (props) => {
     // console.log(filterValue, grid, gridRef, gridInit);
     console.log("filterValue", filterValue);
     console.log("grid", gridInit);
+    // console.log(myText);
     gridInit.arrange({ filter: filterValue });
     handleClick(event);
   };

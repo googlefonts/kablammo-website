@@ -156,7 +156,7 @@ function Index(props) {
             <SlotMachine />
             {/* SMALL SCROLLING TEXT PILL 2 */}
             {/* BIG SROLLING TEXT 1 */}
-            <Pill className="hvr-wobble-top hvr-shutter-in-horizontal bg-gray hover:bg-orange h-10 lg:h-6 bg-clip-padding overflow-hidden">
+            {/* <Pill className="hvr-wobble-top hvr-shutter-in-horizontal bg-gray hover:bg-orange h-10 lg:h-6 bg-clip-padding overflow-hidden">
               <ScrollingText
                 className=""
                 href={`#`}
@@ -172,7 +172,7 @@ function Index(props) {
                   ☮ Type ☼ Foundry &nbsp;
                 </span>
               </ScrollingText>
-            </Pill>
+            </Pill> */}
             <Pill className="bg-lime hover:bg-blue h-30 bg-clip-padding overflow-hidden">
               <ScrollingText
                 className=""
@@ -182,7 +182,7 @@ function Index(props) {
                 hideMobile
                 borderTop
                 large
-                right
+                left
               >
                 <span className="text-24 text-purple uppercase">
                   The making of KABLAMMO
@@ -199,6 +199,7 @@ function Index(props) {
                 hideMobile
                 borderTop
                 large
+                right
               >
                 <span className="text-24 text-gray uppercase">
                   The making of KABLAMMO
@@ -293,7 +294,7 @@ function Index(props) {
               </span>
             </Pill>
             {/* VECTRO TYPE FOUNDRY CREDIT */}
-            <Pill className="bg-blue h-12 hover:bg-yellow">
+            <Pill className="bg-blue h-12 hover:bg-yellow cursor-pointer">
               <span className="text-6 uppercase cursor-pointer">
                 Font by Vectro Type Foundry
               </span>

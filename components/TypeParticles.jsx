@@ -11,13 +11,13 @@ import Frame from "./Frame";
 import TypeParticlesText from "./TypeParticlesText";
 
 const TypeParticles = (props) => {
-  useEffect(() => {
-    if (window.innerWidth < 1024) {
-      console.log("small");
-    } else {
-      console.log("biiiig");
-    }
-  });
+  // useEffect(() => {
+  //   if (window.innerWidth < 1024) {
+  //     console.log("small");
+  //   } else {
+  //     console.log("biiiig");
+  //   }
+  // });
   return (
     <Frame
       className={`type-particles bg-extraBlack md:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-50vh lg:h-100vh flex justify-center items-center px-10 md:px-20 relative`}

@@ -3053,10 +3053,6 @@ const CharacterSet = (props) => {
   const handleFilterClick = (event) => {
     // var grid = gridRef !== null ? document.querySelector(".grid") : null;
     const filterValue = event.target.getAttribute("data-filter");
-    // console.log(filterValue, grid, gridRef, gridInit);
-    console.log("filterValue", filterValue);
-    console.log("grid", gridInit);
-    // console.log(myText);
     gridInit.arrange({ filter: filterValue });
     // handleClick(event);
   };

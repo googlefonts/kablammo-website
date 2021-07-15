@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Pill from "./Pill";
+import CharacterSetFilter from "./CharacterSetFilter";
 
 const CharacterSetFilters = ({ handleFilterClick }) => {
   const [open, setOpen] = useState(false);
@@ -13,38 +14,47 @@ const CharacterSetFilters = ({ handleFilterClick }) => {
     {
       name: '.basic-latin',
       label: 'Basic Latin',
+      color: 'yellow'
     },
     {
       name: '.extended-latin',
-      label: 'Extended Latin'
+      label: 'Extended Latin',
+      color: 'lime'
     },
     {
       name: '.cyrillic',
-      label: 'Cyrillic'
+      label: 'Cyrillic',
+      color: 'pink'
     },
     {
       name: '.numerals',
-      label: 'Numerals'
+      label: 'Numerals',
+      color: 'purple'
     },
     {
       name: '.punctuation-and-symbols',
-      label: 'Punctuation & Symbols'
+      label: 'Punctuation & Symbols',
+      color: 'orange'
     },
     {
       name: '.math-and-currency',
-      label: 'Math & Currency'
+      label: 'Math & Currency',
+      color: 'blue'
     },
     {
       name: '.kablammoji',
-      label: 'Kablammoji'
+      label: 'Kablammoji',
+      color: 'lime'
     },
     {
       name: '.patterns-and-borders',
-      label: 'Patterns & Borders'
+      label: 'Patterns & Borders',
+      color: 'pink'
     },
     {
       name: '.zodiac',
-      label: 'Zodiac'
+      label: 'Zodiac',
+      color: 'purple'
     }
   ]
 
@@ -62,73 +72,19 @@ const CharacterSetFilters = ({ handleFilterClick }) => {
         <div className="w-100%">
           <div className="grid grid-cols-3 font-body">
             <div>
-              <button
-                data-filter={categories[0].name}
-                onClick={handleFilterClick}
-                className="bg-yellow hover:bg-lime h-10 lg:h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-3 lg:text-2 uppercase"
-              >
-                {categories[0].label}
-              </button>
-              <button
-                data-filter={categories[1].name}
-                onClick={handleFilterClick}
-                className="bg-lime hover:bg-lime h-10 lg:h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-3 lg:text-2 uppercase"
-              >
-                {categories[1].label}
-              </button>
-              <button
-                data-filter={categories[2].name}
-                onClick={handleFilterClick}
-                className="bg-pink hover:bg-lime h-10 lg:h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-3 lg:text-2 uppercase"
-              >
-                {categories[2].label}
-              </button>
+              <CharacterSetFilter name={categories[0].name} color={categories[0].color} label={categories[0].label} onClick = {handleFilterClick}/>
+              <CharacterSetFilter name={categories[1].name} color={categories[1].color} label={categories[1].label} onClick = {handleFilterClick}/>
+              <CharacterSetFilter name={categories[2].name} color={categories[2].color} label={categories[2].label} onClick = {handleFilterClick}/>
             </div>
             <div>
-            <button
-                data-filter={categories[3].name}
-                onClick={handleFilterClick}
-                className="bg-purple hover:bg-lime h-10 lg:h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-3 lg:text-2 uppercase"
-              >
-                {categories[3].label}
-              </button>
-              <button
-                data-filter={categories[4].name}
-                onClick={handleFilterClick}
-                className="bg-orange hover:bg-lime h-10 lg:h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-3 lg:text-2 uppercase"
-              >
-                {categories[4].label}
-              </button>
-              <button
-                data-filter={categories[5].name}
-                onClick={handleFilterClick}
-                className="bg-blue hover:bg-lime h-10 lg:h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-3 lg:text-2 uppercase"
-              >
-                {categories[5].label}
-              </button>
+              <CharacterSetFilter name={categories[3].name} color={categories[3].color} label={categories[3].label} onClick = {handleFilterClick}/>
+              <CharacterSetFilter name={categories[4].name} color={categories[4].color} label={categories[4].label} onClick = {handleFilterClick}/>
+              <CharacterSetFilter name={categories[5].name} color={categories[5].color} label={categories[5].label} onClick = {handleFilterClick}/>
             </div>
             <div>
-            <button
-                data-filter={categories[5].name}
-                onClick={handleFilterClick}
-                className="bg-lime hover:bg-lime h-10 lg:h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-3 lg:text-2 uppercase"
-              >
-                {categories[5].label}
-              </button>
-              <button
-                data-filter={categories[6].name}
-                onClick={handleFilterClick}
-                className="bg-pink hover:bg-lime h-10 lg:h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-3 lg:text-2 uppercase"
-              >
-                {categories[6].label}
-              </button>
-              <button
-                data-filter={categories[7].name}
-                onClick={handleFilterClick}
-                className="bg-purple hover:bg-lime h-10 lg:h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-3 lg:text-2 uppercase"
-              >
-                {categories[7].label}
-              </button>
+              <CharacterSetFilter name={categories[6].name} color={categories[6].color} label={categories[6].label} onClick = {handleFilterClick}/>
+              <CharacterSetFilter name={categories[7].name} color={categories[7].color} label={categories[7].label} onClick = {handleFilterClick}/>
+              <CharacterSetFilter name={categories[8].name} color={categories[8].color} label={categories[8].label} onClick = {handleFilterClick}/>
             </div>
           </div>
         </div>

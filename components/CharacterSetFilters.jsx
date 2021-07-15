@@ -1,14 +1,8 @@
-import React, { useState } from "react";
-import Pill from "./Pill";
+import React, { useEffect } from "react";
 import CharacterSetFilter from "./CharacterSetFilter";
 
-const CharacterSetFilters = ({ handleFilterClick }) => {
-  const [open, setOpen] = useState(false);
-  const [activeFilters, setActiveFilters] = useState(false);
+const CharacterSetFilters = ({ handleFilterClick, activeFilters }) => {
 
-  const handleClick = (event) => {
-    setOpen(!open);
-  };
 
   const categories = [
     {
@@ -57,7 +51,10 @@ const CharacterSetFilters = ({ handleFilterClick }) => {
       color: 'purple'
     }
   ]
-
+useEffect(() => {
+  console.log("active filters frmo parent comp: ",activeFilters);
+  let activefirst = activeFilters.includes(categories[0].name);
+});
 
   return (
     <div className="character-set-filters">
@@ -72,19 +69,19 @@ const CharacterSetFilters = ({ handleFilterClick }) => {
         <div className="w-100%">
           <div className="grid grid-cols-3 font-body">
             <div>
-              <CharacterSetFilter name={categories[0].name} color={categories[0].color} label={categories[0].label} onClick = {handleFilterClick}/>
-              <CharacterSetFilter name={categories[1].name} color={categories[1].color} label={categories[1].label} onClick = {handleFilterClick}/>
-              <CharacterSetFilter name={categories[2].name} color={categories[2].color} label={categories[2].label} onClick = {handleFilterClick}/>
+              <CharacterSetFilter name={categories[0].name} color={categories[0].color} label={categories[0].label} onClick = {handleFilterClick} active={activeFilters.includes(categories[0].name)} />
+              <CharacterSetFilter name={categories[1].name} color={categories[1].color} label={categories[1].label} onClick = {handleFilterClick} active={activeFilters.includes(categories[1].name)} />
+              <CharacterSetFilter name={categories[2].name} color={categories[2].color} label={categories[2].label} onClick = {handleFilterClick} active={activeFilters.includes(categories[2].name)} />
             </div>
             <div>
-              <CharacterSetFilter name={categories[3].name} color={categories[3].color} label={categories[3].label} onClick = {handleFilterClick}/>
-              <CharacterSetFilter name={categories[4].name} color={categories[4].color} label={categories[4].label} onClick = {handleFilterClick}/>
-              <CharacterSetFilter name={categories[5].name} color={categories[5].color} label={categories[5].label} onClick = {handleFilterClick}/>
+              <CharacterSetFilter name={categories[3].name} color={categories[3].color} label={categories[3].label} onClick = {handleFilterClick} active={activeFilters.includes(categories[3].name)} />
+              <CharacterSetFilter name={categories[4].name} color={categories[4].color} label={categories[4].label} onClick = {handleFilterClick} active={activeFilters.includes(categories[4].name)} />
+              <CharacterSetFilter name={categories[5].name} color={categories[5].color} label={categories[5].label} onClick = {handleFilterClick} active={activeFilters.includes(categories[5].name)} />
             </div>
             <div>
-              <CharacterSetFilter name={categories[6].name} color={categories[6].color} label={categories[6].label} onClick = {handleFilterClick}/>
-              <CharacterSetFilter name={categories[7].name} color={categories[7].color} label={categories[7].label} onClick = {handleFilterClick}/>
-              <CharacterSetFilter name={categories[8].name} color={categories[8].color} label={categories[8].label} onClick = {handleFilterClick}/>
+              <CharacterSetFilter name={categories[6].name} color={categories[6].color} label={categories[6].label} onClick = {handleFilterClick} active={activeFilters.includes(categories[6].name)} />
+              <CharacterSetFilter name={categories[7].name} color={categories[7].color} label={categories[7].label} onClick = {handleFilterClick} active={activeFilters.includes(categories[7].name)} />
+              <CharacterSetFilter name={categories[8].name} color={categories[8].color} label={categories[8].label} onClick = {handleFilterClick} active={activeFilters.includes(categories[8].name)} />
             </div>
           </div>
         </div>

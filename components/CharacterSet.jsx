@@ -19,14 +19,15 @@ import CharacterSetFilters from "./CharacterSetFilters";
 const CharacterSet = (props) => {
   const [showChild, setShowChild] = useState(false);
   const [pckry, setPckry] = useState(null);
+  const [activeFilters, setActiveFilters] = useState([".basic-latin", ".numerals", ".kablammoji", ".zodiac"]);
   const gridRef = useRef(null);
   let gridInit;
-  var docElem = document.documentElement;
-  var transitionProp =
+  let docElem = document.documentElement;
+  let transitionProp =
     typeof docElem.style.transition == "string"
       ? "transition"
       : "WebkitTransition";
-  var transitionEndEvent = {
+  let transitionEndEvent = {
     WebkitTransition: "webkitTransitionEnd",
     transition: "transitionend",
   }[transitionProp];
@@ -2986,11 +2987,13 @@ const CharacterSet = (props) => {
   }, [gridRef]);
 
   useEffect(() => {
-    var grid =
+    let grid =
       gridRef !== null ? document.querySelector(".isotope-grid") : null;
     gridInit = new Isotope(grid, {
       itemSelector: ".grid-item",
     });
+    let filterValueString = activeFilters.join(", ");
+    gridInit.arrange({ filter: filterValueString });
   });
 
   function handleClick(event) {
@@ -2998,16 +3001,16 @@ const CharacterSet = (props) => {
       return;
     }
 
-    var itemContent = event.target;
+    let itemContent = event.target;
     setItemContentPixelSize(itemContent);
 
-    var itemElem = itemContent.parentNode;
+    let itemElem = itemContent.parentNode;
 
-    var isExpanded = itemElem.classList.contains("is-expanded");
+    let isExpanded = itemElem.classList.contains("is-expanded");
     itemElem.classList.toggle("is-expanded");
 
     // force redraw
-    var redraw = itemContent.offsetWidth;
+    let redraw = itemContent.offsetWidth;
     // renable default transition
     itemContent.style[transitionProp] = "";
 
@@ -3024,7 +3027,7 @@ const CharacterSet = (props) => {
   }
 
   function setItemContentPixelSize(itemContent) {
-    var previousContentSize = pckry.getSize(itemContent);
+    let previousContentSize = pckry.getSize(itemContent);
     // disable transition
     itemContent.style[transitionProp] = "none";
     // set current size in pixels
@@ -3036,7 +3039,7 @@ const CharacterSet = (props) => {
 
   function addTransitionListener(itemContent) {
     // reset 100%/100% sizing after transition end
-    var onTransitionEnd = function () {
+    let onTransitionEnd = function () {
       itemContent.style.width = "";
       itemContent.style.height = "";
       itemContent.removeEventListener(transitionEndEvent, onTransitionEnd);
@@ -3046,21 +3049,28 @@ const CharacterSet = (props) => {
 
   function setItemContentTransitionSize(itemContent, itemElem) {
     // set new size
-    var size = pckry.getSize(itemElem);
+    let size = pckry.getSize(itemElem);
     itemContent.style.width = size && size.width + "px";
     itemContent.style.height = size && size.height + "px";
   }
 
   const handleFilterClick = (event) => {
-    // var grid = gridRef !== null ? document.querySelector(".grid") : null;
-    const filterValue = event.target.getAttribute("data-filter");
-    gridInit.arrange({ filter: filterValue });
+    let updatedActiveFilters = activeFilters;
+    // let grid = gridRef !== null ? document.querySelector(".grid") : null;
+    let filter = event.target.getAttribute("data-filter");
+    let ind = activeFilters.indexOf(filter);
+    if (ind===-1){
+      updatedActiveFilters.push(filter); 
+    } else { updatedActiveFilters.splice(ind,1);}
+    let filterValueString = activeFilters.join(", ");
+    gridInit.arrange({ filter: filterValueString });
+    setActiveFilters(updatedActiveFilters);
     // handleClick(event);
   };
 
   // bind filter button click
   // $('#filters').on('click', 'button', function () {
-  //  var filterValue = $(this).attr('data-filter');
+  //  let filterValue = $(this).attr('data-filter');
   //  // use filterFn if matches value
   //  filterValue = filterFns[filterValue] || filterValue;
   //  $grid.isotope({ filter: filterValue });
@@ -3068,7 +3078,7 @@ const CharacterSet = (props) => {
 
   return (
     <div className={`character-set`}>
-      <CharacterSetFilters handleFilterClick={handleFilterClick} />
+      <CharacterSetFilters handleFilterClick={handleFilterClick} activeFilters={activeFilters} />
       <div ref={gridRef} className="isotope-grid" onClick={handleClick}>
         <div className="grid-sizer"></div>
         {characterDictionary.map((item, i) => {

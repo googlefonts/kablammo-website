@@ -202,7 +202,7 @@ class TypeTester extends Component {
                 <div className="h-3 bg-purple lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg relative flex justify-center items-center overflow-hidden">
                   <div className="w-1/4 bg-gray h-100% border-r-2 border-solid border-black flex justify-center items-center">
                     <span className="uppercase font-mono text-1">
-                      Move Axis
+                      Style
                     </span>
                   </div>
                   <div
@@ -229,7 +229,8 @@ class TypeTester extends Component {
             width: 2vw;
             border: 0;
             border-radius: 100%;
-            cursor: pointer;
+            // cursor: pointer;
+            cursor: url("/images/icons/SVG/white-cursor.svg"), pointer;
             transition: none;
           }
           .select {
@@ -260,7 +261,8 @@ class TypeTester extends Component {
             border: 0;
             border-radius: 100%;
             background: #ffc000;
-            cursor: pointer;
+            // cursor: pointer;
+            cursor: url("/images/icons/SVG/white-cursor.svg"), pointer;
             margin-top: -1vw;
             transition: none;
           }

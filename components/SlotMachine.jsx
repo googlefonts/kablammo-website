@@ -15,7 +15,23 @@ const SlotMachine = (props) => {
     <Frame
       className={`relative bg-black lg:border-2 border border-solid border-black bg-clip-padding overflow-hidden h-75vh lg:h-100vh flex justify-between flex-col`}
     >
-      <Pill className="bg-pink hover:bg-orange h-10 lg:h-6 bg-clip-padding overflow-hidden">
+                  {/* SMALL SCROLLING TEXT 1 */}
+        <Pill className="hvr-wobble-top hvr-shutter-out-horizontal bg-lime hover:bg-green h-10 lg:h-5 bg-clip-padding overflow-hidden">
+              <ScrollingText
+                className="cursor-pointer"
+                blank
+                specialRight
+                hideMobile
+                borderTop
+                large
+                right
+              >
+                <span className="animate-it-fast text-6 leading-none inline-block -mt-5 text-blue uppercase">
+                  &#xE006;&#xE006;&#xE006;&#xE006;&#xE006;&#xE006;&#xE006;&#xE006;
+                </span>
+              </ScrollingText>
+            </Pill>
+      {/* <Pill className="bg-pink hover:bg-orange h-10 lg:h-6 bg-clip-padding overflow-hidden">
         <ScrollingText
           className=""
           href={`#`}
@@ -29,7 +45,7 @@ const SlotMachine = (props) => {
             &#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;
           </span>
         </ScrollingText>
-      </Pill>
+      </Pill> */}
       <Frame
         className={`relative bg-black border lg:border-2 border-solid border-black bg-clip-padding overflow-hidden h-100% grid grid-cols-2 grid-rows-2`}
       >

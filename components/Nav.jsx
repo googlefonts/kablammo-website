@@ -26,11 +26,13 @@ const Nav = (props) => {
     if (mobileNavShowing) {
       links.classList.add("hidden");
       links.classList.remove("flex");
+      links.classList.remove("lg:hidden");
       console.log("hiding links!");
       setMobileNavShowing(false);
     } else {
       links.classList.remove("hidden");
       links.classList.add("flex");
+      links.classList.add("lg:hidden");
       console.log("showing links!");
       setMobileNavShowing(true);
     }
@@ -45,17 +47,18 @@ const Nav = (props) => {
           =
         </div>
         <div id="desktoplinks" className={`hidden lg:flex w-100%`}>
-          <Link href="#" passHref scroll={false}>
-            <NavItem className="bg-lime">Made By Vectro</NavItem>
-          </Link>
+          
           <Link href="#typetester" passHref scroll={false}>
             <NavItem className="bg-orange">Try It Out!</NavItem>
           </Link>
-          <Link href="#" passHref scroll={false}>
+          <Link href="#characterset" passHref scroll={false}>
             <NavItem className="bg-blue">Character Set</NavItem>
           </Link>
           <Link href="#" passHref scroll={false}>
             <NavItem className="bg-green">Download</NavItem>
+          </Link>
+          <Link href="#" passHref scroll={false}>
+            <NavItem className="bg-lime">Made By Vectro</NavItem>
           </Link>
         </div>
         <div className={`w-100% lg:w-20% flex justify-center`}>
@@ -76,17 +79,18 @@ const Nav = (props) => {
         </div>
       </div>
       <div id="mobilelinks" className={`hidden flex-col w-100%`}>
-        <Link href="#" passHref scroll={false}>
-          <NavItem className="bg-lime">Kablammo</NavItem>
-        </Link>
+        
         <Link href="#typetester" passHref scroll={false}>
           <NavItem className="bg-orange">Try It Out!</NavItem>
         </Link>
-        <Link href="#" passHref scroll={false}>
+        <Link href="#characterset" passHref scroll={false}>
           <NavItem className="bg-blue">Character Set</NavItem>
         </Link>
         <Link href="#" passHref scroll={false}>
           <NavItem className="bg-green">Download</NavItem>
+        </Link>
+        <Link href="#" passHref scroll={false}>
+          <NavItem className="bg-lime">Made by Vectro</NavItem>
         </Link>
       </div>
 

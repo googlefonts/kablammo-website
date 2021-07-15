@@ -1,0 +1,7 @@
+\u0041, basic-latin
+\u00C1, extended
+\u0102, extended
+\u1EAE, extended
+\u1EB6, extended
+\u1EB0, extended
+\u1EB2, extended

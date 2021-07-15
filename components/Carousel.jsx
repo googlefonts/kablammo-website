@@ -11,11 +11,9 @@ class Carousel extends React.Component {
 		super(props);
 
 		this.state = { value: props.sliderValue, items: props.items };
-		console.log("items", props.items);
 	}
 
 	render() {
-		console.log("updated slider value", this.state.value);
 		return (
 			<div className={this.props.className}>
 				<section className="carousel" aria-label="Gallery">
@@ -24,7 +22,6 @@ class Carousel extends React.Component {
 					<ol className="carousel__viewport">
 						
 						{this.state.items.map((item, i) => {
-							console.log("item", item);
 							return (
 								<li
 									key={i}

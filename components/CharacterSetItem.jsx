@@ -64,7 +64,8 @@ const CharacterSetItem = ({ item, className, keyValue }) => {
 
         .grid-item:hover .grid-item-content {
           background: #e4e4e4;
-          cursor: pointer;
+          // cursor: pointer;
+          cursor: url("/images/icons/SVG/white-cursor.svg"), pointer;
         }
 
         /* both item and item content change size */

@@ -147,7 +147,8 @@ const TypeTester2 = (props) => {
           border: 0;
           border-radius: 100%;
           background: #ffc000;
-          cursor: pointer;
+          // cursor: pointer;
+          cursor: url("/images/icons/SVG/white-cursor.svg"), pointer;
         }
         @keyframes type-tester-animation {
           0% {

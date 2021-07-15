@@ -120,7 +120,8 @@ const Header = (props) => {
 							}
 
 							.hamburger {
-								cursor: pointer;
+								// cursor: pointer;
+								cursor: url("/images/icons/SVG/white-cursor.svg"), pointer;
 								display: none;
 							}
 							.second-scrolling {

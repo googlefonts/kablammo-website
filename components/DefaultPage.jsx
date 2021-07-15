@@ -224,7 +224,8 @@ const DefaultPage = ({ homePageData, pageData }) => {
 							background-color: #704cff;
 						}
 						.about-box {
-							cursor: pointer;
+							// cursor: pointer;
+							cursor: url("/images/icons/SVG/white-cursor.svg"), pointer;
 							height: 100%;
 							width: 100%;
 							display: flex;

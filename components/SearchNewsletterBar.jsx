@@ -141,7 +141,8 @@ const SearchNewsletterBar = (props) => {
 				}
 				input.newsletter-submit:hover {
 					background: #f0f0f0 !important;
-					cursor: pointer;
+					// cursor: pointer;
+					cursor: url("/images/icons/SVG/white-cursor.svg"), pointer;
 				}
 				@media (max-width: 1199px) {
 					.search {

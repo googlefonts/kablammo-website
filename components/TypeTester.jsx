@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import Anime from "animejs";
 import Frame from "../components/Frame";
-import AnimationButton from "../components/AnimationButton";
+// import AnimationButton from "../components/AnimationButton";
 import TypeTesterSlider from "../components/TypeTesterSlider";
-import InputRange from "react-input-range";
-import TypeTesterSelect from "../components/TypeTesterSelect";
+// import InputRange from "react-input-range";
+// import TypeTesterSelect from "../components/TypeTesterSelect";
 import Pattern from "../components/Pattern";
 import Pill from "../components/Pill";
 
-let animation = null;
+let animation;
 
 const bgOptions = [
   {
@@ -38,9 +38,9 @@ const bgOptions = [
 ];
 
 // Auxiliary method. Retrieves and sanitises the value of a custom property.
-var getVariable = function (styles, propertyName) {
-  return String(styles.getPropertyValue(propertyName)).trim();
-};
+// var getVariable = function (styles, propertyName) {
+//   return String(styles.getPropertyValue(propertyName)).trim();
+// };
 
 // Auxiliary method. Sets the value of a custom property at the document level.
 var setDocumentVariable = function (propertyName, value) {
@@ -69,7 +69,7 @@ class TypeTester extends Component {
     this.sliderUpdating = React.createRef();
     this.toggleCurrentAnimation = this.toggleCurrentAnimation.bind(this);
     this.handleSliderChange = this.handleSliderChange.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    // this.handleClick = this.handleClick.bind(this);
     this.animationStart = this.animationStart.bind(this);
     this.sliderRefValue.current = 500;
     this.inputRef = React.createRef();
@@ -104,9 +104,9 @@ class TypeTester extends Component {
     this.setState({ activeBg: bgOptions[index] });
   }
 
-  handleClick() {
-    clearCurrentAnimation(animation);
-  }
+  // handleClick() {
+  //   clearCurrentAnimation(animation);
+  // }
 
   handleControllerClick() {
     this.toggleCurrentAnimation(animation);
@@ -154,7 +154,7 @@ class TypeTester extends Component {
             >
               <span
                 ref={this.typeTesterInputRef}
-                className={`text-${this.state.activeBg.textColor} type-tester text-13 lg:text-12 m-auto w-3/4 h-100% absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center block leading-none text-center focus:outline-none overflow-hidden self-center break-words`}
+                className={`text-${this.state.activeBg.textColor} type-tester text-13 lg:text-12 m-auto w-3/4 h-100% absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center block leading-tight text-center focus:outline-none overflow-hidden self-center break-words`}
                 contentEditable="true"
                 suppressContentEditableWarning={true}
                 spellCheck="false"

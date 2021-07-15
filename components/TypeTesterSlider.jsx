@@ -10,16 +10,16 @@ var getVariable = function (styles, propertyName) {
 };
 
 // Auxiliary method. Sets the value of a custom property at the document level.
-var setDocumentVariable = function (propertyName, value) {
-  document.documentElement.style.setProperty(propertyName, value);
-};
+// var setDocumentVariable = function (propertyName, value) {
+//   document.documentElement.style.setProperty(propertyName, value);
+// };
 
 class TypeTesterSlider extends React.Component {
   constructor(props) {
     super(props);
     this.setDocumentListener = this.setDocumentListener.bind(this);
   }
-  componentDidUpdate(prevProps, prevState) {}
+  componentDidUpdate() {}
   setDocumentListener() {
     document.documentElement.addEventListener("change", (event) => {
       var styles = getComputedStyle(document.documentElement);

@@ -52,7 +52,6 @@ const CharacterSetFilters = ({ handleFilterClick, activeFilters }) => {
     }
   ]
 useEffect(() => {
-  console.log("active filters frmo parent comp: ",activeFilters);
   let activefirst = activeFilters.includes(categories[0].name);
 });
 

@@ -20,9 +20,9 @@ const TypeParticles = (props) => {
   // });
   return (
     <Frame
-      className={`type-particles bg-extraBlack md:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-50vh lg:h-100vh flex justify-center items-center px-10 md:px-20 relative`}
+      className={`type-particles bg-extraBlack md:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-75vh lg:h-100vh flex justify-center items-center px-10 md:px-20 relative`}
     >
-      <div className="text-7 md:text-6 leading-tight text-gray uppercase text-center z-50">
+      <div className="text-7.5 md:text-6 lg:text-5 leading-tight text-gray uppercase text-center z-50">
         <TypeParticlesText className={``}>Meet</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>KABLAMMO</TypeParticlesText>{" "}
         <TypeParticlesText color={`#E8F75C`} className={``}>👀</TypeParticlesText>{" "}

@@ -104,16 +104,12 @@ class TypeTester extends Component {
     this.setState({ activeBg: bgOptions[index] });
   }
 
-  // handleClick() {
-  //   clearCurrentAnimation(animation);
-  // }
-
   handleControllerClick() {
     this.toggleCurrentAnimation(animation);
   }
 
   animationStart() {
-    clearCurrentAnimation(animation);
+    // clearCurrentAnimation(animation);
 
     animation = Anime({
       targets: this.typeTesterInputRef.current,

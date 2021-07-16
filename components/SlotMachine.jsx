@@ -6,10 +6,10 @@ import Slots from "../components/Slots";
 
 const SlotMachine = (props) => {
   const altChars = {
-    slot1: ["👀", "?"],
-    slot2: ["👁", ""],
-    slot3: ["", "🪐"],
-    slot4: ["👄", "🙃"],
+    slot1: ["👀", "☀", "?", "☼"],
+    slot2: ["👁", "", "♡", "💩"],
+    slot3: ["", "🪐", "👁", "!"],
+    slot4: ["👄", "", "🙃", "☮"],
   };
   return (
     <Frame
@@ -35,35 +35,31 @@ const SlotMachine = (props) => {
         className={`relative bg-black border lg:border-2 border-solid border-black bg-clip-padding overflow-hidden h-100% grid grid-cols-2 grid-rows-2`}
       >
         <Slots
-          content="👀"
-          alt="?"
+          charset={altChars.slot1}
           bgColor="green"
           bgColorHover="pink"
           textColor="orange"
         />
         <Slots
-          content="👁"
-          alt=""
+          charset={altChars.slot2}
           bgColor="lime"
           bgColorHover="pink"
           textColor="blue"
         />
         <Slots
-          content=""
-          alt="🪐"
+          charset={altChars.slot3}
           bgColor="yellow"
           bgColorHover="gray"
           textColor="purple"
         />
         <Slots
-          content="👄"
-          alt="🙃"
+          charset={altChars.slot4}
           bgColor="blue"
           bgColorHover="orange"
           textColor="yellow"
         />
       </Frame>
-      <Pill className="bg-purple hover:bg-orange h-10 lg:h-6 bg-clip-padding overflow-hidden">
+      <Pill className="bg-purple hover:bg-orange h-10 lg:h-5 bg-clip-padding overflow-hidden">
         <ScrollingText
           className=""
           href={`#`}

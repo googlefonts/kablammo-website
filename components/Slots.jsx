@@ -9,17 +9,15 @@ const Slots = (props) => {
   const handleMouseLeave = (event) => {
     event.target.classList.remove("animate-it");
   };
-  const [Alt, setAlt] = useState(false);
+  const [activeEmoji, setActiveEmoji] = useState(0);
   const handleClick = () => {
-    console.log("clicked!");
-    console.log("alt b4: " + Alt);
-    setAlt(!Alt);
-    console.log("alt after: " + Alt);
+    console.log(props.charset);
+    if (activeEmoji+1===props.charset.length){
+      setActiveEmoji(0);
+    } else { setActiveEmoji(activeEmoji+1); }
   };
-  const activeEmoji = Alt ? props.alt : props.content;
   return (
     <Pill
-      
       className={`${hover ? `animate-it` : ""} bg-${props.bgColor} hover:bg-${
         props.bgColorHover
       } h-100% bg-clip-padding overflow-hidden cursor-pointer`}
@@ -30,7 +28,8 @@ const Slots = (props) => {
         onClick={handleClick}
         className={`text-38 lg:text-24 -mt-10 w-100% text-${props.textColor} uppercase`}
       >
-        {activeEmoji}
+        {props.charset[activeEmoji]}
+        
       </span>
     </Pill>
   );

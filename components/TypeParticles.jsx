@@ -31,8 +31,8 @@ const TypeParticles = (props) => {
         <TypeParticlesText className={``}>FONT</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>FROM</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>OUTER</TypeParticlesText>{" "}
-        <TypeParticlesText className={``}>SPACE!</TypeParticlesText>{" "}
         <TypeParticlesText color={`#73B6E7`} className={``}>🛸</TypeParticlesText>{" "}
+        <TypeParticlesText className={``}>SPACE!</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>Designed</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>BY</TypeParticlesText>{" "}
         <TypeParticlesText color={`#F97DDA`} className={``}>🙃</TypeParticlesText>{" "}
@@ -41,6 +41,7 @@ const TypeParticles = (props) => {
         <TypeParticlesText className={``}>IT</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>FEATURES</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>A</TypeParticlesText>{" "}
+        <TypeParticlesText color={`#FFC000`} className={``}>꩜</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>MOVEMENT</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>AXIS</TypeParticlesText>{" "}
         <TypeParticlesText color={`#9891E8`} className={``}>🌐</TypeParticlesText>{" "}
@@ -48,6 +49,7 @@ const TypeParticles = (props) => {
         <TypeParticlesText className={``}>MAKES</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>THE</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>LETTERS</TypeParticlesText>{" "}
+        <TypeParticlesText color={`#E8F75C`} className={``}>⚡</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>bop</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>and</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>BOUNCE</TypeParticlesText>{" "}

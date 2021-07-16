@@ -115,7 +115,7 @@ function Index(props) {
                 <Kablammo />
               </Pill>
               {/* SMALL SCROLLING TEXT 1 */}
-              <Pill className="hvr-wobble-top hvr-shutter-in-horizontal bg-gray hover:bg-yellow h-10 lg:h-5 bg-clip-padding overflow-hidden">
+              <Pill className="hvr-wobble-top hvr-shutter-in-horizontal bg-gray hover:bg-yellow h-10 lg:h-4 bg-clip-padding overflow-hidden">
                 <ScrollingText
                   href={`#`}
                   blank
@@ -143,7 +143,7 @@ function Index(props) {
               className={`bg-orange lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-50vh lg:h-100vh`}
               items={doc.data.carousel}
             />
-             <Pill className="hvr-wobble-top hvr-shutter-in-horizontal bg-gray hover:bg-orange h-10 lg:h-6 bg-clip-padding overflow-hidden">
+             <Pill className="hvr-wobble-top hvr-shutter-in-horizontal bg-gray hover:bg-pink h-10 lg:h-4 bg-clip-padding overflow-hidden">
               <ScrollingText
                 className=""
                 href={`#`}
@@ -164,7 +164,7 @@ function Index(props) {
             {/* TYPE SCALES */}
             <TypeScales />
             {/* CHARACTER SET */}
-                <Pill className="bg-pink hover:bg-orange h-10 lg:h-6 bg-clip-padding overflow-hidden">
+                <Pill className="bg-pink hover:bg-orange h-10 lg:h-4 bg-clip-padding overflow-hidden">
         <ScrollingText
           className=""
           href={`#`}
@@ -255,8 +255,8 @@ function Index(props) {
             </Pill>
             {/* <Nav /> */}
             {/* CREDITS */}
-            <Pill className="bg-gray h-auto lg:h-6">
-            <span className="font-body text-4 lg:text-2 py-2 px-4 uppercase">
+            <Pill className="bg-gray h-auto lg:h-4">
+            <span className="font-body text-4 lg:text-2 py-2 px-4 uppercase font-mono">
                 Art Direction
               </span>
               </Pill>
@@ -265,8 +265,8 @@ function Index(props) {
               Travis Kochel and Lizy Gershenzon
               </span>
             </Pill>
-            <Pill className="bg-gray h-auto lg:h-6">
-            <span className="font-body text-4 lg:text-2 py-2 px-4 uppercase">
+            <Pill className="bg-gray h-auto lg:h-4">
+            <span className="font-body text-4 lg:text-2 py-2 px-4 uppercase font-mono">
             Lead Design and Production 
               </span>
               </Pill>
@@ -275,8 +275,8 @@ function Index(props) {
               Travis Kochel
               </span>
             </Pill>
-            <Pill className="bg-gray h-auto lg:h-6">
-              <span className="font-body text-4 lg:text-2 py-2 px-4 uppercase">
+            <Pill className="bg-gray h-auto lg:h-4">
+              <span className="font-body text-4 lg:text-2 py-2 px-4 uppercase font-mono">
                 Cyrillic and Production Help
               </span>
             </Pill>
@@ -285,8 +285,8 @@ function Index(props) {
                 Daria Petrova and Ethan Cohen
               </span>
             </Pill>
-            <Pill className="bg-gray h-auto lg:h-6">
-              <span className="font-body py-1 text-4 lg:text-2 py-2 uppercase">
+            <Pill className="bg-gray h-auto lg:h-4">
+              <span className="font-body py-1 text-4 lg:text-2 py-2 uppercase font-mono">
                 Website Design and Development
               </span>
             </Pill>
@@ -295,8 +295,8 @@ function Index(props) {
                 FISK
               </span>
             </Pill>
-            <Pill className="bg-orange h-auto lg:h-6">
-              <span className="font-body text-4 lg:text-2 py-2 uppercase">
+            <Pill className="bg-gray h-auto lg:h-4">
+              <span className="font-body text-4 lg:text-2 py-2 uppercase font-mono">
                 Commissioned by Google Fonts
               </span>
             </Pill>
@@ -306,6 +306,7 @@ function Index(props) {
                 Font by Vectro Type Foundry
               </span>
             </Pill>
+            
           </Layout>
         </div>
       )}

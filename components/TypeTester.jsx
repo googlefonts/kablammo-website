@@ -83,7 +83,7 @@ class TypeTester extends Component {
         animation.play();
         this.setState({ animationPlaying: true });
       }
-    }
+    } else{console.log("animation not playing!!");}
   }
   handleSliderChange(event, value) {
     if (event) {
@@ -100,7 +100,7 @@ class TypeTester extends Component {
   }
 
   handleBgClick(index, e) {
-    e.preventDefault();
+    // e.preventDefault();
     this.setState({ activeBg: bgOptions[index] });
   }
 
@@ -150,7 +150,7 @@ class TypeTester extends Component {
             >
               <span
                 ref={this.typeTesterInputRef}
-                className={`text-${this.state.activeBg.textColor} type-tester text-13 lg:text-12 m-auto w-3/4 h-100% absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center block leading-tight text-center focus:outline-none overflow-hidden self-center break-words`}
+                className={`text-${this.state.activeBg.textColor} cursor-text type-tester text-13 lg:text-12 m-auto w-3/4 h-100% absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center block leading-tight text-center focus:outline-none overflow-hidden self-center break-words`}
                 contentEditable="true"
                 suppressContentEditableWarning={true}
                 spellCheck="false"
@@ -245,9 +245,6 @@ class TypeTester extends Component {
           </div>
         </Pill>
         <style global jsx>{`
-          #typetestereditablefield {
-            cursor: url("/images/icons/textcursor.svg"), text;
-          }
           .type-tester {
             transition: font-variation-settings 0.6s ease;
           }

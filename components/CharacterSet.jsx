@@ -1,23 +1,14 @@
 import React, {
-  Component,
-  Fragment,
   useState,
-  useContext,
   useEffect,
-  useLayoutEffect,
   useRef,
 } from "react";
-import Link from "next/link";
-const isBrowser = typeof window !== "undefined";
 import Packery from "packery";
 import Isotope from "isotope-layout";
-import Pill from "./Pill";
 import CharacterSetItem from "./CharacterSetItem";
 import CharacterSetFilters from "./CharacterSetFilters";
-// import myText from '../public/js/kablammo-uni-glyphs.txt';
 
 const CharacterSet = (props) => {
-  const [showChild, setShowChild] = useState(false);
   const [pckry, setPckry] = useState(null);
   const [activeFilters, setActiveFilters] = useState([".basic-latin", ".numerals", ".kablammoji", ".zodiac"]);
   const gridRef = useRef(null);
@@ -3065,7 +3056,6 @@ const CharacterSet = (props) => {
     let filterValueString = activeFilters.join(", ");
     gridInit.arrange({ filter: filterValueString });
     setActiveFilters(updatedActiveFilters);
-    // handleClick(event);
   };
 
   // bind filter button click

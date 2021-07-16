@@ -143,22 +143,7 @@ function Index(props) {
               className={`bg-orange lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-50vh lg:h-100vh`}
               items={doc.data.carousel}
             />
-            {/* TYPE SCALES */}
-            <TypeScales />
-            {/* CHARACTER SET */}
-            <div
-              className={`bg-green lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden`}
-              id="characterset"
-            >
-              <p className="text-center text-yellow text-8 lg:text-5 my-3 lg:my-6">
-                Character Set
-              </p>
-              <CharacterSetNoSSR />
-            </div>
-            <SlotMachine />
-            {/* SMALL SCROLLING TEXT PILL 2 */}
-            {/* BIG SROLLING TEXT 1 */}
-            {/* <Pill className="hvr-wobble-top hvr-shutter-in-horizontal bg-gray hover:bg-orange h-10 lg:h-6 bg-clip-padding overflow-hidden">
+             <Pill className="hvr-wobble-top hvr-shutter-in-horizontal bg-gray hover:bg-orange h-10 lg:h-6 bg-clip-padding overflow-hidden">
               <ScrollingText
                 className=""
                 href={`#`}
@@ -174,7 +159,38 @@ function Index(props) {
                   ☮ Type ☼ Foundry &nbsp;
                 </span>
               </ScrollingText>
-            </Pill> */}
+            </Pill> 
+            
+            {/* TYPE SCALES */}
+            <TypeScales />
+            {/* CHARACTER SET */}
+                <Pill className="bg-pink hover:bg-orange h-10 lg:h-6 bg-clip-padding overflow-hidden">
+        <ScrollingText
+          className=""
+          href={`#`}
+          blank
+          specialRight
+          hideMobile
+          borderTop
+          large
+        >
+          <span className="text-4 text-lime uppercase">
+            &#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;
+          </span>
+        </ScrollingText>
+      </Pill> 
+            <div
+              className={`bg-green lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden`}
+              id="characterset"
+            >
+              <p className="text-center text-yellow text-8 lg:text-5 my-3 lg:my-6">
+                Character Set
+              </p>
+              <CharacterSetNoSSR />
+            </div>
+            <SlotMachine />
+            {/* SMALL SCROLLING TEXT PILL 2 */}
+            {/* BIG SROLLING TEXT 1 */}
             <Pill className="bg-lime hover:bg-blue h-30 bg-clip-padding overflow-hidden">
               <ScrollingText
                 className=""

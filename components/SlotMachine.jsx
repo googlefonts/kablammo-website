@@ -31,21 +31,6 @@ const SlotMachine = (props) => {
                 </span>
               </ScrollingText>
             </Pill>
-      {/* <Pill className="bg-pink hover:bg-orange h-10 lg:h-6 bg-clip-padding overflow-hidden">
-        <ScrollingText
-          className=""
-          href={`#`}
-          blank
-          specialRight
-          hideMobile
-          borderTop
-          large
-        >
-          <span className="text-4 text-lime uppercase">
-            &#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;
-          </span>
-        </ScrollingText>
-      </Pill> */}
       <Frame
         className={`relative bg-black border lg:border-2 border-solid border-black bg-clip-padding overflow-hidden h-100% grid grid-cols-2 grid-rows-2`}
       >

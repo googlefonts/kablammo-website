@@ -3,12 +3,12 @@ import CharacterSetFilter from "./CharacterSetFilter";
 
 const CharacterSetFilters = ({ handleFilterClick, activeFilters }) => {
 
-
   const categories = [
     {
       name: '.basic-latin',
       label: 'Basic Latin',
       color: 'yellow'
+
     },
     {
       name: '.extended-latin',

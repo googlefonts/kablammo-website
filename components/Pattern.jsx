@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 // var positions = ["top left", "bottom center", "top right"];
 
-const Pattern = ({ className, children, bgImage, id }) => {
+const Pattern = ({ className, children, bgImage, id, onMouseEnter, onMouseLeave }) => {
   // const [seconds, setSeconds] = useState(0);
   // const [isActive, setIsActive] = useState(true);
   // const [bgPosition, setBgPosition] = useState(positions[0]);
@@ -29,6 +29,8 @@ const Pattern = ({ className, children, bgImage, id }) => {
         backgroundImage: backgroundImage,
         // backgroundPosition: bgPosition,
       }}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
       {/*<MatterType />*/}
       {children}

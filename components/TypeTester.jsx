@@ -89,11 +89,15 @@ class TypeTester extends Component {
   }
   handleSliderChange(event, value) {
     if (event) {
+      // console.log("if this state animationplaying: ",this.state.animationPlaying);
+      animation.pause();
+      this.setState({ animationPlaying: false });
       this.inputRef.current.value = event.target.value;
       setDocumentVariable("--typeTesterValue", event.target.value);
       this.typeTesterInputRef.current.style.fontVariationSettings =
         "'move' " + event.target.value;
     } else if (value) {
+      console.log("value: ",value);
       this.inputRef.current.value = value;
       setDocumentVariable("--typeTesterValue", value);
       this.typeTesterInputRef.current.style.fontVariationSettings =

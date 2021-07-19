@@ -23,24 +23,24 @@ class TypeTesterSlider extends React.Component {
   setDocumentListener() {
     document.documentElement.addEventListener("change", (event) => {
       var styles = getComputedStyle(document.documentElement);
-      this.props.inputRef.current.value = getVariable(
+      this.props.sliderRef.current.value = getVariable(
         styles,
         "--typeTesterValue"
       );
-      console.log("--typetestervalue on update, ",this.props.inputRef.current.value = getVariable(styles,"--typeTesterValue"));
+      console.log("--typetestervalue on update, ",this.props.sliderRef.current.value = getVariable(styles,"--typeTesterValue"));
     });
   }
   componentDidMount() {
-    // this.inputRef.current.addEventListener("input", function (e) {
-    //   setDocumentVariable("--typeTesterValue", this.inputRef.current.value);
+    // this.sliderRef.current.addEventListener("input", function (e) {
+    //   setDocumentVariable("--typeTesterValue", this.sliderRef.current.value);
     // });
     this.setDocumentListener();
     var styles = getComputedStyle(document.documentElement);
-    this.props.inputRef.current.value = getVariable(
+    this.props.sliderRef.current.value = getVariable(
       styles,
       "--typeTesterValue"
     );
-    console.log("--typetestervalue, ",this.props.inputRef.current.value = getVariable(
+    console.log("--typetestervalue, ",this.props.sliderRef.current.value = getVariable(
       styles,"--typeTesterValue"));
   }
 
@@ -49,7 +49,7 @@ class TypeTesterSlider extends React.Component {
       <form className="form cursor-pointer">
         <input
           className="cursor-pointer mt-1"
-          ref={this.props.inputRef}
+          ref={this.props.sliderRef}
           type="range"
           min="0"
           max="1000"

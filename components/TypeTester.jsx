@@ -47,11 +47,11 @@ var setDocumentVariable = function (propertyName, value) {
   document.documentElement.style.setProperty(propertyName, value);
 };
 
-const clearCurrentAnimation = (currentAnimation) => {
-  if (currentAnimation) {
-    currentAnimation.pause();
-  }
-};
+// const clearCurrentAnimation = (currentAnimation) => {
+//   if (currentAnimation) {
+//     currentAnimation.pause();
+//   }
+// };
 
 class TypeTester extends Component {
   constructor(props) {
@@ -61,7 +61,8 @@ class TypeTester extends Component {
       isActive: true,
       seconds: 0,
       animationPlaying: true,
-      inputContent: "⚠ click and type 💩 try me out 😵"
+      inputContent: "⚠ click and type 💩 try me out 😵",
+      inputAnimateValue: 1
     };
 
     this.typeTesterRef = React.createRef();
@@ -74,16 +75,18 @@ class TypeTester extends Component {
     // this.handleClick = this.handleClick.bind(this);
     this.animationStart = this.animationStart.bind(this);
     this.sliderRefValue.current = 500;
-    this.inputRef = React.createRef();
+    this.sliderRef = React.createRef();
   }
   toggleCurrentAnimation() {
     if (animation) {
       if (this.state.animationPlaying) {
         animation.pause();
         this.setState({ animationPlaying: false });
+        console.log(this.state.inputAnimateValue);
       } else {
         animation.play();
         this.setState({ animationPlaying: true });
+        console.log(this.state.inputAnimateValue);
       }
     } else{console.log("animation not playing!!");}
   }
@@ -92,13 +95,15 @@ class TypeTester extends Component {
       // console.log("if this state animationplaying: ",this.state.animationPlaying);
       animation.pause();
       this.setState({ animationPlaying: false });
-      this.inputRef.current.value = event.target.value;
+      this.sliderRef.current.value = event.target.value;
       setDocumentVariable("--typeTesterValue", event.target.value);
       this.typeTesterInputRef.current.style.fontVariationSettings =
         "'move' " + event.target.value;
     } else if (value) {
+      animation.pause();
+      this.setState({ animationPlaying: false });
       console.log("value: ",value);
-      this.inputRef.current.value = value;
+      this.sliderRef.current.value = value;
       setDocumentVariable("--typeTesterValue", value);
       this.typeTesterInputRef.current.style.fontVariationSettings =
         "'move' " + value;
@@ -106,9 +111,17 @@ class TypeTester extends Component {
   }
 
   handleBgClick(index, e) {
-    // e.preventDefault();
+
     this.setState({ activeBg: bgOptions[index] });
-  }
+    if (this.state.animationPlaying) {
+      animation.pause();
+      animation.play();
+      this.setState({ animationPlaying: true });
+    } else {
+    animation.pause();
+    this.setState({ animationPlaying: false });
+    // console.log("animation play!");
+  }}
 
   handleControllerClick() {
     this.toggleCurrentAnimation(animation);
@@ -119,11 +132,10 @@ class TypeTester extends Component {
   }
 
   animationStart() {
-    // clearCurrentAnimation(animation);
-
+    console.log("curr animation value: ",this.state.inputAnimateValue);
     animation = Anime({
       targets: this.typeTesterInputRef.current,
-      fontVariationSettings: ["'move' 1", "'move' 1000"],
+      fontVariationSettings: ["'move' "+this.state.inputAnimateValue, "'move' 1000"],
       easing: "linear",
       direction: "alternate",
       duration: 6000,
@@ -132,7 +144,9 @@ class TypeTester extends Component {
         const animationValue = parseInt(
           anim.animations[0].currentValue.substring(7)
         );
-        this.inputRef.current.value = animationValue;
+        this.sliderRef.current.value = animationValue;
+        this.setState({ inputAnimateValue: animationValue });
+        // console.log(this.state.inputAnimateValue);
         return true;
       },
     });
@@ -141,6 +155,7 @@ class TypeTester extends Component {
   componentDidMount() {
     this.animationStart();
   }
+
 
   render() {
     return (
@@ -246,7 +261,7 @@ class TypeTester extends Component {
                 >
                   <TypeTesterSlider
                     key={this.typeTesterInputRef.current}
-                    inputRef={this.inputRef}
+                    sliderRef={this.sliderRef}
                     handleSliderChange={this.handleSliderChange}
                   />
                 </div>

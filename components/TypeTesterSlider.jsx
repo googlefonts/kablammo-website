@@ -27,6 +27,7 @@ class TypeTesterSlider extends React.Component {
         styles,
         "--typeTesterValue"
       );
+      console.log("--typetestervalue on update, ",this.props.inputRef.current.value = getVariable(styles,"--typeTesterValue"));
     });
   }
   componentDidMount() {
@@ -39,6 +40,8 @@ class TypeTesterSlider extends React.Component {
       styles,
       "--typeTesterValue"
     );
+    console.log("--typetestervalue, ",this.props.inputRef.current.value = getVariable(
+      styles,"--typeTesterValue"));
   }
 
   render() {

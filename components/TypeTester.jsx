@@ -61,6 +61,7 @@ class TypeTester extends Component {
       isActive: true,
       seconds: 0,
       animationPlaying: true,
+      inputContent: "⚠ click and type 💩 try me out 😵"
     };
 
     this.typeTesterRef = React.createRef();
@@ -69,6 +70,7 @@ class TypeTester extends Component {
     this.sliderUpdating = React.createRef();
     this.toggleCurrentAnimation = this.toggleCurrentAnimation.bind(this);
     this.handleSliderChange = this.handleSliderChange.bind(this);
+    this.handleTypeTesterInputChange = this.handleTypeTesterInputChange.bind(this);
     // this.handleClick = this.handleClick.bind(this);
     this.animationStart = this.animationStart.bind(this);
     this.sliderRefValue.current = 500;
@@ -106,6 +108,10 @@ class TypeTester extends Component {
 
   handleControllerClick() {
     this.toggleCurrentAnimation(animation);
+  }
+
+  handleTypeTesterInputChange(e){
+    this.setState({ inputContent: e.target.textContent });
   }
 
   animationStart() {
@@ -150,14 +156,14 @@ class TypeTester extends Component {
             >
               <span
                 ref={this.typeTesterInputRef}
-                className={`text-${this.state.activeBg.textColor} cursor-text type-tester text-13 lg:text-12 m-auto w-3/4 h-100% absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center block leading-tight text-center focus:outline-none overflow-hidden self-center break-words`}
+                className={`text-${this.state.activeBg.textColor} type-tester text-13 lg:text-12 m-auto w-3/4 h-100% absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center block leading-none text-center focus:outline-none overflow-hidden self-center break-words`}
                 contentEditable="true"
                 suppressContentEditableWarning={true}
                 spellCheck="false"
-                onKeyDown={this.handleTypeTesterInputChange}
+                onKeyUp={this.handleTypeTesterInputChange}
                 id="typetestereditablefield"
               >
-                ⚠ click and type 💩 try me out 😵
+                {this.state.inputContent}
               </span>
               <div className="justify-end hidden lg:flex ">
                 <div className="pt-5 pr-5 lg:pr-20 z-50">
@@ -245,6 +251,9 @@ class TypeTester extends Component {
           </div>
         </Pill>
         <style global jsx>{`
+          #typetestereditablefield {
+            cursor: url("/images/icons/textcursor.svg"), text;
+          }
           .type-tester {
             transition: font-variation-settings 0.6s ease;
           }

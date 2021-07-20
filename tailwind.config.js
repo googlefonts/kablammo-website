@@ -87,7 +87,7 @@ module.exports = {
       lime: "#E8F75C",
       blue: "#73B6E7",
       purple: "#9891E8",
-      lightpurple: "#9C97FC",
+      lightpurple: "#a09beb",
       yellow: "#FFC000",
       orange: "#EB7B57",
       pink: "#F97DDA",

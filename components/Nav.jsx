@@ -64,13 +64,13 @@ const Nav = (props) => {
         <div className={`w-100% lg:w-20% flex justify-center`}>
           <div
             onClick={() => handleInvert("day")}
-            className={`hvr-shrink cursor-pointer w-50% h-10 lg:h-5 lg:border-2 border border-solid border-black text-black bg-yellow rounded-lg text-center flex justify-center font-body items-center hover:bg-pink `}
+            className={`hvr-shrink cursor-pointer w-50% h-10 lg:h-5 text-black bg-yellow rounded-lg text-center flex justify-center font-body items-center hover:bg-pink `}
           >
             <span className="font-display uppercase text-8 lg:text-3">☀</span>
           </div>
           <div
             onClick={() => handleInvert("night")}
-            className={`hvr-shrink cursor-pointer w-50% h-10 lg:h-5 lg:border-2 border border-solid border-black text-black bg-extraBlack rounded-lg text-center flex justify-center font-body items-center hover:bg-pink `}
+            className={`hvr-shrink cursor-pointer w-50% h-10 lg:h-5 text-black bg-extraBlack rounded-lg text-center flex justify-center font-body items-center hover:bg-pink `}
           >
             <span className="font-display uppercase text-8 lg:text-3 text-gray">
               ☾

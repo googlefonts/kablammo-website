@@ -33,7 +33,7 @@ const bgOptions = [
     image: "/images/bg/orange-worms.svg",
     bgColor: "green",
     textColor: "gray",
-    sliderColor: "orange"
+    sliderColor: "green"
   },
 ];
 
@@ -137,7 +137,7 @@ class TypeTester extends Component {
         <div
           ref={this.typeTesterRef}
           id="typetester"
-          className={`bg-${this.state.activeBg.bgColor} h-tester-mobile lg:h-tester-desktop w-100% relative lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden`}
+          className={`bg-${this.state.activeBg.bgColor} h-tester-mobile lg:h-tester-desktop w-100% relative rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden`}
         >
           <Pattern
             className="h-100% w-100% bg-cover grid place-items-center"

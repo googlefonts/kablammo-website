@@ -4,10 +4,10 @@ const Pill = (props) => {
   useEffect(() => {
     props.children && setShowChild(true);
   }, []);
-
+// lg:border-2 border border-solid border-black
   return (
     <div
-      className={`pill w-100% lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center flex justify-center items-center ${
+      className={`pill w-100% text-black rounded-sm lg:rounded-lg text-center flex justify-center items-center ${
         props.className && `${props.className}`
       }`}
     >

@@ -13,7 +13,7 @@ const SlotMachine = (props) => {
   };
   return (
     <Frame
-      className={`relative bg-black lg:border-2 border border-solid border-black bg-clip-padding overflow-hidden h-75vh lg:h-100vh flex justify-between flex-col`}
+      className={`relative bg-black bg-clip-padding overflow-hidden h-75vh lg:h-100vh flex justify-between flex-col`}
     >
                   {/* SMALL SCROLLING TEXT 1 */}
         <Pill className="hvr-wobble-top hvr-shutter-out-horizontal bg-lime hover:bg-green h-10 lg:h-5 bg-clip-padding overflow-hidden">
@@ -22,7 +22,6 @@ const SlotMachine = (props) => {
                 blank
                 specialRight
                 hideMobile
-                borderTop
                 large
                 right
               >
@@ -32,7 +31,7 @@ const SlotMachine = (props) => {
               </ScrollingText>
             </Pill>
       <Frame
-        className={`relative bg-black border lg:border-2 border-solid border-black bg-clip-padding overflow-hidden h-100% grid grid-cols-2 grid-rows-2`}
+        className={`relative bg-black bg-clip-padding overflow-hidden h-100% grid grid-cols-2 grid-rows-2`}
       >
         <Slots
           charset={altChars.slot1}
@@ -66,7 +65,6 @@ const SlotMachine = (props) => {
           blank
           specialRight
           hideMobile
-          borderTop
           large
           right
         >

@@ -109,7 +109,7 @@ function Index(props) {
               {/* LANDING */}
 
               <Pill
-                className={`bg-purple lg:border-2 border border-solid border-black bg-clip-padding overflow-hidden h-100%`}
+                className={`bg-purple bg-clip-padding overflow-hidden h-100%`}
               >
                 <Kablammo />
               </Pill>
@@ -139,7 +139,7 @@ function Index(props) {
             
             {/* SLIDER FRAME */}
             <Carousel
-              className={`lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-50vh lg:h-100vh`}
+              className={`rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-50vh lg:h-100vh`}
               items={doc.data.carousel}
             />
              <Pill className="hvr-wobble-top hvr-shutter-in-horizontal bg-gray hover:bg-pink h-10 lg:h-4 bg-clip-padding overflow-hidden">
@@ -179,7 +179,7 @@ function Index(props) {
         </ScrollingText>
       </Pill> 
             <div
-              className={`bg-green lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden`}
+              className={`bg-green rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden`}
               id="characterset"
             >
               <p className="text-center text-yellow text-8 lg:text-5 my-3 lg:my-6">
@@ -225,7 +225,7 @@ function Index(props) {
             </Pill>
             {/* ESSAY */}
             <Frame
-              className={`bg-gray lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-auto lg:h-75vh`}
+              className={`bg-gray rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-auto lg:h-75vh`}
             >
               <p className="text-center text-black text-8 lg:text-5 my-3 lg:my-6">
                 About the Font
@@ -254,8 +254,8 @@ function Index(props) {
             </Pill>
             {/* <Nav /> */}
             {/* CREDITS */}
-            <Pill className="bg-gray h-auto lg:h-4">
-            <span className="font-body text-4 lg:text-2 py-2 px-4 uppercase font-mono">
+            <Pill className="bg-gray h-auto lg:h-6">
+            <span className="font-body text-4 lg:text-2 py-2 px-4 uppercase">
                 Art Direction
               </span>
               </Pill>
@@ -264,8 +264,8 @@ function Index(props) {
               Travis Kochel and Lizy Gershenzon
               </span>
             </Pill>
-            <Pill className="bg-gray h-auto lg:h-4">
-            <span className="font-body text-4 lg:text-2 py-2 px-4 uppercase font-mono">
+            <Pill className="bg-gray h-auto lg:h-6">
+            <span className="font-body text-4 lg:text-2 py-2 px-4 uppercase ">
             Lead Design and Production 
               </span>
               </Pill>
@@ -274,8 +274,8 @@ function Index(props) {
               Travis Kochel
               </span>
             </Pill>
-            <Pill className="bg-gray h-auto lg:h-4">
-              <span className="font-body text-4 lg:text-2 py-2 px-4 uppercase font-mono">
+            <Pill className="bg-gray h-auto lg:h-6">
+              <span className="font-body text-4 lg:text-2 py-2 px-4 uppercase ">
                 Cyrillic and Production Help
               </span>
             </Pill>
@@ -284,8 +284,8 @@ function Index(props) {
                 Daria Petrova and Ethan Cohen
               </span>
             </Pill>
-            <Pill className="bg-gray h-auto lg:h-4">
-              <span className="font-body py-1 text-4 lg:text-2 py-2 uppercase font-mono">
+            <Pill className="bg-gray h-auto lg:h-6">
+              <span className="font-body py-1 text-4 lg:text-2 py-2 uppercase ">
                 Website Design and Development
               </span>
             </Pill>
@@ -294,8 +294,8 @@ function Index(props) {
                 FISK
               </span>
             </Pill>
-            <Pill className="bg-gray h-auto lg:h-4">
-              <span className="font-body text-4 lg:text-2 py-2 uppercase font-mono">
+            <Pill className="bg-gray h-auto lg:h-6">
+              <span className="font-body text-4 lg:text-2 py-2 uppercase ">
                 Commissioned by Google Fonts
               </span>
             </Pill>

@@ -7,10 +7,13 @@ import Packery from "packery";
 import Isotope from "isotope-layout";
 import CharacterSetItem from "./CharacterSetItem";
 import CharacterSetFilters from "./CharacterSetFilters";
+import CharacterSetFilter from "./CharacterSetFilter";
 
 const CharacterSet = (props) => {
   const [pckry, setPckry] = useState(null);
   const [activeFilters, setActiveFilters] = useState([".basic-latin", ".numerals", ".kablammoji", ".zodiac"]);
+  const categoryMap = 
+  ['.basic-latin', '.extended-latin', '.cyrillic', '.numerals', '.punctuation-and-symbols', '.math-and-currency', '.kablammoji','.patterns-and-borders', '.zodiac']
   const gridRef = useRef(null);
   let gridInit;
   let docElem = document.documentElement;
@@ -2664,66 +2667,66 @@ const CharacterSet = (props) => {
       category: "kablammoji",
       scale: 1
     },
-    {
-      letter: "\u1f33c",
-      category: "kablammoji",
-      scale: 1
-    },
-    {
-      letter: "\u1f440",
-      category: "kablammoji",
-      scale: 1
-    },
-    {
-      letter: "\u1f441",
-      category: "kablammoji",
-      scale: 1
-    },
-    {
-      letter: "\u1f444",
-      category: "kablammoji",
-      scale: 1
-    },
-    {
-      letter: "\u1f451",
-      category: "kablammoji",
-      scale: 1
-    },
-    {
-      letter: "\u1f47b",
-      category: "kablammoji",
-      scale: 1
-    },
-    {
-      letter: "\u1f48e",
-      category: "kablammoji",
-      scale: 1
-    },
-    {
-      letter: "\u1f496",
-      category: "kablammoji",
-      scale: 1
-    },
-    {
-      letter: "\u1f4a9",
-      category: "kablammoji",
-      scale: 1
-    },
-    {
-      letter: "\u1f525",
-      category: "kablammoji",
-      scale: 1
-    },
-    {
-      letter: "\u1f632",
-      category: "kablammoji",
-      scale: 1
-    },
-    {
-      letter: "\u1f635",
-      category: "kablammoji",
-      scale: 1
-    },
+    // {
+    //   letter: "\u1F33C",
+    //   category: "kablammoji",
+    //   scale: 1
+    // },
+    // {
+    //   letter: "\u1F440",
+    //   category: "kablammoji",
+    //   scale: 1
+    // },
+    // {
+    //   letter: "\u1f441",
+    //   category: "kablammoji",
+    //   scale: 1
+    // },
+    // {
+    //   letter: "\u1f444",
+    //   category: "kablammoji",
+    //   scale: 1
+    // },
+    // {
+    //   letter: "\u1f451",
+    //   category: "kablammoji",
+    //   scale: 1
+    // },
+    // {
+    //   letter: "\u1f47b",
+    //   category: "kablammoji",
+    //   scale: 1
+    // },
+    // {
+    //   letter: "\u1f48e",
+    //   category: "kablammoji",
+    //   scale: 1
+    // },
+    // {
+    //   letter: "\u1f496",
+    //   category: "kablammoji",
+    //   scale: 1
+    // },
+    // {
+    //   letter: "\u1f4a9",
+    //   category: "kablammoji",
+    //   scale: 1
+    // },
+    // {
+    //   letter: "\u1f525",
+    //   category: "kablammoji",
+    //   scale: 1
+    // },
+    // {
+    //   letter: "\u1f632",
+    //   category: "kablammoji",
+    //   scale: 1
+    // },
+    // {
+    //   letter: "\u1f635",
+    //   category: "kablammoji",
+    //   scale: 1
+    // },
     {
       letter: "\uaa5c",
       category: "kablammoji",
@@ -2764,46 +2767,46 @@ const CharacterSet = (props) => {
       category: "kablammoji",
       scale: 1
     },
-    {
-      letter: "\u1f310",
-      category: "kablammoji",
-      scale: 1
-    },
-    {
-      letter: "\u1f355",
-      category: "kablammoji",
-      scale: 1
-    },
-    {
-      letter: "\u1f47d",
-      category: "kablammoji",
-      scale: 1
-    },
-    {
-      letter: "\u1f4a5",
-      category: "kablammoji",
-      scale: 1
-    },
-    {
-      letter: "\u1f552",
-      category: "kablammoji",
-      scale: 1
-    },
-    {
-      letter: "\u1f643",
-      category: "kablammoji",
-      scale: 1
-    },
-    {
-      letter: "\u1f6f8",
-      category: "kablammoji",
-      scale: 1
-    },
-    {
-      letter: "\u1fa90",
-      category: "kablammoji",
-      scale: 1
-    },
+    // {
+    //   letter: "\u1f310",
+    //   category: "kablammoji",
+    //   scale: 1
+    // },
+    // {
+    //   letter: "\u1f355",
+    //   category: "kablammoji",
+    //   scale: 1
+    // },
+    // {
+    //   letter: "\u1f47d",
+    //   category: "kablammoji",
+    //   scale: 1
+    // },
+    // {
+    //   letter: "\u1f4a5",
+    //   category: "kablammoji",
+    //   scale: 1
+    // },
+    // {
+    //   letter: "\u1f552",
+    //   category: "kablammoji",
+    //   scale: 1
+    // },
+    // {
+    //   letter: "\u1f643",
+    //   category: "kablammoji",
+    //   scale: 1
+    // },
+    // {
+    //   letter: "\u1f6f8",
+    //   category: "kablammoji",
+    //   scale: 1
+    // },
+    // {
+    //   letter: "\u1fa90",
+    //   category: "kablammoji",
+    //   scale: 1
+    // },
     {
       letter: "\ue000",
       category: "patterns-and-borders",
@@ -2966,6 +2969,74 @@ const CharacterSet = (props) => {
     }
   ]
   
+  const [activeColors, setActiveColors] = useState({
+    '.basic-latin': 'blue',
+    '.extended-latin': 'gray',
+    '.cyrillic': 'gray',
+    '.numerals': 'purple',
+    '.punctuation-and-symbols': 'gray',
+    '.math-and-currency': 'gray',
+    '.kablammoji': 'lime',
+    '.patterns-and-borders': 'gray',
+    '.zodiac': 'purple',
+  })
+
+  const [categories, setCategories] = useState([
+    {
+      name: '.basic-latin',
+      label: 'Basic Latin',
+      color: 'yellow',
+      active: 'yellow'
+    },
+    {
+      name: '.extended-latin',
+      label: 'Extended Latin',
+      color: 'lime',
+      active: 'gray'
+    },
+    {
+      name: '.cyrillic',
+      label: 'Cyrillic',
+      color: 'pink',
+      active: 'gray'
+    },
+    {
+      name: '.numerals',
+      label: 'Numerals',
+      color: 'purple',
+      active: 'purple'
+    },
+    {
+      name: '.punctuation-and-symbols',
+      label: 'Punctuation & Symbols',
+      color: 'orange',
+      active: 'gray'
+    },
+    {
+      name: '.math-and-currency',
+      label: 'Math & Currency',
+      color: 'blue',
+      active: 'gray'
+    },
+    {
+      name: '.kablammoji',
+      label: 'Kablammoji',
+      color: 'lime',
+      active: 'lime'
+    },
+    {
+      name: '.patterns-and-borders',
+      label: 'Patterns & Borders',
+      color: 'pink',
+      active: 'gray'
+    },
+    {
+      name: '.zodiac',
+      label: 'Zodiac',
+      color: 'purple',
+      active: 'purple'
+    }
+  ]);
 
   useEffect(() => {
     gridRef !== null &&
@@ -2976,6 +3047,7 @@ const CharacterSet = (props) => {
         })
       );
   }, [gridRef]);
+  
 
   useEffect(() => {
     let grid =
@@ -3046,29 +3118,65 @@ const CharacterSet = (props) => {
   }
 
   const handleFilterClick = (event) => {
-    let updatedActiveFilters = activeFilters;
+    // console.log(event, this.state)
+    const updatedActiveFilters = activeFilters;
     // let grid = gridRef !== null ? document.querySelector(".grid") : null;
     let filter = event.target.getAttribute("data-filter");
+    let refInd = categoryMap.indexOf(filter)
     let ind = activeFilters.indexOf(filter);
     if (ind===-1){
       updatedActiveFilters.push(filter); 
-    } else { updatedActiveFilters.splice(ind,1);}
+      // console.log(refInd);
+      // let newcat = categories;
+      // newcat[refInd].active = categories[refInd].color;
+      // setCategories(newcat);
+      // console.log(categories[refInd].active);
+      event.target.classList.add("bg-"+categories[refInd].color);
+      event.target.classList.remove("bg-gray");
+    } else { 
+      updatedActiveFilters.splice(ind,1);
+      // let newcat = categories;
+      event.target.classList.add("bg-gray");
+      event.target.classList.remove("bg-"+categories[refInd].color);
+      // newcat[refInd].active = "gray";
+      // event.target.classList.add("bg-"+categories[refInd].active);
+      // setCategories(newcat);
+    }
     let filterValueString = activeFilters.join(", ");
     gridInit.arrange({ filter: filterValueString });
     setActiveFilters(updatedActiveFilters);
   };
 
-  // bind filter button click
-  // $('#filters').on('click', 'button', function () {
-  //  let filterValue = $(this).attr('data-filter');
-  //  // use filterFn if matches value
-  //  filterValue = filterFns[filterValue] || filterValue;
-  //  $grid.isotope({ filter: filterValue });
-  // });
-
   return (
     <div className={`character-set`}>
-      <CharacterSetFilters handleFilterClick={handleFilterClick} activeFilters={activeFilters} />
+      <div className="character-set-filters">
+      <div 
+        className={`filters w-100% text-black text-center grid place-items-center`}
+      >
+        <div className="w-100%">
+          <div className="grid grid-cols-3 font-body">
+            <div>
+            <button data-filter= {categories[0].name} onClick={handleFilterClick}
+            className={`bg-`+categories[0].active+` hover:bg-`+categories[0].color+` h-10 lg:h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-3 lg:text-2 uppercase cursor-pointer` }>
+              {categories[0].label}
+            </button>
+              <CharacterSetFilter name={categories[1].name} color={categories[1].color} label={categories[1].label} onClickProp={handleFilterClick} activeColor={categories[1].active} />
+              <CharacterSetFilter name={categories[2].name} color={categories[2].color} label={categories[2].label} onClickProp={handleFilterClick} activeColor={categories[2].active} />
+            </div>
+            <div>
+              <CharacterSetFilter name={categories[3].name} color={categories[3].color} label={categories[3].label} onClickProp={handleFilterClick} activeColor={categories[3].active} />
+              <CharacterSetFilter name={categories[4].name} color={categories[4].color} label={categories[4].label} onClickProp={handleFilterClick} activeColor={categories[4].active} />
+              <CharacterSetFilter name={categories[5].name} color={categories[5].color} label={categories[5].label} onClickProp={handleFilterClick} activeColor={categories[5].active} />
+            </div>
+            <div>
+              <CharacterSetFilter name={categories[6].name} color={categories[6].color} label={categories[6].label} onClickProp={handleFilterClick} activeColor={categories[6].active} />
+              <CharacterSetFilter name={categories[7].name} color={categories[7].color} label={categories[7].label} onClickProp={handleFilterClick} activeColor={categories[7].active} />
+              <CharacterSetFilter name={categories[8].name} color={categories[8].color} label={categories[8].label} onClickProp={handleFilterClick} activeColor={categories[8].active} />
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
       <div ref={gridRef} className="isotope-grid" onClick={handleClick}>
         <div className="grid-sizer"></div>
         {characterDictionary.map((item, i) => {
@@ -3086,20 +3194,16 @@ const CharacterSet = (props) => {
         .character-set {
           width: 100%;
         }
-
-        .character-set-filters {
-          border: 1px solid hsla(0, 0%, 0%, 0.5);
-          border-radius: 32px;
-          height: 75px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
+        button {
+          appearance: none;
+          outline: none;
         }
-
-        .character-set-filters span {
-          font-size: 15px;
-          text-align: center;
-          text-transform: uppercase;
+        .closed {
+          height: 0;
+          opacity: 0;
+          border: 0;
+          padding: 0;
+          visibility: hidden;
         }
 
         .isotope-grid {

@@ -82,17 +82,14 @@ class TypeTester extends Component {
       if (this.state.animationPlaying) {
         animation.pause();
         this.setState({ animationPlaying: false });
-        console.log(this.state.inputAnimateValue);
       } else {
         animation.play();
         this.setState({ animationPlaying: true });
-        console.log(this.state.inputAnimateValue);
       }
     } else{console.log("animation not playing!!");}
   }
   handleSliderChange(event, value) {
     if (event) {
-      // console.log("if this state animationplaying: ",this.state.animationPlaying);
       animation.pause();
       this.setState({ animationPlaying: false });
       this.sliderRef.current.value = event.target.value;
@@ -102,7 +99,6 @@ class TypeTester extends Component {
     } else if (value) {
       animation.pause();
       this.setState({ animationPlaying: false });
-      console.log("value: ",value);
       this.sliderRef.current.value = value;
       setDocumentVariable("--typeTesterValue", value);
       this.typeTesterInputRef.current.style.fontVariationSettings =
@@ -120,7 +116,6 @@ class TypeTester extends Component {
     } else {
     animation.pause();
     this.setState({ animationPlaying: false });
-    // console.log("animation play!");
   }}
 
   handleControllerClick() {
@@ -132,7 +127,6 @@ class TypeTester extends Component {
   }
 
   animationStart() {
-    console.log("curr animation value: ",this.state.inputAnimateValue);
     animation = Anime({
       targets: this.typeTesterInputRef.current,
       fontVariationSettings: ["'move' "+this.state.inputAnimateValue, "'move' 1000"],
@@ -146,7 +140,6 @@ class TypeTester extends Component {
         );
         this.sliderRef.current.value = animationValue;
         this.setState({ inputAnimateValue: animationValue });
-        // console.log(this.state.inputAnimateValue);
         return true;
       },
     });

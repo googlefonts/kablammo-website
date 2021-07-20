@@ -3133,7 +3133,19 @@ const CharacterSet = (props) => {
       // console.log(categories[refInd].active);
       event.target.classList.add("bg-"+categories[refInd].color);
       event.target.classList.remove("bg-gray");
-    } else { 
+      let filterValueString = activeFilters.join(", ");
+      gridInit.arrange({ filter: filterValueString });
+      setActiveFilters(updatedActiveFilters); }
+    // } else if (activeFilters.length===1){ 
+    //   updatedActiveFilters.splice(ind,1);
+    //   event.target.classList.add("bg-gray");
+    //   event.target.classList.remove("bg-"+categories[refInd].color);
+    //   setActiveFilters([".basic-latin", ".numerals", ".kablammoji", ".zodiac"]);
+    //   let filterValueString = activeFilters.join(", ");
+    //   gridInit.arrange({ filter: filterValueString });
+
+    // }
+    else {
       updatedActiveFilters.splice(ind,1);
       // let newcat = categories;
       event.target.classList.add("bg-gray");
@@ -3141,10 +3153,10 @@ const CharacterSet = (props) => {
       // newcat[refInd].active = "gray";
       // event.target.classList.add("bg-"+categories[refInd].active);
       // setCategories(newcat);
+      let filterValueString = activeFilters.join(", ");
+      gridInit.arrange({ filter: filterValueString });
+      setActiveFilters(updatedActiveFilters);
     }
-    let filterValueString = activeFilters.join(", ");
-    gridInit.arrange({ filter: filterValueString });
-    setActiveFilters(updatedActiveFilters);
   };
 
   return (
@@ -3156,10 +3168,7 @@ const CharacterSet = (props) => {
         <div className="w-100%">
           <div className="grid grid-cols-3 font-body">
             <div>
-            <button data-filter= {categories[0].name} onClick={handleFilterClick}
-            className={`bg-`+categories[0].active+` hover:bg-`+categories[0].color+` h-10 lg:h-6 lg:border-2 border border-solid border-black text-black rounded-sm lg:rounded-lg text-center w-100% text-3 lg:text-2 uppercase cursor-pointer` }>
-              {categories[0].label}
-            </button>
+              <CharacterSetFilter name={categories[0].name} color={categories[0].color} label={categories[0].label} onClickProp={handleFilterClick} activeColor={categories[0].active} />
               <CharacterSetFilter name={categories[1].name} color={categories[1].color} label={categories[1].label} onClickProp={handleFilterClick} activeColor={categories[1].active} />
               <CharacterSetFilter name={categories[2].name} color={categories[2].color} label={categories[2].label} onClickProp={handleFilterClick} activeColor={categories[2].active} />
             </div>

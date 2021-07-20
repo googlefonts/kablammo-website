@@ -59,7 +59,6 @@ class TypeTester extends Component {
     this.state = {
       activeBg: bgOptions[0],
       isActive: true,
-      seconds: 0,
       animationPlaying: true,
       inputContent: "⚠ click and type 💩 try me out 😵",
       inputAnimateValue: 1
@@ -86,37 +85,20 @@ class TypeTester extends Component {
         animation.play();
         this.setState({ animationPlaying: true });
       }
-    } else{console.log("animation not playing!!");}
-  }
-  handleSliderChange(event, value) {
-    if (event) {
-      animation.pause();
-      this.setState({ animationPlaying: false });
-      this.sliderRef.current.value = event.target.value;
-      setDocumentVariable("--typeTesterValue", event.target.value);
-      this.typeTesterInputRef.current.style.fontVariationSettings =
-        "'move' " + event.target.value;
-    } else if (value) {
-      animation.pause();
-      this.setState({ animationPlaying: false });
-      this.sliderRef.current.value = value;
-      setDocumentVariable("--typeTesterValue", value);
-      this.typeTesterInputRef.current.style.fontVariationSettings =
-        "'move' " + value;
     }
   }
-
-  handleBgClick(index, e) {
-
-    this.setState({ activeBg: bgOptions[index] });
-    if (this.state.animationPlaying) {
-      animation.pause();
-      animation.play();
-      this.setState({ animationPlaying: true });
-    } else {
+  handleSliderChange(event) {
     animation.pause();
     this.setState({ animationPlaying: false });
-  }}
+    this.sliderRef.current.value = event.target.value;
+    setDocumentVariable("--typeTesterValue", event.target.value);
+    this.typeTesterInputRef.current.style.fontVariationSettings =
+      "'move' " + event.target.value;
+  }
+
+  handleBgClick(index) {
+    this.setState({ activeBg: bgOptions[index] });
+  }
 
   handleControllerClick() {
     this.toggleCurrentAnimation(animation);
@@ -149,7 +131,6 @@ class TypeTester extends Component {
     this.animationStart();
   }
 
-
   render() {
     return (
       <div className="lg:h-100vh md:h-75vh h-50vh ">
@@ -159,12 +140,11 @@ class TypeTester extends Component {
           className={`bg-${this.state.activeBg.bgColor} h-tester-mobile lg:h-tester-desktop w-100% relative lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden`}
         >
           <Pattern
-            key={this.state.activeBg.index}
             className="h-100% w-100% bg-cover grid place-items-center"
             bgImage={this.state.activeBg.image}
           >
-            <Frame
-              className={`type-tester h-100% absolute top-0 left-0 right-0 bottom-0 z-10`}
+            <div
+              className="w-100% bg-contain bg-no-repeat bg-center type-tester h-100% absolute inset-0 z-10"
             >
               <span
                 ref={this.typeTesterInputRef}
@@ -221,20 +201,14 @@ class TypeTester extends Component {
                     >
                       
                     </a>
-                  </div>{" "}
+                  </div>
                 </div>
               </div>
-            </Frame>
+            </div>
           </Pattern>
         </div>
         <Pill className="bg-purple h-10 lg:h-5 flex w-100vw">
           <div className="w-100% h-100%">
-            {/* <TypeTesterSelect
-                key={this.typeTesterInputRef.current}
-                inputRef={this.inputRef}
-                handleSliderChange={this.handleSliderChange}
-                onClick={this.handleClick}
-              /> */}
             <div className="flex flex-col w-100% h-100%">
               <div className="h-100% w-100% bg-purple rounded-sm lg:rounded-lg flex justify-center items-center overflow-hidden">
                 <div className="w-1/5 lg:w-10% bg-gray h-100% flex justify-center items-center">

@@ -247,11 +247,9 @@ function Index(props) {
               </div>
             </Frame>
             {/* DOWNLOAD */}
-            <Pill className="bg-purple hover:bg-pink h-30">
-              <span className="text-16 text-lime uppercase cursor-pointer">
+            <a id="download" className="w-100% text-black rounded-sm lg:rounded-lg text-center flex justify-center items-center bg-purple hover:bg-pink h-30 text-16 text-lime uppercase cursor-pointer" target="_blank" href="https://www.fiskprojects.com/">
                 Download
-              </span>
-            </Pill>
+            </a>
             {/* <Nav /> */}
             {/* CREDITS */}
             <Pill className="bg-gray h-auto lg:h-6">
@@ -300,11 +298,9 @@ function Index(props) {
               </span>
             </Pill>
             {/* VECTRO TYPE FOUNDRY CREDIT */}
-            <Pill className="bg-blue h-12 hover:bg-yellow cursor-pointer">
-              <span className="text-6 uppercase cursor-pointer">
+            <a className="text-6 uppercase cursor-pointer bg-blue h-12 hover:bg-yellow cursor-pointer w-100% text-black rounded-sm lg:rounded-lg text-center flex justify-center items-center" target="_blank" href="https://www.fiskprojects.com/">
                 Font by Vectro Type Foundry
-              </span>
-            </Pill>
+              </a>
             
           </Layout>
         </div>

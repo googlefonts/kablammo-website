@@ -12,7 +12,7 @@ import Media from "react-media";
 import dynamic from "next/dynamic";
 import Pill from "../components/Pill";
 import TypeTester from "../components/TypeTester";
-import Scene from "../components/Scene";
+
 import TypeParticles from "../components/TypeParticles";
 import Kablammo from "../components/Kablammo";
 import TypeScales from "../components/TypeScales";
@@ -103,8 +103,7 @@ function Index(props) {
           </Head>
           <Layout>
             <Frame className={`lg:h-100vh flex justify-between flex-col`}>
-              {/* SCENE */}
-              {isBrowser && <Scene />}
+
               {/* NAV */}
               <Nav />
               {/* LANDING */}

@@ -1,10 +1,5 @@
 import React, {
-  Component,
-  Fragment,
-  useState,
-  useContext,
   useEffect,
-  useLayoutEffect,
   useRef,
 } from "react";
 import Pattern from "../components/Pattern";

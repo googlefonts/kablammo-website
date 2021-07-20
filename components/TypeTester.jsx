@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 import Anime from "animejs";
-import Frame from "../components/Frame";
-// import AnimationButton from "../components/AnimationButton";
 import TypeTesterSlider from "../components/TypeTesterSlider";
-// import InputRange from "react-input-range";
-// import TypeTesterSelect from "../components/TypeTesterSelect";
 import Pattern from "../components/Pattern";
 import Pill from "../components/Pill";
 

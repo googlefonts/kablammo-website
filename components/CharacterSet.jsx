@@ -6,7 +6,7 @@ import React, {
 import Packery from "packery";
 import Isotope from "isotope-layout";
 import CharacterSetItem from "./CharacterSetItem";
-import CharacterSetFilters from "./CharacterSetFilters";
+// import CharacterSetFilters from "./CharacterSetFilters";
 import CharacterSetFilter from "./CharacterSetFilter";
 
 const CharacterSet = (props) => {

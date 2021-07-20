@@ -1,11 +1,4 @@
-import React, {
-	Component,
-	Fragment,
-	useState,
-	useContext,
-	useEffect,
-} from "react";
-import Link from "next/link";
+import React, { useState } from "react";
 
 const Frame = (props) => {
 	const [child, setChild] = useState(props.children);

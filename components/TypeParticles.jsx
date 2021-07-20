@@ -1,23 +1,8 @@
-import React, {
-  Component,
-  Fragment,
-  useState,
-  useEffect,
-  useContext,
-} from "react";
-import Link from "next/link";
-import { useRouter } from "next/router";
+import React from "react";
 import Frame from "./Frame";
 import TypeParticlesText from "./TypeParticlesText";
 
-const TypeParticles = (props) => {
-  // useEffect(() => {
-  //   if (window.innerWidth < 1024) {
-  //     console.log("small");
-  //   } else {
-  //     console.log("biiiig");
-  //   }
-  // });
+const TypeParticles = () => {
   return (
     <Frame
       className={`type-particles bg-extraBlack md:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-75vh lg:h-100vh flex justify-center items-center px-10 md:px-20 relative`}

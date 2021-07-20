@@ -1,18 +1,8 @@
-import React, { Component } from "react";
-import Anime from "animejs";
-import Frame from "../components/Frame";
-import AnimationButton from "../components/AnimationButton";
-import InputRange from "react-input-range";
+import React from "react";
 
-// Auxiliary method. Retrieves and sanitises the value of a custom property.
 var getVariable = function (styles, propertyName) {
   return String(styles.getPropertyValue(propertyName)).trim();
 };
-
-// Auxiliary method. Sets the value of a custom property at the document level.
-// var setDocumentVariable = function (propertyName, value) {
-//   document.documentElement.style.setProperty(propertyName, value);
-// };
 
 class TypeTesterSlider extends React.Component {
   constructor(props) {
@@ -30,9 +20,6 @@ class TypeTesterSlider extends React.Component {
      });
   }
   componentDidMount() {
-    // this.sliderRef.current.addEventListener("input", function (e) {
-    //   setDocumentVariable("--typeTesterValue", this.sliderRef.current.value);
-    // });
     this.setDocumentListener();
     var styles = getComputedStyle(document.documentElement);
     this.props.sliderRef.current.value = getVariable(

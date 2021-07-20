@@ -1,10 +1,4 @@
-import React, { Component } from "react";
-import Anime from "animejs";
-import Frame from "../components/Frame";
-import AnimationButton from "../components/AnimationButton";
-import InputRange from "react-input-range";
-import Pill from "../components/Pill";
-import ScrollingText from "../components/ScrollingText";
+import React from "react";
 
 class Carousel extends React.Component {
 	constructor(props) {

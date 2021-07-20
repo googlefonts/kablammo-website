@@ -152,7 +152,7 @@ function Index(props) {
                 hideMobile
                 borderTop
                 large
-                left
+                right
               >
                 <span className="text-5 lg:text-3 text-black uppercase">
                   👁 A 🌐 Dancing ☀ typeface ☮ BROUGHT ☼ TO 👁 YOU 🌐 BY ☀ VECTRO
@@ -203,7 +203,7 @@ function Index(props) {
                 left
               >
                 <span className="text-24 text-purple uppercase">
-                  The making of KABLAMMO
+                  The making of KABLAMMO 
                 </span>
               </ScrollingText>
             </Pill>

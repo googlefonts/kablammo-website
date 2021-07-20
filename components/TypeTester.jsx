@@ -12,24 +12,28 @@ const bgOptions = [
     image: "/images/bg/lime-circles.svg",
     bgColor: "lime",
     textColor: "pink",
+    sliderColor: "pink"
   },
   {
     index: 1,
     image: "/images/bg/pink-pattern.svg",
     bgColor: "blue",
-    textColor: "lime",
+    textColor: "green",
+    sliderColor: "green"
   },
   {
     index: 2,
     image: "/images/bg/purple-squiggly.svg",
     bgColor: "purple",
     textColor: "yellow",
+    sliderColor: "purple"
   },
   {
     index: 3,
     image: "/images/bg/orange-worms.svg",
     bgColor: "green",
     textColor: "gray",
+    sliderColor: "orange"
   },
 ];
 
@@ -203,10 +207,10 @@ class TypeTester extends Component {
             </div>
           </Pattern>
         </div>
-        <Pill className="bg-purple h-10 lg:h-5 flex w-100vw">
+        <Pill className="h-10 lg:h-5 flex w-100vw">
           <div className="w-100% h-100%">
             <div className="flex flex-col w-100% h-100%">
-              <div className="h-100% w-100% bg-purple rounded-sm lg:rounded-lg flex justify-center items-center overflow-hidden">
+              <div className={`h-100% w-100% bg-`+this.state.activeBg.sliderColor+` rounded-sm lg:rounded-lg flex justify-center items-center overflow-hidden`}>
                 <div className="w-1/5 lg:w-10% bg-gray h-100% flex justify-center items-center">
                   <span
                     onClick={this.toggleCurrentAnimation}

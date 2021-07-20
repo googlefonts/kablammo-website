@@ -46,26 +46,39 @@ class TypeTesterSlider extends React.Component {
             input[type="range"]::-webkit-slider-thumb {
               height: 4.5vw;
               width: 4.5vw;
-              margin-top: -2.2vw;
+              margin-top: -2vw;
             }
             input[type="range"]::-moz-range-thumb {
               height: 4.5vw;
               width: 4.5vw;
             }
+            ::-webkit-slider-runnable-track {
+              background: #3D3D3D;
+              margin-top:2.25vw;
+              margin-bottom:2.25vw;
+              height: 0.5vw;
+              transition: none;
+            }
           }
           @media only screen and (max-width: 1024px) {
             input[type="range"]::-webkit-slider-thumb {
-              height: 8vw;
-              width: 8vw;
-              margin-top: -4vw;
+              height: 9.6vw;
+              width: 9.6vw;
+              margin-top: -4.5vw;
             }
             input[type="range"]::-moz-range-thumb {
               height: 8vw;
               width: 8vw;
             }
+            ::-webkit-slider-runnable-track {
+              background: #3D3D3D;
+              margin-top:2vw;
+              margin-bottom:2vw;
+              height: 1vw;
+              transition: none;
+            }
           }
           .slider {
-            // margin-bottom: 40px;
             transition: none;
           }
           .slider label {
@@ -126,17 +139,9 @@ class TypeTesterSlider extends React.Component {
           .input-range__slider:active {
             transform: none;
           }
-          ::-webkit-slider-runnable-track {
-            // box-sizing: border-box
-            background: black;
-            margin-top:2.4vw;
-            margin-bottom:2.4vw;
-            height: 0.2vw;
-            transition: none;
-          }
           ::-moz-range-track {
-            background: black;
-            height: 2px;
+            background: #3D3D3D;
+            height: 7px;
             transition: none;
           }
 

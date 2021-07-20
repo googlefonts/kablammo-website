@@ -139,7 +139,7 @@ function Index(props) {
             
             {/* SLIDER FRAME */}
             <Carousel
-              className={`bg-orange lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-50vh lg:h-100vh`}
+              className={`lg:border-2 border border-solid border-black rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-50vh lg:h-100vh`}
               items={doc.data.carousel}
             />
              <Pill className="hvr-wobble-top hvr-shutter-in-horizontal bg-gray hover:bg-pink h-10 lg:h-4 bg-clip-padding overflow-hidden">

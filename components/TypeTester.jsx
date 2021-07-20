@@ -26,7 +26,7 @@ const bgOptions = [
     image: "/images/bg/purple-squiggly.svg",
     bgColor: "purple",
     textColor: "yellow",
-    sliderColor: "purple"
+    sliderColor: "lightpurple"
   },
   {
     index: 3,
@@ -158,8 +158,8 @@ class TypeTester extends Component {
                 {this.state.inputContent}
               </span>
               <div className="justify-end hidden lg:flex ">
-                <div className="pt-5 pr-5 lg:pr-20 z-50">
-                  <span className="uppercase font-mono text-black text-1">
+                <div className="pt-10 pr-5 lg:pr-20 z-50">
+                  <span className="uppercase font-mono text-black text-14pt">
                     Background
                   </span>
                   <div className="flex text-1">

@@ -67,6 +67,11 @@ var scaleSystem = {
   landing: "calc(100% - 6vw)",
   "tester-desktop": "calc(100% - 5vw);",
   "tester-mobile": "calc(100% - 10vw);",
+  "12pt": "12pt",
+  "14pt": "14pt",
+  "24pt": "24pt",
+  "16pt": "16pt",
+  "10pt": "10pt",
 };
 module.exports = {
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
@@ -82,6 +87,7 @@ module.exports = {
       lime: "#E8F75C",
       blue: "#73B6E7",
       purple: "#9891E8",
+      lightpurple: "#9C97FC",
       yellow: "#FFC000",
       orange: "#EB7B57",
       pink: "#F97DDA",

@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import Media from "react-media";
+import { useInView } from 'react-intersection-observer'
 
 const ScrollingText = (props) => {
   const [child, setChild] = useState(props.children);
-  const pink = "#ef60a3";
-  const green = "#00a651";
-  const blue = "#008dd3";
-  const red = "#e41e26";
+  const [scrollingText, inView
+  ] = useInView({
+    threshold: 0.01,
+  })
   return (
     <Media
       defaultMatches={{ mobile: false, desktop: false }}
@@ -20,12 +21,14 @@ const ScrollingText = (props) => {
           className={`scrolling-text ${
             props.className ? props.className : ""
           } ${matches.mobile ? "mobile" : matches.tablet ? "tablet" : ""}`}
+          inView={inView}
         >
-          <div className="scrolling-text-inner">
+          <div className={`${ inView ? `` : `scrollanimate`} scrolling-text-inner`}>
             <a
               className={props.specialLeft ? `small-text` : ``}
               href={props.href && props.href}
               target={props.blank ? "_blank" : "_self"}
+              ref={scrollingText}
             >
               {child}
               {child}
@@ -236,6 +239,8 @@ const ScrollingText = (props) => {
               position: absolute;
               width: 200%;
               height: 100%;
+            }
+            .scrollanimate {
               ${props.right ? "right" : "left"}: 0;
               animation: scrollDesktop 300s linear infinite;
             }
@@ -250,7 +255,7 @@ const ScrollingText = (props) => {
             .scrolling-text a {
               margin-top: -5px;
             }
-            .mobile .scrolling-text-inner {
+            .mobile .scrolling-text-inner .scrollanimate {
               animation: scrollMobile 150s linear infinite;
             }
             .back-to-shop {

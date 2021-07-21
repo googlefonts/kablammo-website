@@ -2667,66 +2667,66 @@ const CharacterSet = (props) => {
       category: "kablammoji",
       scale: 1
     },
-    // {
-    //   letter: "\u1F33C",
-    //   category: "kablammoji",
-    //   scale: 1
-    // },
-    // {
-    //   letter: "\u1F440",
-    //   category: "kablammoji",
-    //   scale: 1
-    // },
-    // {
-    //   letter: "\u1f441",
-    //   category: "kablammoji",
-    //   scale: 1
-    // },
-    // {
-    //   letter: "\u1f444",
-    //   category: "kablammoji",
-    //   scale: 1
-    // },
-    // {
-    //   letter: "\u1f451",
-    //   category: "kablammoji",
-    //   scale: 1
-    // },
-    // {
-    //   letter: "\u1f47b",
-    //   category: "kablammoji",
-    //   scale: 1
-    // },
-    // {
-    //   letter: "\u1f48e",
-    //   category: "kablammoji",
-    //   scale: 1
-    // },
-    // {
-    //   letter: "\u1f496",
-    //   category: "kablammoji",
-    //   scale: 1
-    // },
-    // {
-    //   letter: "\u1f4a9",
-    //   category: "kablammoji",
-    //   scale: 1
-    // },
-    // {
-    //   letter: "\u1f525",
-    //   category: "kablammoji",
-    //   scale: 1
-    // },
-    // {
-    //   letter: "\u1f632",
-    //   category: "kablammoji",
-    //   scale: 1
-    // },
-    // {
-    //   letter: "\u1f635",
-    //   category: "kablammoji",
-    //   scale: 1
-    // },
+    {
+      letter: "\u{1F33C}",
+      category: "kablammoji",
+      scale: 1
+    },
+    {
+      letter: "\u{1F440}",
+      category: "kablammoji",
+      scale: 1
+    },
+    {
+      letter: "\u{1f441}",
+      category: "kablammoji",
+      scale: 1
+    },
+    {
+      letter: "\u{1f444}",
+      category: "kablammoji",
+      scale: 1
+    },
+    {
+      letter: "\u{1f451}",
+      category: "kablammoji",
+      scale: 1
+    },
+    {
+      letter: "\u{1f47b}",
+      category: "kablammoji",
+      scale: 1
+    },
+    {
+      letter: "\u{1f48e}",
+      category: "kablammoji",
+      scale: 1
+    },
+    {
+      letter: "\u{1f496}",
+      category: "kablammoji",
+      scale: 1
+    },
+    {
+      letter: "\u{1f4a9}",
+      category: "kablammoji",
+      scale: 1
+    },
+    {
+      letter: "\u{1f525}",
+      category: "kablammoji",
+      scale: 1
+    },
+    {
+      letter: "\u{1f632}",
+      category: "kablammoji",
+      scale: 1
+    },
+    {
+      letter: "\u{1f635}",
+      category: "kablammoji",
+      scale: 1
+    },
     {
       letter: "\uaa5c",
       category: "kablammoji",
@@ -2767,46 +2767,46 @@ const CharacterSet = (props) => {
       category: "kablammoji",
       scale: 1
     },
-    // {
-    //   letter: "\u1f310",
-    //   category: "kablammoji",
-    //   scale: 1
-    // },
-    // {
-    //   letter: "\u1f355",
-    //   category: "kablammoji",
-    //   scale: 1
-    // },
-    // {
-    //   letter: "\u1f47d",
-    //   category: "kablammoji",
-    //   scale: 1
-    // },
-    // {
-    //   letter: "\u1f4a5",
-    //   category: "kablammoji",
-    //   scale: 1
-    // },
-    // {
-    //   letter: "\u1f552",
-    //   category: "kablammoji",
-    //   scale: 1
-    // },
-    // {
-    //   letter: "\u1f643",
-    //   category: "kablammoji",
-    //   scale: 1
-    // },
-    // {
-    //   letter: "\u1f6f8",
-    //   category: "kablammoji",
-    //   scale: 1
-    // },
-    // {
-    //   letter: "\u1fa90",
-    //   category: "kablammoji",
-    //   scale: 1
-    // },
+    {
+      letter: "\u{1f310}",
+      category: "kablammoji",
+      scale: 1
+    },
+    {
+      letter: "\u{1f355}",
+      category: "kablammoji",
+      scale: 1
+    },
+    {
+      letter: "\u{1f47d}",
+      category: "kablammoji",
+      scale: 1
+    },
+    {
+      letter: "\u{1f4a5}",
+      category: "kablammoji",
+      scale: 1
+    },
+    {
+      letter: "\u{1f552}",
+      category: "kablammoji",
+      scale: 1
+    },
+    {
+      letter: "\u{1f643}",
+      category: "kablammoji",
+      scale: 1
+    },
+    {
+      letter: "\u{1f6f8}",
+      category: "kablammoji",
+      scale: 1
+    },
+    {
+      letter: "\u{1fa90}",
+      category: "kablammoji",
+      scale: 1
+    },
     {
       letter: "\ue000",
       category: "patterns-and-borders",

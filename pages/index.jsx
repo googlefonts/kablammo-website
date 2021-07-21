@@ -188,7 +188,6 @@ function Index(props) {
               <CharacterSetNoSSR />
             </div>
             <SlotMachine />
-            {/* SMALL SCROLLING TEXT PILL 2 */}
             {/* BIG SROLLING TEXT 1 */}
             <Pill className="bg-lime hover:bg-blue h-30 bg-clip-padding overflow-hidden">
               <ScrollingText

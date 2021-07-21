@@ -18,7 +18,7 @@ const SlotMachine = (props) => {
                   {/* SMALL SCROLLING TEXT 1 */}
         <Pill className="hvr-wobble-top hvr-shutter-out-horizontal bg-purple h-10 lg:h-5 bg-clip-padding overflow-hidden">
               <ScrollingText
-                className="cursor-pointer"
+                className="cursor-auto"
                 blank
                 specialRight
                 hideMobile
@@ -60,9 +60,7 @@ const SlotMachine = (props) => {
       </Frame>
       <Pill className="bg-orange h-10 lg:h-5 bg-clip-padding overflow-hidden">
         <ScrollingText
-          className=""
-          href={`#`}
-          blank
+          className="cursor-auto"
           specialRight
           hideMobile
           large

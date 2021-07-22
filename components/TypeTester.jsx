@@ -6,6 +6,10 @@ import Pill from "../components/Pill";
 
 let animation;
 
+let setDocumentVariable = function (propertyName, value) {
+  document.documentElement.style.setProperty(propertyName, value);
+};
+
 const bgOptions = [
   {
     index: 0,
@@ -37,22 +41,6 @@ const bgOptions = [
   },
 ];
 
-// Auxiliary method. Retrieves and sanitises the value of a custom property.
-// var getVariable = function (styles, propertyName) {
-//   return String(styles.getPropertyValue(propertyName)).trim();
-// };
-
-// Auxiliary method. Sets the value of a custom property at the document level.
-var setDocumentVariable = function (propertyName, value) {
-  document.documentElement.style.setProperty(propertyName, value);
-};
-
-// const clearCurrentAnimation = (currentAnimation) => {
-//   if (currentAnimation) {
-//     currentAnimation.pause();
-//   }
-// };
-
 class TypeTester extends Component {
   constructor(props) {
     super(props);
@@ -71,7 +59,6 @@ class TypeTester extends Component {
     this.toggleCurrentAnimation = this.toggleCurrentAnimation.bind(this);
     this.handleSliderChange = this.handleSliderChange.bind(this);
     this.handleTypeTesterInputChange = this.handleTypeTesterInputChange.bind(this);
-    // this.handleClick = this.handleClick.bind(this);
     this.animationStart = this.animationStart.bind(this);
     this.sliderRefValue.current = 500;
     this.sliderRef = React.createRef();
@@ -133,7 +120,7 @@ class TypeTester extends Component {
 
   render() {
     return (
-      <div className="lg:h-100vh md:h-75vh h-50vh ">
+      <div className="lg:h-100vh md:h-75vh h-50vh">
         <div
           ref={this.typeTesterRef}
           id="typetester"
@@ -316,6 +303,7 @@ class TypeTester extends Component {
             transition: none;
           }
         `}</style>
+      
       </div>
     );
   }

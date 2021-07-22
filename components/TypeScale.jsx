@@ -20,13 +20,13 @@ const TypeScale = props => {
           onMouseLeave={handleMouseLeave}
         >
           <div className="absolute flex justify-between w-100%">
-            <div className={`pt-`+props.mobileLabelPt+` lg:pt-`+props.desktopLabelPt+` pl-4 lg:pl-1 lg:pl-20 flex flex-col`}>
+            <div className={`pt-`+props.mobileLabelPt+` lg:pt-`+props.desktopLabelPt+` pl-4 md:pl-10 lg:pl-14 xl:pl-20 flex flex-col`}>
               <span className="uppercase font-mono text-10pt lg:text-14pt">Style</span>
               <span className={`uppercase font-mono text-10pt lg:text-14pt bg-`+props.labelColor+` rounded-full pt-1 px-4`}>
                 {props.axisLabel}
               </span>
             </div>
-            <div className={`pt-`+props.mobileLabelPt+` lg:pt-`+props.desktopLabelPt+` pr-4 lg:pr-1 lg:pr-20 flex flex-col`}>
+            <div className={`pt-`+props.mobileLabelPt+` lg:pt-`+props.desktopLabelPt+` pr-4 md:pr-10 lg:pr-14 xl:pr-20 flex flex-col`}>
               <span className="uppercase font-mono text-10pt lg:text-14pt">Font Size</span>
               <span className={`hvr-bounce-in uppercase font-mono text-10pt lg:text-14pt bg-`+props.labelColor+` rounded-full pt-1 px-4`}>
                 {parseInt(window.innerWidth * props.textScale)}px

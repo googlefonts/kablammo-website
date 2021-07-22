@@ -129,9 +129,8 @@ class Carousel extends React.Component {
 						overflow-x: hidden;
 						counter-reset: item;
 						scroll-behavior: smooth;
-						scroll-snap-type: x mandatory;
+						scroll-snap-type: both proximity;
 					}
-
 					.carousel__slide {
 						position: relative;
 						flex: 0 0 100%;

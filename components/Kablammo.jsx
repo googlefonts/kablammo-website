@@ -15,7 +15,6 @@ const Kablammo = () => {
     >
       <div
         className={`w-100% h-100% lg:w-80% lg:h-auto grid place-items-center`}
-        inView={inView}
         id="kablammoWrapper"
       >
         <h1

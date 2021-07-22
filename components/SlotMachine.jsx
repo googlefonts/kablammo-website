@@ -16,7 +16,6 @@ const SlotMachine = (props) => {
       className={`relative bg-black bg-clip-padding overflow-hidden h-75vh lg:h-100vh flex justify-between flex-col`}
     >
                   {/* SMALL SCROLLING TEXT 1 */}
-        <Pill className="hvr-wobble-top hvr-shutter-out-horizontal bg-purple h-10 lg:h-5 bg-clip-padding overflow-hidden">
               <ScrollingText
                 className="cursor-auto"
                 blank
@@ -24,12 +23,14 @@ const SlotMachine = (props) => {
                 hideMobile
                 large
                 right
+                bgColor="purple"
+                mobileHeight="10"
+                desktopHeight="5"
               >
                 <span className="animate-it-fast text-6 leading-none inline-block -mt-5 text-blue uppercase">
                   &#xE006;&#xE006;&#xE006;&#xE006;&#xE006;&#xE006;&#xE006;&#xE006;
                 </span>
               </ScrollingText>
-            </Pill>
       <Frame
         className={`relative bg-black bg-clip-padding overflow-hidden h-100% grid grid-cols-2 grid-rows-2`}
       >
@@ -58,19 +59,20 @@ const SlotMachine = (props) => {
           textColor="yellow"
         />
       </Frame>
-      <Pill className="bg-orange h-10 lg:h-5 bg-clip-padding overflow-hidden">
         <ScrollingText
           className="cursor-auto"
           specialRight
           hideMobile
           large
           right
+          bgColor="orange"
+          mobileHeight="10"
+          desktopHeight="5"
         >
           <span className="text-4 text-green uppercase">
             &#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;
           </span>
         </ScrollingText>
-      </Pill>
     </Frame>
   );
 };

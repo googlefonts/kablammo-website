@@ -174,7 +174,6 @@ function Index(props) {
             </div>
             <SlotMachine />
             {/* BIG SROLLING TEXT 1 */}
-            <Pill className="bg-lime hover:bg-blue h-30 bg-clip-padding overflow-hidden">
               <ScrollingText
                 className=""
                 href={`#`}
@@ -192,9 +191,7 @@ function Index(props) {
                   The making of KABLAMMO 
                 </span>
               </ScrollingText>
-            </Pill>
             {/* BIG SROLLING TEXT 2 */}
-            <Pill className="bg-pink hover:bg-green h-30 bg-clip-padding overflow-hidden">
               <ScrollingText
                 className=""
                 href={`#`}
@@ -212,7 +209,6 @@ function Index(props) {
                   The making of KABLAMMO
                 </span>
               </ScrollingText>
-            </Pill>
             {/* ESSAY */}
             <Frame
               className={`bg-gray rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-auto lg:h-75vh`}

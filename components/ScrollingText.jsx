@@ -6,7 +6,7 @@ const ScrollingText = (props) => {
   const [child, setChild] = useState(props.children);
   const [scrollingText, inView
   ] = useInView({
-    threshold: 0.1,
+    threshold: 0,
   })
   return (
     <Media
@@ -17,10 +17,11 @@ const ScrollingText = (props) => {
       }}
     >
       {(matches) => (
+        <div ref={scrollingText}>
         <div
         className={`overflow-x-hidden w-100% text-black rounded-sm lg:rounded-lg text-center flex justify-center items-center bg-clip-padding 
         ${props.hvrWobbleTop ? `hvr-wobble-top` : ``} ${props.hvrShutterHorizontal ? `hvr-shutter-in-horizontal` : ``} ${props.bgColor ? `bg-`+props.bgColor : `bg-gray`}  ${props.hvrColor ? `hover:bg-`+props.hvrColor : ``}  ${props.mobileHeight ? `h-`+props.mobileHeight : `h-4`} ${props.desktopHeight ? `lg:h-`+props.desktopHeight : ``}`}
-        inView={inView} >
+         >
 
         <div
           className={`scrolling-text ${
@@ -29,12 +30,12 @@ const ScrollingText = (props) => {
           
         >
           <div className="overflow-hidden">
-          <div className={`${ inView ? `` : `scrollanimate`} scrolling-text-inner`}>
+          <div className={`${ inView ? `scrollanimate` : ``} scrolling-text-inner`}>
             <a
               className={props.specialLeft ? `small-text` : ``}
               href={props.href && props.href}
               target={props.blank ? "_blank" : "_self"}
-              ref={scrollingText}
+              
             >
               {child}
               {child}
@@ -229,6 +230,7 @@ const ScrollingText = (props) => {
               {child}
               {child}
             </a>
+          </div>
           </div>
           </div>
           </div>

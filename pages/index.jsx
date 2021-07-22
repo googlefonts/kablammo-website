@@ -121,31 +121,31 @@ function Index(props) {
               className={`rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-50vh lg:h-100vh`}
               items={doc.data.carousel}
             />
-              <ScrollingText
-                className=""
-                href={`#`}
-                blank
-                specialRight
-                hideMobile
-                borderTop
-                large
-                right
-                hvrWobbleTop
-                hvrShutterHorizontal
-                bgColor="gray"
-                hvrColor="pink"
-                mobileHeight="10"
-                desktopHeight="4"
-              >
-                <span className="text-5 lg:text-3 text-black uppercase">
-                  👁 A 🌐 Dancing ☀ typeface ☮ BROUGHT ☼ TO 👁 YOU 🌐 BY ☀ VECTRO
-                  ☮ Type ☼ Foundry &nbsp;
-                </span>
-              </ScrollingText> 
-            
-            {/* TYPE SCALES */}
-            <TypeScales />
-            {/* CHARACTER SET */}
+          <ScrollingText
+            className=""
+            href={`#`}
+            blank
+            specialRight
+            hideMobile
+            borderTop
+            large
+            right
+            hvrWobbleTop
+            hvrShutterHorizontal
+            bgColor="gray"
+            hvrColor="pink"
+            mobileHeight="10"
+            desktopHeight="4"
+          >
+            <span className="text-5 lg:text-3 text-black uppercase">
+              👁 A 🌐 Dancing ☀ typeface ☮ BROUGHT ☼ TO 👁 YOU 🌐 BY ☀ VECTRO
+              ☮ Type ☼ Foundry &nbsp;
+            </span>
+          </ScrollingText> 
+        
+        {/* TYPE SCALES */}
+        <TypeScales />
+        {/* CHARACTER SET */}
         <ScrollingText
           className=""
           href={`#`}

@@ -96,6 +96,7 @@ class TypeTester extends Component {
   }
 
   animationStart() {
+    this.typeTesterInputRef.current.style.fontVariationSettings = "'move' 1";
     animation = Anime({
       targets: this.typeTesterInputRef.current,
       fontVariationSettings: ["'move' "+this.state.inputAnimateValue, "'move' 1000"],
@@ -112,6 +113,7 @@ class TypeTester extends Component {
         return true;
       },
     });
+    setDocumentVariable("--typeTesterValue", 1);
   }
 
   componentDidMount() {

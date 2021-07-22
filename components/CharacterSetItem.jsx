@@ -70,7 +70,7 @@ const CharacterSetItem = ({ item, className, keyValue }) => {
 
         /* both item and item content change size */
         .grid-item.is-expanded {
-          width: calc(100% / 6 - 1px);
+          width: calc(100% / 6 - .5px);
           height: 20vw;
           z-index: 2;
         }
@@ -84,11 +84,20 @@ const CharacterSetItem = ({ item, className, keyValue }) => {
             width: calc(100% / 6);
           }
           .grid-item {
-            height: 10vh;
+            height: 20vw;
           }
           .grid-item-content {
-            font-size: 10vw;
-            line-height: 10vw;
+            font-size: 12vw;
+            line-height: 12vw;
+          }
+          .grid-item.is-expanded .grid-item-content {
+            background: #ffc000;
+            font-size: 20vw;
+          }
+          .grid-item.is-expanded {
+            width: calc(100% / 3 - 1px);
+            height: 40vw;
+            z-index: 2;
           }
         }
       `}</style>

@@ -39,31 +39,6 @@ const fetchData = async (setDocData) => {
     });
   }
 };
-
-const setTwo = () => {
-  // Make an instance of two and place it on the page.
-  var elem = document.getElementById("draw-shapes");
-  var params = { width: 285, height: 200 };
-  var two = new Two(params).appendTo(elem);
-
-  // two has convenience methods to create shapes.
-  var circle = two.makeCircle(72, 100, 50);
-  var rect = two.makeRectangle(213, 100, 100, 100);
-
-  // The object returned has many stylable properties:
-  circle.fill = "#FF8000";
-  circle.stroke = "orangered"; // Accepts all valid css color
-  circle.linewidth = 5;
-
-  rect.fill = "rgb(0, 200, 255)";
-  rect.opacity = 0.75;
-  rect.noStroke();
-
-  // Don't forget to tell two to render everything
-  // to the screen
-  two.update();
-};
-
 function Index(props) {
   const [doc, setDocData] = useState(null);
   const grayRef = useRef(null);
@@ -114,7 +89,6 @@ function Index(props) {
                 <Kablammo />
               </Pill>
               {/* SMALL SCROLLING TEXT 1 */}
-              <Pill className="hvr-wobble-top hvr-shutter-in-horizontal bg-gray hover:bg-yellow h-10 lg:h-4 bg-clip-padding overflow-hidden">
                 <ScrollingText
                   href={`#`}
                   blank
@@ -122,6 +96,12 @@ function Index(props) {
                   hideMobile
                   borderTop
                   large
+                  hvrWobbleTop
+                  hvrShutterHorizontal
+                  bgColor="gray"
+                  hvrColor="yellow"
+                  mobileHeight="10"
+                  desktopHeight="4"
                 >
                   <span
                     className={`text-5 lg:text-3 text-black uppercase`}
@@ -130,7 +110,6 @@ function Index(props) {
                     VECTRO ☮ Type ☼ Foundry &nbsp;
                   </span>
                 </ScrollingText>
-              </Pill>
             </Frame>
             {/* TYPE PARTICLES */}
             <TypeParticles />
@@ -142,7 +121,6 @@ function Index(props) {
               className={`rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-50vh lg:h-100vh`}
               items={doc.data.carousel}
             />
-             <Pill className="hvr-wobble-top hvr-shutter-in-horizontal bg-gray hover:bg-pink h-10 lg:h-4 bg-clip-padding overflow-hidden">
               <ScrollingText
                 className=""
                 href={`#`}
@@ -152,18 +130,22 @@ function Index(props) {
                 borderTop
                 large
                 right
+                hvrWobbleTop
+                hvrShutterHorizontal
+                bgColor="gray"
+                hvrColor="pink"
+                mobileHeight="10"
+                desktopHeight="4"
               >
                 <span className="text-5 lg:text-3 text-black uppercase">
                   👁 A 🌐 Dancing ☀ typeface ☮ BROUGHT ☼ TO 👁 YOU 🌐 BY ☀ VECTRO
                   ☮ Type ☼ Foundry &nbsp;
                 </span>
-              </ScrollingText>
-            </Pill> 
+              </ScrollingText> 
             
             {/* TYPE SCALES */}
             <TypeScales />
             {/* CHARACTER SET */}
-                <Pill className="bg-pink hover:bg-orange h-10 lg:h-4 bg-clip-padding overflow-hidden">
         <ScrollingText
           className=""
           href={`#`}
@@ -172,12 +154,15 @@ function Index(props) {
           hideMobile
           borderTop
           large
+          bgColor="pink"
+          hvrColor="orange"
+          mobileHeight="10"
+          desktopHeight="4"
         >
           <span className="text-4 text-lime uppercase">
             &#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;
           </span>
         </ScrollingText>
-      </Pill> 
             <div
               className={`bg-green rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden`}
               id="characterset"
@@ -199,6 +184,9 @@ function Index(props) {
                 borderTop
                 large
                 left
+                bgColor="lime"
+                hvrColor="blue"
+                mobileHeight="30"
               >
                 <span className="text-24 text-purple uppercase">
                   The making of KABLAMMO 
@@ -216,6 +204,9 @@ function Index(props) {
                 borderTop
                 large
                 right
+                bgColor="pink"
+                hvrColor="green"
+                mobileHeight="30"
               >
                 <span className="text-24 text-gray uppercase">
                   The making of KABLAMMO

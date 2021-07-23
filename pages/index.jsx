@@ -171,8 +171,7 @@ function Index(props) {
                 left
                 className={`bg-lime hover:bg-blue h-30`}
               >
-                <span className="text-24 text-purple uppercase">
-                  The making of KABLAMMO 
+                <span className="text-24 text-purple uppercase">&nbsp;The making of KABLAMMO
                 </span>
               </ScrollingText>
             {/* BIG SROLLING TEXT 2 */}
@@ -188,7 +187,7 @@ function Index(props) {
                 className={`bg-pink hover:bg-orange h-30`}
               >
                 <span className="text-24 text-gray uppercase">
-                  The making of KABLAMMO
+                &nbsp;The making of KABLAMMO
                 </span>
               </ScrollingText>
             {/* ESSAY */}

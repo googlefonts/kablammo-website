@@ -10,14 +10,15 @@ const TypeScale = props => {
     // const handleMouseLeave = () => {
     //     setBgImage(props.bgImage);
     // }
+    const [mobile, setMobile] = useState(window.innerWidth < 1024);
     return(
       // hover:bg-gray removed from Pill 
         <Pill className={`${props.pillClassName ? props.pillClassName : ``} overflow-hidden`}>
         <Pattern
           className="grid place-items-center hover:bg-none"
           bgImage={props.bgImage}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+          // onMouseEnter={handleMouseEnter}
+          // onMouseLeave={handleMouseLeave}
         >
           <div className="absolute flex justify-between w-100%">
             <div className={`${props.labelClassName ? props.labelClassName : ``} pl-4 md:pl-10 lg:pl-14 xl:pl-20 flex flex-col`}>
@@ -35,12 +36,12 @@ const TypeScale = props => {
           </div>
           <span
             ref={props.ref}
-            className={`${props.textSizeClassName ? props.textSizeClassName : ``} cursor-text w-100% block text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-center break-word font-axis-1 z-50`}
+            className={`${props.textSizeClassName ? props.textSizeClassName : ``} cursor-text w-100% block text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-centerbreak-word font-axis-1 z-50`}
             contentEditable="true"
             spellCheck="false"
             suppressContentEditableWarning={true}
           >
-            {props.copy}
+            {mobile ? props.copyMobile : props.copyDesktop}
           </span>
         </Pattern>
       </Pill>

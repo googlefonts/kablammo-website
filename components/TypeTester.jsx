@@ -137,7 +137,7 @@ class TypeTester extends Component {
             >
               <span
                 ref={this.typeTesterInputRef}
-                className={`text-${this.state.activeBg.textColor} type-tester text-13 lg:text-12 m-auto w-3/4 h-100% absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center block leading-none text-center focus:outline-none overflow-hidden self-center break-words`}
+                className={`text-${this.state.activeBg.textColor} type-tester text-13 lg:text-12 m-auto w-3/4 h-100% absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center block text-center focus:outline-none overflow-hidden self-center break-words`}
                 contentEditable="true"
                 suppressContentEditableWarning={true}
                 spellCheck="false"
@@ -228,6 +228,19 @@ class TypeTester extends Component {
         <style global jsx>{`
           #typetestereditablefield {
             cursor: url("/images/icons/textcursor.svg"), text;
+            line-height:1;
+          }
+          #typetestereditablefield::selection{
+            color:black;
+            background: white;
+          }
+          #typetestereditablefield::-webkit-selection{
+            color:black;
+            background: white;
+          }
+          #typetestereditablefield::-moz-selection{
+            color:black;
+            background: white;
           }
           .type-tester {
             transition: font-variation-settings 0.6s ease;

@@ -19,14 +19,11 @@ const ScrollingText = (props) => {
       {(matches) => (
         <div ref={scrollingText}>
         <div
-        className={`overflow-x-hidden w-100% text-black rounded-sm lg:rounded-lg text-center flex justify-center items-center bg-clip-padding 
-        ${props.hvrWobbleTop ? `hvr-wobble-top` : ``} ${props.hvrShutterHorizontal ? `hvr-shutter-in-horizontal` : ``} ${props.bgColor ? `bg-`+props.bgColor : `bg-gray`}  ${props.hvrColor ? `hover:bg-`+props.hvrColor : ``}  ${props.mobileHeight ? `h-`+props.mobileHeight : `h-4`} ${props.desktopHeight ? `lg:h-`+props.desktopHeight : ``}`}
+        className={`${props.className ? props.className : ``} overflow-x-hidden w-100% text-black rounded-sm lg:rounded-lg text-center flex justify-center items-center bg-clip-padding ` }
          >
 
         <div
-          className={`scrolling-text ${
-            props.className ? props.className : ""
-          } ${matches.mobile ? "mobile" : matches.tablet ? "tablet" : ""}`}
+          className={`scrolling-text ${matches.mobile ? "mobile" : matches.tablet ? "tablet" : ""}`}
           
         >
           <div className="overflow-hidden">

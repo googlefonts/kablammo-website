@@ -96,12 +96,7 @@ function Index(props) {
                   hideMobile
                   borderTop
                   large
-                  hvrWobbleTop
-                  hvrShutterHorizontal
-                  bgColor="gray"
-                  hvrColor="yellow"
-                  mobileHeight="10"
-                  desktopHeight="4"
+                  className={`hvr-wobble-top hvr-shutter-in-horizontal bg-gray hover:bg-yellow h-10 lg:h-4`}
                 >
                   <span
                     className={`text-5 lg:text-3 text-black uppercase`}
@@ -130,12 +125,7 @@ function Index(props) {
             borderTop
             large
             right
-            hvrWobbleTop
-            hvrShutterHorizontal
-            bgColor="gray"
-            hvrColor="pink"
-            mobileHeight="10"
-            desktopHeight="4"
+            className={`hvr-wobble-top hvr-shutter-in-horizontal bg-gray hover:bg-pink h-10 lg:h-4`}
           >
             <span className="text-5 lg:text-3 text-black uppercase">
               👁 A 🌐 Dancing ☀ typeface ☮ BROUGHT ☼ TO 👁 YOU 🌐 BY ☀ VECTRO
@@ -148,16 +138,12 @@ function Index(props) {
         {/* CHARACTER SET */}
         <ScrollingText
           className=""
-          href={`#`}
           blank
           specialRight
           hideMobile
           borderTop
           large
-          bgColor="pink"
-          hvrColor="orange"
-          mobileHeight="10"
-          desktopHeight="4"
+          className={`bg-pink hover:bg-orange h-10 lg:h-4`}
         >
           <span className="text-4 text-lime uppercase">
             &#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;
@@ -183,9 +169,7 @@ function Index(props) {
                 borderTop
                 large
                 left
-                bgColor="lime"
-                hvrColor="blue"
-                mobileHeight="30"
+                className={`bg-lime hover:bg-blue h-30`}
               >
                 <span className="text-24 text-purple uppercase">
                   The making of KABLAMMO 
@@ -201,9 +185,7 @@ function Index(props) {
                 borderTop
                 large
                 right
-                bgColor="pink"
-                hvrColor="green"
-                mobileHeight="30"
+                className={`bg-pink hover:bg-green h-30`}
               >
                 <span className="text-24 text-gray uppercase">
                   The making of KABLAMMO

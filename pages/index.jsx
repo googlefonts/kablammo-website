@@ -185,7 +185,7 @@ function Index(props) {
                 borderTop
                 large
                 right
-                className={`bg-pink hover:bg-green h-30`}
+                className={`bg-pink hover:bg-orange h-30`}
               >
                 <span className="text-24 text-gray uppercase">
                   The making of KABLAMMO
@@ -193,23 +193,17 @@ function Index(props) {
               </ScrollingText>
             {/* ESSAY */}
             <Frame
-              className={`bg-gray rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-auto lg:h-75vh`}
+              className={`bg-green rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-auto`}
             >
-              <p className="text-center text-black text-8 lg:text-5 my-3 lg:my-6">
+              <p className="text-center text-gray text-12 lg:text-8 my-3 lg:my-6">
                 About the Font
               </p>
-              <div className={`grid lg:grid-cols-1 w-90vh m-auto`}>
-                <div className="px-5 lg:pl-5 lg:pr-2.5 text-5 lg:text-2 xl:text-1.5">
-                  <p className="font-body block mb-2 lg:mb-8">
-                    Nicolette Gray wrote about the Caslon Italian (above) in her
-                    book Nineteenth Century.
-                  </p>
-                  <p className="font-mono block mb-4 lg:mb-8">
-                    Maelstrom & Maelstrom Sans are reversed-stress typefaces.
-                    They’re “perverse”, to be sure, but that’s exactly their
-                    charm. They belong to a genre destined to be a perpetual
-                    typographic outsider — never fashionable yet never
-                    abandoned.
+              <div className={`grid lg:grid-cols-1 w-80 lg:w-70 m-auto mb-5`}>
+                <div className="text-14pt lg:text-20pt xl:text-24pt">
+                  <p className="font-mono text-gray block mb-2 lg:mb-8">
+                    Kablammo is a variable font inspired by Jokerman. We love Jokerman's expressive, playful, maximalist, and care free personality. 
+                    We wanted to put our own spin on it—to take this genre of fonts and make it more contemporary. <br />
+                    <span className="font-display text-yellow cursor-pointer"><a target="_blank" href="https://www.fiskprojects.com/">Click here</a></span> to read more about the process!
                   </p>
                 </div>
               </div>

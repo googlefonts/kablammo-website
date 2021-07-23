@@ -1,4 +1,4 @@
-import React, { Component, Fragment, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 const colors = [
 	"#E8F75C",
@@ -43,7 +43,7 @@ const TypeParticlesText = (props) => {
 				setTimeout(()=>{
 					handleMouseEnter();
 					setTimeout(()=>{
-						handleMouseLeave;
+						handleMouseLeave();
 						setSpanStyle({color: "#e4e4e4"})
 					}, rand1+750);
 					// mobileHighlighting();

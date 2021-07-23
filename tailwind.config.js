@@ -72,6 +72,8 @@ var scaleSystem = {
   "12pt": "12pt",
   "14pt": "14pt",
   "16pt": "16pt",
+  "20pt": "20pt",
+  "22pt": "22pt",
   "24pt": "24pt",
 };
 module.exports = {

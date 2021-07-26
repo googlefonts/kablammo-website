@@ -46,13 +46,13 @@ function Index(props) {
   const [inView, setInView] = useState(false);
   const [loaderVisible, setLoaderVisible] = useState("");
   fetchData(setDocData);
-  useEffect(()=>{
-      console.log("window loaded");
-      setTimeout(()=>{
-        document.getElementById("loaderr").style.display="none";
-        console.log("timedout")
-      },4000);
-  });
+  // useEffect(()=>{
+  //     console.log("window loaded");
+  //     setTimeout(()=>{
+  //       document.getElementById("loaderr").style.display="none";
+  //       console.log("timedout")
+  //     },4000);
+  // });
   const pageReady = doc !== null ? true : false;
   return pageReady ? (
     <Media
@@ -85,8 +85,8 @@ function Index(props) {
             <script async defer src=""></script>
           </Head>
           <Layout>
-            <Loader className={loaderVisible}/>
-            <Frame className={`lg:h-100vh flex justify-between flex-col`}>
+           {/* <Loader className={loaderVisible}/> */}
+            <Frame className={`lg:h-100vh flex justify-between flex-col cursor-auto`}>
 
               {/* NAV */}
               <Nav />

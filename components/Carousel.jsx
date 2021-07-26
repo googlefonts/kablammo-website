@@ -106,7 +106,6 @@ class Carousel extends React.Component {
 							scroll-snap-align: center;
 						}
 					}
-
 					ol,
 					li {
 						list-style: none;
@@ -129,7 +128,7 @@ class Carousel extends React.Component {
 						overflow-x: hidden;
 						counter-reset: item;
 						scroll-behavior: smooth;
-						scroll-snap-type: both proximity;
+						scroll-snap-type: x proximity;
 					}
 					.carousel__slide {
 						position: relative;

@@ -7,7 +7,6 @@ const Kablammo = () => {
   ] = useInView({
     threshold: 0,
   })
-
   return (
     <Pattern
       className="flex justify-center py-14 px-4 lg:px-0 lg:py-0"

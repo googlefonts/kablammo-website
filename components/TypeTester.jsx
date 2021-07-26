@@ -118,6 +118,7 @@ class TypeTester extends Component {
 
   componentDidMount() {
     this.animationStart();
+    console.log(this.props.testerInView);
   }
 
   render() {
@@ -137,7 +138,7 @@ class TypeTester extends Component {
             >
               <span
                 ref={this.typeTesterInputRef}
-                className={`text-${this.state.activeBg.textColor} type-tester text-13 lg:text-12 m-auto w-3/4 h-100% absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center block text-center focus:outline-none overflow-hidden self-center break-words font-display `}
+                className={`text-${this.state.activeBg.textColor} type-tester text-13 lg:text-12 m-auto w-3/4 h-100% absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center block text-center focus:outline-none overflow-hidden self-center break-all whitespace-normal font-display `}
                 contentEditable="true"
                 suppressContentEditableWarning={true}
                 spellCheck="false"

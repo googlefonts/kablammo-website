@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Prismic from "prismic-javascript";
 import { client } from "../prismic-configuration";
 import Head from "next/head";
@@ -8,11 +8,12 @@ import Frame from "../components/Frame";
 import Carousel from "../components/Carousel";
 import Layout from "../components/Layout";
 import Loading from "../components/Loading";
+import Loader from "../components/Loader";
 import Media from "react-media";
 import dynamic from "next/dynamic";
 import Pill from "../components/Pill";
 import TypeTester from "../components/TypeTester";
-
+import { InView } from 'react-intersection-observer'
 import TypeParticles from "../components/TypeParticles";
 import Kablammo from "../components/Kablammo";
 import TypeScales from "../components/TypeScales";
@@ -42,9 +43,16 @@ const fetchData = async (setDocData) => {
 function Index(props) {
   const [doc, setDocData] = useState(null);
   const grayRef = useRef(null);
-
+  const [inView, setInView] = useState(false);
+  const [loaderVisible, setLoaderVisible] = useState("");
   fetchData(setDocData);
-
+  useEffect(()=>{
+      console.log("window loaded");
+      setTimeout(()=>{
+        document.getElementById("loaderr").style.display="none";
+        console.log("timedout")
+      },4000);
+  });
   const pageReady = doc !== null ? true : false;
   return pageReady ? (
     <Media
@@ -77,6 +85,7 @@ function Index(props) {
             <script async defer src=""></script>
           </Head>
           <Layout>
+            <Loader className={loaderVisible}/>
             <Frame className={`lg:h-100vh flex justify-between flex-col`}>
 
               {/* NAV */}
@@ -109,13 +118,20 @@ function Index(props) {
             {/* TYPE PARTICLES */}
             <TypeParticles />
             {/* TYPE TESTER 1 */}
-            <TypeTester />
-            
+            <InView onChange={setInView} threshold={1}>
+            {({ ref, inView }) => (
+              <div  ref={ref} >
+            <TypeTester inView={inView} log="logthis!" />
+            </div>
+            )}
+            </InView>
             {/* SLIDER FRAME */}
+            <div id="carouselwrapper">
             <Carousel
               className={`rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-50vh lg:h-100vh`}
               items={doc.data.carousel}
             />
+            </div>
           <ScrollingText
             className=""
             href={`#`}
@@ -153,7 +169,7 @@ function Index(props) {
               className={`bg-green rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden`}
               id="characterset"
             >
-              <p className="text-center text-yellow text-8 lg:text-5 my-3 lg:my-6">
+              <p className="text-center text-yellow text-8 lg:text-5 my-3 lg:my-6 font-display">
                 Character Set
               </p>
               <CharacterSetNoSSR />

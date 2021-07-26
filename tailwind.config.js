@@ -112,6 +112,10 @@ module.exports = {
       display: ["Kablammo", "Helvetica", "ui-sans-serif"],
       body: ["Helvetica", "ui-sans-serif"],
       mono: ["Iso", "ui-monospace"],
+      pointA: ["KablammoA", "Kablammo", "Helvetica", "ui-sans-serif"],
+      pointB: ["KablammoB", "Kablammo", "Helvetica", "ui-sans-serif"],
+      pointC: ["KablammoC", "Kablammo", "Helvetica", "ui-sans-serif"],
+      pointD: ["KablammoD", "Kablammo", "Helvetica", "ui-sans-serif"],
     },
     cursor: {
       auto: 'url("/images/icons/autocursor-lg.png"), default',

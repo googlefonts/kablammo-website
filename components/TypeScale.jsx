@@ -36,7 +36,7 @@ const TypeScale = props => {
           </div>
           <span
             ref={props.ref}
-            className={`${props.textSizeClassName ? props.textSizeClassName : ``} cursor-text w-100% block text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-centerbreak-word font-axis-1 z-50`}
+            className={`${props.textClassName ? props.textClassName : ``} cursor-text w-100% block text-center text-black whitespace-nowrap focus:outline-none overflow-hidden self-centerbreak-word z-50`}
             contentEditable="true"
             spellCheck="false"
             suppressContentEditableWarning={true}

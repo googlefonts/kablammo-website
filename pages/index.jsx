@@ -99,7 +99,7 @@ function Index(props) {
                   className={`hvr-wobble-top hvr-shutter-in-horizontal bg-gray hover:bg-yellow h-10 lg:h-4`}
                 >
                   <span
-                    className={`text-5 lg:text-3 text-black uppercase`}
+                    className={`text-5 lg:text-3 text-black uppercase font-display`}
                   >
                     ☮ BROUGHT ☼ TO 👁 YOU 🌐 BY ☀
                     VECTRO ☮ Type ☼ Foundry &nbsp;
@@ -194,7 +194,7 @@ function Index(props) {
             <Frame
               className={`bg-green rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-auto`}
             >
-              <p className="text-center text-gray text-12 lg:text-8 my-3 lg:my-6">
+              <p className="text-center text-gray text-12 lg:text-8 my-3 lg:my-6 font-display">
                 About the Font
               </p>
               <div className={`grid lg:grid-cols-1 w-80 lg:w-70 m-auto mb-5`}>
@@ -208,7 +208,7 @@ function Index(props) {
               </div>
             </Frame>
             {/* DOWNLOAD */}
-            <a id="download" className="w-100% text-black rounded-sm lg:rounded-lg text-center flex justify-center items-center bg-purple hover:bg-pink h-30 text-16 text-lime uppercase cursor-pointer" target="_blank" href="https://www.fiskprojects.com/">
+            <a id="download" className="w-100% text-black rounded-sm lg:rounded-lg text-center flex justify-center items-center bg-purple hover:bg-pink h-30 text-16 text-lime uppercase cursor-pointer font-display" target="_blank" href="https://www.fiskprojects.com/">
                 Download
             </a>
             {/* <Nav /> */}
@@ -259,7 +259,7 @@ function Index(props) {
               </span>
             </Pill>
             {/* VECTRO TYPE FOUNDRY CREDIT */}
-            <a className="text-6 uppercase cursor-pointer bg-blue h-12 hover:bg-yellow cursor-pointer w-100% text-black rounded-sm lg:rounded-lg text-center flex justify-center items-center" target="_blank" href="https://www.fiskprojects.com/">
+            <a className="text-6 uppercase cursor-pointer bg-blue h-12 hover:bg-yellow cursor-pointer w-100% font-display text-black rounded-sm lg:rounded-lg text-center flex justify-center items-center" target="_blank" href="https://www.fiskprojects.com/">
                 Font by Vectro Type Foundry
               </a>
             

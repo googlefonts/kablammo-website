@@ -26,7 +26,7 @@ const ScrollingText = (props) => {
           className={`scrolling-text ${matches.mobile ? "mobile" : matches.tablet ? "tablet" : ""}`}
           
         >
-          <div className="overflow-hidden">
+          <div className="overflow-hidden font-display">
           <div className={`${ inView ? `scrollanimate` : ``} scrolling-text-inner`}>
             <a
               className={props.specialLeft ? `small-text` : ``}

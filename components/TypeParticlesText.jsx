@@ -61,7 +61,7 @@ const TypeParticlesText = (props) => {
 			style={spanStyle}
 			className={`${props.className} ${
 				hover && `animate-it`
-			} cursor-pointer grow`}
+			} cursor-pointer grow font-display`}
 		>
 			{props.children}
 			<style jsx>{`

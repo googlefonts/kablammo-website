@@ -32,7 +32,7 @@ const CharacterSetItem = ({ item, className, keyValue }) => {
         style={bgStyle}
         className={`${
           clicked ? "animate-it" : ""
-        } grid-item-content grid-cols-6 lg:grid-cols-12 rounded-sm lg:rounded-xs text-black`}
+        } grid-item-content grid-cols-6 lg:grid-cols-12 rounded-sm lg:rounded-xs text-black font-display` }
       >
         {item.letter}
       </div>

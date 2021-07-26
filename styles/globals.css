@@ -4,7 +4,23 @@
 
 @font-face {
   font-family: "Kablammo";
-  src: url("/fonts/Kablammo/Kablammov0.21[move].woff2");
+  src: url("/fonts/Kablammo/Kablammov0.22[move].woff2");
+}
+@font-face {
+  font-family: "KablammoA";
+  src: url("/fonts/Kablammo/static/Kablammov0.22-A.woff2");
+}
+@font-face {
+  font-family: "KablammoB";
+  src: url("/fonts/Kablammo/static/Kablammov0.22-B.woff2");
+}
+@font-face {
+  font-family: "KablammoC";
+  src: url("/fonts/Kablammo/static/Kablammov0.22-C.woff2");
+}
+@font-face {
+  font-family: "KablammoD";
+  src: url("/fonts/Kablammo/static/Kablammov0.22-D.woff2");
 }
 @font-face {
   font-family: "Iso";
@@ -14,8 +30,7 @@
 a {
   cursor: url("/images/icons/pointercursor-lg.png"), pointer;
 }
-
-body {
+static body {
   @apply font-display;
   @apply text-black;
   overflow-x: hidden;

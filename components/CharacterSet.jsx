@@ -3061,9 +3061,10 @@ const CharacterSet = (props) => {
 
   function handleClick(event) {
     if (!event.target.classList.contains("grid-item-content")) {
+      console.log("handleclick called NOT on grid item content"    );
       return;
     }
-
+    console.log("handleclick called on grid item content"    );
     let itemContent = event.target;
     setItemContentPixelSize(itemContent);
 
@@ -3083,9 +3084,12 @@ const CharacterSet = (props) => {
     if (isExpanded) {
       // if shrinking, shiftLayout
       pckry.shiftLayout();
+      console.log("item is shrinking, shift layout!");
     } else {
       // if expanding, fit it
       pckry.fit(itemElem);
+      console.log("item is expanding, pckry.fit");
+      console.log(pckry);
     }
   }
 

@@ -22,8 +22,8 @@ const Kablammo = () => {
           id="kablammoEl"
           className={`${ inView ? `animate-it` : ``} relative text-40 lg:text-35 leading-none text-lime -mt-2 -ml-2 lg:-mt-12 lg:-ml-12 xl:-mt-24`}
         >
-          <span className={`mt-12 ml-4 lg:mt-12 lg:ml-12`}></span>
-          <span className={`absolute inset-0 text-pink`}></span>
+          <span className={`mt-12 ml-4 lg:mt-12 lg:ml-12 font-display`}></span>
+          <span className={`absolute inset-0 text-pink font-display`}></span>
         </h1>
       </div>
       <style jsx>{`

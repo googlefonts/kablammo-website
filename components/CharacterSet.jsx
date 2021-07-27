@@ -2668,12 +2668,12 @@ const CharacterSet = (props) => {
       scale: 1
     },
     {
-      letter: "\u{1F33C}",
+      letter: "\u{1f33c}",
       category: "kablammoji",
       scale: 1
     },
     {
-      letter: "\u{1F440}",
+      letter: "\u{1f440}",
       category: "kablammoji",
       scale: 1
     },

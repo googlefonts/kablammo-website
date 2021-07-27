@@ -116,7 +116,7 @@ function Index(props) {
                 </ScrollingText>
             </Frame>
             {/* TYPE PARTICLES */}
-            <TypeParticles />
+            {/* <TypeParticles /> */}
             {/* TYPE TESTER 1 */}
             <InView onChange={setInView} threshold={1}>
             {({ ref, inView }) => (

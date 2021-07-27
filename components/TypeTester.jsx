@@ -49,7 +49,8 @@ class TypeTester extends Component {
       isActive: true,
       animationPlaying: true,
       inputContent: "⚠ click and type 💩 try me out 😵",
-      inputAnimateValue: 1
+      inputAnimateValue: 1,
+      animationStarted:false,
     };
 
     this.typeTesterRef = React.createRef();
@@ -117,8 +118,21 @@ class TypeTester extends Component {
   }
 
   componentDidMount() {
-    this.animationStart();
-    console.log(this.props.testerInView);
+    // 
+  }
+
+  componentDidUpdate(prevProps, prevState){
+    if (this.props.inView===true && prevProps.inView===false && this.state.animationStarted===false){
+      this.animationStart();
+      this.setState({animationStarted: true});
+      this.setState({ animationPlaying: true });
+    } else if (this.props.inView===false && prevProps.inView===true && this.state.animationStarted===true){
+      animation.pause();
+      this.setState({ animationPlaying: false });
+    } else if (this.props.inView===true && prevProps.inView===false && this.state.animationStarted===true){
+      animation.play();
+      this.setState({ animationPlaying: true });
+    } 
   }
 
   render() {

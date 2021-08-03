@@ -21,7 +21,7 @@ const bgOptions = [
   {
     index: 1,
     image: "/images/bg/pink-pattern.svg",
-    bgColor: "blue",
+    bgColor: "lightpink",
     textColor: "green",
     sliderColor: "green"
   },
@@ -35,9 +35,9 @@ const bgOptions = [
   {
     index: 3,
     image: "/images/bg/orange-worms.svg",
-    bgColor: "green",
-    textColor: "gray",
-    sliderColor: "green"
+    bgColor: "peach",
+    textColor: "lime",
+    sliderColor: "lime"
   },
 ];
 

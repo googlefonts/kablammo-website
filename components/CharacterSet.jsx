@@ -2985,7 +2985,7 @@ const CharacterSet = (props) => {
     {
       name: '.basic-latin',
       label: 'Basic Latin',
-      color: 'yellow',
+      color: 'bg-yellow',
       active: 'yellow'
     },
     {
@@ -3172,19 +3172,19 @@ const CharacterSet = (props) => {
         <div className="w-100%">
           <div className="grid grid-cols-3 font-body">
             <div>
-              <CharacterSetFilter name={categories[0].name} color={categories[0].color} label={categories[0].label} onClickProp={handleFilterClick} activeColor={categories[0].active} />
-              <CharacterSetFilter name={categories[1].name} color={categories[1].color} label={categories[1].label} onClickProp={handleFilterClick} activeColor={categories[1].active} />
-              <CharacterSetFilter name={categories[2].name} color={categories[2].color} label={categories[2].label} onClickProp={handleFilterClick} activeColor={categories[2].active} />
+              <CharacterSetFilter name={categories[0].name} color={`hover:bg-`+categories[0].color} label={categories[0].label} onClickProp={handleFilterClick} activeColor={`bg-`+categories[0].active} />
+              <CharacterSetFilter name={categories[1].name} color={`hover:bg-`+categories[1].color} label={categories[1].label} onClickProp={handleFilterClick} activeColor={`bg-`+categories[1].active} />
+              <CharacterSetFilter name={categories[2].name} color={`hover:bg-`+categories[2].color} label={categories[2].label} onClickProp={handleFilterClick} activeColor={`bg-`+categories[2].active} />
             </div>
             <div>
-              <CharacterSetFilter name={categories[3].name} color={categories[3].color} label={categories[3].label} onClickProp={handleFilterClick} activeColor={categories[3].active} />
-              <CharacterSetFilter name={categories[4].name} color={categories[4].color} label={categories[4].label} onClickProp={handleFilterClick} activeColor={categories[4].active} />
-              <CharacterSetFilter name={categories[5].name} color={categories[5].color} label={categories[5].label} onClickProp={handleFilterClick} activeColor={categories[5].active} />
+              <CharacterSetFilter name={categories[3].name} color={`hover:bg-`+categories[3].color} label={categories[3].label} onClickProp={handleFilterClick} activeColor={`bg-`+categories[3].active} />
+              <CharacterSetFilter name={categories[4].name} color={`hover:bg-`+categories[4].color} label={categories[4].label} onClickProp={handleFilterClick} activeColor={`bg-`+categories[4].active} />
+              <CharacterSetFilter name={categories[5].name} color={`hover:bg-`+categories[5].color} label={categories[5].label} onClickProp={handleFilterClick} activeColor={`bg-`+categories[5].active} />
             </div>
             <div>
-              <CharacterSetFilter name={categories[6].name} color={categories[6].color} label={categories[6].label} onClickProp={handleFilterClick} activeColor={categories[6].active} />
-              <CharacterSetFilter name={categories[7].name} color={categories[7].color} label={categories[7].label} onClickProp={handleFilterClick} activeColor={categories[7].active} />
-              <CharacterSetFilter name={categories[8].name} color={categories[8].color} label={categories[8].label} onClickProp={handleFilterClick} activeColor={categories[8].active} />
+              <CharacterSetFilter name={categories[6].name} color={`hover:bg-`+categories[6].color} label={categories[6].label} onClickProp={handleFilterClick} activeColor={`bg-`+categories[6].active} />
+              <CharacterSetFilter name={categories[7].name} color={`hover:bg-`+categories[7].color} label={categories[7].label} onClickProp={handleFilterClick} activeColor={`bg-`+categories[7].active} />
+              <CharacterSetFilter name={categories[8].name} color={`hover:bg-`+categories[8].color} label={categories[8].label} onClickProp={handleFilterClick} activeColor={`bg-`+categories[8].active} />
             </div>
           </div>
         </div>

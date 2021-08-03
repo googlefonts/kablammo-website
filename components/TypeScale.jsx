@@ -3,22 +3,22 @@ import Pill from "../components/Pill";
 import Pattern from "../components/Pattern";
 
 const TypeScale = props => {
-    // const [bgImage, setBgImage] = useState(props.bgImage);
-    // const handleMouseEnter = () => {
-    //     setBgImage("none");
-    // }
-    // const handleMouseLeave = () => {
-    //     setBgImage(props.bgImage);
-    // }
-    const [mobile, setMobile] = useState(window.innerWidth < 1024);
+    const [bodyCopy, setBodyCopy] = useState(null);
+    window.addEventListener("resize", ()=>{
+      if (window.innerWidth < 1024){
+        setBodyCopy(props.copyMobile);
+      } else { setBodyCopy(props.copyDesktop); }
+    });
+    useEffect(()=>{
+      if (window.innerWidth < 1024){
+        setBodyCopy(props.copyMobile);
+      } else { setBodyCopy(props.copyDesktop); }
+    })
     return(
-      // hover:bg-gray removed from Pill 
         <Pill className={`${props.pillClassName ? props.pillClassName : ``} overflow-hidden`}>
         <Pattern
           className="grid place-items-center hover:bg-none"
           bgImage={props.bgImage}
-          // onMouseEnter={handleMouseEnter}
-          // onMouseLeave={handleMouseLeave}
         >
           <div className="absolute flex justify-between w-100%">
             <div className={`${props.labelClassName ? props.labelClassName : ``} pl-4 md:pl-10 lg:pl-14 xl:pl-20 flex flex-col`}>
@@ -41,7 +41,7 @@ const TypeScale = props => {
             spellCheck="false"
             suppressContentEditableWarning={true}
           >
-            {mobile ? props.copyMobile : props.copyDesktop}
+            { bodyCopy }
           </span>
         </Pattern>
       </Pill>

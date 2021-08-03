@@ -100,8 +100,8 @@ class TypeTesterSlider extends React.Component {
             background-position: center;
             background-repeat: no-repeat; 
             background-size: cover; 
-            // cursor: pointer;
-            cursor: url('/images/icons/pointercursor-lg.png'), pointer;
+            cursor: pointer;
+            // cursor: url('/images/icons/pointercursor-lg.png'), pointer;
             transition: none;
           }
           input[type="range"]::-ms-thumb {
@@ -116,8 +116,8 @@ class TypeTesterSlider extends React.Component {
             background-position: center;
             background-repeat: no-repeat; 
             background-size: cover; 
-            cursor: url('/images/icons/pointercursor-lg.png'), pointer;
-            // cursor: pointer;
+            // cursor: url('/images/icons/pointercursor-lg.png'), pointer;
+            cursor: pointer;
             margin-top: 0vw;
             transition: none;
           }
@@ -131,8 +131,8 @@ class TypeTesterSlider extends React.Component {
             border: 0;
             border-radius: 100%;
             background: #ffc000;
-            cursor: url('/images/icons/pointercursor-lg.png'), pointer;
-            // cursor: pointer;
+            // cursor: url('/images/icons/pointercursor-lg.png'), pointer;
+            cursor: pointer;
             margin-top: 1vw;
             transition: none;
           }

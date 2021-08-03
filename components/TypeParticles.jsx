@@ -21,8 +21,7 @@ const TypeParticles = () => {
         <TypeParticlesText className={``}>Designed</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>BY</TypeParticlesText>{" "}
         <TypeParticlesText color={`#F97DDA`} className={``}>🙃</TypeParticlesText>{" "}
-        <TypeParticlesText className={``}>VECTRO</TypeParticlesText>{" "}
-        <TypeParticlesText className={``}>FOUNDRY,</TypeParticlesText>{" "}
+        <TypeParticlesText className={``}>VECTRO,</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>IT</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>FEATURES</TypeParticlesText>{" "}
         <TypeParticlesText className={``}>A</TypeParticlesText>{" "}

@@ -29,15 +29,15 @@
 #carouselwrapper {
   scroll-behavior: smooth;
 }
-a {
+/* a {
   cursor: url("/images/icons/pointercursor-lg.png"), pointer;
-}
+} */
 static body {
   @apply font-display;
   @apply text-black;
   overflow-x: hidden;
   transition: filter 600ms;
-  cursor: url("/images/icons/autocursor-lg.png"), default;
+  /* cursor: url("/images/icons/autocursor-lg.png"), default; */
 }
 
 h1 {
@@ -76,8 +76,8 @@ h6 {
   border: 0;
   border-radius: 100%;
   background: #ffc000;
-  cursor: url("/images/icons/pointercursor-lg.png"), pointer;
-  /* cursor: pointer; */
+  /* cursor: url("/images/icons/pointercursor-lg.png"), pointer; */
+  cursor: pointer;
 }
 
 .color-burn {

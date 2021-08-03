@@ -7,7 +7,7 @@ const CharacterSetFilter = (props) => {
       <button
       data-filter= {props.name}
       onClick={props.onClickProp}
-      className={`charsetfilters bg-`+ (props.activeColor) +` hover:bg-`+props.color+` h-12 lg:h-6 text-black rounded-sm lg:rounded-lg text-center w-100% text-3 lg:text-2 uppercase cursor-pointer` }
+      className={`charsetfilters `+props.activeColor+` `+props.color+` h-12 lg:h-6 text-black rounded-sm lg:rounded-lg text-center w-100% text-3 lg:text-2 uppercase cursor-pointer` }
       >
       {props.label}<style jsx>{`
         button {

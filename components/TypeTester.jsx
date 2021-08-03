@@ -242,8 +242,9 @@ class TypeTester extends Component {
         </Pill>
         <style global jsx>{`
           #typetestereditablefield {
-            cursor: url("/images/icons/textcursor-lg.png"), text;
+            // cursor: url("/images/icons/textcursor-lg.png"), text;
             line-height:1;
+            cursor: text;
           }
           #typetestereditablefield::selection{
             color:black;
@@ -265,8 +266,8 @@ class TypeTester extends Component {
             width: 2vw;
             border: 0;
             border-radius: 100%;
-            // cursor: pointer;
-            cursor: url("/images/icons/pointercursor-lg.png"), pointer;
+            cursor: pointer;
+            // cursor: url("/images/icons/pointercursor-lg.png"), pointer;
             transition: none;
           }
           .select {
@@ -297,8 +298,8 @@ class TypeTester extends Component {
             border: 0;
             border-radius: 100%;
             background: #ffc000;
-            // cursor: pointer;
-            cursor: url("/images/icons/pointercursor-lg.png"), pointer;
+            cursor: pointer;
+            // cursor: url("/images/icons/pointercursor-lg.png"), pointer;
             margin-top: -1vw;
             transition: none;
           }

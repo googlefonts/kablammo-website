@@ -117,6 +117,19 @@ function Index(props) {
             </Frame>
             {/* TYPE PARTICLES */}
             <TypeParticles />
+            <ScrollingText
+          className=""
+          right
+          specialLeft
+          hideMobile
+          borderTop
+          large
+          className={`bg-orange h-10 lg:h-4`}
+        >
+          <span className="text-4 text-blue uppercase cursor-default">
+            &#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;
+          </span>
+        </ScrollingText>
             {/* TYPE TESTER 1 */}
             <InView threshold={0}>
             {({ inView, ref, entry}) => (
@@ -154,14 +167,13 @@ function Index(props) {
         {/* CHARACTER SET */}
         <ScrollingText
           className=""
-          blank
           specialRight
           hideMobile
           borderTop
           large
-          className={`bg-pink hover:bg-orange h-10 lg:h-4`}
+          className={`bg-pink h-10 lg:h-4`}
         >
-          <span className="text-4 text-lime uppercase">
+          <span className="text-4 text-lime uppercase cursor-default">
             &#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;
           </span>
         </ScrollingText>
@@ -169,7 +181,7 @@ function Index(props) {
               className={`bg-green rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden`}
               id="characterset"
             >
-              <p className="text-center text-yellow text-8 lg:text-5 my-3 lg:my-6 font-display">
+              <p className="text-center text-yellow text-10 lg:text-8 my-3 lg:my-6 font-display">
                 Character Set
               </p>
               <CharacterSetNoSSR />
@@ -178,29 +190,25 @@ function Index(props) {
             {/* BIG SROLLING TEXT 1 */}
               <ScrollingText
                 className=""
-                href={`#`}
-                blank
                 specialRight
                 hideMobile
                 borderTop
                 large
                 left
-                className={`bg-lime hover:bg-blue h-30`}
+                className={`bg-lime h-30 cursor-auto`}
               >
-                <span className="text-24 text-purple uppercase">&nbsp;The making of KABLAMMO
+                <span className="text-24 text-blue uppercase">&nbsp;The making of KABLAMMO
                 </span>
               </ScrollingText>
             {/* BIG SROLLING TEXT 2 */}
               <ScrollingText
                 className=""
-                href={`#`}
-                blank
                 specialRight
                 hideMobile
                 borderTop
                 large
                 right
-                className={`bg-pink hover:bg-orange h-30`}
+                className={`bg-orange h-30 cursor-auto`}
               >
                 <span className="text-24 text-gray uppercase">
                 &nbsp;The making of KABLAMMO
@@ -210,7 +218,7 @@ function Index(props) {
             <Frame
               className={`bg-green rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-auto`}
             >
-              <p className="text-center text-gray text-12 lg:text-8 my-3 lg:my-6 font-display">
+              <p className="text-center text-gray text-10 lg:text-8 my-3 lg:my-6 font-display">
                 About the Font
               </p>
               <div className={`grid lg:grid-cols-1 w-80 lg:w-70 m-auto mb-5`}>
@@ -227,50 +235,29 @@ function Index(props) {
             <a id="download" className="w-100% text-black rounded-sm lg:rounded-lg text-center flex justify-center items-center bg-purple hover:bg-pink h-30 text-16 text-lime uppercase cursor-pointer font-display" target="_blank" href="https://www.fiskprojects.com/">
                 Download
             </a>
-            {/* <Nav /> */}
             {/* CREDITS */}
-            <Pill className="bg-gray h-auto lg:h-6">
-            <span className="font-body text-4 lg:text-2 py-2 px-4 uppercase">
-                Art Direction
-              </span>
-              </Pill>
-              <Pill className="bg-yellow h-auto lg:h-6">
-              <span className="font-body text-4 lg:text-2 py-2 px-4 uppercase">
-              Travis Kochel and Lizy Gershenzon
+              <Pill className="bg-orange h-auto">
+              <span className="font-body text-4 lg:text-2 py-4 px-4 uppercase">
+              Art Direction<br/>Travis Kochel and Lizy Gershenzon
               </span>
             </Pill>
-            <Pill className="bg-gray h-auto lg:h-6">
-            <span className="font-body text-4 lg:text-2 py-2 px-4 uppercase ">
-            Lead Design and Production 
-              </span>
-              </Pill>
-              <Pill className="bg-purple h-auto lg:h-6">
-              <span className="font-body text-4 lg:text-2 py-2 px-4 uppercase">
-              Travis Kochel
+              <Pill className="bg-lime h-auto">
+              <span className="font-body text-4 lg:text-2 py-4 px-4 uppercase">
+              Lead Design and Production<br/>Travis Kochel
               </span>
             </Pill>
-            <Pill className="bg-gray h-auto lg:h-6">
-              <span className="font-body text-4 lg:text-2 py-2 px-4 uppercase ">
-                Cyrillic and Production Help
+            <Pill className="bg-blue h-auto">
+              <span className="font-body text-4 lg:text-2 py-4 px-4 uppercase">
+              Cyrillic and Production Help<br/>Daria Petrova and Ethan Cohen
               </span>
             </Pill>
-            <Pill className="bg-lime h-auto lg:h-6">
-              <span className="font-body text-4 lg:text-2 py-2 px-4 uppercase">
-                Daria Petrova and Ethan Cohen
+            <Pill className="bg-pink h-auto">
+              <span className="font-body py-1 text-4 lg:text-2 py-4 uppercase">
+              Website Design and Development<br/>FISK
               </span>
             </Pill>
-            <Pill className="bg-gray h-auto lg:h-6">
-              <span className="font-body py-1 text-4 lg:text-2 py-2 uppercase ">
-                Website Design and Development
-              </span>
-            </Pill>
-            <Pill className="bg-pink h-auto lg:h-6">
-              <span className="font-body py-1 text-4 lg:text-2 py-2 uppercase">
-                FISK
-              </span>
-            </Pill>
-            <Pill className="bg-gray h-auto lg:h-6">
-              <span className="font-body text-4 lg:text-2 py-2 uppercase ">
+            <Pill className="bg-gray h-auto">
+              <span className="font-body text-4 lg:text-2 py-4 uppercase ">
                 Commissioned by Google Fonts
               </span>
             </Pill>

@@ -3066,6 +3066,7 @@ const CharacterSet = (props) => {
     }
     console.log("handleclick called on grid item content"    );
     let itemContent = event.target;
+    console.log("target: ",event.target);
     setItemContentPixelSize(itemContent);
 
     let itemElem = itemContent.parentNode;
@@ -3087,7 +3088,7 @@ const CharacterSet = (props) => {
       console.log("item is shrinking, shift layout!");
     } else {
       // if expanding, fit it
-      pckry.fit(itemElem);
+      pckry.shiftLayout(itemElem);
       console.log("item is expanding, pckry.fit");
       console.log(pckry);
     }

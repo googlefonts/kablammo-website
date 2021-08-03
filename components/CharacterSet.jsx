@@ -3082,15 +3082,15 @@ const CharacterSet = (props) => {
     addTransitionListener(itemContent);
     setItemContentTransitionSize(itemContent, itemElem);
 
-    if (isExpanded) {
+    if (!isExpanded) {
+      // if expanding, fit it
+      pckry.fit(itemElem);
+      console.log("item is expanding, pckry.fit");
+    } else {
       // if shrinking, shiftLayout
       pckry.shiftLayout();
       console.log("item is shrinking, shift layout!");
-    } else {
-      // if expanding, fit it
-      pckry.shiftLayout(itemElem);
-      console.log("item is expanding, pckry.fit");
-      console.log(pckry);
+      // console.log(pckry);
     }
   }
 

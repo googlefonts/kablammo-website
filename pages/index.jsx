@@ -232,34 +232,34 @@ function Index(props) {
               </div>
             </Frame>
             {/* DOWNLOAD */}
-            <a id="download" className="w-100% text-black rounded-sm lg:rounded-lg text-center flex justify-center items-center bg-purple hover:bg-pink h-30 text-16 text-lime uppercase cursor-pointer font-display" target="_blank" href="https://www.fiskprojects.com/">
+            <a id="download" className="w-100% text-black rounded-sm lg:rounded-lg text-center flex justify-center items-center bg-purple hover:bg-yellow hover:text-gray h-30 text-16 text-lime uppercase cursor-pointer font-display" target="_blank" href="https://www.fiskprojects.com/">
                 Download
             </a>
             {/* CREDITS */}
-              <Pill className="bg-orange h-auto">
+            <Pill className="bg-orange h-auto ">
               <span className="font-body text-4 lg:text-2 py-4 px-4 uppercase">
               Art Direction<br/>Travis Kochel and Lizy Gershenzon
               </span>
             </Pill>
-              <Pill className="bg-lime h-auto">
+            <Pill className="bg-lime h-auto ">
               <span className="font-body text-4 lg:text-2 py-4 px-4 uppercase">
               Lead Design and Production<br/>Travis Kochel
               </span>
             </Pill>
-            <Pill className="bg-blue h-auto">
-              <span className="font-body text-4 lg:text-2 py-4 px-4 uppercase">
+            <Pill className="bg-blue h-auto hover:bg-yellow ">
+              <a className="font-body text-4 lg:text-2 py-4 px-4 uppercase" href="https://www.futurefonts.xyz/daria-petrova">
               Cyrillic and Production Help<br/>Daria Petrova and Ethan Cohen
-              </span>
+              </a>
             </Pill>
-            <Pill className="bg-pink h-auto">
-              <span className="font-body py-1 text-4 lg:text-2 py-4 uppercase">
+            <Pill className="bg-pink hover:bg-yellow h-auto">
+              <a className="font-body py-1 text-4 lg:text-2 py-4 uppercase" href="https://www.fiskprojects.com/">
               Website Design and Development<br/>FISK
-              </span>
+              </a>
             </Pill>
-            <Pill className="bg-gray h-auto">
-              <span className="font-body text-4 lg:text-2 py-4 uppercase ">
+            <Pill className="bg-gray h-auto hover:bg-yellow ">
+              <a className="font-body text-4 lg:text-2 py-4 uppercase " href="https://fonts.google.com/">
                 Commissioned by Google Fonts
-              </span>
+              </a>
             </Pill>
             {/* VECTRO TYPE FOUNDRY CREDIT */}
             <a className="text-6 uppercase cursor-pointer bg-blue h-12 hover:bg-yellow cursor-pointer w-100% font-display text-black rounded-sm lg:rounded-lg text-center flex justify-center items-center" target="_blank" href="https://www.fiskprojects.com/">

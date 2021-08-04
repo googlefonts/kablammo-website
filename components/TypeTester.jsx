@@ -118,7 +118,10 @@ class TypeTester extends Component {
   }
 
   componentDidMount() {
-    // 
+    this.animationStart();
+    this.setState({animationStarted: true});
+    animation.pause();
+    this.setState({animationPlaying: false});
   }
 
   componentDidUpdate(prevProps, prevState){
@@ -132,7 +135,11 @@ class TypeTester extends Component {
     } else if (this.props.inView===true && prevProps.inView===false && this.state.animationStarted===true){
       animation.play();
       this.setState({ animationPlaying: true });
-    } 
+    } else {
+      console.log("inView: ",this.props.inView);
+      console.log("prevProps.inView: ",prevProps.inView);
+      console.log("this.state.animationPlaying: ",this.state.animationPlaying);
+    }
   }
 
   render() {

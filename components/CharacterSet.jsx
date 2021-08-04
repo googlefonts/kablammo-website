@@ -2986,8 +2986,7 @@ const CharacterSet = (props) => {
       name: '.basic-latin',
       label: 'Basic Latin',
       color: 'yellow',
-      active: 'yellow',
-      className: ''
+      active: 'yellow'
     },
     {
       name: '.extended-latin',

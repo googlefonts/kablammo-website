@@ -2985,8 +2985,9 @@ const CharacterSet = (props) => {
     {
       name: '.basic-latin',
       label: 'Basic Latin',
-      color: 'bg-yellow',
-      active: 'yellow'
+      color: 'yellow',
+      active: 'yellow',
+      className: ''
     },
     {
       name: '.extended-latin',
@@ -3132,33 +3133,17 @@ const CharacterSet = (props) => {
     let ind = activeFilters.indexOf(filter);
     if (ind===-1){
       updatedActiveFilters.push(filter); 
-      // console.log(refInd);
-      // let newcat = categories;
-      // newcat[refInd].active = categories[refInd].color;
-      // setCategories(newcat);
-      // console.log(categories[refInd].active);
       event.target.classList.add("bg-"+categories[refInd].color);
       event.target.classList.remove("bg-gray");
       let filterValueString = activeFilters.join(", ");
       gridInit.arrange({ filter: filterValueString });
       setActiveFilters(updatedActiveFilters); }
-    // } else if (activeFilters.length===1){ 
-    //   updatedActiveFilters.splice(ind,1);
-    //   event.target.classList.add("bg-gray");
-    //   event.target.classList.remove("bg-"+categories[refInd].color);
-    //   setActiveFilters([".basic-latin", ".numerals", ".kablammoji", ".zodiac"]);
-    //   let filterValueString = activeFilters.join(", ");
-    //   gridInit.arrange({ filter: filterValueString });
-
-    // }
     else {
       updatedActiveFilters.splice(ind,1);
-      // let newcat = categories;
       event.target.classList.add("bg-gray");
+      console.log("added bg gray!");
       event.target.classList.remove("bg-"+categories[refInd].color);
-      // newcat[refInd].active = "gray";
-      // event.target.classList.add("bg-"+categories[refInd].active);
-      // setCategories(newcat);
+      console.log("removing color",categories[refInd].color);
       let filterValueString = activeFilters.join(", ");
       gridInit.arrange({ filter: filterValueString });
       setActiveFilters(updatedActiveFilters);
@@ -3174,19 +3159,19 @@ const CharacterSet = (props) => {
         <div className="w-100%">
           <div className="grid grid-cols-3 font-body">
             <div>
-              <CharacterSetFilter name={categories[0].name} color={`hover:bg-`+categories[0].color} label={categories[0].label} onClickProp={handleFilterClick} activeColor={`bg-`+categories[0].active} />
-              <CharacterSetFilter name={categories[1].name} color={`hover:bg-`+categories[1].color} label={categories[1].label} onClickProp={handleFilterClick} activeColor={`bg-`+categories[1].active} />
-              <CharacterSetFilter name={categories[2].name} color={`hover:bg-`+categories[2].color} label={categories[2].label} onClickProp={handleFilterClick} activeColor={`bg-`+categories[2].active} />
+              <CharacterSetFilter name={categories[0].name} color={`hover:bg-yellow`} label={categories[0].label} onClickProp={handleFilterClick} activeColor={`bg-`+categories[0].active} />
+              <CharacterSetFilter name={categories[1].name} color={`hover:bg-lime`} label={categories[1].label} onClickProp={handleFilterClick} activeColor={`bg-`+categories[1].active} />
+              <CharacterSetFilter name={categories[2].name} color={`hover:bg-pink`} label={categories[2].label} onClickProp={handleFilterClick} activeColor={`bg-`+categories[2].active} />
             </div>
             <div>
-              <CharacterSetFilter name={categories[3].name} color={`hover:bg-`+categories[3].color} label={categories[3].label} onClickProp={handleFilterClick} activeColor={`bg-`+categories[3].active} />
-              <CharacterSetFilter name={categories[4].name} color={`hover:bg-`+categories[4].color} label={categories[4].label} onClickProp={handleFilterClick} activeColor={`bg-`+categories[4].active} />
-              <CharacterSetFilter name={categories[5].name} color={`hover:bg-`+categories[5].color} label={categories[5].label} onClickProp={handleFilterClick} activeColor={`bg-`+categories[5].active} />
+              <CharacterSetFilter name={categories[3].name} color={`hover:bg-purple`} label={categories[3].label} onClickProp={handleFilterClick} activeColor={`bg-`+categories[3].active} />
+              <CharacterSetFilter name={categories[4].name} color={`hover:bg-orange`} label={categories[4].label} onClickProp={handleFilterClick} activeColor={`bg-`+categories[4].active} />
+              <CharacterSetFilter name={categories[5].name} color={`hover:bg-blue`} label={categories[5].label} onClickProp={handleFilterClick} activeColor={`bg-`+categories[5].active} />
             </div>
             <div>
-              <CharacterSetFilter name={categories[6].name} color={`hover:bg-`+categories[6].color} label={categories[6].label} onClickProp={handleFilterClick} activeColor={`bg-`+categories[6].active} />
-              <CharacterSetFilter name={categories[7].name} color={`hover:bg-`+categories[7].color} label={categories[7].label} onClickProp={handleFilterClick} activeColor={`bg-`+categories[7].active} />
-              <CharacterSetFilter name={categories[8].name} color={`hover:bg-`+categories[8].color} label={categories[8].label} onClickProp={handleFilterClick} activeColor={`bg-`+categories[8].active} />
+              <CharacterSetFilter name={categories[6].name} color={`hover:bg-lime`} label={categories[6].label} onClickProp={handleFilterClick} activeColor={`bg-`+categories[6].active} />
+              <CharacterSetFilter name={categories[7].name} color={`hover:bg-pink`} label={categories[7].label} onClickProp={handleFilterClick} activeColor={`bg-`+categories[7].active} />
+              <CharacterSetFilter name={categories[8].name} color={`hover:bg-purple`} label={categories[8].label} onClickProp={handleFilterClick} activeColor={`bg-`+categories[8].active} />
             </div>
           </div>
         </div>

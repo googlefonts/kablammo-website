@@ -18,6 +18,7 @@ import TypeParticles from "../components/TypeParticles";
 import Kablammo from "../components/Kablammo";
 import TypeScales from "../components/TypeScales";
 import SlotMachine from "../components/SlotMachine";
+import MarqueeScroller from "../components/Marquee";
 
 var FontFaceObserver = require("fontfaceobserver");
 
@@ -91,7 +92,7 @@ function Index(props) {
                 <Kablammo />
               </Pill>
               {/* SMALL SCROLLING TEXT 1 */}
-                <ScrollingText
+                {/* <ScrollingText
                   href={`#`}
                   blank
                   specialRight
@@ -106,7 +107,13 @@ function Index(props) {
                     ☮ BROUGHT ☼ TO 👁 YOU 🌐 BY ☀
                     VECTRO ☮ Type ☼ Foundry &nbsp;
                   </span>
-                </ScrollingText>
+                </ScrollingText> */}
+                <MarqueeScroller>
+                  <span className={`text-5 lg:text-3 text-black font-display`}>
+                    ☮ BROUGHT ☼ TO 👁 YOU 🌐 BY ☀
+                    VECTRO ☮ TYPE ☼ FOUNDRY &nbsp;
+                  </span>
+                  </MarqueeScroller>
             </Frame>
             {/* TYPE PARTICLES */}
             <TypeParticles />

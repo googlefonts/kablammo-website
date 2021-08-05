@@ -3054,6 +3054,7 @@ const CharacterSet = (props) => {
       gridRef !== null ? document.querySelector(".isotope-grid") : null;
     gridInit = new Isotope(grid, {
       itemSelector: ".grid-item",
+      stamp: '.stamp'
     });
     let filterValueString = activeFilters.join(", ");
     gridInit.arrange({ filter: filterValueString });
@@ -3065,9 +3066,10 @@ const CharacterSet = (props) => {
     }
     let itemContent = event.target;
     setItemContentPixelSize(itemContent);
-
+    console.log(event.target);
+    console.log(pckry);
     let itemElem = itemContent.parentNode;
-
+    console.log(itemElem);
     let isExpanded = itemElem.classList.contains("is-expanded");
     itemElem.classList.toggle("is-expanded");
 
@@ -3081,11 +3083,14 @@ const CharacterSet = (props) => {
 
     if (!isExpanded) {
       // if expanding, fit it
-      pckry.fit(itemElem);
-      
+      // pckry.fit(itemElem);
+      itemElem.classList.add("stamp");
+      pckry.shiftLayout();
+      console.log(itemElem);
     } else {
       // if shrinking, shiftLayout
       pckry.shiftLayout();
+      itemElem.classList.remove("stamp");
       
     }
   }

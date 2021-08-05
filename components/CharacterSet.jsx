@@ -3083,15 +3083,14 @@ const CharacterSet = (props) => {
 
     if (!isExpanded) {
       // if expanding, fit it
-      // pckry.fit(itemElem);
+      // let x = itemElem.style.left * window.innerWidth;
+      // let y = itemElem.style.top;
+      pckry.fit(itemElem, itemElem.style.left * window.innerWidth, itemElem.style.top);
       itemElem.classList.add("stamp");
-      pckry.shiftLayout();
       console.log(itemElem);
     } else {
       // if shrinking, shiftLayout
       pckry.shiftLayout();
-      itemElem.classList.remove("stamp");
-      
     }
   }
 

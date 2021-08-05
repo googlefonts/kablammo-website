@@ -108,7 +108,7 @@ function Index(props) {
                     VECTRO ☮ Type ☼ Foundry &nbsp;
                   </span>
                 </ScrollingText> */}
-                <MarqueeScroller>
+                <MarqueeScroller className="bg-gray h-10 lg:h-4 hvr-wobble-top hvr-shutter-in-horizontal hover:bg-yellow">
                   <span className={`text-5 lg:text-3 text-black font-display`}>
                     ☮ BROUGHT ☼ TO 👁 YOU 🌐 BY ☀
                     VECTRO ☮ TYPE ☼ FOUNDRY &nbsp;
@@ -145,7 +145,7 @@ function Index(props) {
               items={doc.data.carousel}
             />
             </div>
-          <ScrollingText
+          {/* <ScrollingText
             className=""
             href={`#`}
             blank
@@ -160,8 +160,13 @@ function Index(props) {
               👁 A 🌐 Dancing ☀ typeface ☮ BROUGHT ☼ TO 👁 YOU 🌐 BY ☀ VECTRO
               ☮ Type ☼ Foundry &nbsp;
             </span>
-          </ScrollingText> 
-        
+          </ScrollingText>  */}
+        <MarqueeScroller direction="right" className="bg-gray h-10 lg:h-4 hvr-wobble-top hvr-shutter-in-horizontal hover:bg-pink cursor-default">
+          <span className={`text-5 lg:text-3 text-black font-display`}>
+            ☮ BROUGHT ☼ TO 👁 YOU 🌐 BY ☀
+            VECTRO ☮ TYPE ☼ FOUNDRY &nbsp;
+          </span>
+        </MarqueeScroller>
         {/* TYPE SCALES */}
         <TypeScales />
         {/* CHARACTER SET */}

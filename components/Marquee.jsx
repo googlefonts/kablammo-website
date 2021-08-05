@@ -19,7 +19,15 @@ const MarqueeScroller = (props) => {
       >
         {(matches) => (
         <div ref={marqueeWrapper}>
-            <Marquee gradient={false} play={inView} pauseOnHover={true} speed={matches.mobile ? 20 : 40} className="bg-gray rounded-sm lg:rounded-lg h-10 lg:h-4 hvr-wobble-top hvr-shutter-in-horizontal hover:bg-yellow">{child}{child}</Marquee>
+            <Marquee 
+            gradient={false} 
+            play={inView} 
+            pauseOnHover={false} 
+            speed={matches.mobile ? 10 : 40} 
+            direction={props.direction ? props.direction : "left"} 
+            className={` ${props.className ? `${props.className}` : ``} rounded-sm lg:rounded-lg `}
+            >{child}{child}
+            </Marquee>
           <style jsx>{`
             .marquee {
               font: serif;

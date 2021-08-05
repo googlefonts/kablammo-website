@@ -3066,19 +3066,16 @@ const CharacterSet = (props) => {
     }
     let itemContent = event.target;
     setItemContentPixelSize(itemContent);
-    console.log(event.target);
-    console.log(pckry);
     let itemElem = itemContent.parentNode;
-    console.log(itemElem);
     let isExpanded = itemElem.classList.contains("is-expanded");
     itemElem.classList.toggle("is-expanded");
 
     // force redraw
-    let redraw = itemContent.offsetWidth;
+    // let redraw = itemContent.offsetWidth;
     // renable default transition
-    itemContent.style[transitionProp] = "";
+    // itemContent.style[transitionProp] = "";
 
-    addTransitionListener(itemContent);
+    // addTransitionListener(itemContent);
     setItemContentTransitionSize(itemContent, itemElem);
 
     if (!isExpanded) {
@@ -3087,6 +3084,7 @@ const CharacterSet = (props) => {
       console.log("y: ",itemElem.style.top);
       console.log("y: ",itemElem.offsetTop);
       pckry.fit(itemElem, itemElem.offsetLeft, itemElem.offsetTop);
+
       console.log(itemElem);
     } else {
       // if shrinking, shiftLayout

@@ -1,8 +1,6 @@
 import React from "react";
 const CharacterSetFilter = (props) => {
-  // useEffect(() => {
-  //   console.log("activeFilters: ");
-  // });
+
     return(
       <button
       data-filter= {props.name}

@@ -3063,9 +3063,7 @@ const CharacterSet = (props) => {
     if (!event.target.classList.contains("grid-item-content")) {
       return;
     }
-    console.log("handleclick called on grid item content");
     let itemContent = event.target;
-    console.log("target: ", itemContent);
     setItemContentPixelSize(itemContent);
 
     let itemElem = itemContent.parentNode;
@@ -3084,18 +3082,15 @@ const CharacterSet = (props) => {
     if (!isExpanded) {
       // if expanding, fit it
       pckry.fit(itemElem);
-      console.log("item is expanding, pckry.fit");
       
     } else {
       // if shrinking, shiftLayout
       pckry.shiftLayout();
-      console.log("item is shrinking, shift layout!");
       
     }
   }
 
   function setItemContentPixelSize(itemContent) {
-    console.log("itemContent", itemContent)
     let previousContentSize = pckry.getSize(itemContent);
     // disable transition
     itemContent.style[transitionProp] = "none";
@@ -3124,7 +3119,6 @@ const CharacterSet = (props) => {
   }
 
   const handleFilterClick = (event) => {
-    // console.log(event, this.state)
     const updatedActiveFilters = activeFilters;
     // let grid = gridRef !== null ? document.querySelector(".grid") : null;
     let filter = event.target.getAttribute("data-filter");
@@ -3140,9 +3134,7 @@ const CharacterSet = (props) => {
     else {
       updatedActiveFilters.splice(ind,1);
       event.target.classList.add("bg-gray");
-      console.log("added bg gray!");
       event.target.classList.remove("bg-"+categories[refInd].color);
-      console.log("removing color",categories[refInd].color);
       let filterValueString = activeFilters.join(", ");
       gridInit.arrange({ filter: filterValueString });
       setActiveFilters(updatedActiveFilters);

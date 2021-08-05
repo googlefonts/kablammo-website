@@ -49,10 +49,6 @@ const CharacterSetFilters = ({ handleFilterClick, activeFilters }) => {
       color: 'purple'
     }
   ]
-useEffect(() => {
-  // let activefirst = activeFilters.includes(categories[0].name);
-  console.log('active filters', activeFilters);
-}, [activeFilters]);
 
   return (
     <div className="character-set-filters">

@@ -27,13 +27,11 @@ const Nav = (props) => {
       links.classList.add("hidden");
       links.classList.remove("flex");
       links.classList.remove("lg:hidden");
-      console.log("hiding links!");
       setMobileNavShowing(false);
     } else {
       links.classList.remove("hidden");
       links.classList.add("flex");
       links.classList.add("lg:hidden");
-      console.log("showing links!");
       setMobileNavShowing(true);
     }
   };

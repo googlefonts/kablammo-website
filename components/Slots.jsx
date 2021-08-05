@@ -11,7 +11,6 @@ const Slots = (props) => {
   };
   const [activeEmoji, setActiveEmoji] = useState(0);
   const handleClick = () => {
-    console.log(props.charset);
     if (activeEmoji+1===props.charset.length){
       setActiveEmoji(0);
     } else { setActiveEmoji(activeEmoji+1); }

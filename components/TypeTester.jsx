@@ -14,30 +14,30 @@ const bgOptions = [
   {
     index: 0,
     image: "/images/bg/lime-circles.svg",
-    bgColor: "lime",
+    bgColor: "bg-lime",
     textColor: "pink",
-    sliderColor: "pink"
+    sliderColor: "bg-pink"
   },
   {
     index: 1,
     image: "/images/bg/pink-pattern.svg",
-    bgColor: "lightpink",
+    bgColor: "bg-lightpink",
     textColor: "green",
-    sliderColor: "green"
+    sliderColor: "bg-green"
   },
   {
     index: 2,
     image: "/images/bg/purple-squiggly.svg",
-    bgColor: "purple",
+    bgColor: "bg-purple",
     textColor: "yellow",
-    sliderColor: "lightpurple"
+    sliderColor: "bg-lightpurple"
   },
   {
     index: 3,
     image: "/images/bg/orange-worms.svg",
-    bgColor: "peach",
+    bgColor: "bg-peach",
     textColor: "lime",
-    sliderColor: "lime"
+    sliderColor: "bg-lime"
   },
 ];
 
@@ -59,7 +59,7 @@ class TypeTester extends Component {
     this.sliderUpdating = React.createRef();
     this.toggleCurrentAnimation = this.toggleCurrentAnimation.bind(this);
     this.handleSliderChange = this.handleSliderChange.bind(this);
-    this.handleTypeTesterInputChange = this.handleTypeTesterInputChange.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
     this.animationStart = this.animationStart.bind(this);
     this.sliderRefValue.current = 500;
     this.sliderRef = React.createRef();
@@ -85,6 +85,7 @@ class TypeTester extends Component {
   }
 
   handleBgClick(index) {
+    this.handleInputChange();
     this.setState({ activeBg: bgOptions[index] });
   }
 
@@ -92,8 +93,9 @@ class TypeTester extends Component {
     this.toggleCurrentAnimation(animation);
   }
 
-  handleTypeTesterInputChange(e){
-    this.setState({ inputContent: e.target.textContent });
+  handleInputChange(){
+    console.log(this.typeTesterInputRef.current.textContent);
+    this.setState({ inputContent: this.typeTesterInputRef.current.textContent });
   }
 
   animationStart() {
@@ -135,11 +137,7 @@ class TypeTester extends Component {
     } else if (this.props.inView===true && prevProps.inView===false && this.state.animationStarted===true){
       animation.play();
       this.setState({ animationPlaying: true });
-    } else {
-      console.log("inView: ",this.props.inView);
-      console.log("prevProps.inView: ",prevProps.inView);
-      console.log("this.state.animationPlaying: ",this.state.animationPlaying);
-    }
+    } 
   }
 
   render() {
@@ -148,7 +146,7 @@ class TypeTester extends Component {
         <div
           ref={this.typeTesterRef}
           id="typetester"
-          className={`bg-${this.state.activeBg.bgColor} h-tester-mobile lg:h-tester-desktop w-100% relative rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden`}
+          className={`${this.state.activeBg.bgColor} h-tester-mobile lg:h-tester-desktop w-100% relative rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden`}
         >
           <Pattern
             className="h-100% w-100% bg-cover grid place-items-center"
@@ -159,11 +157,10 @@ class TypeTester extends Component {
             >
               <span
                 ref={this.typeTesterInputRef}
-                className={`text-${this.state.activeBg.textColor} type-tester text-13 lg:text-12 m-auto w-3/4 h-100% absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center block text-center focus:outline-none overflow-hidden self-center break-all whitespace-normal font-display `}
+                className={`text-${this.state.activeBg.textColor} type-tester text-13 lg:text-12 m-auto w-3/4 h-100% absolute inset-0 flex justify-center items-center block text-center focus:outline-none overflow-hidden self-center font-display break-words `}
                 contentEditable="true"
                 suppressContentEditableWarning={true}
                 spellCheck="false"
-                onKeyUp={this.handleTypeTesterInputChange}
                 id="typetestereditablefield"
               >
                 {this.state.inputContent}
@@ -221,7 +218,7 @@ class TypeTester extends Component {
         <Pill className="h-10 lg:h-5 flex w-100vw">
           <div className="w-100% h-100%">
             <div className="flex flex-col w-100% h-100%">
-              <div className={`h-100% w-100% bg-`+this.state.activeBg.sliderColor+` rounded-sm lg:rounded-lg flex justify-center items-center overflow-hidden`}>
+              <div className={`h-100% w-100% `+this.state.activeBg.sliderColor+` rounded-sm lg:rounded-lg flex justify-center items-center overflow-hidden`}>
                 <div className="w-1/5 lg:w-10% bg-gray h-100% flex justify-center items-center">
                   <span
                     onClick={this.toggleCurrentAnimation}

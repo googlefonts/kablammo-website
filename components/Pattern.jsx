@@ -1,25 +1,7 @@
 import React, { useEffect, useState } from "react";
-// var positions = ["top left", "bottom center", "top right"];
 
 const Pattern = ({ className, children, bgImage, id, onMouseEnter, onMouseLeave }) => {
-  // const [seconds, setSeconds] = useState(0);
-  // const [isActive, setIsActive] = useState(true);
-  // const [bgPosition, setBgPosition] = useState(positions[0]);
-  const backgroundImage = bgImage ? "url('" + bgImage + "')" : "none";
-
-  // useEffect(() => {
-  // 	let interval = null;
-  // 	if (isActive) {
-  // 		interval = setInterval(() => {
-  // 			setSeconds((seconds) => seconds + 0.5);
-  // 			setBgPosition(positions[Math.floor(Math.random() * 3)]);
-  // 		}, 500);
-  // 	} else if (!isActive && seconds !== 0) {
-  // 		clearInterval(interval);
-  // 	}
-  // 	// console.log(seconds);
-  // 	return () => clearInterval(interval);
-  // }, [isActive, seconds]);
+ const backgroundImage = bgImage ? "url('" + bgImage + "')" : "none";
 
   return (
     <div

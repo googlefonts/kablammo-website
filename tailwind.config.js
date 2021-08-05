@@ -114,7 +114,7 @@ module.exports = {
     fontFamily: {
       display: ["Kablammo", "Helvetica", "ui-sans-serif"],
       body: ["Helvetica", "ui-sans-serif"],
-      mono: ["Iso", "ui-monospace"],
+      mono: ["Helvetica", "ui-monospace"],
       pointA: ["KablammoA", "Kablammo", "Helvetica", "ui-sans-serif"],
       pointB: ["KablammoB", "Kablammo", "Helvetica", "ui-sans-serif"],
       pointC: ["KablammoC", "Kablammo", "Helvetica", "ui-sans-serif"],

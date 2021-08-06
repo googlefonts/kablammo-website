@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import Prismic from "prismic-javascript";
 import { client } from "../prismic-configuration";
 import Head from "next/head";
-import ScrollingText from "../components/ScrollingText";
 import Nav from "../components/Nav";
 import Frame from "../components/Frame";
 import Carousel from "../components/Carousel";
@@ -92,44 +91,18 @@ function Index(props) {
                 <Kablammo />
               </Pill>
               {/* SMALL SCROLLING TEXT 1 */}
-                {/* <ScrollingText
-                  href={`#`}
-                  blank
-                  specialRight
-                  hideMobile
-                  borderTop
-                  large
-                  className={`hvr-wobble-top hvr-shutter-in-horizontal bg-gray hover:bg-yellow h-10 lg:h-4`}
-                >
-                  <span
-                    className={`text-5 lg:text-3 text-black uppercase font-display`}
-                  >
-                    ☮ BROUGHT ☼ TO 👁 YOU 🌐 BY ☀
-                    VECTRO ☮ Type ☼ Foundry &nbsp;
-                  </span>
-                </ScrollingText> */}
-                <MarqueeScroller className="bg-gray h-10 lg:h-4 hvr-wobble-top hvr-shutter-in-horizontal hover:bg-yellow">
+              <MarqueeScroller className="bg-gray h-10 lg:h-4 hvr-wobble-top hvr-shutter-in-horizontal hover:bg-yellow">
                   <span className={`text-5 lg:text-3 text-black font-display`}>
                     ☮ BROUGHT ☼ TO 👁 YOU 🌐 BY ☀
                     VECTRO ☮ TYPE ☼ FOUNDRY &nbsp;
                   </span>
-                  </MarqueeScroller>
+              </MarqueeScroller>
             </Frame>
             {/* TYPE PARTICLES */}
             <TypeParticles />
-            <ScrollingText
-          className=""
-          right
-          specialLeft
-          hideMobile
-          borderTop
-          large
-          className={`bg-orange h-10 lg:h-4`}
-        >
-          <span className="text-4 text-blue uppercase cursor-default">
-            &#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;
-          </span>
-        </ScrollingText>
+        <MarqueeScroller direction="right" className="bg-orange h-10 lg:h-4 cursor-default">
+          <span className="text-4 text-blue uppercase font-display cursor-default">&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;</span>
+        </MarqueeScroller>
             {/* TYPE TESTER 1 */}
             <InView threshold={0}>
             {({ inView, ref, entry}) => (
@@ -145,22 +118,6 @@ function Index(props) {
               items={doc.data.carousel}
             />
             </div>
-          {/* <ScrollingText
-            className=""
-            href={`#`}
-            blank
-            specialRight
-            hideMobile
-            borderTop
-            large
-            right
-            className={`hvr-wobble-top hvr-shutter-in-horizontal bg-gray hover:bg-pink h-10 lg:h-4`}
-          >
-            <span className="text-5 lg:text-3 text-black uppercase">
-              👁 A 🌐 Dancing ☀ typeface ☮ BROUGHT ☼ TO 👁 YOU 🌐 BY ☀ VECTRO
-              ☮ Type ☼ Foundry &nbsp;
-            </span>
-          </ScrollingText>  */}
         <MarqueeScroller direction="right" className="bg-gray h-10 lg:h-4 hvr-wobble-top hvr-shutter-in-horizontal hover:bg-pink cursor-default">
           <span className={`text-5 lg:text-3 text-black font-display`}>
             ☮ BROUGHT ☼ TO 👁 YOU 🌐 BY ☀
@@ -170,18 +127,9 @@ function Index(props) {
         {/* TYPE SCALES */}
         <TypeScales />
         {/* CHARACTER SET */}
-        <ScrollingText
-          className=""
-          specialRight
-          hideMobile
-          borderTop
-          large
-          className={`bg-pink h-10 lg:h-4`}
-        >
-          <span className="text-4 text-lime uppercase cursor-default">
-            &#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;
-          </span>
-        </ScrollingText>
+        <MarqueeScroller direction="left" className="bg-pink h-10 lg:h-4 cursor-default">
+          <span className="text-4 text-lime uppercase font-display cursor-default">&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;</span>
+        </MarqueeScroller>
             <div
               className={`bg-green rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden`}
               id="characterset"
@@ -192,33 +140,13 @@ function Index(props) {
               <CharacterSetNoSSR />
             </div>
             <SlotMachine />
-            {/* BIG SROLLING TEXT 1 */}
-              <ScrollingText
-                className=""
-                specialRight
-                hideMobile
-                borderTop
-                large
-                left
-                className={`bg-lime h-30 cursor-auto`}
-              >
-                <span className="text-24 text-blue uppercase">&nbsp;The making of KABLAMMO
-                </span>
-              </ScrollingText>
-            {/* BIG SROLLING TEXT 2 */}
-              <ScrollingText
-                className=""
-                specialRight
-                hideMobile
-                borderTop
-                large
-                right
-                className={`bg-orange h-30 cursor-auto`}
-              >
-                <span className="text-24 text-gray uppercase">
-                &nbsp;The making of KABLAMMO
-                </span>
-              </ScrollingText>
+            {/* BIG SROLLING TEXT */}
+              <MarqueeScroller direction="left" className="bg-lime h-30 cursor-auto cursor-default">
+                <span className="text-24 text-blue uppercase font-display">&nbsp;The making of KABLAMMO</span>
+              </MarqueeScroller>
+              <MarqueeScroller direction="right" className="bg-orange h-30 cursor-auto cursor-default">
+                <span className="text-24 text-gray uppercase font-display">&nbsp;The making of KABLAMMO</span>
+              </MarqueeScroller>
             {/* ESSAY */}
             <Frame
               className={`bg-green rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-auto`}

@@ -7,7 +7,7 @@ const MarqueeScroller = (props) => {
     const [child, setChild] = useState(props.children);
     const [marqueeWrapper, inView
     ] = useInView({
-      threshold: 0.5,
+      threshold: 0,
     })
     return (
         <Media
@@ -25,7 +25,7 @@ const MarqueeScroller = (props) => {
             pauseOnHover={false} 
             speed={matches.mobile ? 10 : 40} 
             direction={props.direction ? props.direction : "left"} 
-            className={` ${props.className ? `${props.className}` : ``} rounded-sm lg:rounded-lg `}
+            className={` ${props.className ? `${props.className}` : ``} rounded-sm lg:rounded-lg overflow-hidden `}
             >{child}{child}
             </Marquee>
           <style jsx>{`

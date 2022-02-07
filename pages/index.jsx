@@ -124,7 +124,7 @@ function Index(props) {
               </span>
             </MarqueeScroller>
             {/* TYPE SCALES */}
-            {<TypeScales />}
+            <TypeScales />
             {/* CHARACTER SET}  */}
             <MarqueeScroller direction="left" className="bg-pink h-10 lg:h-4 cursor-default">
               <span className="text-4 text-lime uppercase font-display cursor-default">&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;</span>

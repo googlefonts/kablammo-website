@@ -43,7 +43,6 @@ const fetchData = async (setDocData) => {
 function Index(props) {
   const [doc, setDocData] = useState(null);
   const grayRef = useRef(null);
-  const [inView, setInView] = useState(false);
   const [loaderVisible, setLoaderVisible] = useState("");
   fetchData(setDocData);
   const pageReady = doc !== null ? true : false;
@@ -88,7 +87,7 @@ function Index(props) {
               <Pill
                 className={`bg-purple bg-clip-padding overflow-hidden h-100%`}
               >
-                <Kablammo />
+                <Kablammo /> 
               </Pill>
               {/* SMALL SCROLLING TEXT 1 */}
               <MarqueeScroller className="bg-gray h-10 lg:h-4 hvr-wobble-top hvr-shutter-in-horizontal hover:bg-yellow">
@@ -100,36 +99,36 @@ function Index(props) {
             </Frame>
             {/* TYPE PARTICLES */}
             <TypeParticles />
-        <MarqueeScroller direction="right" className="bg-orange h-10 lg:h-4 cursor-default">
-          <span className="text-4 text-blue uppercase font-display cursor-default">&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;</span>
-        </MarqueeScroller>
-            {/* TYPE TESTER 1 */}
+            <MarqueeScroller direction="right" className="bg-orange h-10 lg:h-4 cursor-default">
+              <span className="text-4 text-blue uppercase font-display cursor-default">&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;</span>
+            </MarqueeScroller> 
+            {/* TYPE TESTER 1 */} 
             <InView threshold={0}>
             {({ inView, ref, entry}) => (
-              <div  ref={ref} >
-            <TypeTester inView={inView} log="logthis!" />
-            </div>
+              <div ref={ref} >
+                <TypeTester inView={inView} log="logthis!" />
+              </div>
             )}
             </InView>
             {/* SLIDER FRAME */}
             <div id="carouselwrapper">
             <Carousel
               className={`rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-50vh lg:h-100vh`}
-              items={doc.data.carousel}
-            />
+               items={doc.data.carousel}
+               />
             </div>
-        <MarqueeScroller direction="right" className="bg-gray h-10 lg:h-4 hvr-wobble-top hvr-shutter-in-horizontal hover:bg-pink cursor-default">
-          <span className={`text-5 lg:text-3 text-black font-display`}>
-            ☮ BROUGHT ☼ TO 👁 YOU 🌐 BY ☀
-            VECTRO ☮ TYPE ☼ FOUNDRY &nbsp;
-          </span>
-        </MarqueeScroller>
-        {/* TYPE SCALES */}
-        <TypeScales />
-        {/* CHARACTER SET */}
-        <MarqueeScroller direction="left" className="bg-pink h-10 lg:h-4 cursor-default">
-          <span className="text-4 text-lime uppercase font-display cursor-default">&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;</span>
-        </MarqueeScroller>
+            <MarqueeScroller direction="right" className="bg-gray h-10 lg:h-4 hvr-wobble-top hvr-shutter-in-horizontal hover:bg-pink cursor-default">
+              <span className={`text-5 lg:text-3 text-black font-display`}>
+                ☮ BROUGHT ☼ TO 👁 YOU 🌐 BY ☀
+                VECTRO ☮ TYPE ☼ FOUNDRY &nbsp;
+              </span>
+            </MarqueeScroller>
+            {/* TYPE SCALES */}
+            {<TypeScales />}
+            {/* CHARACTER SET}  */}
+            <MarqueeScroller direction="left" className="bg-pink h-10 lg:h-4 cursor-default">
+              <span className="text-4 text-lime uppercase font-display cursor-default">&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;&#xE000;</span>
+            </MarqueeScroller>
             <div
               className={`bg-green rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden`}
               id="characterset"
@@ -141,12 +140,12 @@ function Index(props) {
             </div>
             <SlotMachine />
             {/* BIG SROLLING TEXT */}
-              <MarqueeScroller direction="left" className="bg-lime h-30 cursor-auto cursor-default">
-                <span className="text-24 text-blue uppercase font-display">&nbsp;The making of KABLAMMO</span>
-              </MarqueeScroller>
-              <MarqueeScroller direction="right" className="bg-orange h-30 cursor-auto cursor-default">
-                <span className="text-24 text-gray uppercase font-display">&nbsp;The making of KABLAMMO</span>
-              </MarqueeScroller>
+            <MarqueeScroller direction="left" className="bg-lime h-30 cursor-auto cursor-default">
+              <span className="text-24 text-blue uppercase font-display">&nbsp;The making of KABLAMMO</span>
+            </MarqueeScroller>
+            <MarqueeScroller direction="right" className="bg-orange h-30 cursor-auto cursor-default">
+              <span className="text-24 text-gray uppercase font-display">&nbsp;The making of KABLAMMO</span>
+            </MarqueeScroller>
             {/* ESSAY */}
             <Frame
               className={`bg-green rounded-sm lg:rounded-lg bg-clip-padding overflow-hidden h-auto`}
@@ -165,10 +164,9 @@ function Index(props) {
               </div>
             </Frame>
             {/* DOWNLOAD */}
-            <a id="download" className="w-100% text-black rounded-sm lg:rounded-lg text-center flex justify-center items-center bg-purple hover:bg-yellow hover:text-gray h-30 text-16 text-lime uppercase cursor-pointer font-display" target="_blank" href="https://www.fiskprojects.com/">
+            <a id="download" className="w-100% text-black rounded-sm lg:rounded-lg text-center flex justify-center items-center bg-purple hover:bg-yellow hover:text-gray h-30 text-16 text-lime uppercase cursor-pointer font-display" target="_blank" href="https://www.fiskprojects.com/"> 
                 Download
             </a>
-            {/* CREDITS */}
             <Pill className="bg-orange h-auto ">
               <span className="font-body text-4 lg:text-2 py-4 px-4 uppercase">
               Art Direction<br/>Travis Kochel and Lizy Gershenzon
@@ -197,8 +195,7 @@ function Index(props) {
             {/* VECTRO TYPE FOUNDRY CREDIT */}
             <a className="text-6 uppercase cursor-pointer bg-blue h-12 hover:bg-yellow cursor-pointer w-100% font-display text-black rounded-sm lg:rounded-lg text-center flex justify-center items-center" target="_blank" href="https://www.fiskprojects.com/">
                 Font by Vectro Type Foundry
-              </a>
-            
+            </a>
           </Layout>
         </div>
       )}

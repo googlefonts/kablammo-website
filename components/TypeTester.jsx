@@ -48,6 +48,7 @@ class TypeTester extends Component {
       activeBg: bgOptions[0],
       isActive: true,
       animationPlaying: true,
+      animationTogglePaused: false,
       inputContent: "⚠ click and type 💩 try me out 😵",
       inputAnimateValue: 1,
       animationStarted:false,
@@ -66,14 +67,18 @@ class TypeTester extends Component {
   }
   toggleCurrentAnimation() {
     if (animation) {
-      if (this.state.animationPlaying) {
-        animation.pause();
-        this.setState({ animationPlaying: false });
-      } else {
-        animation.play();
-        this.setState({ animationPlaying: true });
+      if (this.state.animationTogglePaused === false) {
+        if (this.state.animationPlaying === false) {
+          animation.play();
+          this.setState({ animationPlaying: true });
+        } else {
+          animation.pause();
+          this.setState({ animationPlaying: false });
+        }
       }
-    }
+      this.setState(prevState => ({
+        animationTogglePaused: !prevState.animationTogglePaused
+      }));    }
   }
   handleSliderChange(event) {
     animation.pause();
@@ -122,22 +127,33 @@ class TypeTester extends Component {
   componentDidMount() {
     this.animationStart();
     this.setState({animationStarted: true});
-    animation.pause();
-    this.setState({animationPlaying: false});
+    animation.play();
+    this.setState({animationPlaying: true});
   }
 
   componentDidUpdate(prevProps, prevState){
-    if (this.props.inView===true && prevProps.inView===false && this.state.animationStarted===false){
-      this.animationStart();
-      this.setState({animationStarted: true});
-      this.setState({ animationPlaying: true });
-    } else if (this.props.inView===false && prevProps.inView===true && this.state.animationStarted===true){
-      animation.pause();
-      this.setState({ animationPlaying: false });
-    } else if (this.props.inView===true && prevProps.inView===false && this.state.animationStarted===true){
+    // if (this.props.inView===true && prevProps.inView===false && this.state.animationStarted===false){
+    //   this.animationStart();
+    //   this.setState({animationStarted: true});
+    //   this.setState({ animationPlaying: true });
+    // }
+    // if (this.props.inView===true && prevProps.inView===false && this.state.animationStarted===true){
+    //   animation.play();
+    //   this.setState({ animationPlaying: true });
+    // } 
+    // if (this.props.inView===false && prevProps.inView===true && this.state.animationStarted===true){
+    //   animation.pause();
+    //   this.setState({ animationPlaying: false });
+    // } 
+    if (this.props.inView && this.state.animationPlaying === false && this.state.animationTogglePaused === false) {
       animation.play();
-      this.setState({ animationPlaying: true });
-    } 
+      this.setState({animationPlaying: true})
+    } else if (this.props.inView && this.state.animationPlaying === true ) {
+
+    } else if (!this.props.inView && this.state.animationPlaying === true) {
+      animation.pause();
+      this.setState({animationPlaying: false})
+    }
   }
 
   render() {

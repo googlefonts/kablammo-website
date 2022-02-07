@@ -1,3 +1,5 @@
+import React from 'react';
+
 const NavItem = React.forwardRef((props, ref) => {
   return (
     <a

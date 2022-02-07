@@ -51,7 +51,7 @@ const TypeParticlesText = (props) => {
 	// 		}
 	// 		mobileHighlighting();
 	// }
-},[]); 
+// },[]); 
 	
 	return (
 		<span

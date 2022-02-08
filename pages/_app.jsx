@@ -5,6 +5,7 @@ import "../styles/hover-min.css";
 import "../styles/globals.css";
 import "../styles/slider.css";
 const isBrowser = typeof window !== "undefined";
+import Layout from "../components/Layout";
 
 // import App from 'next/app'
 
@@ -19,6 +20,7 @@ function MyApp({ Component, pageProps }) {
 
 		// We listen to the resize event
 		window.addEventListener("resize", () => {
+			console.log('resizing')
 			// We execute the same script as before
 			let vh = window.innerHeight * 0.01;
 			document.documentElement.style.setProperty("--vh", `${vh}px`);
@@ -27,7 +29,12 @@ function MyApp({ Component, pageProps }) {
 			document.documentElement.style.setProperty("--vw", `${vw}px`);
 		});
 	}
-	return <Component {...pageProps} />;
+	console.log('pageProps', pageProps)
+	return (
+		<Layout>
+			<Component {...pageProps} />
+		</Layout>
+	)
 }
 
 // Only uncomment this method if you have blocking data requirements for

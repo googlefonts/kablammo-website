@@ -5,7 +5,6 @@ import Head from "next/head";
 import Nav from "../components/Nav";
 import Frame from "../components/Frame";
 import Carousel from "../components/Carousel";
-import Layout from "../components/Layout";
 import Loading from "../components/Loading";
 import Loader from "../components/Loader";
 import Media from "react-media";
@@ -76,7 +75,7 @@ function Index(props) {
             <meta property="og:image" content={""} />
             <script async defer src=""></script>
           </Head>
-          <Layout>
+          <div>
            {/* <Loader className={loaderVisible}/> */}
             <Frame className={`lg:h-100vh flex justify-between flex-col cursor-auto`}>
 
@@ -196,7 +195,8 @@ function Index(props) {
             <a className="text-6 uppercase cursor-pointer bg-blue h-12 hover:bg-yellow cursor-pointer w-100% font-display text-black rounded-sm lg:rounded-lg text-center flex justify-center items-center" target="_blank" href="https://www.fiskprojects.com/">
                 Font by Vectro Type Foundry
             </a>
-          </Layout>
+            >
+          </div>
         </div>
       )}
     </Media>

@@ -9,6 +9,7 @@ import Layout from "../components/Layout";
 
 // import App from 'next/app'
 
+
 function MyApp({ Component, pageProps }) {
 	let vh = isBrowser ? window.innerHeight * 0.01 : null;
 	let vw = isBrowser ? window.innerWidth * 0.01 : null;
@@ -32,7 +33,7 @@ function MyApp({ Component, pageProps }) {
 	console.log('pageProps', pageProps)
 	return (
 		<Layout>
-			<Component {...pageProps} />
+			<Component {...pageProps } />
 		</Layout>
 	)
 }

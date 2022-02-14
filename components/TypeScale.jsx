@@ -1,17 +1,21 @@
 import React, { useState, useRef, useEffect } from "react";
 import Pill from "../components/Pill";
 import Pattern from "../components/Pattern";
+const isBrowser = typeof window !== "undefined";
 
 const TypeScale = props => {
     const [bodyCopy, setBodyCopy] = useState(null);
-    window.addEventListener("resize", ()=>{
+    const [innerWidth, setInnerWidth] = useState(null);
+    isBrowser && window.addEventListener("resize", ()=>{
       if (window.innerWidth < 1024){
         setBodyCopy(props.copyMobile);
+        setInnerWidth(window.innerWidth)
       } else { setBodyCopy(props.copyDesktop); }
-    });
+    })
     useEffect(()=>{
       if (window.innerWidth < 1024){
         setBodyCopy(props.copyMobile);
+        setInnerWidth(window.innerWidth)
       } else { setBodyCopy(props.copyDesktop); }
     })
     return(
@@ -30,7 +34,7 @@ const TypeScale = props => {
             <div className={`${props.labelClassName ? props.labelClassName : ``} pr-4 md:pr-10 lg:pr-14 xl:pr-20 flex flex-col`}>
               <span className="uppercase font-mono text-10pt lg:text-14pt">Font Size</span>
               <span className={`${props.labelColorClassName ? props.labelColorClassName : `bg-gray`} uppercase font-mono text-10pt lg:text-14pt rounded-full pt-1 px-4`}>
-                {parseInt(window.innerWidth * props.textScale)}px
+                {parseInt(innerWidth * props.textScale)}px
               </span>
             </div>
           </div>

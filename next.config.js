@@ -1,9 +1,10 @@
 module.exports = {
-	target: "serverless",
 	env: {
-		siteUrl: "https://kablammo-whapow-3000.netlify.app",
+		siteUrl: "https://kablammo.netlify.app",
 	},
 	images: {
 		domains: ["kablammo.cdn.prismic.io"],
 	},
+	reactStrictMode: true,
+    swcMinify: true,
 };

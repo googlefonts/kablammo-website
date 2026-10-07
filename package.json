@@ -35,6 +35,6 @@
     "react-intersection-observer": "^8.31.0",
     "react-media": "^1.10.0",
     "serve": "^11.3.2",
-    "tailwindcss": "^2.0.2"
+    "tailwindcss": "^4.3.3"
   }
 }
